@@ -1,0 +1,19 @@
+var sizes = ['large', 'default'];
+var prefixCls = 'i-switch';
+
+function setSize(size) {
+    var index = sizes.indexOf(size);
+    return (prefixCls + (index > -1 ? ('-' + size) : 'default'))
+};
+
+function setCurrent(value, disabled) {
+    var className = value && !disabled ? prefixCls + '-checked' : '';
+    if (disabled) {
+        className += ' ' + prefixCls + '-disabled'
+    };
+    return (className)
+};
+module.exports = ({
+    setSize: setSize,
+    setCurrent: setCurrent,
+});

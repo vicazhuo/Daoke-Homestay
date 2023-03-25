@@ -1,0 +1,148 @@
+.main {
+    padding: 0 30rpx;
+}
+
+.main .tit {
+    font-family: PingFangSC-Medium;
+    font-size: 50rpx;
+    color: #2A2A2A;
+    padding-top: 40rpx;
+    font-weight: bold;
+}
+
+.main .tit-con {
+    font-family: PingFangSC-Light;
+    font-size: 30rpx;
+    color: #5E646B;
+    margin-top: 20rpx;
+}
+
+.main .sel-ul {
+    margin-top: 100rpx;
+}
+
+.main .sel-ul .sel-li {
+    display: flex;
+    align-items: center;
+    margin-top: 40rpx;
+}
+
+.main .sel-ul .sel-li image {
+    width: 48rpx;
+    height: 48rpx;
+    display: block;
+}
+
+.main .sel-ul .sel-li text {
+    font-family: PingFangSC-Regular;
+    font-size: 34rpx;
+    color: #2B2F33;
+    padding-left: 20rpx;
+}
+
+.main .top {
+    padding-bottom: 100rpx;
+}
+
+.main .unload-tit {
+    font-family: PingFangSC-Medium;
+    font-size: 42rpx;
+    color: #2A2A2A;
+    font-weight: bold;
+}
+
+.main .unload-con {
+    font-family: PingFangSC-Light;
+    font-size: 30rpx;
+    color: #5E646B;
+    margin-top: 20rpx;
+    padding-bottom: 60rpx;
+}
+
+.main .unload-con text {
+    font-weight: bold;
+}
+
+.main .unload-image {
+    margin-bottom: 30rpx;
+}
+
+.main .unload-image image {
+    width: 690rpx;
+    height: 460rpx;
+    display: block;
+}
+
+.main .btm-con {
+    padding: 50rpx 0 190rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #5E646B;
+    text-align: center;
+}
+
+.btm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 750rpx;
+    height: 150rpx;
+    background: #fff;
+    border-top: 1px solid #EBEBEB;
+}
+
+.btm .btn {
+    width: 690rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    background: #EBEBEB;
+    border-radius: 6rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 34rpx;
+    color: #B4B9BF;
+    text-align: center;
+}
+
+.btm .sel {
+    background: #FAD330;
+    color: #2A2A2A;
+}
+
+.guide-download-progress .guide-download-progress-con {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: rgba(0,0,0,0.7);
+    width: 650rpx;
+    height: 200rpx;
+    padding: 40rpx;
+    box-sizing: border-box;
+    border-radius: 6rpx;
+}
+
+.guide-download-progress .guide-download-progress-con view {
+    color: #fff;
+    font-size: 32rpx;
+    padding-bottom: 20rpx;
+}
+
+.guide-download-progress .guide-download-progress-con progress {
+    color: #fff;
+}
+
+.pop-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 10;
+    opacity: 0;
+}

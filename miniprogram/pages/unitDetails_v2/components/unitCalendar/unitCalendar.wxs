@@ -1,0 +1,13 @@
+function getDate(ditem, selectBegin, selectEnd, dindex) {
+  return ((ditem.date >= selectBegin && ditem.date <= selectEnd) || ditem.date == selectBegin || ditem.festival.length == 0) ? dindex + 1 : ditem.festival
+};
+
+function topCalendarDate(text) {
+  text = text.replace('月', '.');
+  text = text.replace('日', '');
+  return (text)
+};
+module.exports = ({
+  getDate: getDate,
+  topCalendarDate: topCalendarDate,
+});

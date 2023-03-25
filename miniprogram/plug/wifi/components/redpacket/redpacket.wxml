@@ -1,0 +1,42 @@
+<view class="wrapper" wx:if="{{money}}">
+    <view class="content">
+        <view class="big {{isOpend?'open':'close'}}" style="background-image:url({{bigImg}})" wx:if="{{size=='BIG'}}">
+            <view wx:if="{{!isOpend}}">
+                <view class="text">
+          您有<view class="value">{{money}}</view>元红包待领取
+        </view>
+                <form reportSubmit bindsubmit="formBtn">
+                    <button bindtap="getRedpacket" class="btn" formType="submit">一键领取</button>
+                </form>
+            </view>
+            <view wx:else>
+                <view class="text">
+                    <view> 恭喜您！</view>
+                    <view class="value">{{money}}</view>元红包已到账
+        </view>
+                <form reportSubmit bindsubmit="formBtn">
+                    <button bindtap="gotoUse" class="btn" formType="submit">立即使用</button>
+                </form>
+            </view>
+        </view>
+        <view class="small {{isOpend?'open':'close'}}" style="background-image:url({{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/redpacket-small-close.png)" wx:if="{{size=='SMALL'}}">
+            <view class="wrapper" wx:if="{{!isOpend}}">
+                <view class="text">
+          您有<view class="value">{{money}}</view>元红包待领取
+        </view>
+                <form reportSubmit bindsubmit="formBtn" class="formBtn">
+                    <button bindtap="getRedpacket" class="btn" formType="submit">一键领取</button>
+                </form>
+            </view>
+            <view class="wrapper" wx:else>
+                <view class="text">
+                    <view class="congratulations"> 恭喜您！</view>
+                    <view class="value">{{money}}</view>元红包已到账
+        </view>
+                <form reportSubmit bindsubmit="formBtn" class="formBtn">
+                    <button bindtap="gotoUse" class="btn" formType="submit">立即使用</button>
+                </form>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,34 @@
+<view class="com-qrcode-wrapper">
+    <view class="qr-content">
+        <view class="qr-top">
+            <view class="qr-top-title">
+                <image class="qr-top-img" mode="scaleToFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi.png"></image>
+                <view>
+                    <text>{{wifiName}}</text>
+                </view>
+            </view>
+            <view class="erweima">
+                <view class="weima_cirle" wx:if="{{enumQRCodeType==1}}">
+                    <image mode="scaleToFill" src="{{wifiUrl}}"></image>
+                </view>
+                <view wx:else>
+                    <image mode="scaleToFill" src="{{wifiUrl}}"></image>
+                </view>
+            </view>
+            <view class="qr-title-des">微信扫码即可连接Wi-Fi</view>
+            <view class="qr-title-note"> Wi-Fi编号：{{wifiId}}</view>
+        </view>
+        <view class="qr-bottom">
+            <view class="tujia-text">住民宿  上途家</view>
+            <view class="tujia-icon">
+                <image mode="scaleToFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/logo-bottom.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="qr-des">打印二维码并粘贴在房内，推荐房客微信扫码连Wi-Fi</view>
+    <view class="qr-btn">
+        <view bindtap="editQrcode" class="edit br1">完成</view>
+        <button bindopensetting="bindopensetting" bindtap="savePhoto" class="save br1" openType="{{powerfail?'openSetting':''}}">{{btnText}}</button>
+    </view>
+</view>
+<canvas canvasId="mycanvas" hidden="{{true}}" style="width: 621px; height: 1000px;"></canvas>

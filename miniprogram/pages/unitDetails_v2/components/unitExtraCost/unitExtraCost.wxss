@@ -1,0 +1,56 @@
+.extracost-wrapper {
+    padding: 60rpx 60rpx 58rpx 40rpx;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+    box-shadow: 0 1px 3rpx 0 rgba(0,0,0,0.06);
+}
+
+.extracost-title {
+    line-height: 56rpx;
+    font-weight: 400;
+    font-size: 40rpx;
+    color: #333333;
+    letter-spacing: 0;
+}
+
+.extracost-des {
+    line-height: 32rpx;
+    margin-bottom: 30rpx;
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.extracost {
+    display: flex;
+    margin-bottom: 8rpx;
+}
+
+.extracost-left {
+    font-size: 28rpx;
+    color: #999999;
+    letter-spacing: 0;
+    min-width: 64rpx;
+    margin-right: 20rpx;
+    line-height: 40rpx;
+}
+
+.extracost-right {
+    flex: 1;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 40rpx;
+    max-width: 587rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.see-more {
+    margin-top: 28rpx;
+    font-size: 28rpx;
+    color: #fa152c;
+    line-height: 40rpx;
+}

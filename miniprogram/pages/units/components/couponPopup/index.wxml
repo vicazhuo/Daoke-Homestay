@@ -1,0 +1,58 @@
+<view class="cu-modal bottom-modal {{isPopupShow?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog" catchtap>
+    <view class="cu-bar bg-white">
+      <view class="action text-blue"></view>
+      <view class="text-black text-center">
+        {{title}}
+      </view>
+      <view class="action text-green" bindtap="hideModal">
+        <text class="cuIcon-close lg text-gray" bindtap="hideModal"></text>
+      </view>
+    </view>
+    <slot name="items"></slot>
+    <view class="grid col-3 padding-sm bg-{{bgColor}}">
+      <scroll-view scrollY class="top-screen-content scroll-height">
+        <view class="content-wrap">
+          <view  class="conpon-item">
+            <view class="title">{{CouponList.labelText}}</view>
+            <view class="mt" wx:for="{{CouponList.items}}" wx:for-index="idx" wx:key="index">
+              <view class="topinfo style01">
+                <view class="lftinfo">
+                  <view class="moneycont">
+                    <span class="moneytype">￥</span>
+                    <span class="moneynum">{{item.money}}</span>
+                  </view>
+                </view>
+                <view class="rgtinfo">
+                  <view class="cont">
+                    <view class="titcont">{{item.title}}</view>
+                    <view class="discount">{{item.content}}</view>
+                  </view>
+                </view>
+                <view class="longqu">
+                  <view class="but {{item.isGet?'active':''}}" data-isget="{{item.isGet}}" data-id="{{item.id}}" data-index="{{idx}}" bindtap="pickUp">
+                    {{item.isGet?'已':''}}领取
+                  </view>
+                </view>
+              </view>
+              <view bindtap="showAll" class="bottominfo" data-index="{{idx}}" wx:if="{{item.limitRules.length>0}}">
+                <block wx:if="{{idx==curIndex}}">
+                  <span class="limit {{isShowAll?'':'oneline'}}">
+                    <span class="limitinfo" wx:for="{{item.limitRules}}" wx:key="key" wx:for-item="i">1.{{i}}</span>
+                  </span>
+                  <span class="downarrow {{isShowAll?'uparrow':''}}" wx:if="{{isFold}}"></span>
+                </block>
+                <block wx:else>
+                  <span class="limit {{isShowAllStatic?'':'oneline'}}">
+                    <span class="limitinfo" wx:for="{{item.limitRules}}" wx:key="key" wx:for-item="i">1.{{i}}</span>
+                  </span>
+                  <span class="downarrow {{isShowAllStatic?'uparrow':''}}" wx:if="{{isFold}}"></span>
+                </block>
+              </view>
+            </view>
+        </view>
+    </view>
+    </scroll-view>
+  </view>
+</view>
+</view>

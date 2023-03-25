@@ -1,0 +1,47 @@
+.unit-promise-wrapper {
+    padding: 60rpx 40rpx 160rpx 40rpx;
+}
+
+.p168 {
+    padding: 60rpx 40rpx 228rpx 40rpx;
+}
+
+.promise-top {
+    text-align: center;
+    padding: 40rpx 0;
+    background: #f0f3f6;
+    border-radius: 12rpx;
+    margin-bottom: 20rpx;
+}
+
+.promise-text {
+    font-size: 24rpx;
+    color: #999999;
+    letter-spacing: 0;
+    line-height: 24rpx;
+    margin-bottom: 23rpx;
+}
+
+.promise-icon {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 32rpx;
+    color: #fa152c;
+    letter-spacing: 0;
+    line-height: 32rpx;
+}
+
+.icon-promise {
+    width: 30rpx;
+    height: 37rpx;
+    margin-right: 10rpx;
+}
+
+.promise-number {
+    text-align: center;
+    font-size: 24rpx;
+    color: #b2b2b2;
+    letter-spacing: 0;
+    line-height: 24rpx;
+}

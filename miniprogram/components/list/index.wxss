@@ -1,0 +1,45 @@
+.list-component {
+  width: auto;
+}
+
+.list-loading-contaniner {
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24rpx;
+}
+
+.loading-icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.tab-content-item {
+    padding: 0 0 0;
+    height: 90vh;
+}
+
+.item-contaniner {
+    box-sizing: border-box;
+}
+
+.list-loading {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background: #fff;
+    transition: height .2s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1400;
+    transform: translateY(0);
+}
+
+.loading-text {
+    font-size: 24rpx;
+    color: #999;
+}

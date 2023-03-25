@@ -1,0 +1,57 @@
+<view class="g-wrapper">
+    <view class="haveApplyCount" wx:if="{{apply>0}}">当前门店已申请{{apply}}套</view>
+    <form reportSubmit bindsubmit="formBtn">
+        <view class="formwrap">
+            <view class="formitem" wx:if="{{!isSingleStore}}">
+                <text class="formtit">申请门店</text>
+                <view bindtap="selectStoreList" class="storelist">
+                    <input disabled class="hotelnameipt {{hotelList.length>1?'havearrow':''}}" placeholder="请选择门店" placeholderClass="placeholder" type="text" value="{{hotelName}}"></input>
+                    <icon class="arrow" wx:if="{{hotelList.length>1}}"></icon>
+                </view>
+            </view>
+            <view class="formitem">
+                <text class="formtit">申请数量</text>
+                <view class="storelist">
+                    <input bindinput="getNumbers" class="number" placeholder="{{applynumtext}}" placeholderClass="placeholder" type="number" value="{{applyCount}}"></input>
+                    <text class="text">套</text>
+                </view>
+            </view>
+            <view class="formitem">
+                <text class="formtit">收件人</text>
+                <view class="storelist">
+                    <input bindinput="getAcceptName" placeholder="请输入收件人姓名" placeholderClass="placeholder" type="text" value="{{recipient}}"></input>
+                </view>
+            </view>
+            <view class="formitem">
+                <text class="formtit">手机号码</text>
+                <view class="storelist">
+                    <input bindinput="bindphone" placeholder="请输入收件人电话" placeholderClass="placeholder" type="number" value="{{mobile}}"></input>
+                </view>
+            </view>
+            <view class="formitem">
+                <text class="formtit spect-l">省市区</text>
+                <view class="storelist spect-r">
+                    <picker bindchange="bindRegionChange" customItem="{{customItem}}" mode="region" value="{{region}}">
+                        <view class="picker">
+            {{region[0]}} {{region[1]}} {{region[2]}}
+            </view>
+                    </picker>
+                    <icon class="arrow"></icon>
+                </view>
+            </view>
+            <view class="formitem">
+                <text class="formtit">详细地址</text>
+                <view class="storelist">
+                    <input bindinput="getAddressInfo" placeholder="请输入详细地址" placeholderClass="placeholder" type="text" value="{{detailAddress}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="tips">
+            <view>温馨提示：</view>
+            <view>1、台卡费用及寄送费用均由途家承担</view>
+            <view>2、仅当门店上架且有房屋上架时可申请</view>
+            <view>3、申请套数≤在线门店下在线房屋套数</view>
+        </view>
+        <button bindtap="submitInfo" class="{{hotelName&&recipient&&mobile&&detailAddress&&region[0]&&applyCount?'btn-hover':'btn'}}" formType="submit" type="primary">提交</button>
+    </form>
+</view>

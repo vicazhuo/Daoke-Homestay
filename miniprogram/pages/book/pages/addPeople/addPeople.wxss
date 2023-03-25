@@ -1,0 +1,199 @@
+.add-people-page {
+}
+
+.book-module {
+    background: #fff;
+    box-shadow: 0 1px 3rpx 0 rgba(0,0,0,0.04);
+    margin-bottom: 20rpx;
+    box-sizing: border-box;
+}
+
+.input-con-title {
+    position: relative;
+    padding-right: 14rpx;
+    display: inline-block;
+}
+
+.input-con-title::after {
+    content: '';
+    width: 0;
+    height: 0;
+    content: '';
+    bottom: 10rpx;
+    right: 0;
+    position: absolute;
+    border-style: dashed solid solid dashed;
+    border-width: 8rpx 10rpx 0 0;
+    border-color: transparent #ff9645 #ff9645 transparent;
+}
+
+.add-id-type {
+    position: relative;
+    color: #333;
+}
+
+.add-id-type::after {
+    content: " ";
+    display: inline-block;
+    width: 20rpx;
+    height: 20rpx;
+    position: absolute;
+    top: 50%;
+    right: 4rpx;
+    border-width: 2rpx 2rpx 0 0;
+    border-color: #dddee1;
+    border-style: solid;
+    transform: translateY(-50%) matrix(0.71,0.71,-.71,0.71,0,0);
+}
+
+.add-people-tip {
+    background: #f0f3f6;
+    border-radius: 12rpx;
+    margin: 60rpx 0 30rpx;
+    display: flex;
+    padding: 35rpx 24rpx;
+    align-items: center;
+}
+
+.insurance-icon {
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 20rpx;
+}
+
+.add-people-tip-right {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.people-tip-right-name {
+    line-height: 1;
+    font-size: 28rpx;
+    color: #333;
+    font-weight: 500;
+}
+
+.people-tip-right-desc {
+    color: #333;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+    color: #333;
+    font-weight: 500;
+}
+
+.people-tip-right-desc {
+    color: #333;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+.add-people-tip-content {
+    padding: 0 40rpx;
+    box-sizing: border-box;
+}
+
+.peolple-insurance-alert {
+    display: flex;
+    flex-direction: column;
+    font-size: 24rpx;
+    color: #999;
+    line-height: 42rpx;
+}
+
+.name-input-title {
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.name-text-en {
+    font-size: 22rpx;
+    color: #999;
+    line-height: 1.4;
+}
+
+.name-input-title {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.sex-radio-item {
+    display: inline-block;
+    margin-right: 80rpx;
+}
+
+.action-sheet-header {
+    font-size: 28rpx;
+    color: #999;
+    line-height: 96rpx;
+    height: 96rpx;
+}
+
+.brith-slot {
+    display: inline-flex;
+    align-items: center;
+}
+
+.passport-tip {
+    font-size: 24rpx;
+    color: #FF6666;
+    line-height: 1;
+    padding: 0 40rpx;
+    display: flex;
+    align-items: center;
+}
+
+.passport-tip-icon {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 10rpx;
+}
+
+.people-list-btn-content {
+    background: #fff;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 120rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    box-shadow: 0 -1px 3rpx 0 #E9E9E9;
+}
+
+.people-list-btn {
+    background: #d7616d;
+    border-radius: 12rpx;
+    border: none;
+    height: 80rpx;
+    padding: 0;
+    margin: 0;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.people-list-btn-hover {
+    opacity: 0.8;
+}
+
+.birth-date-con {
+    color: #333;
+    line-height: 1;
+}
+
+.passport-tip--wrapper {
+    box-sizing: border-box;
+    padding: 0 40rpx;
+}
+
+.passport-title {
+    font-weight: 400;
+    font-size: 34rpx;
+    color: #000;
+    margin-bottom: 30rpx;
+}
+
+.birth-no-value {
+    color: #DADADA;
+    line-height: 1;
+}

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "入住人",
+    "usingComponents": {
+        "tj-cell": "/components/cell/index",
+        "tj-radio": "/components/radio/radio",
+        "tj-swipeout": "/components/swipeout/index",
+        "common-page": "/components/commonPage2/commonPage"
+    }
+}

@@ -1,0 +1,232 @@
+.header {
+    position: relative;
+    padding-bottom: 60rpx;
+}
+
+.headerbg {
+    position: absolute;
+    width: 100%;
+    height: 374rpx;
+}
+
+.headercont {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.header .helpicon image {
+    position: absolute;
+    right: 40rpx;
+    top: 40rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.header .helpicon {
+    position: relative;
+}
+
+.header .pophelp {
+    position: absolute;
+    right: 40rpx;
+    top: 100rpx;
+    padding: 40rpx;
+    width: 330rpx;
+    height: 160rpx;
+    color: #fff;
+    font-size: 28rpx;
+    letter-spacing: 0;
+    background: rgba(0,0,0,0.70);
+    border-radius: 8rpx;
+}
+
+.header .helpicon icon {
+    width: 0;
+    height: 0;
+    border: 16rpx solid transparent;
+    border-top: 22rpx solid rgba(0,0,0,0.70);
+    position: absolute;
+    top: -34rpx;
+    z-index: 0;
+    right: 1%;
+    transform: translateX(0%) rotate(180deg);
+}
+
+.header .getamount {
+    padding-top: 80rpx;
+    text-align: center;
+}
+
+.getamount .title {
+    margin-bottom: 20rpx;
+    font-size: 24rpx;
+    color: #999999;
+    letter-spacing: 0;
+}
+
+.getamount .amount {
+    font-size: 80rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.header .info {
+    display: flex;
+    margin-top: 30rpx;
+    justify-content: center;
+    text-align: center;
+}
+
+.info .infotext {
+    flex: 0.4;
+    text-align: center;
+    font-size: 28rpx;
+    color: #DADADA;
+}
+
+.info .infotext text {
+    font-weight: bold;
+}
+
+.wifilist {
+    margin: 40rpx;
+}
+
+.wifilist .desc {
+    margin-bottom: 20rpx;
+    font-size: 28rpx;
+    color: #999999;
+}
+
+.wifilist .listitem {
+    position: relative;
+    margin-bottom: 40rpx;
+    background: #FFFFFF;
+    box-shadow: 0 2rpx 36rpx 0 rgba(0,0,0,0.10);
+    border-radius: 12rpx;
+}
+
+.itemtop {
+    padding: 40rpx;
+    overflow: hidden;
+}
+
+.listitem .typeflag {
+    position: absolute;
+    right: -3rpx;
+    top: -3rpx;
+}
+
+.listitem .typeflag image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.itemtop .qr {
+    float: left;
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.itemtop .iteminfo {
+    float: left;
+    margin-left: 20rpx;
+}
+
+.itemtop .iteminfo .wifiname {
+    max-width: 400rpx;
+    font-size: 32rpx;
+    color: #333333;
+    height: 40rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.itemtop .iteminfo .items {
+    max-width: 430rpx;
+    margin-top: 15rpx;
+    font-size: 24rpx;
+    color: #333333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.itemtop .iteminfo .items text {
+    color: #999;
+    width: 98rpx;
+}
+
+.itembottom {
+    margin: 0 40rpx;
+    border-top: 1rpx solid #e9e9e9;
+    padding: 30rpx 0;
+}
+
+.operation {
+    width: 99%;
+    overflow: hidden;
+}
+
+.operation .delete,.operation .edit,.operation .save {
+    float: right;
+    margin-left: 60rpx;
+    color: #FF9645;
+    font-size: 14px;
+    padding: 0;
+    border: 0;
+    line-height: 14px;
+}
+
+.button-hover {
+    padding: 0;
+}
+
+button+button:not([size="mini"]) {
+    margin-top: 0;
+}
+
+.operation image {
+    display: inline-block;
+    width: 32rpx;
+    height: 32rpx;
+    vertical-align: -4rpx;
+    margin-right: 10rpx;
+}
+
+.bottomBtn {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    z-index: 9;
+    width: 100%;
+    background: #fff;
+}
+
+.btns {
+    flex: 0.5;
+    margin: 20rpx;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+    color: #fff;
+    font-size: 28rpx;
+    background: #FF9645;
+    border: 1px solid #FF9645;
+    border-radius: 12rpx;
+}
+
+.btns.self {
+    color: #FF9645;
+    background: #fff;
+    border: 1px solid #FF9645;
+}
+
+.wifiNo {
+    padding-top: 40rpx;
+    padding-left: 40rpx;
+    font-size: 24rpx;
+    color: #999999;
+}

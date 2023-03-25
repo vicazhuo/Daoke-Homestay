@@ -1,0 +1,162 @@
+.order-goodsorder {
+}
+
+.goodsorder-item {
+    margin-top: 20rpx;
+    background-color: #fff;
+    padding-left: 40rpx;
+}
+
+.goodsorder-item .item-title {
+    display: flex;
+    padding: 30rpx 40rpx 30rpx 0rpx;
+    align-items: center;
+}
+
+.goodsorder-item .item-title .icon {
+    width: 38rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.goodsorder-item .item-title .name {
+    flex: 1;
+    font-size: 32rpx;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 32rpx;
+}
+
+.goodsorder-item .item-title .info {
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 0;
+    text-align: right;
+    line-height: 28rpx;
+}
+
+.goodsorder-item .item-body {
+    display: flex;
+    padding-bottom: 40rpx;
+}
+
+.goodsorder-item .item-body::before {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.goodsorder-item .item-body .image {
+    width: 160rpx;
+    height: 120rpx;
+    flex-shrink: 0;
+}
+
+.goodsorder-item .item-body .desc {
+    padding: 0rpx 90rpx 0rpx 20rpx;
+    height: 120rpx;
+    overflow: hidden;
+}
+
+.goodsorder-item .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.goodsorder-item .text.multitext {
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    line-height: 1.4;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.goodsorder-item .desc .sub-name {
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 0;
+}
+
+.goodsorder-item .desc.service {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.goodsorder-item .desc .sub-text {
+    font-size: 24rpx;
+    color: #666666;
+    letter-spacing: 0;
+    flex: 1;
+    padding-top: 7rpx;
+}
+
+.goodsorder-item .desc .sub-subname {
+    font-size: 20rpx;
+    color: #FF9645;
+    letter-spacing: 0;
+    background: rgba(255,150,69,0.10);
+    border-radius: 4rpx;
+    padding: 1rpx 5rpx;
+}
+
+.item-footer .intros {
+    display: flex;
+    justify-content: space-between;
+    padding: 34rpx 0rpx;
+    margin-right: 40rpx;
+    font-size: 28rpx;
+    color: #666666;
+    letter-spacing: 0;
+    line-height: 28rpx;
+    flex-wrap: wrap;
+}
+
+.item-footer .intros .intors-value1 {
+    width: 100%;
+    font-size: 24rpx;
+    color: #999999;
+    letter-spacing: 0;
+    text-align: right;
+    line-height: 28rpx;
+    margin-top: 20rpx;
+}
+
+.item-footer .intros .intors-value2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    font-size: 24rpx;
+    color: #999999;
+    letter-spacing: 0;
+    text-align: left;
+    line-height: 28rpx;
+    margin-top: 20rpx;
+}
+
+.item-footer .intros .intors-value2 text {
+    margin-right: 40rpx;
+}
+
+.item-footer .intros:not(:last-child):before {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.item-footer .tip {
+    padding: 20rpx 0rpx;
+    font-size: 24rpx;
+    color: #999;
+    line-height: 36rpx;
+    letter-spacing: 0;
+    margin-right: 40rpx;
+}
+
+.goodsorder-item:last-child {
+    margin-bottom: 150rpx;
+}
+
+.val-font {
+    color: #333333;
+}

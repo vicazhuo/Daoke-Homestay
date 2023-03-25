@@ -1,0 +1,51 @@
+.con {
+    padding: 0 30rpx;
+}
+
+.con .tit {
+    font-family: PingFangSC-Medium;
+    font-size: 50rpx;
+    color: #2A2A2A;
+    padding-top: 40rpx;
+    font-weight: bold;
+}
+
+.con .tit-con {
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    color: #B4B9BF;
+    margin-top: 20rpx;
+    margin-bottom: 120rpx;
+}
+
+.con .instruce {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #2A2A2A;
+    line-height: 1.5;
+}
+
+.con .bto {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150rpx;
+    background: #fff;
+    border-top: 1px solid #EBEBEB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.con .bto .btn {
+    width: 690rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    background: #FAD330;
+    border-radius: 6rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 34rpx;
+    color: #2A2A2A;
+}

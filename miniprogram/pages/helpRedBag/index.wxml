@@ -1,0 +1,105 @@
+<import src="./components/pageError/index.wxml"></import>
+<import src="/components/backIndexBtn/index.wxml"></import>
+<view class="redbag-page-wrapper" hidden="{{!(isPage==='success')}}">
+    <form reportSubmit bindsubmit="formBtn">
+        <notity-scroll activityId="{{orderNo}}" bindsetFormEvent="formBtn"></notity-scroll>
+        <view class="redbag-page">
+            <view class="redbag-header">
+                <view class="header-title">
+                    <image class="title-bg" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_new.png"></image>
+                    <image class="title-left-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_title_left.png"></image>
+                    <text class="title-text">{{activeStatus==1?'系统会为您保留1小时积累红包时间':'邀好友助力·赢300元全额抵扣红包'}}</text>
+                    <image class="title-left-icon title-right-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_title_left.png"></image>
+                </view>
+                <view class="header-img">
+                    <image class="icon-title-main" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_title_main.png" wx:if="{{activeStatus==0}}"></image>
+                    <image class="icon-title-refuse" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_title_refuse.png" wx:elif="{{activeStatus==1}}"></image>
+                    <image class="icon-title-refuse" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_order_cancel.png" wx:elif="{{activeStatus==3}}"></image>
+                    <image class="icon-title-success" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_title_success.png" wx:else></image>
+                </view>
+            </view>
+            <block wx:if="{{activeStatus==0||activeStatus==1}}">
+                <view class="redbag-active">
+                    <view>
+                        <text class="active-time-text">距离结束<text class="active-time-box">{{activeTime[0]}}</text>时<text class="active-time-box">{{activeTime[1]}}</text>分</text>
+                    </view>
+                    <view class="active-text-line">
+                        <text class="active-time-text">再邀请<text class="active-number">{{activeDetail.againHelpNum}}</text>个人，可升级为<text class="active-number">{{activeDetail.availableAmount}}元</text>红包</text>
+                    </view>
+                    <view class="active-progress-container">
+                        <view class="active-redbag-icon-container">
+                            <view class="active-redbag-icon" style="left:{{redbagProgressLeftList[nowRedBagActive]}}rpx" wx:if="{{nowRedBagActive!=0}}">
+                                <image class="active-redbag-img" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_active_redbag.png"></image>
+                                <view class="now-redbag-down-icon" wx:if="{{nowRedBagActive>1&&nowRedBagActive<5}}"></view>
+                                <view class="now-redbag-down-icon-right" wx:elif="{{nowRedBagActive==5}}"></view>
+                                <view class="now-redbag-down-icon-left" wx:else></view>
+                                <text class="now-redbag-text">￥{{redbagProgressList[nowRedBagActive]}}</text>
+                            </view>
+                        </view>
+                        <view class="active-progress">
+                            <view class="active-progress active-progress-line" style="width:{{nowRedBagActive==0?5:nowRedBagActive==5?'100%':(nowRedBagActive-1)*132.8+60+'rpx'}}">
+                                <view class="progress-end"></view>
+                            </view>
+                        </view>
+                        <view class="progress-redbag-nums">
+                            <text class="nums-item" wx:if="{{index!=0}}" wx:for="{{redbagProgressList}}" wx:key="{{index}}">
+              ￥{{item}}
+              </text>
+                        </view>
+                    </view>
+                </view>
+                <button class="form-btn show-hotel-info" formType="submit" hoverClass="none">
+                    <label bindtap="checkTap" class="show-hotel-label">
+                        <checkbox checked="{{isShowHotel}}" class="{{isShowHotel?'checked':''}}"></checkbox>
+                        <text class="hotel-info-text {{isShowHotel?'show-hotel-info':''}}">我要秀出房屋信息</text>
+                    </label>
+                </button>
+                <view class="redbag-btn-container">
+                    <button class="redbag-btn redbag-btn-firend" formType="submit" hoverClass="btn-hover" openType="share">邀请好友助力红包</button>
+                    <button bindtap="toFirendShare" class="redbag-btn redbag-btn-more" formType="submit" hoverClass="btn-hover">保存图片分享</button>
+                </view>
+            </block>
+            <view class="helper-header" wx:elif="{{activeStatus==3}}">
+                <navigator class="active-house-container" url="/pages/unitDetails_v2/unitDetails?unitId={{activeDetail.house.houseId}}">
+                    <image class="active-house-img" mode="aspectFill" src="{{activeDetail.house.defaultPicture}}"></image>
+                    <view class="house-show-btm">
+                        <text class="house-name">
+                {{activeDetail.house.houseName}}
+              </text>
+                        <text class="house-price">
+                ￥{{activeDetail.house.productPrice}}
+              </text>
+                    </view>
+                </navigator>
+                <navigator class="active-time-end-btn to-index-btn" openType="switchTab" url="/pages/index/index">重新预订</navigator>
+            </view>
+            <block wx:else>
+                <view class="redbag-success-container">
+                    <image class="icon_redbag_bg" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_redbag_bg.png"></image>
+                    <image class="icon_time_end_tag" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_time_end_tag.png"></image>
+                    <text class="redbg-cash-text">￥{{activeDetail.alreadyHaveAmount}}</text>
+                </view>
+                <navigator class="redbag-btn redbag-btn-firend" url="/pages/user/redpacket/redpacket">去查看</navigator>
+            </block>
+        </view>
+        <view class="help-list-container">
+            <helper-list activityId="{{orderNo}}" isFirst="{{!isCreate}}"></helper-list>
+        </view>
+    </form>
+</view>
+<template is="pageError" data="{{...pageErrorData}}" wx:if="{{isPage==='fail'}}"></template>
+<template is="back-index-btn" data="{{...pageErrorData}}"></template>
+<popup isPopupShow="{{isShowPopup}}">
+    <view class="active-time-end-container" wx:if="{{popupStatus===0}}">
+        <view class="active-time-end-text">{{numQuantityVal=='all'?'抱歉啊，100元以上红包都被抢光了，记得下次早点来哦':numQuantityVal==100?'抱歉啊，100元红包今日被抢光了，但你还有机会获得300元红包哦':numQuantityVal==300?'抱歉啊，您来晚了，300元红包已经被抢光啦':''}}</view>
+        <view bindtap="activeEndBtn" class="active-time-end-btn">知道啦</view>
+    </view>
+    <view class="active-time-end-container" wx:if="{{popupStatus===1}}">
+        <view class="active-time-end-text">活动截止了哦，下次记得快点哦 ~</view>
+        <view bindtap="activeEndBtn" class="active-time-end-btn">知道啦</view>
+    </view>
+    <view class="active-time-end-container" wx:if="{{popupStatus===2}}">
+        <view class="active-time-end-text">{{activeErrMsg}}</view>
+        <view bindtap="closePage" class="active-time-end-btn">知道啦</view>
+    </view>
+</popup>

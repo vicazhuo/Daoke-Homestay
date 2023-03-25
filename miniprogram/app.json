@@ -1,0 +1,151 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/pay_v2/index/index",
+    "pages/pay_v2/success/success",
+    "pages/pay_v2/fail/fail",
+    "pages/pay_v2/confirm/confirm",
+    "pages/common/dateSelect/dateSelect",
+    "pages/common/search/search",
+    "pages/common/search/searchBox/searchBox",
+    "pages/common/search/searchSuggestion/searchSuggestion",
+    "pages/common/peopleCountSelect/peopleCountSelect",
+    "pages/landlord/index",
+    "pages/helpRedBag/index",
+    "pages/helpRedBag/friends/index",
+    "pages/helpRedBag/helper/index",
+    "pages/helpRedBag/moreHelper/index",
+    "pages/units/units",
+    "pages/units/components/locationSelect/locationSelect",
+    "pages/units/moreSelect/moreSelect",
+    "pages/units/components/sortSelect/sortSelect",
+    "pages/unitDetails_v2/unitDetails",
+    "pages/unitDetails_v2/common/unitComment/unitComment",
+    "pages/unitDetails_v2/common/unitCallPhone/unitCallPhone",
+    "pages/unitDetails_v2/common/unitWebview/unitWebview",
+    "pages/unitDetails_v2/common/unitPictureList/unitPictureList",
+    "pages/unitDetails_v2/common/unitHouseDesc/unitHouseDesc",
+    "pages/unitDetails_v2/common/unitHousePosition/unitHousePosition",
+    "pages/unitDetails_v2/common/unitServiceSetting/unitServiceSetting",
+    "pages/unitDetails_v2/common/unitExtraCost/unitExtraCost",
+    "pages/unitDetails_v2/common/unitDeposit/unitDeposit",
+    "pages/units/maps/maps",
+    "pages/shareHouse/index",
+    "pages/book/book",
+    "pages/book/pages/areaCode/areaCode",
+    "pages/book/pages/peopleList/peopleList",
+    "pages/book/pages/addPeople/addPeople",
+    "pages/book/pages/redpacket/redpacket",
+    "pages/book/pages/travelCard/travelCard",
+    "pages/helpBargain/index",
+    "pages/helpBargain/pages/friendList/index",
+    "pages/collection/collection",
+    "pages/collection/selectCity/selectCity",
+    "pages/webview/index",
+    "pages/webview/map/map",
+    "pages/webview/share/share",
+    "pages/wechatShare/share",
+    "pages/wechatShareWebview/index",
+    "pages/wechatShare/tjlogin/index",
+    "components/unitPrice/unitPrice",
+    "pages/user/index/index",
+    "pages/user/webView/webView",
+    "pages/user/orderList/orderList",
+    "pages/user/orderList/getAllOrders/index",
+    "pages/user/orderDetail/AccidentInsurance/index",
+    "pages/user/orderDetail/reFundView/reFundView",
+    "pages/user/orderDetail/refuseReason/refuseReason",
+    "pages/user/orderDetail/goodsOrder/goodsOrder",
+    "pages/user/orderDetail/deposit/deposit",
+    "pages/user/orderDetail/detailsOfCharges/index",
+    "pages/user/orderDetail/returnOrder/index",
+    "pages/user/orderDetail/returnMoney/index",
+    "pages/user/orderDetail/commentSubmit/commentSubmit",
+    "pages/user/login/login",
+    "pages/user/orderDetails/orderDetails",
+    "pages/user/orderDetail/orderDetail",
+    "pages/user/customerService/customerService",
+    "pages/user/card/card",
+    "pages/user/redpacket/redpacket",
+    "pages/user/prepayCard/prepayCard",
+    "pages/user/invoice/index",
+    "pages/user/invoice/invoice-info",
+    "pages/user_v2/index/index",
+    "pages/user_v2/member/index",
+    "pages/user_v2/components/swiperItemCom/swiperItemCom",
+    "pages/user_v2/recharge/index",
+    "pages/user_v2/wallet/wallet",
+    "pages/user_v2/wallet/returnCash",
+    "pages/find/index/index"
+  ],
+  "subpackages": [
+    {
+      "root": "plug",
+      "pages": [
+        "wifi/index/index",
+        "wifi/matAndWifi/index",
+        "wifi/matAndWifi/applyMatter/applyMatter",
+        "wifi/matAndWifi/applyMatterList/applyMatterList",
+        "wifi/matAndWifi/applyQrCode/completeQrCode/index",
+        "wifi/matAndWifi/storeList/index",
+        "wifi/connectWifiError/connectWifiError",
+        "wifi/connectWifiSuccess/connectWifiSuccess",
+        "wifi/wifiList/wifiList",
+        "wifi/matAndWifi/applyQrCode/addQrCode/index",
+        "wifi/matAndWifi/wifiLogin/index",
+        "wifi/landlordActivateConfirm/index",
+        "wifi/matAndWifi/houseListForWifi/index",
+        "checkin/deposit/deposit",
+        "checkin/personList/personList"
+      ]
+    }
+  ],
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#d8646f",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "common/images/nav/home_un.png",
+        "selectedIconPath": "common/images/nav/home.png"
+      },
+      {
+        "pagePath": "pages/find/index/index",
+        "text": "发现",
+        "iconPath": "common/images/nav/colle_un.png",
+        "selectedIconPath": "common/images/nav/colle.png"
+      },
+      {
+        "pagePath": "pages/user/orderList/orderList",
+        "text": "行程",
+        "iconPath": "common/images/nav/trip_un.png",
+        "selectedIconPath": "common/images/nav/trip.png"
+      },
+      {
+        "pagePath": "pages/user_v2/index/index",
+        "text": "我的",
+        "iconPath": "common/images/nav/user_un.png",
+        "selectedIconPath": "common/images/nav/user.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "enablePullDownRefresh": false
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "定位"
+    }
+  },
+  "networkTimeout": {
+    "request": 120000
+  },
+  "sitemapLocation": "sitemap.json"
+}

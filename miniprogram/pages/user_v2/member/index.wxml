@@ -1,0 +1,134 @@
+<view class="container">
+  <button bindgetuserinfo="getUserInfo" class="tit1" hoverClass="none" openType="getUserInfo" wx:if="{{!isAuth}}">
+    <image class="tit1-img" src="/common/images/header.png"></image>
+    <view class="text2">登录/注册</view>
+  </button>
+  <view bindtap="goWallet" class="tit2" wx:else>
+    <view class="member" wx:if="{{isLogin}}">
+      <image class="member-img" src="{{'http://minsu.image.zhiyinfo.com/member/vip/vip-card-'+userLevel+'.png'}}"></image>
+      <view class="member-info">
+        <view class="member-info-user">
+          <image src="{{headImageUrl}}"></image>
+          <view class="member-info-user-right">
+            <view class="member-info-user-right-top">
+              <text class="{{'color-'+userLevel}} t1">{{nickname}}</text>
+              <text class="{{'color-'+userLevel}} t2" wx:if="{{userLevel==0}}">普通用户</text>
+              <text class="{{'color-'+userLevel}} t2" wx:else>{{userLevelName}}会员</text>
+            </view>
+            <text class="{{'color-'+userLevel}} member-info-user-right-btm">累计为您返现￥{{totalBackAmount}}</text>
+          </view>
+        </view>
+        <view class="member-info-money">
+          <text class="{{'color-'+userLevel}} t1">{{payRemainAmount}}</text>
+          <text class="{{'color-'+userLevel}} t2">储值余额(元)</text>
+        </view>
+        <view class="member-info-btm">
+          <view class="member-info-btm-money">
+            <text class="{{'color-'+userLevel}} t1">{{backRemainAmount}}</text>
+            <text class="{{'color-'+userLevel}} t2">返现余额(元)</text>
+          </view>
+          <view class="member-info-btm-money member-info-btm-money1">
+            <text class="{{'color-'+userLevel}} t1">{{couponCount}}</text>
+            <text class="{{'color-'+userLevel}} t2">优惠券(张)</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view bindtap="goAuthorize" class="tit1" wx:else>
+      <image class="tit1-img" src="../../../images/order/header.png"></image>
+      <view class="text2">登录/注册</view>
+    </view>
+  </view>
+  <view wx:if="{{userLevel!=40&&isLogin}}">
+    <view class="grade-tit">会员等级</view>
+    <view class="grage-list">
+      <image class="grage-list-img" src="{{'http://minsu.image.zhiyinfo.com/member/vip/vip-icon-'+userLevel+'.png'}}"></image>
+      <view class="grage-list-con">
+        <view class="grage-list-con1"></view>
+      </view>
+      <image class="grage-list-img" src="{{'http://minsu.image.zhiyinfo.com/member/vip/vip-icon-'+(nextLevel)+'.png'}}"></image>
+    </view>
+    <view class="grage-list">
+      <view class="grage-list-text">{{userLevelName}}</view>
+      <view class="grage-list-con-text">
+        再储值
+        <text>￥{{vipIntroList[userLevel/10].stillPayAmount}}</text>/住
+        <text>{{vipIntroList[userLevel/10].stillNight}}</text>晚
+      </view>
+      <view class="grage-list-text" wx:if="{{userLevel==0}}">白银</view>
+      <view class="grage-list-text" wx:elif="{{userLevel==10}}">黄金</view>
+      <view class="grage-list-text" wx:elif="{{userLevel==20}}">铂金</view>
+      <view class="grage-list-text" wx:elif="{{userLevel==30}}">钻石</view>
+    </view>
+  </view>
+
+  <view class="title-view">{{globalName}}VIP计划</view>
+  <swiper bindanimationfinish="swiperFinish" class="swiper-style" current="{{swiperCurrent}}" nextMargin="90rpx" previousMargin="30rpx">
+    <swiper-item wx:for="{{vipIntroList}}" wx:key="{{item.level}}">
+      <swiper-item-com info="{{item}}"></swiper-item-com>
+    </swiper-item>
+  </swiper>
+  <view bindtap="goRecharge" class="limite-time" wx:if="{{isLogin&&vipIntroList[swiperCurrent].level>userLevel}}">
+    <view class="limite-time-view">
+     <view>
+      您只需储值￥{{vipIntroList[swiperCurrent].stillPayAmount}}或累计入住{{vipIntroList[swiperCurrent].stillNight}}晚，即可升级{{vipIntroList[swiperCurrent].levelName}}VIP
+      </view>
+      <view style="padding-top: 5px;color: #e84358;"> 马上去充值<text class="cuIcon-right lg text-gray" style="color: #e84358;"/></view>
+    </view>
+  </view>
+  <view>
+    <benefit info="{{vipIntroList[swiperCurrent]}}"></benefit>
+  </view>
+  <view class="rull">
+    <text bindtap="goTeturnCash">VIP规则说明</text>
+  </view>
+  <view class="null"></view>
+  <view bindtap="gofreeRoom" class="btmFix" wx:if="{{from==1&&!isLogin}}">
+    <view class="btmFixOneCon">
+      ￥188购买黄金VIP+免费入住券
+    </view>
+  </view>
+  <block wx:else>
+    <block wx:if="{{userLevel==0}}">
+      <button bindgetuserinfo="getUserInfo" class="btmFix" hoverClass="none" openType="getUserInfo" wx:if="{{!isAuth}}">
+        <block wx:if="{{userLevel==0&&isFirstPayActivityOnline&&isFirstPayActivityJoin}}">
+          <image class="limite-time-img" src="{{wapUrl+'/images/vip/btn@2x.png'}}"></image>
+          <view class="btmFixTwoCon">
+            <view class="v1">￥8.8直接购买VIP</view>
+            <view class="v2">限时1折</view>
+          </view>
+        </block>
+        <view class="btmFixOneCon" wx:else>
+          ￥88直接购买VIP
+        </view>
+      </button>
+      <block wx:else>
+        <view class="btmFix" wx:if="{{isLogin}}">
+          <block wx:if="{{userLevel==0&&isFirstPayActivityOnline&&isFirstPayActivityJoin}}">
+            <image class="limite-time-img" src="{{wapUrl+'/images/vip/btn@2x.png'}}"></image>
+            <view bindtap="goRecharge" class="btmFixTwoCon btmFixTwoCon2" data-id="10">
+              <view class="v1">￥8.8直接购买VIP</view>
+              <view class="v2">限时1折</view>
+            </view>
+          </block>
+          <view bindtap="goRecharge" class="btmFixOneCon btmFixOneCon2" data-id="12" wx:else>
+            ￥88直接购买VIP
+          </view>
+        </view>
+        <view bindtap="goAuthorize" class="btmFix" wx:else>
+          <block wx:if="{{userLevel==0&&isFirstPayActivityOnline&&isFirstPayActivityJoin}}">
+            <image class="limite-time-img" src="{{wapUrl+'/images/vip/btn@2x.png'}}"></image>
+            <view class="btmFixTwoCon">
+              <view class="v1">￥8.8直接购买VIP</view>
+              <view class="v2">限时1折</view>
+            </view>
+          </block>
+          <view class="btmFixOneCon" wx:else>
+            ￥88直接购买VIP
+          </view>
+        </view>
+      </block>
+    </block>
+  </block>
+</view>
+<auth-drawer-box bind:CallbackEvent="CallbackEvent" id="auth-drawer-box" isGetUserInfoPopup="{{isGetUserInfoPopup}}"></auth-drawer-box>

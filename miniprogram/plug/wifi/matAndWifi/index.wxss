@@ -1,0 +1,159 @@
+.g-wrapper {
+    background: url(https://pwastatic1.fvt.tujia.com/static/wechat/wifitwo/wifi_con_bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    margin: 0 40rpx 0 40rpx;
+    padding-top: 70rpx;
+}
+
+.header-txt {
+    margin-bottom: 5rpx;
+    font-size: 28rpx;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.header-txt image {
+    width: 28rpx;
+    height: 28rpx;
+    display: inline-block;
+    margin-right: 20rpx;
+    vertical-align: -1px;
+    margin-right: 4rpx;
+}
+
+.header-txt text {
+    margin-left: 10rpx;
+}
+
+.main {
+    height: 900rpx;
+    margin: 70rpx 40rpx 0 40rpx;
+    padding-top: 30rpx;
+    background: #fff;
+    border-radius: 12rpx;
+}
+
+.navbar {
+    display: flex;
+    margin-bottom: 80rpx;
+}
+
+.navbaritem {
+    position: relative;
+    flex: 0.5;
+    text-align: center;
+}
+
+.navitem {
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    color: #999;
+}
+
+.navitem.active {
+    color: #FF9645;
+}
+
+.navitem.active:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -15rpx;
+    left: 0;
+    right: 0;
+    height: 4rpx;
+    background: #ec9e14;
+    font-size: 24rpx;
+    color: #666666;
+    font-family: Microsoft YaHei;
+}
+
+.navbaritem .free {
+    position: absolute;
+    top: 0;
+    right: 15rpx;
+    width: 94rpx;
+    height: 34rpx;
+}
+
+.step {
+    position: relative;
+    margin: 0 40rpx 60rpx 40rpx;
+    padding: 35rpx 40rpx 35rpx 0;
+    text-align: center;
+    background: #F7F7F7;
+    border-radius: 12rpx;
+}
+
+.step .text {
+    text-align: left;
+    padding-left: 55rpx;
+    font-size: 40rpx;
+    color: #666666;
+}
+
+.step .arrow {
+    width: 32rpx;
+    height: 32rpx;
+    vertical-align: -2rpx;
+}
+
+.step .line {
+    position: absolute;
+    left: 0;
+    top: 28rpx;
+    width: 38rpx;
+    height: 68rpx;
+}
+
+.intro {
+    text-align: left;
+    text-indent: 36rpx;
+}
+
+.intro-tit {
+    font-size: 32rpx;
+    margin-bottom: 30rpx;
+}
+
+.intro-txt {
+    position: relative;
+    margin: 0 70rpx 20rpx 50rpx;
+    color: rgba(102,102,102,0.80);
+}
+
+.intro-txt text {
+    display: inline-block;
+    position: absolute;
+    top: 4%;
+    left: -10rpx;
+    width: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    color: #fff;
+    text-indent: 0;
+    text-align: center;
+    font-size: 24rpx;
+    background: rgba(63,73,84,0.80);
+    border-radius: 100px;
+}
+
+.applybtn {
+    margin: 60rpx auto 0 auto;
+    width: 310rpx;
+    height: 88rpx;
+    color: #fff;
+    font-size: 32rpx;
+    line-height: 88rpx;
+    text-align: center;
+    background-image: linear-gradient(-225deg,#FCAF3F 0%,#FA8C1D 100%);
+    box-shadow: 0 20rpx 37rpx -17rpx rgba(229,100,0,0.66);
+    border-radius: 12rpx;
+}

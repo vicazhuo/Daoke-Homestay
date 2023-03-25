@@ -1,0 +1,5 @@
+<view class="inputNumber">
+    <view hover bindtap="lessChange" class="inputNumber-minus {{lessDisabled?'is-disabled':''}}"></view>
+    <slot></slot>
+    <view hover bindtap="moreChange" class="inputNumber-plus {{moreDisabled?'is-disabled':''}}"></view>
+</view>

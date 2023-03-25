@@ -1,0 +1,10 @@
+<view class="unit-promise-wrapper {{isNeedShiPei?'p168':''}}">
+    <view class="promise-top" wx-if="{{brandInfo.isShowBrand}}">
+        <view class="promise-text">{{brandInfo.saveInfo}}</view>
+        <view class="promise-icon">
+            <image class="icon-promise" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-promise.png"></image>
+            <view class="icon-text">{{brandInfo.slogant}}</view>
+        </view>
+    </view>
+    <view class="promise-number">房屋编号：{{unitNumber}}</view>
+</view>

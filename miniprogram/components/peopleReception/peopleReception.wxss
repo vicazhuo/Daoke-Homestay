@@ -1,0 +1,56 @@
+.reception-btn {
+    font-size: 24rpx;
+    color: #333;
+    line-height: 1;
+    margin-left: 10rpx;
+}
+
+.people-reception-text {
+    font-size: 24rpx;
+    color: #999;
+    background: #F5F7F9;
+    border-radius: 12rpx;
+    padding: 16rpx;
+    line-height: 36rpx;
+    box-sizing: border-box;
+}
+
+.people-reception {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.reception-tip {
+    font-size: 24rpx;
+    color: #fff;
+    width: 484rpx;
+    padding: 10rpx;
+    line-height: 34rpx;
+    box-sizing: border-box;
+    border-radius: 4rpx;
+    background: rgba(0,0,0,0.70);
+    position: absolute;
+    z-index: 100;
+    top: -100rpx;
+}
+
+.tip-arrow {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-style: dashed solid solid dashed;
+    border-width: 8rpx;
+    border-top-width: 14rpx;
+    opacity: 0.7;
+    border-color: #000 transparent transparent transparent;
+    bottom: -22rpx;
+}
+
+.wrap-box {
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.wrap-box-active {
+    opacity: 1;
+}

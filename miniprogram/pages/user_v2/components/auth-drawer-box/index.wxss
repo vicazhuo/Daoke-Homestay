@@ -1,0 +1,263 @@
+@import "/common/wxss/animation.wxss";
+.auth_drawer_box {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    line-height: 1;
+    margin: auto;
+    z-index: 1002;
+    background-color: rgba(0,0,0,0);
+}
+
+.auth_drawer_box .mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.auth_drawer_box .localsBindBox {
+    position: absolute;
+    width: 583rpx;
+    max-height: 540rpx;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: translate(-50%,-50%);
+    margin: auto;
+    background-color: white;
+    border-radius: 17rpx;
+    padding: 60rpx 40rpx 40rpx 40rpx;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-size: 28rpx;
+}
+
+.auth_drawer_box .logo-image {
+    width: 93rpx;
+    height: 93rpx;
+    position: absolute;
+    left: 50%;
+    top: -50rpx;
+    transform: translateX(-50%);
+}
+
+.auth_drawer_box .box-title {
+    text-align: center;
+    font-size: 36rpx;
+    line-height: 36rpx;
+    font-family: "PingFangSC-Regular";
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #484848;
+}
+
+.auth_drawer_box .box-text {
+    font-family: "PingFangSC-Light";
+    color: #686868;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.auth_drawer_box .box-text view:last-child {
+    padding-top: 20rpx;
+}
+
+.auth_drawer_box .box-content {
+    flex: 1;
+    padding: 40rpx 0;
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 30rpx;
+    color: #555555;
+    line-height: 54rpx;
+    text-align: center;
+}
+
+.auth_drawer_box .box-content-mobile {
+    padding: 20rpx 0;
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 30rpx;
+    color: #555555;
+    line-height: 54rpx;
+    text-align: center;
+}
+
+.auth_drawer_box .box-content image {
+    width: 309rpx;
+    display: block;
+    margin: auto;
+    opacity: 0.8;
+}
+
+.auth_drawer_box .box-button {
+    display: flex;
+    text-align: center;
+    padding: 20rpx 0 0 0;
+}
+
+.auth_drawer_box .box-button>button {
+    display: inline-block;
+    width: 515rpx;
+    height: 68rpx;
+    padding: 0;
+    line-height: 68rpx;
+    font-size: 30rpx;
+    background-color: #e84358;
+    border-radius: 12rpx;
+    border: none;
+    color: white;
+}
+
+.auth_drawer_box .box-button.horizontally-button>button {
+    width: 48%;
+}
+
+.auth_drawer_box .box-button>button.cancel {
+    background-color: #ffffff;
+    border: solid 1px #e84358;
+    color: #e84358;
+}
+
+.auth_drawer_box .box-noButton {
+    text-align: center;
+    height: 68rpx;
+    line-height: 68rpx;
+    color: red;
+    padding-bottom: 52rpx;
+}
+
+.auth_drawer_box .box-button button::after {
+    border: none;
+}
+
+.auth_drawer_box>view>view>button:active {
+    background-color: #eeeeee;
+}
+
+.bingPhone {
+    position: absolute;
+    width: 100%;
+    height: 602rpx;
+    max-height: 99%;
+    background-color: rgba(255,255,255,1);
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.bingPhone .title {
+    padding: 49rpx 0 18rpx 32rpx;
+    font-size: 36rpx;
+    font-family: "PingFangSC-Regular";
+}
+
+.bingPhone .tips {
+    font-size: 28rpx;
+    padding-left: 32rpx;
+    padding-bottom: 32rpx;
+    font-family: "PingFangSC-Light";
+}
+
+.bingPhone .input-box {
+    display: flex;
+    align-items: center;
+    height: 130rpx;
+    margin: 0 40rpx;
+    border-bottom: 1px solid rgba(51,51,51,0.2);
+}
+
+.bingPhone .input-box .phone {
+    width: 19rpx;
+    height: 28rpx;
+    margin-right: 31rpx;
+}
+
+.bingPhone .input-box .identity {
+    width: 29rpx;
+    height: 23rpx;
+    margin-right: 21rpx;
+}
+
+.bingPhone .input-box .text {
+    font-family: "PingFangSC-Light";
+    font-size: 30rpx;
+    letter-spacing: 1px;
+    color: #484848;
+    margin-right: 48rpx;
+}
+
+.bingPhone .input-box input {
+    flex: 1;
+    font-family: "PingFangSC-Light";
+    font-size: 30rpx;
+}
+
+.bingPhone .input-box .getCode {
+    width: 164rpx;
+    height: 46rpx;
+    line-height: 46rpx;
+    border-radius: 8rpx;
+    padding: 0;
+    font-family: "PingFangSC-Regular";
+    font-size: 22rpx;
+    border: solid 1px #e84358;
+    background-color: #ffffff;
+    color: #e84358;
+}
+
+.bingPhone button::after {
+    border: none;
+}
+
+.bingPhone .button-box {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50rpx;
+    text-align: center;
+}
+
+.bingPhone .button-box button {
+    width: 327rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 12rpx;
+    font-size: 28rpx;
+    border: none;
+    display: inline-block;
+    font-family: "PingFangSC-Regular";
+}
+
+.bingPhone .button-box button.cancel {
+    border: solid 1px #e84358;
+    margin-right: 16rpx;
+    color: #e84358;
+    background-color: #ffffff;
+}
+
+.bingPhone .button-box button.login {
+    background-color: #e84358;
+    color: #ffffff;
+    margin-top:0px; 
+}
+
+.cancel-button {
+    position: absolute;
+    left: 50%;
+    bottom: -80rpx;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    width: 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    color: #fff;
+    background: url('https://oss.localhome.cn/new_icon/cancel.png');
+    background-position: center;
+    background-size: 100% 100%;
+}

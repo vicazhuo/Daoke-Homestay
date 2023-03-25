@@ -1,0 +1,53 @@
+
+
+.popup-background {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: 542rpx;
+    min-height: 230rpx;
+    border-radius: 12rpx;
+    overflow: hidden;
+}
+
+.popup-background .popup-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 40rpx;
+    min-height: 150rpx;
+    font-size: 32rpx;
+    color: #030303;
+    line-height: 40rpx;
+}
+
+.p-text-c {
+    word-break: break-all;
+    text-align: center;
+}
+
+.popup-background .popup-btns {
+    display: flex;
+    height: 87rpx;
+}
+
+.popup-background .popup-btns::before {
+    border-top: 1px solid #e9e9e9;
+}
+
+.popup-background .popup-btns .button {
+    flex: 1;
+    margin: 0rpx;
+    border: none;
+    border-radius: 0rpx;
+    font-size: 32rpx;
+    color: #0076FF;
+    letter-spacing: 0;
+    text-align: center;
+    background: transparent;
+}
+
+.btn-ok::before {
+    border-left: 1px solid #e9e9e9;
+}

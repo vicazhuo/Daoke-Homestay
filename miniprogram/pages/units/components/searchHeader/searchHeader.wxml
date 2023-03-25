@@ -1,0 +1,38 @@
+<view class="{{pageType==='house'?'component-search-header-contaniner':'component-search-header-map-contaniner'}}  {{isheaderFixed?'is-fixed':''}}">
+    <view class="component-search-header" id="searchHeader">
+        <view class="search-header-top">
+            <view class="serach-input-bar {{params.isOverseas?'overseas-city':''}}">
+                <view class="search-header-options">
+                    <view class="search-header-left">
+                        <view bindtap="dataSelected" class="header-left-date triangle-down">{{params.date}}</view>
+                    </view>
+                    <view bindtap="goSearch" class="search-header-right">
+                        <view class="text-omit {{params.searchText?'text-omit-yes':''}}">{{params.searchText?params.searchText:'关键字 / 位置 / 房屋'}}</view>
+                    </view>
+                    <view bindtap="clearInput" class="clear-btn-box">
+                        <icon class="header-search__reset" color="#dadada" hidden="{{!params.searchText}}" size="14" type="clear"></icon>
+                    </view>
+                </view>
+                <view bindtap="headMapBtn" class="search-header-btn-box" wx:if="{{!params.isOverseas}}">
+                    <image class="search-header-map-btn" src="{{DAOKE_STATIC_HOST}}/static/wechat/units_search_page/{{pageType==='house'?'global':'unit_list'}}.png"></image>
+                </view>
+            </view>
+            <view class="search-options-container">
+                <view bindtap="toOptionPage" class="search-options-item " data-gtype="{{item.gType}}" data-title="{{item.label}}" wx:if="{{!(pageType==='maps'&&item.gType==4)}}" wx:for="{{conditionsGroups}}" wx:key="{{index}}">
+                    <view class="triangle-down">{{params[ common.filterText(item.gType) ]?params[ common.filterText(item.gType) ]:item.label}}</view>
+                </view>
+            </view>
+            <view></view>
+        </view>
+    </view>
+    <scroll-view class="search-header-scroll" scrollX="{{true}}" wx:if="{{hotTags.length}}">
+        <view class="search-header-btm-box br1_bottom {{pageType==='maps'?'map-btm-box':''}}">
+            <view class="search-header-btm">
+                <view bindtap="hotTagTap" class="house-type-btn {{item.selected?'active':''}}" data-index="{{index}}" data-title="{{item.label}}" wx:for="{{hotTags}}" wx:key="{{index}}">
+                    <image class="icon-quick-buy" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_quick_buy.png" wx:if="{{item.value==='405'}}"></image>{{item.label}}</view>
+                <view class="space-content"></view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<wxs module="common" src="../../units.wxs" />

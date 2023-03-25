@@ -1,0 +1,24 @@
+<include src="/components/toast/toast.wxml"></include>
+<view class="wifiwrap">
+    <view class="wifi-header">
+        <image class="wifi-header-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjwifi/icon_wifi_head.png"></image>
+        <text class="wifi-header-text">欢迎使用{{app_name}}Wi-Fi</text>
+    </view>
+    <view class="wificont" wx:if="{{wifiStatus}}">
+        <image class="wifiicon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_moving_icon.png"></image>
+        <image class="wifiman" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_man_icon.png"></image>
+        <view class="wifiname">
+            <view class="nameinfo">{{wifiList.SSID}}</view>
+        </view>
+    </view>
+    <view class="wifi-close" wx:else>
+        <view class="tosetWifi">请去开启无线网络</view>
+    </view>
+    <form reportSubmit bindsubmit="formBtn">
+        <view class="wifi-btn-container">
+            <button bindgetphonenumber="getPhoneNumber" bindtap="getPhoneNumber" class="wifi-refresh-btn" formType="submit" hoverClass="refresh-btn-active" openType="{{isGetPhoneNumber?'getPhoneNumber':''}}" type="primary" wx:if="{{wifiStatus}}">点击连接网络</button>
+        </view>
+    </form>
+</view>
+<loading hidden="{{!isLoading}}">请稍后...</loading>
+<view class="tujia-slogan-text">致一 · 稻客</view>

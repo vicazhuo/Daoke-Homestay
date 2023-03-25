@@ -1,0 +1,155 @@
+.select-more__title {
+    padding-left: 30rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.select-price {
+    font-size: 28rpx;
+    color: #555;
+    padding: 50rpx 60rpx 0;
+}
+
+.select-price__header {
+    margin-bottom: 0;
+    height: 50rpx;
+    position: relative;
+}
+
+.select-price__footer {
+    margin-top: 20rpx;
+    height: 40rpx;
+    position: relative;
+}
+
+.select-price__footer .select-price__item::after {
+    content: "";
+    position: absolute;
+    bottom: auto;
+    top: 5rpx;
+    left: 50%;
+    margin-left: -2rpx;
+    width: 1rpx;
+    height: 20rpx;
+}
+
+.select-price__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 20rpx;
+    line-height: 50rpx;
+    color: #999;
+    white-space: nowrap;
+    transform: translateX(-50%);
+}
+
+.select-price__item.is-selected {
+    color: #d5535f;
+}
+
+.select-price__item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2rpx;
+    width: 4rpx;
+    height: 4rpx;
+}
+
+.range {
+    padding: 30rpx 0;
+}
+
+.range-slider {
+    height: 8rpx;
+    background: #ee6262;
+    position: relative;
+    border-radius: 4rpx;
+}
+
+.range-slider__selected {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(-269deg,rgba(255, 51, 0, 0.97) 0%,rgb(248, 78, 48) 100%);
+    right: 0;
+    margin: 0 30rpx;
+}
+
+.distanceRangeSlider__style {
+    background: none;
+}
+
+.range__max_handle,.range__min_handle {
+    position: absolute;
+    top: -13px;
+    right: -14px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    color: rgb(255, 94, 0);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 80;
+    transition: all .2s;
+    box-shadow: 0 2rpx 4rpx 0 rgba(0,0,0,0.08),0 2rpx 10rpx 0 rgba(0,0,0,0.08);
+}
+
+.range__handle__is__durtion {
+    transition: all 0s;
+}
+
+.range__max_handle:after,.range__min_handle:after {
+}
+
+.range__min__icon {
+    height: 20rpx;
+    width: 4rpx;
+    border-radius: 4rpx;
+    margin: 0 4rpx;
+    background-image: linear-gradient(-180deg ,
+    rgba(255, 0, 0, 0.911) 0%,
+    rgba(248, 48, 48, 0.89) 100%);
+}
+
+.distance__handle__icon {
+    width: 28rpx;
+    height: 32rpx;
+}
+
+.select-distance__item {
+    display: inline-block;
+}
+
+.select-distance-dian {
+    position: absolute;
+    width: 60rpx;
+    height: 60rpx;
+    bottom: 74rpx;
+    transform: translateX(-50%);
+    left: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-distance-dian::before {
+    content: '';
+    display: inline-block;
+    background-image: linear-gradient(-205deg,rgba(255,176,0,0.97) 0%,#F88E30 100%);
+    width: 16rpx;
+    height: 16rpx;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.distanceRangeSlider-layout {
+    width: 100%;
+    margin-bottom: 80rpx;
+}

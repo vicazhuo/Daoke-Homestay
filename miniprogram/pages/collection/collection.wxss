@@ -1,0 +1,125 @@
+page {
+    min-height: 100vh;
+    background: #fff;
+}
+
+.collection-page {
+    box-sizing: border-box;
+}
+
+.collection-page.favorite {
+}
+
+.collection-head {
+    display: flex;
+    height: 80rpx;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1002;
+    background: #fff;
+    position: relative;
+}
+
+.collection-head::before {
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+    pointer-events: none;
+}
+
+.head-item-box {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.head-item {
+    line-height: 1;
+    font-size: 28rpx;
+    color: #666;
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+    position: relative;
+    transition: all .2s;
+    border-bottom: 4rpx solid transparent;
+}
+
+.head-item.active {
+    color: #d8646f;
+    border-bottom-color: #d8646f;
+    z-index: 302;
+}
+
+.collection-list-item {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.select-bar {
+    display: flex;
+    height: 80rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1300;
+    padding: 0 40rpx;
+    box-sizing: border-box;
+    background: #fff;
+    transform: translateZ(0) translateY(0);
+    transition: transform .2s;
+    transition: transform .2s,-webkit-transform .2s;
+}
+
+.select-bar-hide {
+    transform: translateY(-80rpx);
+}
+
+.select-bar-item {
+    margin-right: 90rpx;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+
+.bar-item-text::after {
+    content: '';
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: -20rpx;
+    position: absolute;
+    border-style: dashed solid solid dashed;
+    border-width: 9rpx 11rpx 0 0;
+    border-color: transparent #333 #333 transparent;
+}
+
+.bar-item-text {
+    font-size: 24rpx;
+    color: #333;
+    font-weight: 300;
+    line-height: 1;
+    position: relative;
+}
+
+.collection-swiper {
+    height: calc(100vh - 80rpx)!important;
+}
+
+.tj-list-item {
+    padding: 0 40rpx;
+}
+
+.tj-list-item.house {
+    padding-top: 80rpx;
+}
+
+.footprint-item {
+    padding-top: 40rpx;
+}
+
+.tj-favorite-list {
+    padding-top: 80rpx;
+}

@@ -1,0 +1,73 @@
+<form bindsubmit="formSubmit">
+  <view class="contain">
+    <view class="title">发票</view>
+    <view class="sel-type">
+      <view bindtap="invoiceIsFalse" class="{{isInvoice?'':'sel'}}">不开发票</view>
+      <view bindtap="invoiceIsTrue" class="{{isInvoice?'sel v2':'v2'}}">电子普通发票</view>
+    </view>
+    <view wx:if="{{isInvoice}}">
+      <view class="introduce">购买储值卡不单独提供发票，在使用储值或者返现金余额消费时，可与消费订单实付金额一同开票。活动赠送的储值金部分不开发票。</view>
+      <view class="tit-all">
+        <view class="title-two">开具发票</view>
+        <view bindtap="goInvoiceIntro" class="intro-link">发票须知</view>
+      </view>
+      <view class="list">
+        <view class="list-li">
+          <view class="list-li-l">发票选项</view>
+          <view class="list-li-r list-li-r-t">
+            <view bindtap="changeCompany" class="{{type==1?'sel':''}}">单位</view>
+            <view bindtap="changeOwn" class="{{type==2?'sel v2':'v2'}}">个人</view>
+          </view>
+        </view>
+        <view class="list-li">
+          <view class="list-li-l">发票内容</view>
+          <view class="list-li-r">住宿服务费</view>
+        </view>
+        <view class="list-li">
+          <view class="list-li-l">发票金额</view>
+          <view class="list-li-r">￥{{invoiceAmount}}</view>
+        </view>
+        <view class="list-li" wx:if="{{type==1}}">
+          <view class="list-li-l">企业名称</view>
+          <view class="list-li-r">
+            <input bindinput="companyInput" cursorSpacing="80" maxlength="30" placeholder="请填写单位名称" placeholderStyle="color: #B4B9BF;" value="{{company}}"></input>
+          </view>
+        </view>
+        <view class="list-li" wx:if="{{type==1}}">
+          <view class="list-li-l">纳税人识别号</view>
+          <view class="list-li-r">
+            <input bindinput="taxpayerNumberInput" cursorSpacing="80" maxlength="20" placeholder="请填写纳税人识别号" placeholderStyle="color: #B4B9BF;" value="{{taxpayerNumber}}"></input>
+          </view>
+        </view>
+        <view class="list-li" wx:if="{{type==2}}">
+          <view class="list-li-l">发票抬头</view>
+          <view class="list-li-r">
+            <input bindinput="titleInput" cursorSpacing="80" maxlength="30" placeholder="请输入发票抬头" placeholderStyle="color: #B4B9BF;" value="{{title}}"></input>
+          </view>
+        </view>
+        <view class="list-li">
+          <view class="list-li-l">收票人手机号</view>
+          <view class="list-li-r">
+            <input bindinput="receiveMobileInput" cursorSpacing="80" maxlength="11" placeholder="不填写则默认使用登录手机号" placeholderStyle="color: #B4B9BF;" type="number" value="{{receiveMobile}}"></input>
+          </view>
+        </view>
+        <view class="list-li">
+          <view class="list-li-l">收票人邮箱</view>
+          <view class="list-li-r">
+            <input bindinput="receiveMailInput" cursorSpacing="80" maxlength="30" placeholder="请输入以 .com 结尾的邮箱" placeholderStyle="color: #B4B9BF;" value="{{receiveMail}}"></input>
+          </view>
+        </view>
+        <view class="list-li">
+          <view class="list-li-l">发票备注</view>
+          <view class="list-li-r list-li-r-tt">
+            <textarea autoHeight="{{true}}" cursorSpacing="80" maxlength="100" name="textarea" placeholder="选填，请输入发票备注内容" placeholderStyle="color: #B4B9BF;" value="{{detailRemark}}"></textarea>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="bto-null"></view>
+    <view class="bto" wx:if="{{isInvoice}}">
+      <button formType="submit">确认</button>
+    </view>
+  </view>
+</form>

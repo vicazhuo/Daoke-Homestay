@@ -1,0 +1,13 @@
+<view class="contain">
+    <image mode="widthFix" src="../../../images/activity/pop2.png"></image>
+    <view class="top">
+        <view class="tit">
+            免押金：<text>￥</text>
+            <text class="t1">{{depositAmount}}</text>
+        </view>
+        <view class="con">
+            <text>全网首家，全部房源无条件免押的品牌民宿!</text>
+        </view>
+    </view>
+    <view bindtap="goGetPwd" class="btn">刷脸获取开门密码</view>
+</view>

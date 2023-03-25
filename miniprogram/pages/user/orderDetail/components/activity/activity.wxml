@@ -1,0 +1,12 @@
+<view class="order-activity">
+    <view bindtap="onClick" class="activity-body" wx:if="{{isShow}}">
+        <image mode="widthFix" src="{{redPacket.pictureUrl}}"></image>
+        <view class="activity-text">
+            <view class="activity-name">{{redPacket.name}}</view>
+            <view class="activity-btns">
+                <view class="btn-text">{{redPacket.countDown>0?deadLineText:''}}</view>
+                <view class="btn-action">{{redPacket.subTitle}}</view>
+            </view>
+        </view>
+    </view>
+</view>

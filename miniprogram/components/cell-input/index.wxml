@@ -1,0 +1,17 @@
+<view class="i-cell-input  i-input {{error?'i-input-error':''}} {{mode==='wrapped'?'i-input-wrapped':''}} {{isBorder?'tj-border':''}}">
+    <view class="i-cell-input-hd i-input-title" wx:if="{{title}}">{{title}}</view>
+    <view class="\"i-cell-hd i-input-title" wx:elif="{{slotTitle}}">
+        <slot name="title"></slot>
+    </view>
+    <textarea autoHeight bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" class="i-input-input i-cell-input-bd {{right?'i-input-input-right':''}}" disabled="{{disabled}}" focus="{{autofocus}}" maxlength="{{maxlength}}" placeholder="{{placeholder}}" placeholderClass="i-input-placeholder" value="{{value}}" wx:if="{{type==='textarea'}}"></textarea>
+    <view bindtap="rightSlotClick" class="i-input-input i-cell-input-bd {{right?'i-input-input-right':''}}" wx:elif="{{type==='slot'}}">
+        <slot></slot>
+    </view>
+    <view class="tj-input-box {{right?'i-input-input-right':''}} {{isClearBtn&&isFocus&&value?'tj-clear-input':''}}" wx:else>
+        <input bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" class="i-input-input i-cell-input-bd {{right?'i-input-input-right':''}}" disabled="{{disabled}}" focus="{{autofocus}}" maxlength="{{maxlength}}" placeholder="{{placeholder}}" placeholderClass="i-input-placeholder" type="{{type}}" value="{{value}}"></input>
+        <view catchtap="clearInput" class="clear-btn-box {{isFocus&&isClearBtn&&value&&type!=='textarea'?'show':''}}" hidden="{{!isAliApp&&!(isFocus&&isClearBtn&&value&&type!=='textarea')}}">
+            <icon class="header-search__reset" color="#e9e9e9" size="14" type="clear"></icon>
+        </view>
+    </view>
+    <slot name="right"></slot>
+</view>

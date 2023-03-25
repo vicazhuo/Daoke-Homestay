@@ -1,0 +1,54 @@
+<view class="content br1">
+  <view class="re-fund br1" wx:if="{{!depositDetail.introduction}}">
+    <view class="total-money">
+      <text class="t-font">退款总额</text>
+      <text class="t-num">￥{{depositDetail.totalAmount||0}}</text>
+    </view>
+    <view class="total-num">
+      <view class="n-num">
+        共
+        <text>{{depositDetail.refundItems.length||0}}</text> 笔退款
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{depositDetail.introduction}}">
+    <view class="order-checkinfo">
+      <text>{{depositDetail.introduction||''}}</text>
+    </view>
+    <view class="order-locationinfo">
+      <view class="total-money">
+        <text class="t-font">退款总额</text>
+        <text class="t-num">￥{{depositDetail.totalAmount||0}}</text>
+      </view>
+      <view class="total-num">
+        <view class="n-num">
+          共
+          <text>{{depositDetail.refundItems.length||0}}</text> 笔退款
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="money-block" wx:for="{{depositDetail.refundItems}}" wx:key="{{index}}">
+    <view class="block-title br1">
+      <view class="icon-num-flag">{{index+1}}、</view>
+      <view class="t-deposit">
+        <text>{{item.title}}</text>
+        <text wx:if="{{item.amountTip}}">{{item.amountTip}}</text>
+      </view>
+      <text class="t-money">￥{{item.totalAmount}}</text>
+    </view>
+    <view class="block-body">
+      <view class="pro-line-item" wx:for="{{item.flow}}" wx:for-index="flowIndex" wx:for-item="flow" wx:key="{{flowIndex}}">
+        <view class="time-line br1">
+          <view class="time-icon" style="border-color: {{flow.titleColor}};" wx:if="{{!(item.finished==true&&flowIndex==0)}}"></view>
+          <view class="time-icon-img" style="background-image: url({{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-return-success.png)" wx:else></view>
+        </view>
+        <view class="pro-content">
+          <view class="title" style="color: {{flow.titleColor}};">{{flow.title}}</view>
+          <view class="font">{{flow.introduction}}</view>
+          <view class="time">{{flow.dateTime}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

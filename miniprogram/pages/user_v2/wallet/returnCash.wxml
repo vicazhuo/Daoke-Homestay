@@ -1,0 +1,33 @@
+<view class="container">
+    <block wx:if="{{isShow}}">
+        <view class="tit">订单返现说明</view>
+        <view class="tit2">预计本单返现:</view>
+        <view class="red">(￥{{totalPrice}}-￥{{totalRefundFee}})* {{backRate*100}}%= ￥{{backAmount}}</view>
+        <view class="viewcon">1. 实际金额会随VIP 等级、订单退款而变化，请以实际到账金额为准，以上仅供参考</view>
+        <view class="viewcon">2. 返现金额将在您退房后的{{days}}个工作日内，发放至下单账户的返现余额中，<text>可用于民宿预订。</text>
+        </view>
+    </block>
+    <view class="tit2">返现金额计算方式:</view>
+    <view class="viewconbold">返现金额=（实付房费-房费退款）*返现比例</view>
+    <view class="viewcon">1. 实付房费：下单时实际支付的房费(包含储值余额和返现余额支付部分，不含优惠券、押金等优惠部分）</view>
+    <view class="viewcon">2. 返现比例：</view>
+    <view class="table">
+        <view class="list">
+            <view class="bold">
+                <text>等级</text>
+            </view>
+            <view class="bold">
+                <text>{{appName}}小程序下单返现比例</text>
+            </view>
+        </view>
+        <view class="list" wx:for="{{backRateIntroList}}" wx:key="{{item.userLevel}}">
+            <view wx:if="{{item.userLevel==0}}">普通用户</view>
+            <view wx:else>{{item.userLevelName}}VIP</view>
+            <view>{{item.youJiaRate}}%</view>
+        </view>
+    </view>
+    <view class="v1">*以下单时刻的用户VIP等级为准</view>
+    <view class="viewcon">3. 订单返现金额将在您退房后的5个工作日内，发放至下单账户的返现余额中，<text>可用于民宿预订。</text>
+    </view>
+    <view class="null"></view>
+</view>

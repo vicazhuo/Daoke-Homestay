@@ -1,0 +1,12 @@
+<view class="house-desc">
+    <view class="house-desc-title">
+        <view class="title">房屋描述</view>
+        <view class="realphoto" wx:if="{{realPhoto}}">实拍</view>
+    </view>
+    <view class="house-desc-brief" wx:if="{{houseBrief.title||houseBrief.description}}">
+        <view class="sub-title">{{houseBrief.title}}</view>
+        <view class="sub-desc">{{houseBrief.description}}</view>
+    </view>
+    <view class="house-desc-text">{{briefIntroduction}}</view>
+    <view bindtap="gotoHouseDetailDesc" class="see-more" wx:if="{{unitTrafficInfos.length>1||unitTrafficInfos.length==1&&briefIntroduction.length>76}}">查看更多</view>
+</view>

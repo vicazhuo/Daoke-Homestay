@@ -1,0 +1,65 @@
+<view class="main">
+  <block wx:if="{{vipPaySuccess}}">
+    <view class="tit">支付成功</view>
+    <view class="con">您已是{{appname}}的白银VIP用户，本次入住可享免押金。接下来请完成人脸实名认证，然后将为您提供智能门锁密码</view>
+    <view class="list">
+      <view class="list-l">押金金额</view>
+      <view class="list-r list-strong">
+        <text class="list-r-t">VIP已减免</text>¥{{dataObj.depositAmount}}</view>
+    </view>
+    <button bindtap="goPerson" class="btn" hoverClass="none">人脸实名认证</button>
+  </block>
+  <block wx:else>
+    <view class="tit" wx:if="{{type==1}}">支付入住押金</view>
+    <view class="con" wx:if="{{type==1}}">请支付入住押金，押金将在退房当天18:00前退还</view>
+    <view class="tit tit-g" wx:if="{{type==2}}">押金已支付</view>
+    <view class="con" wx:if="{{type==2&&!repay}}">押金支付成功，接下来你需要进行人脸实名认证，认证成功后将下发智能门锁密码</view>
+    <view class="con" wx:if="{{type==2&&repay}}">押金支付成功，您的门锁密码有效期已延长至{{dataObj.passwordEndTime}}</view>
+    <view class="tit tit-r" wx:if="{{type==3}}">支付失败</view>
+    <view class="con" wx:if="{{type==3}}">押金支付失败，请重新支付</view>
+    <view class="list">
+      <view class="list-l">押金金额</view>
+      <view class="list-r list-strong">¥{{dataObj.depositAmount}}</view>
+    </view>
+    <view class="list">
+      <view class="list-l">入住时间</view>
+      <view class="list-r">{{dataObj.checkinTime}}</view>
+    </view>
+    <view class="list">
+      <view class="list-l">退房时间</view>
+      <view class="list-r">{{dataObj.checkoutTime}}</view>
+    </view>
+    <button bindtap="openVipModal" class="btn btn10" hoverClass="none" wx:if="{{type==1&&dataObj.isFirstPayActivityJoin}}">我要免押金</button>
+    <button bindtap="selWechatPay" class="btn" hoverClass="none" wx:if="{{type==1}}">支付押金</button>
+    <button bindtap="goPerson" class="btn" hoverClass="none" wx:if="{{type==2&&!repay}}">人脸实名认证</button>
+    <button bindtap="selWechatPay" class="btn" hoverClass="none" wx:if="{{type==3}}">重试</button>
+  </block>
+</view>
+<view class="vip-modal" wx:if="{{vipModalIsShow}}">
+  <view class="bg"></view>
+  <image bindtap="closeVipModal" class="img1" src="{{wapUrl+'/images/vip/icon-gb@2x.png'}}"></image>
+  <view class="con">
+    <image class="img2" src="{{wapUrl+'/images/vip/banner-vip.png'}}"></image>
+    <view class="list">
+      <view class="item">
+        <view class="v1">
+          <text>￥</text>{{dataObj.depositAmount}}</view>
+        <view class="v2">立免押金</view>
+      </view>
+      <view class="item">
+        <view class="v1">
+          <text>￥</text>200</view>
+        <view class="v2">送优惠券</view>
+      </view>
+      <view class="item">
+        <view class="v3 v4">生日</view>
+        <view class="v3 v5">惊喜</view>
+      </view>
+    </view>
+    <view bindtap="goRecharge" class="btn-vip">
+      <text class="t1">8.8</text>
+      <text class="t2">88</text>
+      <text class="t3">升级VIP免押金</text>
+    </view>
+  </view>
+</view>

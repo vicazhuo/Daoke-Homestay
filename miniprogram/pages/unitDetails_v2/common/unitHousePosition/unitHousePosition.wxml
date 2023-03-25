@@ -1,0 +1,21 @@
+<view class="fixed-border"></view>
+<view class="house-position">
+    <view class="house-scene" wx:for="{{geoHousePosition}}" wx:key="{{index}}">
+        <view class="house-scene-title">
+            <view class="scene-icon">
+                <view class="icon-left">
+                    <image class="" mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/{{item.groupIcon?item.groupIcon+'_big':'sceneries_icon'}}.png"></image>
+                </view>
+                <view class="icon-right">{{item.groupName}}</view>
+            </view>
+            <view class="scene-dis">直线距离</view>
+        </view>
+        <view class="scene-list" wx:if="{{item.geoPositionList&&item.geoPositionList.length}}">
+            <view class="scene" wx:for="{{item.geoPositionList}}" wx:for-index="innerIndex" wx:for-item="innerItem" wx:key="{{innerIndex}}">
+                <view class="scene-name">{{innerItem.title}}</view>
+                <view class="scene-dis">{{innerItem.description}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<component-shipei wx:if="{{isNeedShiPei}}"></component-shipei>

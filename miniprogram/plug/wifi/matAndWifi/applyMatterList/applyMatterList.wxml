@@ -1,0 +1,39 @@
+<view class="dataErr" wx:if="{{dataErr}}">
+    <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_none.png"></image>
+    <view>暂无可申请物料的门店</view>
+</view>
+<view class="g-wrapper" wx:else>
+    <view class="headerInfo">
+        <text class="infoleft">已申请{{count}}套</text>
+        <text bindtap="goHelp" class="inforight">帮助</text>
+    </view>
+    <view class="matterlist">
+        <view class="matteritem" wx:for="{{materieList}}" wx:key="index">
+            <view class="housename">{{item.hotelName}}</view>
+            <view class="info">
+                <text class="infotitle">申请数量：</text>
+                <text class="infoval">{{item.applyCount}}套</text>
+            </view>
+            <view class="info">
+                <text class="infotitle">收件人：</text>
+                <text class="infoval">{{item.recipient}}</text>
+            </view>
+            <view class="info">
+                <text class="infotitle">手机号码：</text>
+                <text class="infoval">{{item.contactPhone}}</text>
+            </view>
+            <view class="info">
+                <text class="infotitle">收件地址：</text>
+                <text class="infoval limit">{{item.province}}{{item.city}}{{item.district}}{{item.detailAddress}}</text>
+            </view>
+            <view class="dateinfo">
+                <text class="enddate">申请时间：{{item.createDate}}</text>
+                <text class="date">预计10个工作日送达</text>
+            </view>
+        </view>
+    </view>
+    <view class="bottomBtn">
+        <view bindtap="applyMatter" class="btns" wx:if="{{isCanApply===true}}">申请更多</view>
+        <view class="btnsover" wx:else>已达最大领取套数</view>
+    </view>
+</view>

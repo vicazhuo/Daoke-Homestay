@@ -1,0 +1,72 @@
+<view class="g-wrapper" wx:if="{{isActive}}">
+  <scroll-view scrollY bindscrolltolower="loadMoreEvent" class="scroll-y" enableBackToTop="true" style="height:{{windowHeight}}px" wx:if="{{hotelWifiList.length>0}}">
+    <view class="header">
+      <image class="headerbg" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_headbg.jpg"></image>
+      <view class="headercont">
+        <view class="helpicon">
+          <image bindtap="showHelp" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_ask_icon.png"></image>
+          <view class="pophelp" wx:if="{{isShowHelpPop}}">
+            <icon></icon>
+            奖励金将定期发放至账户余额，房东可前往“房客中心-我的-余额”查看或提取奖励金。
+          </view>
+        </view>
+        <view class="getamount">
+          <view class="title">我的余额</view>
+          <view class="amount">¥{{amount}}</view>
+        </view>
+        <view class="info">
+          <view class="infotext">新注册用户量：
+            <text>{{totalRegister}}</text>
+          </view>
+          <view class="infotext">待入账：
+            <text>{{transfering_amount}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="wifilist">
+      <view class="desc">已添加{{count}}套</view>
+      <view class="listitem" wx:for="{{hotelWifiList}}" wx:key="index">
+        <view class="wifiNo">Wi-Fi编号：{{item.hotelWifiId}}</view>
+        <view class="itemtop">
+          <image bindtap="toQRdetail" class="qr" data-id="{{item.hotelWifiId}}" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_qricon.png"></image>
+          <view class="iteminfo">
+            <view class="wifiname">{{item.name}}</view>
+            <view class="items" wx:if="{{item.houseName&&item.houseName.length>0}}">
+              <text>房屋名称：</text>{{item.houseName}}</view>
+            <view class="items">
+              <text>注册量：</text>{{item.registerCount}}</view>
+            <view class="items" wx:if="{{item.houseNo&&item.houseNo.length>0}}">
+              <text>门牌号：</text>{{item.houseNo}}</view>
+          </view>
+        </view>
+        <view class="itembottom">
+          <view class="operation">
+            <button bindopensetting="bindopensetting" bindtap="toSave" class="save" data-idx="{{index}}" openType="{{writePhotosAlbum?'':'openSetting'}}">
+              <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_save_icon.png"></image>下载</button>
+            <button bindtap="toEdit" class="edit" data-idx="{{index}}">
+              <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_edit_icon.png"></image>修改</button>
+            <button bindtap="toDelete" class="delete" data-idx="{{index}}">
+              <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_delete_icon.png"></image>删除</button>
+          </view>
+        </view>
+        <view class="typeflag" wx:if="{{item.enumWifiType===1}}">
+          <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_01_icon.png"></image>
+        </view>
+        <view class="typeflag" wx:elif="{{item.enumWifiType===0}}">
+          <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_02_icon.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="loading-end" wx:if="{{!isNeedMoreLoading||wifiListTotalCount<=10}}">这里是最后一条啦~</view>
+  </scroll-view>
+  <view class="bottomBtn">
+    <view bindtap="bySelf" class="btns self">自行制作</view>
+    <view bindtap="byTujia" class="btns">免费领取台卡</view>
+  </view>
+</view>
+<view wx:else>
+  <text>{{activeText}}</text>
+</view>
+<loading hidden="{{!isLoading}}">请稍后...</loading>
+<canvas canvasId="mycanvas" hidden="{{true}}" style="width: 621px; height: 1000px;"></canvas>

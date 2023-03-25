@@ -1,0 +1,8 @@
+<view class="header-search__box">
+    <icon class="header-search__icon" color="#d8646f" size="14" type="search"></icon>
+    <input bindconfirm="inputConfirm" bindinput="getInputSearch" class="header-search__input" confirmType="search" placeholder="{{searchBox.defaultTitle}}" placeholderClass="header-search__input__placeholder" value="{{searchInput}}"></input>
+    <view bindtap="clearInput" class="clear-btn-box" hidden="{{!searchInput}}">
+        <icon class="header-search__reset" color="#dadada" size="14" type="clear"></icon>
+    </view>
+</view>
+<view bindtap="cancel" class="header-search__cancel" hidden="{{!searchInput}}">取消</view>

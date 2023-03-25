@@ -1,0 +1,111 @@
+.house-detail {
+    background: #fff;
+}
+
+.title-h1 {
+    padding: 52rpx 0 32rpx 40rpx;
+    font-weight: 400;
+    font-size: 40rpx;
+    color: #333333;
+}
+
+.nav-address {
+    width: 100%;
+    position: relative;
+}
+
+.nav-address .map-image {
+    width: 100%;
+    height: 400rpx;
+}
+
+.nav-address .address {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 40rpx;
+    left: 0;
+    right: 0;
+    margin: 0 40rpx;
+    padding: 16rpx 20rpx;
+    background: #ffffff;
+    box-shadow: 0 2px 14px 0 rgba(0,2,4,0.08);
+    border-radius: 12rpx;
+}
+
+.nav-address .address-text {
+    max-width: 530rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 28rpx;
+    color: #000000;
+}
+
+.address-copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.address-copy .text {
+    margin-left: 20rpx;
+    font-size: 28rpx;
+    color: #333333;
+}
+
+.address-copy .line {
+    width: 1px;
+    height: 28rpx;
+    border-right: 1px solid #e6e6e6;
+    border-radius: 4px;
+}
+
+.scenery-distance-list {
+    padding: 56rpx 0 0 40rpx;
+    background: #fff;
+    overflow: hidden;
+}
+
+.scenery-distance {
+    width: 50%;
+    display: flex;
+    float: left;
+    padding-bottom: 30rpx;
+}
+
+.scenery-distance .icon image {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 10rpx;
+}
+
+.scenery-distance .desc {
+    display: flex;
+    flex-direction: column;
+    font-size: 24rpx;
+    color: #333333;
+}
+
+.scenery-distance .desc .desc-distance {
+    width: 262rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.scenery-distance .desc .desc-title {
+    width: 262rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.house-detail__local .see-more {
+    padding: 0 0 55rpx 40rpx;
+    font-size: 28rpx;
+    color: #fa152c;
+}

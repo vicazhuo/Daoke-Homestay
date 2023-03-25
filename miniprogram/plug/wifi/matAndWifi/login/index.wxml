@@ -1,0 +1,92 @@
+<include src="/components/toast/toast.wxml"></include>
+<view wx:if="{{ifWiFi}}">
+    <view class="wifi_wrapper">
+        <view>
+            <view class="form_mobile">
+                <view class="mobile">
+                    <input bindinput="bindInputText" class="bing-phonewifi__input" data-type="phone" maxlength="11" name="mobile" placeholder="请输入手机号" type="number"></input>
+                </view>
+                <view class="code">
+                    <button bindtap="getImageVerCode" class="btn-bingwifi__code {{phone&&!isCountDown?'active':''}}">
+            {{isCountDown?countDownTime+'s':'获取验证码'}}
+          </button>
+                </view>
+            </view>
+            <view class="form_ver">
+                <view class="cell__bd">
+                    <input bindinput="bindInputText" class="bing-phonewifi__input" data-type="code" maxlength="4" name="vercode" placeholder="请输入4位验证码" type="number"></input>
+                </view>
+            </view>
+        </view>
+        <view class="role_bar wifi_role_bar">
+      注册/登录即表示同意
+      <text bindtap="goRoleH5Page" class="role_link_text" data-type="1">《途家网服务协议》</text>
+            <text bindtap="goRoleH5Page" class="role_link_text" data-type="2">《隐私政策》</text>
+        </view>
+        <view class="wifi_btn pt60">
+            <form reportSubmit bindsubmit="formBtn1">
+                <button class="wifi_confrim {{phone&&code?'active':''}}" formType="submit">立即注册</button>
+            </form>
+        </view>
+        <view class="wifi_btn">
+            <form reportSubmit bindsubmit="formBtn">
+                <button bindgetphonenumber="getPhoneNumber" class="wifi_quick {{phone?'active':''}}" formType="submit" openType="getPhoneNumber">
+                    <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/{{phone?'wifi_wx_yellow':'wifi_wx_icon'}}.png"></image>
+                    <text>微信快速登录</text>
+                </button>
+            </form>
+        </view>
+    </view>
+</view>
+<view wx:if="{{!ifWiFi}}">
+    <view>
+        <view class="cells__group">
+            <view class="cell">
+                <view class="cell__hd">
+                    <image class="icon-bing-tel" src="/common/images/icon_login_tel.png"></image>
+                </view>
+                <view class="cell__bd">
+                    <input bindinput="bindInputText" class="bing-phone__input" data-type="phone" disabled="{{inputDisabled}}" maxlength="11" name="mobile" placeholder="请填写手机号码" type="number"></input>
+                </view>
+                <view class="cell__fd">
+                    <button bindtap="getImageVerCode" class="btn-bing__code {{phone&&!isCountDown?'active':''}}" type="primary">
+            {{isCountDown?countDownTime+'s':'获取验证码'}}
+          </button>
+                </view>
+            </view>
+            <view class="cell">
+                <view class="cell__hd">
+                    <image class="icon-bing-password" src="/common/images/icon_login_password.png"></image>
+                </view>
+                <view class="cell__bd">
+                    <input bindinput="bindInputText" class="bing-phone__input" data-type="code" disabled="{{inputDisabled}}" maxlength="4" name="vercode" placeholder="请输入验证码" type="number"></input>
+                </view>
+            </view>
+        </view>
+        <view class="role_bar">
+        *仅可使用房东账号登录
+    </view>
+        <view class="btn-area">
+            <form reportSubmit bindsubmit="formBtn1">
+                <button class="login-btn {{phone&&code?'active':''}}" formType="submit" type="primary">
+          确认
+        </button>
+            </form>
+        </view>
+        <view class="btn-area  mb40 mt30">
+            <form reportSubmit bindsubmit="formBtn">
+                <button bindgetphonenumber="getPhoneNumber" bindtap="blurFocus" class="wifi_quick  {{phone?'active':''}}" formType="submit" openType="getPhoneNumber">
+                    <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/{{phone?'wifi_wx_yellow':'wifi_wx_icon'}}.png"></image>
+                    <text>微信快速登录</text>
+                </button>
+            </form>
+        </view>
+        <view class="role_bar pt0">
+      注册/登录即表示同意
+      <text bindtap="goRoleH5Page" class="role_link_text" data-type="1">《途家网服务协议》</text>
+            <text bindtap="goRoleH5Page" class="role_link_text" data-type="2">《隐私政策》</text>
+        </view>
+    </view>
+</view>
+<loading hidden="{{!isLoading}}">请稍后...</loading>
+<imageVerifyCode bindgetCodeChange="getSMSCode" isShow="{{isImageVerCode}}"></imageVerifyCode>

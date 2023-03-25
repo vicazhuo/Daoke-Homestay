@@ -1,0 +1,30 @@
+<view class="book-header-content">
+  <view class="book-house-info">
+    <view class="book-house-img-box tj-img-background">
+      <view class="book-house-img" mode="aspectFit" style="background-image:url({{houseInfo.defaultPictureURL}});background-position:50% 50%;background-repeat:no-repeat;background-size:cover;"></view>
+    </view>
+    <view class="book-house-left">
+      <text class="book-house-name text-line-omit">{{houseInfo.houseName}}</text>
+      <text class="book-house-opt">{{houseInfo.houseSummary}}</text>
+      <text class="book-house-desc">{{houseInfo.houseSafeDescription}}</text>
+    </view>
+  </view>
+  <view bindtap="changedDate" class="book-date-content">
+    <view class="date-con">
+      <text class="book-date-text">{{showBeginDate}}</text>
+      <text class="book-time-text">{{houseInfo.checkInReceptionTime}}后入住</text>
+    </view>
+    <view class="date-mid-con">共{{nightNumber}}晚</view>
+    <view class="date-con">
+      <text class="book-date-text">{{showEndDate}}</text>
+      <text class="book-time-text">{{houseInfo.checkOutLatestTime}}前离店</text>
+    </view>
+  </view>
+  <view class="book-tip-content" wx:if="{{bookingRule.guides&&bookingRule.guides.length}}">
+    <view bindtap="bookingRuleNav" class="book-tip-item" data-url="{{item.navigateUrl}}" wx:for="{{bookingRule.guides}}" wx:key="{{index}}">
+      <image class="book-tip-icon" src="{{item.picUrl}}"></image>
+      <text class="book-tip-text" style="color:{{item.color}}">{{item.text}}</text>
+    </view>
+  </view>
+</view>
+<view class="book-flower"></view>

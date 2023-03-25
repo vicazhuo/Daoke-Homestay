@@ -1,0 +1,184 @@
+page {
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 334rpx;
+    position: relative;
+}
+
+.scroll-fixed {
+    position: fixed!important;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.scroll-y {
+    height: 100%;
+}
+
+.scroll-y-bottom {
+    position: relative;
+    padding-bottom: 90rpx;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+.scroll-y-bottom::before {
+    content: "";
+    display: table;
+}
+
+.tips-bottom {
+    position: absolute;
+    bottom: 40rpx;
+    left: 0;
+    width: 100%;
+    font-size: 24rpx;
+    color: #999;
+    text-align: center;
+}
+
+.card-header {
+    padding: 60rpx 0 66rpx;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    background: #fc675c;
+    background: -webkit-gradient(linear,left top,left bottom,
+    color-stop(0,#fc735b),
+    to(#fc735b));
+    background: -webkit-linear-gradient(top,#fc735b 0,
+    #fc736b 100%);
+    background: linear-gradient(to bottom,
+    #fc735b 0,
+    #fc736b 100%);
+}
+
+.card-header__title {
+    font-size: 80rpx;
+    line-height: 1.1;
+}
+
+.card-header__title sub {
+    font-size: 36rpx;
+    vertical-align: baseline;
+}
+
+.tabs__title {
+    line-height: 88rpx;
+}
+
+.card-item {
+    margin: 20rpx;
+    height: 210rpx;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border: 1rpx solid #e9e9e9;
+    border-radius: 20rpx 20rpx 0 0;
+    background: #fff;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.card-item.is-select {
+    border-color: #44d39f;
+    position: relative;
+}
+
+.card-item.is-select::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    color: #44d39f;
+    border-style: solid;
+    border-width: 30rpx;
+    border-color: transparent currentColor currentColor transparent;
+}
+
+.card-item.is-select::after {
+    content: '';
+    position: absolute;
+    bottom: 4rpx;
+    right: 4rpx;
+    width: 30rpx;
+    height: 24rpx;
+    background: url("https://staticfile.tujia.com/WechatApp/images/icon_select.png") no-repeat;
+    background-size: 100%;
+}
+
+.card-item.is-select.item-gift {
+    border-color: #ffb000;
+}
+
+.card-item.is-select.item-gift::before {
+    color: #ffb000;
+}
+
+.item-value {
+    margin-right: 30rpx;
+    width: 32%;
+    height: 100%;
+    font-size: 44rpx;
+    line-height: 208rpx;
+    color: #fff;
+    text-align: center;
+    background: #44d39f url("https://staticfile.tujia.com/WechatApp/images/list_jxj.png") no-repeat center bottom;
+    background-size: 50%;
+    position: relative;
+}
+
+.item-value sub {
+    vertical-align: baseline;
+    font-size: 0.6em;
+}
+
+.item-gift .item-value {
+    background-color: #ffb000;
+}
+
+.disable .item-value {
+    background-color: #dadada;
+}
+
+.item-info {
+    -webkit-box-flex: 1;
+    flex: auto;
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    line-height: 1.8;
+    color: #666;
+}
+
+.for-app .item-info {
+    background: #fff url("https://staticfile.tujia.com/WechatApp/images/for_app.png") no-repeat 95% 60%;
+    background-size: auto 60%;
+}
+
+.card-status {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 65%;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    text-align: center;
+}
+
+.card-code {
+    font-size: 26rpx;
+    color: #666;
+}
+
+.card-date {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.card-tips {
+    color: #fd8238;
+}

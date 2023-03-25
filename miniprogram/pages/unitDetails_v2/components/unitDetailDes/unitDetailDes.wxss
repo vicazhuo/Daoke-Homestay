@@ -1,0 +1,64 @@
+.house-desc {
+    padding: 52rpx 40rpx 54rpx 40rpx;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.house-desc .house-desc-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32rpx;
+}
+
+.house-desc .house-desc-title .title {
+    font-weight: 400;
+    font-size: 40rpx;
+    color: #333333;
+}
+
+.house-desc .house-desc-title .realphoto {
+    padding: 0 14rpx;
+    font-size: 24rpx;
+    color: #ffffff;
+    background: rgba(44,55,79,0.7);
+    border-radius: 100rpx;
+}
+
+.house-desc-brief {
+    padding: 33rpx 30rpx;
+    margin-bottom: 34rpx;
+    background: rgba(255,150,69,0.06);
+    border-radius: 12rpx;
+}
+
+.house-desc-brief .sub-title {
+    font-weight: 400;
+    font-size: 34rpx;
+    color: #333333;
+}
+
+.house-desc-brief .sub-desc {
+    margin-top: 6rpx;
+    font-size: 28rpx;
+    color: #999999;
+}
+
+.house-desc .house-desc-text {
+    margin-bottom: 28rpx;
+    margin-right: 20rpx;
+    font-size: 28rpx;
+    color: #666666;
+    line-height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+
+.house-desc .see-more {
+    font-size: 28rpx;
+    color: #fa152c;
+}

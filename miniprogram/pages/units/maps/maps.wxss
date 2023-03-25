@@ -1,0 +1,430 @@
+.map {
+    width: 100%;
+    flex: 1;
+    position: relative;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.cover-view {
+    width: 400rpx;
+    height: 200rpx;
+    background: #f90;
+    position: fixed;
+    bottom: 200rpx;
+}
+
+.hjc {
+    width: 2000rpx;
+    background: #000;
+}
+
+.center-marker-icon {
+    width: 42rpx;
+    height: 61rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    transition: transform .2s;
+    transition: transform .2s,-webkit-transform .2s;
+}
+
+.center-marker-icon-touch {
+    transform: translate(-50%,-100%);
+}
+
+.center-marker-box {
+}
+
+.location-btn {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.location-btn-box {
+    position: absolute;
+    bottom: 40rpx;
+    left: 20rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.house-item {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+}
+
+.house-item-content {
+    background: #FFFFFF;
+    display: inline-flex;
+    box-shadow: 0 2prx 15rpx 0 rgba(0,0,0,0.10);
+    border-radius: 12rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    height: 220rpx;
+    position: relative;
+    width: 640rpx;
+    align-items: center;
+}
+
+.house-item-left {
+    width: 180rpx;
+    height: 180rpx;
+    margin-right: 20rpx;
+    flex: none;
+}
+
+.house-item-right {
+    width: 380rpx;
+}
+
+.good-price {
+    font-size: 24rpx;
+    color: #999;
+    flex: none;
+    padding: 0 0 0 24rpx;
+    display: inline-block;
+    box-sizing: content-box;
+    position: relative;
+    font-weight: normal;
+}
+
+.price-del-border {
+    height: 1px;
+    width: 70%;
+    position: absolute;
+    background: #999;
+    top: 50%;
+    margin-top: -1px;
+}
+
+.house-item-price {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 20rpx;
+    font-size: 36rpx;
+    color: #333;
+    margin-right: 20rpx;
+    font-weight: 500;
+}
+
+.final-price {
+    font-size: 36rpx;
+    color: #333;
+    margin-right: 20rpx;
+    font-weight: 500;
+}
+
+.house-item-tag,.house-item-address {
+    display: flex;
+    font-size: 22rpx;
+    color: #666;
+    flex: 1;
+    font-weight: 300;
+    box-sizing: content-box;
+}
+
+.house-item-name {
+    font-size: 32rpx;
+    color: #333;
+    flex: 1;
+    font-weight: 500;
+}
+
+.summeries-item-dian {
+    margin: 0 10rpx;
+}
+
+.summeries-item {
+    display: inline-flex;
+}
+
+.house-item-tag {
+    margin: 20rpx 0 10rpx;
+}
+
+.price-tag {
+    font-size: 20rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    border-radius: 4rpx;
+    font-weight: normal;
+    color: #d6525f;
+    background: #fff1ec;
+    font-weight: 400;
+    padding: 0 5rpx;
+    box-sizing: content-box;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 20rpx;
+}
+
+.price-tag-product {
+    margin-left: 12rpx;
+}
+
+.house-item-name-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 380rpx;
+    flex: none;
+}
+
+.arrow_right_icon {
+    width: 64rpx;
+    height: 64rpx;
+    position: absolute;
+    right: 20rpx;
+    bottom: 120rpx;
+}
+
+.house-bg {
+    width: 600rpx;
+    height: 240rpx;
+    margin-right: 16rpx;
+    position: absolute;
+    bottom: 0;
+}
+
+.house-bg-list {
+    bottom: 32rpx;
+    position: absolute;
+    display: flex;
+    padding-left: 30rpx;
+}
+
+.house-lever-name {
+    font-size: 22rpx;
+    color: #fff;
+    left: -26rpx;
+    background: #FF9645;
+    border-radius: 36rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    padding: 0 14rpx 0 22rpx;
+    display: inline-flex;
+    align-items: center;
+}
+
+.house-lever-name-box {
+    position: absolute;
+    bottom: 20rpx;
+    left: -26rpx;
+    padding: 10rpx;
+}
+
+.house-item-img-box {
+    position: relative;
+}
+
+.house-lever-bg {
+    position: absolute;
+    bottom: 40rpx;
+    height: 44rpx;
+    width: 122rpx;
+    left: 18rpx;
+}
+
+.scroll-view {
+    position: absolute;
+    width: 100%;
+    height: 280rpx;
+    bottom: 0rpx;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.scroll-view-bg {
+    position: absolute;
+    width: 100%;
+    height: 280rpx;
+    bottom: 0rpx;
+}
+
+.scroll-view-shadow-bg {
+    position: absolute;
+    width: 665rpx;
+    height: 260rpx;
+    bottom: 10rpx;
+    left: 44rpx;
+}
+
+.house-select-btn-box {
+    display: inline-flex;
+    align-items: center;
+    width: 60rpx;
+    justify-content: center;
+}
+
+.house-select-btn {
+    width: 21rpx;
+    height: 36rpx;
+}
+
+.select-btn-left {
+    transform: rotate(180deg);
+}
+
+.scroll-view-list-one {
+    padding-left: 68rpx;
+}
+
+.center-marker-popup {
+    padding: 20rpx 20rpx;
+    position: absolute;
+    font-size: 22rpx;
+    color: #333;
+    border: 1px solid #DADADA;
+    background: rgba(255,255,255,0.8);
+    bottom: 57%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4rpx;
+}
+
+.popup-down-tag-icon {
+    width: 20rpx;
+    height: 15rpx;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    bottom: 56%;
+}
+
+.destination-mid-border {
+    width: 1px;
+    height: 70rpx;
+    background: #DADADA;
+    position: absolute;
+    right: 90rpx;
+}
+
+.show-destination-contaniner {
+    display: flex;
+    align-items: center;
+}
+
+.destination-right-btn {
+    display: inline-flex;
+    font-size: 24rpx;
+    color: #FF9645;
+    padding-left: 20rpx;
+}
+
+.destination-tit {
+    color: #333;
+}
+
+.destination-text {
+    font-size: 22rpx;
+    color: #999;
+    margin-top: 6rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 270rpx;
+}
+
+.destination-left {
+    width: 280rpx;
+    display: inline-block;
+}
+
+.map-search-btn {
+    width: 270rpx;
+    height: 110rpx;
+}
+
+.map-search-btn-box {
+    position: absolute;
+    top: 40rpx;
+    margin-left: -135rpx;
+    left: 50%;
+}
+
+.map-search-btn-text {
+    position: absolute;
+    font-size: 28rpx;
+    color: #333;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+
+.no-house-alert {
+    background: rgba(0,0,0,0.7);
+    border-radius: 12rpx;
+    font-size: 28rpx;
+    color: #fff;
+    width: 542rpx;
+    padding: 34rpx;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    margin-left: -271rpx;
+    box-sizing: border-box;
+    top: 40rpx;
+}
+
+.sub-toast-text {
+    font-size: 24rpx;
+    color: #fff;
+    margin-top: 10rpx;
+}
+
+.icon-quick-buy {
+    width: 18rpx;
+    height: 30rpx;
+    margin-right: 5rpx;
+    display: inline-block;
+    flex: none;
+}
+
+.house-item-name-box {
+    display: flex;
+    align-items: center;
+}
+
+.house-lever-name-shadow {
+    position: absolute;
+    width: 100%;
+    height: 45rpx;
+    left: -2rpx;
+    top: 8rpx;
+}
+
+.house-lever-name-bg {
+    background: none;
+}
+
+.main-toast-text {
+    white-space: normal;
+    line-height: 1.4;
+}
+
+.map-house-price {
+    line-height: 1;
+}
+
+.phone-model-mask {
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}

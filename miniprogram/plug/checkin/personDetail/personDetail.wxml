@@ -1,0 +1,55 @@
+<view class="main">
+    <form bindsubmit="formSubmit">
+        <view class="tit">填写入住人信息</view>
+        <view class="tit-con">请输入实名信息，仅用于人脸实名认证，完成后将提供给您智能门锁密码</view>
+        <view class="list">
+            <view class="list-detail">
+                <view class="list-detail-tit">姓名</view>
+                <input bindinput="nameInputEvent" maxlength="8" placeholder="请输入姓名" placeholderStyle="color: #DCDEE0;" value="{{nameValue}}"></input>
+            </view>
+            <view class="list-detail">
+                <view class="list-detail-tit">身份证</view>
+                <input bindinput="idCardInputEvent" maxlength="18" placeholder="请输入身份证号码" placeholderStyle="color: #DCDEE0;" type="idcard" value="{{idCardValue}}"></input>
+            </view>
+        </view>
+        <view bindtap="goUploadCard" class="go-detail">我没有身份证</view>
+        <view class="contact-steward">
+            <view bindtap="callButler" class="contact-steward-inner">
+                <image src="../../../images/checkin/phone-icon.png"></image>
+                <view>联系管家：{{butlerInfo.name}}</view>
+            </view>
+        </view>
+        <view bindtap="callServer" class="service">
+            <view>客服电话</view>
+            <text>400-606-6767</text>
+        </view>
+        <view class="height-null"></view>
+    </form>
+</view>
+<view class="btm-btn">
+    <view class="btn btn-bg" wx:if="{{!isOk}}">开始人脸认证</view>
+    <navigator appId="wx7ccfa42a2a641035" class="btn" extraData="{{sendObj}}" hoverClass="none" openType="navigate" path="pages/pre" target="miniProgram" version="release" wx:else>开始人脸认证</navigator>
+</view>
+<view class="pop" wx:if="{{popIsShow}}">
+    <view class="pop-bg"></view>
+    <view class="pop-con">
+        <block wx:if="{{sweepFaceCodeIsShow}}">
+            <view class="pop-con-tit">此身份证无照片信息</view>
+            <view class="pop-con-content">
+			公安数据源无此身份证的人脸信息，无法进行人脸识别，建议您换同伴身份证，或
+				<text>上传你的证件照片来完成实名认证</text>
+            </view>
+        </block>
+        <block wx:if="{{sweepFaceNum>2}}">
+            <view class="pop-con-tit">提示</view>
+            <view class="pop-con-content">
+			该身份证当前人脸认证次数已达上限，建议您换同伴身份证，或
+				<text>上传你的证件照片来完成实名认证</text>
+            </view>
+        </block>
+        <view class="pop-con-btns">
+            <view bindtap="closePop">换同伴身份证</view>
+            <view bindtap="goUploadCard" class="v1">上传证件照片</view>
+        </view>
+    </view>
+</view>

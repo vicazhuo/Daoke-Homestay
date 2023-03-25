@@ -1,0 +1,129 @@
+<view class="hint-group" hidden="{{isLogin}}">
+  <view class="hint-box">
+    <image class="pic1" src="{{logoUrl}}"></image>
+    <view class="hint-text">
+      <view>您还没有登录，请登录后查看订单~</view>
+      <view>
+        <button bindtap="toLogin" class="button" plain="false" size="mini" type="primary">
+          登录/注册
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="order-options" wx:if="{{isShowOrderBar&&isLogin}}">
+  <view bindtap="orderBarTap" class="o-item  {{index===0?'o-item-first':''}} {{currenActiveTab==item.id?'o-item-active o-border-bottom':''}}" data-title="点击{{item.content}}" id="{{item.id}}" wx:for="{{orderTab}}" wx:key="index">
+    {{item.content}}
+  </view>
+</view>
+<view class="order-margin-f-top" wx:if="{{orderList.length>0&&isLogin}}">
+  <list isEnd="{{houseIsEnd}}" isLoading="{{houseIsLoading}}">
+    <view class="order-item order-margin-top" wx:for="{{orderList}}" wx:key="item.id">
+      <view class="title-content">
+        <view class="house-addr">{{item.unitName}}</view>
+        <view class="order-status" style="color:{{item.orderStatusDescColor}}">
+          <view>{{item.orderStatusDesc}}</view>
+          <view class="order-status-desc" wx:if="{{item.cancelReasonDesc.length>0}}">
+            （{{item.cancelReasonDesc}}）
+          </view>
+        </view>
+      </view>
+      <view bindtap="linkOrderDetail" class="order-img" data-index="{{index}}" data-orderId="{{item.orderId}}" data-orderNumber="{{item.orderNumber}}" data-sourceType="{{item.sourceType}}" data-tnsOrder="{{item.tnsOrder}}" style="background-image: url({{item.unitPicture}})">
+        <view class="order-banner">
+          <view class="order-time">
+            <view class="date-start">
+              <view class="d-font">{{item.checkInDate}}</view>
+              <view class="t-font">{{item.checkInLatestTime}}</view>
+            </view>
+            <view class="icon-next">
+              <image class="icon-arrow-right" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-arrow-right.png"></image>
+            </view>
+            <view class="date-end">
+              <view class="d-font">{{item.checkOutDate}}</view>
+              <view class="t-font">{{item.checkOutLatestTime}}</view>
+            </view>
+          </view>
+          <view class="all-price">
+            <view class="p-font">支付总价</view>
+            <view class="p-number">￥{{item.prepayAmount}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="order-tab" wx:if="{{item.orderStatus!==4}}">
+        <view class="order-del-font">
+          <image class="order-time-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-time.png" wx:if="{{item.countdown>0}}"></image>
+          <view class="order-time-s" wx:if="{{item.countdownS>0}}">{{item.countdownS}}分</view>
+          <view wx:if="{{!item.highLightSummary}}">{{item.summary}}</view>
+          <view wx:if="{{item.highLightSummary}}">预计
+            <text class="high-Light-Summary">{{item.highLightSummary}}</text> 前确认完
+          </view>
+        </view>
+        <view class="btn-penal">
+          <view bindtap="linkDeleteOrder" class="order-del-btn br1" data-index="{{index}}" data-orderId="{{item.orderId}}" data-sourceType="{{item.sourceType}}" wx:if="{{(item.operationFlag&64)===64}}">
+            删除
+          </view>
+          <view bindtap="linkRefundView" class="order-del-btn margin-left-btn br1" data-orderId="{{item.orderId}}" wx:if="{{(item.operationFlag&4096)===4096}}">
+            退款详情
+          </view>
+          <view bindtap="linkCallPhone" class="order-del-btn margin-left-btn br1" data-orderId="{{item.orderId}}" wx:if="{{(item.operationFlag&2048)===2048}}">
+            联系房东
+          </view>
+          <view bindtap="linkOrderAgain" class="order-again-btn margin-left-btn br1" data-unitId="{{item.unitId}}" wx:if="{{(item.operationFlag&32)===32}}">
+            再次预订
+          </view>
+          <view bindtap="linkGoPay" class="order-pay-btn margin-left-btn" data-orderId="{{item.orderId}}" data-tnsOrder="{{item.tnsOrder}}" wx:if="{{(item.operationFlag&1)===1}}">
+            去支付
+          </view>
+          <view bindtap="linkGoThisLocation" class="order-pay-btn margin-left-btn" data-address="{{item.address}}" data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" data-unitName="{{item.unitName}}" wx:if="{{(item.operationFlag&16)===16}}">
+            导航
+          </view>
+          <view bindtap="linkGoService" class="order-pay-btn margin-left-btn" data-orderId="{{item.orderId}}" wx:if="{{(item.operationFlag&16384)===16384}}">
+            接机信息
+          </view>
+          <view bindtap="linkCheckInDate" class="order-pay-btn margin-left-btn" data-orderId="{{item.orderId}}" wx:if="{{item.isCheckInDate}}">
+            办理入住
+          </view>
+           <view bindtap="linkComment" class="order-pay-btn margin-left-btn" data-orderId="{{item.orderId}}" wx:if="{{item.isComment}}">
+            评论
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="order-last-three" wx:if="{{houseIsEnd}}">已显示近三个月订单</view>
+    <view bindtap="getAllOrders" class="order-list-all" wx:if="{{houseIsEnd}}">查看全部订单</view>
+  </list>
+</view>
+<view class="order-last-three" wx:if="{{false}}">已显示近三个月订单</view>
+<component-popup bindpopupCancelEvent="delOrderCancel" bindpopupOkEvent="delOrderAgree" cancelText="点错了" extra="" isShow="{{isShowDelOrder}}" okText="删除" popTitle="确定删除订单？" popupText="订单删除了将无法还原"></component-popup>
+<view class="no-last-orders" wx:if="{{!isHaveRecentOrder&&isLogin}}">
+  <image class="no-last-order" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-no-order2.png"></image>
+  <view class="no-order-title">近期暂无订单</view>
+  <view class="all-order-font">
+    <text>点击这里</text>
+    <text bindtap="getAllOrders" class="all-order-font-l">查看全部订单</text>
+  </view>
+</view>
+<view class="no-last-orders" wx:if="{{!isHaveNetWork&&isLogin}}">
+  <image class="no-last-order" src="/common/images/icon-no-network.png"></image>
+  <view class="no-order-title">暂无网络</view>
+  <view class="all-order-font">
+    <text>网络正在开小差</text>
+  </view>
+  <view bindtap="reloadData" class="add-more-btn add-more-btn-mp" wx:if="{{!isHaveNetWork}}">
+    重新加载
+  </view>
+</view>
+<view class="no-last-orders" wx:if="{{!isHaveService}}">
+  <image class="no-last-order" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-no-order.png"></image>
+  <view class="no-order-title">暂无服务</view>
+  <view class="all-order-font">
+    <text>页面竟然崩溃了</text>
+  </view>
+  <view bindtap="reloadData" class="add-more-btn add-more-btn-mp">重新加载</view>
+</view>
+<view class="no-last-orders br1" wx:if="{{!isHadOrder&&isLogin}}">
+  <image class="no-last-order" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-no-order2.png"></image>
+  <view class="no-order-title">暂无订单</view>
+</view>
+<loading hidden="{{!isLoading}}">加载中...</loading>
+<include src="../../../components/toast/toast.wxml"></include>

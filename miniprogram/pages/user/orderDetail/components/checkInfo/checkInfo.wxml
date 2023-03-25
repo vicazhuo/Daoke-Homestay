@@ -1,0 +1,31 @@
+<view class="order-checkinfo">
+    <view class="order-time">
+        <view class="room-let-time">
+            <view>
+                <view class="time-title">入住时间</view>
+                <view class="time-month-day">{{checkInDate.checkInDate}}</view>
+                <view class="time-time">
+          {{checkInDate.checkInDateTime}}{{infoData.checkInReceptionTime}}
+        </view>
+            </view>
+        </view>
+        <view class="line-let-go">
+            <view class="line"></view>
+        </view>
+        <view class="room-go-time">
+            <view>
+                <view class="time-title">离店时间</view>
+                <view class="time-month-day">{{checkOutDate.checkOutDate}}</view>
+                <view class="time-time">
+          {{checkOutDate.checkOutDateTime}}{{infoData.checkOutLatestTime}}
+        </view>
+            </view>
+        </view>
+    </view>
+    <view class="order-return" wx:if="{{infoData.cancelAbstract}}">
+        <view class="return-desc">
+            <text bindtap="onTap">{{infoData.cancelAbstract}}</text>
+            <view class="solid-arrow-right"></view>
+        </view>
+    </view>
+</view>

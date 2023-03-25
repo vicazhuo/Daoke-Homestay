@@ -1,0 +1,77 @@
+page {
+    background: rgba(0,0,0,.7);
+}
+
+.create-firend-img-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60rpx;
+}
+
+.save-img-text {
+    font-size: 28rpx;
+    color: #fff;
+    margin: 34rpx 0 40rpx;
+}
+
+.save-img-btn {
+    width: 500rpx;
+    height: 80rpx;
+    font-size: 32rpx;
+    color: #FF9645;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 1px solid #FF9645;
+    border-radius: 100rpx;
+}
+
+.page-close-btn {
+    width: 70rpx;
+    height: 70rpx;
+    margin-top: 60rpx;
+}
+
+.create-firend-img-container {
+    position: relative;
+    font-size: 0;
+}
+
+.create-firend-img-bg {
+    width: 630rpx;
+    height: 770rpx;
+}
+
+.user-img-icon {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.user-name {
+    font-size: 28rpx;
+    color: #fff;
+    margin-left: 16rpx;
+}
+
+.user-info {
+    position: absolute;
+    top: 56rpx;
+    left: 40rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.qr-code-icon {
+    position: absolute;
+    bottom: 36rpx;
+    width: 86rpx;
+    height: 86rpx;
+    left: 46rpx;
+    background-color: #fff;
+    border-radius: 13rpx;
+    border: 4rpx solid #fff;
+}

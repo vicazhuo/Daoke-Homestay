@@ -1,0 +1,100 @@
+.order-chargeback {
+    overflow: hidden;
+    background-image: radial-gradient(50% 80%,#63758a 40%,#404a55 100%,#404a44 100%,#3f4954 100%);
+    background-size: 100% 840rpx;
+    background-position: center;
+}
+
+.order-chargeback .chargeback-title {
+    color: #fff;
+    text-align: center;
+    font-size: 42rpx;
+    margin-top: 52rpx;
+    margin-bottom: 10rpx;
+    font-weight: 500;
+}
+
+.order-chargeback .chargeback-reason {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0rpx 110rpx 40rpx;
+    color: #fff;
+    font-size: 24rpx;
+}
+
+.order-chargeback .chargeback-reason .reason-label {
+    flex-shrink: 0;
+    flex-grow: 0;
+    white-space: nowrap;
+    padding-right: 10rpx;
+}
+
+.order-chargeback .chargeback-reason .reason-field {
+    text-align: left;
+}
+
+.order-chargeback .chargeback-btns {
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.order-chargeback .chargeback-btns .btn {
+    background: transparent;
+    display: inline-block;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4rpx;
+    width: 240rpx;
+    font-size: 28rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.order-chargeback .chargeback-btns .btn:not(:last-child) {
+    margin-right: 20rpx;
+}
+
+.order-chargeback .chargeback-notice {
+    font-size: 20rpx;
+    color: #FF6666;
+    white-space: nowrap;
+    text-align: center;
+    margin-bottom: 60rpx;
+}
+
+.order-chargeback .chargeback-footer {
+    width: 100%;
+    left: 0;
+    text-align: center;
+}
+
+.order-chargeback .chargeback-footer .footer-img-warp {
+    margin: 0rpx 16rpx;
+    height: 32rpx;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-sizing: border-box;
+}
+
+.order-chargeback .chargeback-footer .footer-cover {
+    height: 16rpx;
+    background: #fff;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    bottom: 0rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-cover-raduis {
+    position: relative;
+    height: 16rpx;
+    background: #fff;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    bottom: 0rpx;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+}

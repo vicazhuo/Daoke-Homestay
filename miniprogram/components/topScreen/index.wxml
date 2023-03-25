@@ -1,0 +1,14 @@
+<view class="i-as-mask {{isPopupShow?'i-as-mask-show':''}}"></view>
+<view class="popup-panel i-as {{isPopupShow?'i-as-show':''}}">
+  <scroll-view scrollY class="top-screen-content" style="padding-top:{{isNavBar?navHeight:0}}px">
+    <view class="content-wrap">
+      <slot></slot>
+    </view>
+  </scroll-view>
+  <view class="popup-close-contaniner" wx:if="{{isClose}}">
+    <view class="btm-mask"></view>
+    <view bindtap="close" class="popup-icon-close-box">
+      <image class="popup-icon-close" src="https://nm.tujia.com/static/images/webchatApp/page-unitDetal/icon_close.png"></image>
+    </view>
+  </view>
+</view>

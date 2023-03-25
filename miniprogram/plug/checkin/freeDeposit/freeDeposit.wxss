@@ -1,0 +1,53 @@
+.contain {
+    width: 100%;
+}
+
+.contain image {
+    width: 100%;
+}
+
+.contain .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.contain .top .tit {
+    padding-top: 60rpx;
+    padding-left: 30rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 50rpx;
+    color: #2A2A2A;
+    font-weight: bold;
+}
+
+.contain .top .tit text.t1 {
+    text-decoration: line-through;
+}
+
+.contain .top .con {
+    padding-left: 30rpx;
+    margin-top: 20rpx;
+}
+
+.contain .top .con text {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #2A2A2A;
+    display: block;
+}
+
+.contain .btn {
+    position: fixed;
+    left: 30rpx;
+    bottom: 30rpx;
+    background: #FAD330;
+    border-radius: 200rpx;
+    width: 690rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    font-size: 34rpx;
+    color: #2A2A2A;
+}

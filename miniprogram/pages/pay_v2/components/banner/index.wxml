@@ -1,0 +1,7 @@
+<view class="branner-contanier" wx:if="{{bannerData.navigations.length}}">
+    <swiper class="branner-swiper" indicatorActiveColor="#fff" indicatorDots="{{bannerData.navigations.length>1}}" style="height:347rpx;">
+        <swiper-item bindtap="toActivePage" class="branner-item" data-index="{{index}}" wx:for="{{bannerData.navigations}}" wx:key="{{index}}">
+            <image class="branner-img" src="{{item.pictureUrl}}"></image>
+        </swiper-item>
+    </swiper>
+</view>

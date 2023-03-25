@@ -1,0 +1,116 @@
+.wrapbg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    display: block;
+}
+
+button+button:not([size="mini"]) {
+    margin-top: 0rpx;
+}
+
+button {
+    line-height: 1;
+    padding: 0;
+    border: none;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.btns {
+    display: flex;
+    position: relative;
+    width: 623rpx;
+    height: 100rpx;
+    padding-top: 30rpx;
+}
+
+.shareToFriendsCircle,.shareToFriends {
+    display: inlne-block;
+    padding-left: 0;
+    padding-right: 0;
+    width: 265rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    border-radius: 20rpx;
+    border: none;
+    background-image: linear-gradient(0deg,#fe784f 0%,#f2a166 100%);
+}
+
+.shareToFriends {
+    margin-top: 20rpx;
+    background-image: linear-gradient(0deg,#fc4e19 0%,#ef7c28 100%);
+}
+
+.popbg {
+    position: absolute;
+    top: 26%;
+    left: 50%;
+    margin-left: -310rpx;
+}
+
+.popbg image {
+    margin: 0 auto;
+    width: 643rpx;
+    height: 372rpx;
+}
+
+.login {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #eee;
+}
+
+.tjlogo {
+    margin: 450rpx auto 310rpx auto;
+    width: 327rpx;
+    height: 135rpx;
+}
+
+.phonenumber {
+    display: inline-block;
+    width: 622rpx;
+    border: none;
+    border-radius: 20rpx;
+    color: #fff;
+    font-size: 40rpx;
+    background-image: linear-gradient(to bottom,#fc4e19 0%,#ef7c28 100%);
+}
+
+.tips {
+    font-size: 28rpx;
+    margin-top: 26rpx;
+    color: #acabab;
+}
+
+.contents {
+    position: absolute;
+    text-align: center;
+    width: 97%;
+    top: 37%;
+}
+
+.save {
+}
+
+.text01 {
+    font-size: 45rpx;
+    color: #fff;
+}
+
+.text02 {
+    font-size: 30rpx;
+    color: #fff;
+    margin-top: 10rpx;
+}

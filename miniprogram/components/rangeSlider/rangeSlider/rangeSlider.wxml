@@ -1,0 +1,20 @@
+<template name="rangeSlider">
+    <view class="range">
+        <view class="range-slider">
+            <view class="range-slider__selected {{comKey+'__style'}}" style="left:{{translateLeft}}px;right:{{translateRight}}px;"></view>
+            <view catchtouchend="{{comKey+'_buttonEnd'}}" catchtouchmove="{{comKey+'_buttonMove'}}" catchtouchstart="{{comKey+'_buttonStart'}}" class="range__min_handle {{rangeSliderIsDurtion?'range__handle__is__durtion':''}}" data-com-key="{{comKey}}" data-key="left" hidden="{{isSingoBtn}}" style="left:{{translateLeft}}px;">
+                <view class="range__min__icon"></view>
+                <view class="range__min__icon"></view>
+                <view class="range__min__icon"></view>
+            </view>
+            <view catchtouchend="{{comKey+'_buttonEnd'}}" catchtouchmove="{{comKey+'_buttonMove'}}" catchtouchstart="{{comKey+'_buttonStart'}}" class="range__max_handle {{rangeSliderIsDurtion?'range__handle__is__durtion':''}}" data-com-key="{{comKey}}" data-key="right" style="right:{{translateRight}}px;">
+                <image class="distance__handle__icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_distance_btn.png" wx:if="{{comKey==='distanceRangeSlider'}}"></image>
+                <block wx:else>
+                    <view class="range__min__icon"></view>
+                    <view class="range__min__icon"></view>
+                    <view class="range__min__icon"></view>
+                </block>
+            </view>
+        </view>
+    </view>
+</template>

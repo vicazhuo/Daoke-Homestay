@@ -1,0 +1,60 @@
+.ico {
+    width: 100rpx;
+    height: 100rpx;
+    display: block;
+    margin: 60rpx auto;
+}
+
+.tit {
+    font-family: PingFangSC-Medium;
+    font-size: 48rpx;
+    color: #E32636;
+    font-weight: bold;
+    text-align: center;
+}
+
+.con {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #5E646B;
+    line-height: 1.5;
+    width: 600rpx;
+    margin: 20rpx auto 40rpx;
+}
+
+.butler {
+    width: 346rpx;
+    height: 90rpx;
+    border: 1px solid #EBEBEB;
+    border-radius: 200rpx;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.butler image {
+    width: 36rpx;
+    height: 36rpx;
+    display: block;
+    margin-right: 10rpx;
+}
+
+.butler view {
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    color: #5E646B;
+}
+
+.btn {
+    width: 670rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    margin: 180rpx auto 0;
+    background: #FAD330;
+    border-radius: 6rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 34rpx;
+    color: #2A2A2A;
+}

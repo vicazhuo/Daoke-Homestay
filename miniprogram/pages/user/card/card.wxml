@@ -1,0 +1,74 @@
+<view class="scroll-fixed">
+  <view class="card-header">
+    <view class="card-header__title">
+      <sub>¥</sub>{{totalRemainAmount}}</view>
+    <view class="card-header__des">可用总额</view>
+  </view>
+  <view class="tabs__header">
+    <view bindtap="swichNav" class="tabs__item" data-current="0">
+      <view class="tabs__title {{currentTab==0?'current':''}}">可使用</view>
+    </view>
+    <view bindtap="swichNav" class="tabs__item" data-current="1">
+      <view class="tabs__title {{currentTab==1?'current':''}}">不可用</view>
+    </view>
+  </view>
+</view>
+<scroll-view class="scroll-y" scrollY="true" style="">
+  <view class="scroll-y-bottom">
+    <swiper bindchange="bindChange" current="{{currentTab}}" duration="300" style="height:{{swiperHeight}}rpx">
+      <swiper-item>
+        <view class="card-list" wx:if="{{canUseCardList.length>0}}">
+          <view class="card-item item-gift {{item.EnumTicketAdditionalFeature==1?'for-app':''}}" wx:for="{{canUseCardList}}" wx:key="cardid">
+            <view class="item-value">
+              <sub>¥</sub>{{item.RemainedAmount}}</view>
+            <view class="item-info">
+              <view class="card-code">卡号：{{item.SerialNo}}</view>
+              <view class="card-date">有效期至：{{item.EndTime}}</view>
+              <view bindtap="showCardInfoTip" class="card-tips" data-current="{{index}}" data-tap="0">使用限制 ></view>
+            </view>
+          </view>
+        </view>
+        <view style="text-align: center;padding-top:260rpx" wx:else>
+          <image src="/common/images/hint-img2.png" style="width:180rpx;height:153rpx;display:inline-block"></image>
+          <view style="margin-top:40rpx;font-size:28rpx;color:#666;">暂无此类旅途卡</view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class="card-list" wx:if="{{isLoadInvaludCard&&invaludCardList.length>0}}">
+          <view class="card-item item-gift disable" wx:for="{{invaludCardList}}" wx:key="cardid">
+            <view class="item-value">
+              <sub>¥</sub>{{item.RemainedAmount}}
+              <text class="card-status">{{item.EffectStatusDescription}}</text>
+            </view>
+            <view class="item-info">
+              <view class="card-code">卡号：{{item.SerialNo}}</view>
+              <view class="card-date">有效期至：{{item.EndTime}}</view>
+              <view bindtap="showCardInfoTip" class="card-tips" data-current="{{index}}" data-tap="1">使用限制 ></view>
+            </view>
+          </view>
+        </view>
+        <view style="text-align: center;padding-top:260rpx" wx:elif="{{isLoadInvaludCard&&invaludCardList.length<=0}}">
+          <image src="/common/images/hint-img2.png" style="width:180rpx;height:153rpx;display:inline-block"></image>
+          <view style="margin-top:40rpx;font-size:28rpx;color:#666;">暂无此类旅途卡</view>
+        </view>
+      </swiper-item>
+    </swiper>
+    <view class="tips-bottom">旅途卡最终解释权归本小程序主体所有</view>
+  </view>
+</scroll-view>
+<modal noCancel bindconfirm="hideCardInfoTip" class="modal" confirmText="知道了" hidden="{{cardInfo.isShowTip}}">
+  <view style="line-height: 48rpx;border-bottom:1px solid #efeff4;padding-bottom: 16rpx;margin-bottom: 16rpx;">旅途卡详情</view>
+  <view style="line-height: 48rpx;">
+    卡 号：{{cardInfo.SerialNo}}
+  </view>
+  <view style="line-height: 48rpx;">
+    金 额：
+    <sub>¥</sub>{{cardInfo.RemainedAmount}}
+  </view>
+  <view style="line-height: 48rpx;">
+    有效期：{{cardInfo.StartTime}}至{{cardInfo.EndTime}}
+  </view>
+  <view style="line-height: 48rpx;border-top:1px solid #efeff4;padding-top: 16rpx;margin-top: 16rpx;">使用规则</view>
+  <view style="word-break:break-all;white-space:normal;font-size: 26rpx;" wx:for="{{cardInfo.TicketDescriptionDetails}}" wx:for-item="t" wx:key="cardTicketID">{{t}}</view>
+</modal>
+<loading wx:if="{{loadingHidden}}">加载中...</loading>

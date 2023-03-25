@@ -1,0 +1,73 @@
+<import src="templates/templates.wxml"></import>
+<component-header-swiper navigations="{{topBanners}}"></component-header-swiper>
+<tj-favorite-tip isNextPath="{{isNextPath}}"></tj-favorite-tip>
+<view class="page-portal">
+  <view class="form-group">
+    <view class="input-block">
+      <view bindtap="goSearch" class="input-block__bd current-city" data-searchType="1" data-title="一框" data-type="1" data-url="/pages/common/search/search">{{dest.destName}}</view>
+      <view bindtap="getGeo" class="input-block__fd btn-positioning" id="myLocation">
+        <button class="go-geo-setting" openType="{{geoConfig.isSystemAuth&&!geoConfig.isWxAuth?'openSetting':''}}" wx:if="{{!isPositionLoading}}">
+          <text class="tj-location-text">{{geoConfig.text}}</text>
+          <image class="icon-portal-gps" mode="aspectFill" src="/common/images/home_gps.png"></image>
+        </button>
+        <block wx:else>
+          <image class="icon-portal-gps icon-portal-loading" mode="aspectFill" src="/common/images/home_gps_loading.png"></image>
+          <text class="is-positioning">定位中...</text>
+        </block>
+      </view>
+    </view>
+    <view bindtap="select" class="input-block input-date" data-title="日期选择" data-type="2" data-url="/pages/common/dateSelect/dateSelect">
+      <view class="check-in-out">{{dates.start}}
+        <text class="check-in-out__week">{{dates.sWeek}}</text>
+      </view>
+      <view class="check-in-out__total br1_bottom">
+        <text>共{{dates.interval}}晚</text>
+      </view>
+      <view class="check-in-out">{{dates.end}}
+        <text class="check-in-out__week">{{dates.eWeek}}</text>
+      </view>
+    </view>
+    <view bindtap="goSearch" class="input-block last input-location" data-searchType="2" data-title="二框" data-type="1" data-url="/pages/common/search/search">
+      <text class="address-text {{dest.name&&dest.destName!=dest.name?'address-text-active':''}}">{{dest.name&&dest.destName!=dest.name?dest.name:'位置/地标/房源名称'}}</text>
+      <view class="search-bar-right">
+        <view catchtap="clearInput" class="clear-btn-box" hidden="{{!dest.name}}">
+          <icon class="header-search__reset" color="#dadada" size="16" type="clear"></icon>
+        </view>
+        <view class="arrow-right-icon" hidden="{{dest.name}}"></view>
+      </view>
+    </view>
+    <button bindtap="btnSubmit" class="btn-submit" data-title="开始搜索" type="primary">开始搜索</button>
+  </view>
+  <template is="new-user-module" wx:if="{{isShowNewUserArea}}"></template>
+  <view class="hot-recommend-contaniner">
+    <view class="hot-recommend-loading" wx:if="{{hotRecommendLoading}}">
+      <image class="loading-icon" src="/common/images/loading.gif"></image>
+    </view>
+    <block wx:else>
+      <!-- 周末去哪里 -->
+      <template is="week-to-where" data="{{...weekData.weekendPlayItems,scrollLeft:weekData.weekendPlayScrollX}}" wx:if="{{weekData.weekendPlayItems.destinations}}"></template>
+      <component-hot-house-recommend data="{{hotRecommendData.suburbsItems}}" wx:if="{{hotRecommendData.suburbsItems.items.length}}"></component-hot-house-recommend>
+      <!-- 热门郊区 -->
+      <component-hot-house-recommend data="{{hotRecommendData.cityAreaItems}}" wx:if="{{hotRecommendData.cityAreaItems.items.length}}"></component-hot-house-recommend>
+      <!-- 市区推荐 -->
+      <block wx:if="{{hotRecommendData.hotItems.items.length}}">
+        <template is="hot-get-house" data="{{...hotRecommendData.hotItems}}" wx:if="{{hotRecommendData.hotItems.items.length==1}}"></template>
+        <component-hot-house-recommend data="{{hotRecommendData.hotItems}}" wx:else></component-hot-house-recommend>
+      </block>
+      <!-- 稻客广告位 -->
+      <view class="bottom-banner-contaniner">
+        <component-bottom-banner navigations="{{bottomBannerItems}}" wx:if="{{bottomBannerItems.length}}"></component-bottom-banner>
+      </view>
+      <!-- 微信广告位 -->
+      <view class="new-pull-main-banner" wx:if="{{bannerManage.index.adShow}}">
+        <ad ad-intervals="10000" unit-id="{{bannerManage.index.bannerId}}"></ad>
+      </view>
+      <!-- 临城探索 -->
+      <template is="neigh-borhood" data="{{...weekData.neighborhoodItems,scrollLeft:weekData.neighborhoodScrollX}}" wx:if="{{weekData.neighborhoodItems.destinations}}"></template>
+      <template is="tj-desc-bar" data="{{navigations:serviceEnsureItems}}" wx:if="{{serviceEnsureItems.length}}"></template>
+    </block>
+  </view>
+</view>
+<include src="/components/toast/toast.wxml"></include>
+<modal bindcloseEvent="onModalCloseEvent" modalShow="{{imgConfig.isShow}}" modalSrc="{{imgConfig.pictureUrl}}" modalUrl="{{imgConfig.navigateUrl}}"></modal>
+<btnFloatLayer btnImgSrc="{{imgConfig.microPictureUrl}}" id="btnFloatLayer" modalUrl="{{imgConfig.navigateUrl}}"></btnFloatLayer>

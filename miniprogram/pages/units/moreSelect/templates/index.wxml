@@ -1,0 +1,54 @@
+<template name="display-type-8">
+    <view class="display-type-item">
+        <view class="sub-group-title">
+         {{label}}
+         <view bindtap="downIconTap" class="down-icon-show {{style.isShowAllBtn?'down-icon-open':''}}" data-key="{{label}}" wx:if="{{style.haveShowAllBtn}}"></view>
+        </view>
+        <view class="group-btns">
+            <view bindtap="itemTap" class="display-type-8-btn {{item.selected?'is-btn-selected':''}}" data-condition="{{item}}" data-key="{{item.label}}" data-title="{{item.label}}" wx:if="{{index<style.displayCountInline||style.isShowAllBtn}}" wx:for="{{items}}" wx:key="{{index}}">
+                <view class="item-label-box">
+                    <view class="display-type-8-icon" mode="aspectFit" style="background:url({{imgHost}}/static/wechat/units_search_page/icon_options_{{item.selected?'active_':''}}{{item.value}}.png) center left no-repeat;background-size: contain;" wx:if="{{item.value==901||item.value==902}}"></view>{{item.label}}</view>
+                <text class="label-desc">{{item.labelDesc}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="display-type-7">
+    <view class="display-type-item">
+        <view class="sub-group-title">
+         {{label}}
+         <view bindtap="downIconTap" class="down-icon-show {{style.isShowAllBtn?'down-icon-open':''}}" data-key="{{label}}" wx:if="{{style.haveShowAllBtn}}"></view>
+        </view>
+        <view class="group-btns">
+            <view bindtap="itemTap" class="display-type-7-btn {{item.selected?'is-btn-selected':''}}" data-condition="{{item}}" data-key="{{item.label}}" data-title="{{item.label}}" wx:for="{{items}}" wx:key="{{index}}">
+                <icon class="iconfont-unit-facilities iconfont-unit-facilities-{{item.font}}" wx:if="{{label==='配套'}}"></icon>
+                <text class="label-text">{{item.label}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="display-type-6">
+    <view class="select-container">
+        <view class="sub-group-title">
+         {{label}}
+     </view>
+        <view class="inputNumber">
+            <view hover bindtap="peopleLessChange" class="inputNumber-minus {{leftBtnDisabled?'is-disabled':''}}" data-key="{{label}}"></view>
+            <text class="inputNumber-input">{{showText}}</text>
+            <view hover bindtap="peopleMoreChange" class="inputNumber-plus {{rightBtnDisabled?'is-disabled':''}}" data-key="{{label}}"></view>
+        </view>
+    </view>
+</template>
+<template name="display-type-2">
+    <view class="display-type-item">
+        <view class="sub-group-title">
+            <view class="sub-group-title-content">
+         {{label}}
+         <view bindtap="downIconTap" class="down-icon-show {{style.isShowAllBtn?'down-icon-open':''}}" data-key="{{label}}" wx:if="{{style.haveShowAllBtn}}"></view>
+            </view>
+        </view>
+        <view class="group-btns">
+            <view bindtap="itemTap" class="group-btn {{item.selected?'is-btn-selected':''}}" data-condition="{{item}}" data-key="{{item.label}}" data-title="{{item.label}}" wx:if="{{index<style.displayCountInline||style.isShowAllBtn}}" wx:for="{{items}}" wx:key="{{index}}">{{item.label}}</view>
+        </view>
+    </view>
+</template>

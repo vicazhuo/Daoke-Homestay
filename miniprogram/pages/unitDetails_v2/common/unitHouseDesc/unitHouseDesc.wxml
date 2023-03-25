@@ -1,0 +1,7 @@
+<view class="house-detail-desc">
+    <view class="house-special" wx:for="{{unitTrafficInfos}}" wx:key="{{index}}">
+        <view class="special-title " wx:if="{{!(unitTrafficInfos.length==1&&index==0)}}">{{item.title}}</view>
+        <view class="special-text  {{unitTrafficInfos.length==1&&index==0?'pt54':''}} ">{{item.introduction}}</view>
+    </view>
+</view>
+<component-shipei wx:if="{{isNeedShiPei}}"></component-shipei>

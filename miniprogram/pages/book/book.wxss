@@ -1,0 +1,489 @@
+@import "template/template.wxss";
+
+.book-house-left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 0;
+}
+
+.book-page {
+    overflow: hidden;
+}
+
+.book-house-img-box {
+    margin-right: 20rpx;
+    flex: none;
+    background-size: 40%;
+    border-radius: 12rpx;
+}
+
+.book-house-img {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 12rpx;
+    flex: none;
+    background-size: cover;
+}
+
+.book-house-info {
+    display: flex;
+    align-items: center;
+}
+
+.book-header-content {
+    background: #fff;
+    padding: 40rpx;
+}
+
+.book-house-name {
+    font-size: 32rpx;
+    color: #333;
+    font-weight: 500;
+    line-height: 36rpx;
+    max-width: 100%;
+}
+
+.book-house-opt {
+    font-size: 24rpx;
+    line-height: 60rpx;
+    color: #999;
+}
+
+.book-house-desc {
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: rgba(63,73,84,0.70);
+}
+
+.book-date-content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 35rpx 0;
+    background: #fef3f3;
+    border-radius: 12rpx;
+    display: flex;
+    margin-top: 40rpx;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.date-con {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.date-mid-con {
+    margin: 0 90rpx;
+}
+
+.book-date-text {
+    font-size: 36rpx;
+    line-height: 1;
+    color: #333;
+    font-weight: 500;
+}
+
+.book-time-text {
+    font-size: 24rpx;
+    line-height: 1;
+    color: #999;
+    margin-top: 14rpx;
+}
+
+.date-mid-con {
+    font-size: 11px;
+    color: #d7616d;
+    border: 1px solid #d7616d;
+    border-radius: 30rpx;
+    padding: 0 10rpx;
+    height: 15px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+}
+
+.book-tip-content {
+    margin-top: 40rpx;
+}
+
+.book-tip-icon {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 20rpx;
+}
+
+.book-tip-item {
+    display: flex;
+    align-items: center;
+    margin-top: 10rpx;
+}
+
+.book-tip-text {
+    font-size: 24rpx;
+    color: #d7616d;
+}
+
+.tip-text-active {
+    color: #f66;
+}
+
+.book-module {
+    background: #fff;
+    box-shadow: 0 1px 3rpx 0 rgba(0,0,0,0.06);
+    margin-bottom: 20rpx;
+    box-sizing: border-box;
+}
+
+.book-people-info {
+    display: inline-flex;
+    align-items: center;
+}
+
+.add-people-btn {
+    background: #d7616d;
+    box-shadow: 0 2rpx 8rpx 0 rgba(250, 83, 53, 0.3);
+    border-radius: 12rpx;
+    width: 100rpx;
+    height: 54rpx;
+    font-size: 28rpx;
+    color: #fff;
+    padding: 0;
+    margin: 0 0 0 20rpx;
+    border: none;
+    line-height: 56rpx;
+}
+
+.add-people-btn-hover {
+    background: #d7616d;
+}
+
+.no-people-placeholder {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.input-phone-con {
+    display: flex;
+    align-items: center;
+}
+
+.input-con-title {
+    position: relative;
+    padding-right: 14rpx;
+    display: inline-block;
+}
+
+.input-con-title::after {
+    content: '';
+    width: 0;
+    height: 0;
+    content: '';
+    bottom: 10rpx;
+    right: 0;
+    position: absolute;
+    border-style: dashed solid solid dashed;
+    border-width: 8rpx 10rpx 0 0;
+    border-color: transparent #d7616d #d7616d transparent;
+}
+
+.input-add-phone {
+    display: inline-flex;
+}
+
+.add-phone-btn {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.input-add-phone-slot {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 16rpx;
+    padding-left: 40rpx;
+}
+
+.input-add-phone-slot::before {
+    border-left: 1px solid #e9e9e9;
+}
+
+.book-insurance-content {
+    display: flex;
+    margin-left: 40rpx;
+    padding: 40rpx 40rpx 40rpx 0;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.insurance-icon {
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 20rpx;
+}
+
+.insurance-con {
+    display: inline-flex;
+    flex-direction: column;
+    width: 460rpx;
+}
+
+.insurance-name {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: #333;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.insurance-desc {
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 18rpx;
+    line-height: 1;
+}
+
+.book-insurance-left {
+    display: inline-flex;
+    align-items: center;
+}
+
+.book-invoice-content {
+    padding: 40rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.invoice-name {
+    font-size: 28rpx;
+    color: #666;
+    line-height: 1;
+    margin-bottom: 20rpx;
+}
+
+.invoice-desc {
+    font-size: 24rpx;
+    line-height: 1;
+    color: #999;
+}
+
+.book-buy-alert-content {
+    padding: 40rpx 40rpx 60rpx;
+}
+
+.buy-alert-con {
+    background: #f0f3f6;
+    border-radius: 12rpx;
+    padding: 34rpx 20rpx;
+}
+
+.buy-alert-tit {
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+
+.buy-alert-tit-text {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 1;
+    display: inline-block;
+    position: relative;
+}
+
+.buy-alert-tit-text::before,.buy-alert-tit-text::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 60rpx;
+    background-color: #333;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.buy-alert-tit-text::before {
+    left: -70rpx;
+}
+
+.buy-alert-tit-text::after {
+    right: -70rpx;
+}
+
+.rule-item-name {
+    font-size: 24rpx;
+    color: #666;
+}
+
+.rule-item-text {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.booking-buy-footer {
+    height: 120rpx;
+    background: #fff;
+    width: 100%;
+    border: none;
+    border-top: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    padding-left: 40rpx;
+    display: flex;
+}
+
+.ios-cross-btm {
+    bottom: 64rpx;
+}
+
+.ios-cross-page {
+    padding-bottom: 184rpx;
+}
+
+.booking-buy-footer-btn {
+    padding: 0;
+    line-height: 1;
+    height: 100%;
+    border: none;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+}
+
+.need-pay-amount {
+    font-size: 36rpx;
+    color: #d7616d;
+    line-height: 1;
+}
+
+.buy-price-con {
+    font-size: 22rpx;
+    color: #999;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 240rpx;
+}
+
+.buy-deposit-text {
+    font-size: 22rpx;
+    color: #999;
+    line-height: 1;
+    margin-top: 10rpx;
+}
+
+.buy-footer-btn-con {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buy-page-btn {
+    height: 120rpx;
+    width: 300rpx;
+    background: #d7616d;
+    font-size: 36rpx;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: 120rpx;
+    border-radius: 0;
+}
+
+.buy-page-btn-hover {
+    background: #d7616d;
+}
+
+.price-detain-btn {
+    font-size: 22rpx;
+    color: #d7616d;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    width: 70rpx;
+}
+
+.price-detain-btn::after {
+    content: '';
+    width: 0;
+    height: 0;
+    top: 50%;
+    right: 0rpx;
+    position: absolute;
+    border-style: dashed solid solid dashed;
+    border-width: 8rpx 8rpx 0 8rpx;
+    border-color: #d7616d transparent transparent transparent;
+    transform: translateY(-50%);
+}
+
+.default-guests-con {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.guests-info {
+    font-size: 24rpx;
+    color: #999;
+    line-height: 1;
+    margin-top: 10rpx;
+}
+
+.guests-name {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 1;
+    width: 360rpx;
+}
+
+.f-border-bottom-line-gray {
+    position: relative;
+    border: none;
+}
+
+.f-border-bottom-line-gray::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: left top;
+    border-radius: 0;
+    pointer-events: none;
+}
+
+.book-flower {
+    height: 46rpx;
+    background: url(https://pic.tujia.com/upload/festatic/day_190122/201901221103322734.png) repeat-x;
+    background-size: contain;
+}
+
+.free-give {
+    color: rgba(63,73,84,0.70);
+}
+
+.icon-help-inst {
+    width: 36rpx;
+    height: 36rpx;
+    margin-left: 6rpx;
+}
+
+.insurance-names {
+    width: 460rpx;
+    line-height: 44rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.insurance-no-name {
+    color: #999;
+}
+
+.buy-alert-item:not(:last-child) {
+    margin-bottom: 36rpx;
+}

@@ -1,0 +1,118 @@
+.popup-bg {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0,0,0,.7);
+    opacity: 0;
+    transition: opacity .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.popup-panel {
+    height: 100vh;
+    background: #fff;
+    transition: all .3s ease-in-out;
+    padding-bottom: 120rpx;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 10000;
+}
+
+.popup-panel-anim-down-init {
+    transform: translateY(100vh);
+}
+
+.popup-panel-anim-down {
+    transform: translateY(0);
+}
+
+.popup-icon-close {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.popup-close-contaniner {
+    height: 12vh;
+    background: #fff;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.btm-mask {
+    width: 100%;
+    height: 80rpx;
+    position: absolute;
+    top: -80rpx;
+    left: 0;
+    background: linear-gradient(to bottom,rgba(255,255,255,0.00) 0%,#FFFFFF 100%);
+}
+
+.popup-icon-close-box {
+    width: 60rpx;
+    height: 60rpx;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.i-as {
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate3d(0,100%,0);
+    transform-origin: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 900;
+    visibility: hidden;
+}
+
+.i-as-show {
+    transform: translate3d(0,0,0);
+    visibility: visible;
+}
+
+.i-as-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 900;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.i-as-mask-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.top-screen-content {
+    height: 88vh;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.content-wrap {
+    padding-bottom: 80rpx;
+    box-sizing: border-box;
+    background: #fff;
+}

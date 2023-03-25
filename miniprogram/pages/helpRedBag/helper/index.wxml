@@ -1,0 +1,70 @@
+<import src="../components/pageError/index.wxml"></import>
+<import src="/components/backIndexBtn/index.wxml"></import>
+<view class="redbag-page-wrapper" hidden="{{!(isPage==='success')}}">
+    <notity-scroll activityId="{{id}}"></notity-scroll>
+    <view class="helper-page redbag-page">
+        <view class="helper-header-container">
+            <view class="active-expire-title-container" wx:if="{{helpStatus===2}}">
+                <image class="active-expire-title" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_helper_expires_y.png" wx:if="{{isHelp}}"></image>
+                <image class="active-expire-title-n" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_helper_expires_n.png" wx:else></image>
+            </view>
+            <view wx:if="{{helpStatus===2&&isHelp}}">
+                <view class="redbag-success-container">
+                    <image class="icon_redbag_bg" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_redbag_bg.png"></image>
+                    <image class="icon_time_end_tag" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_time_end_tag.png"></image>
+                    <text class="redbg-cash-text">￥300</text>
+                </view>
+                <navigator class="redbag-btn redbag-btn-firend" url="/pages/user/redpacket/redpacket">去查看</navigator>
+                <navigator class="redbag-btn redbag-btn-more" openType="switchTab" url="/pages/index/index">去途家逛逛</navigator>
+            </view>
+            <view class="helper-header" wx:else>
+                <view class="helper-header-top">
+                    <image class="user-img" src="{{activeDetail.picUrl}}"></image>
+                    <text>{{activeDetail.nickname}}在预订途家民宿~</text>
+                </view>
+                <image class="icon_time_end_tag icon_time_end_tag_2" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_time_end_tag.png" wx:if="{{helpStatus==2}}"></image>
+                <navigator class="active-house-container" url="/pages/unitDetails_v2/unitDetails?unitId={{activeDetail.house.houseId}}" wx:if="{{isShowHouse}}">
+                    <image class="active-house-img" mode="aspectFill" src="{{activeDetail.house.defaultPicture}}"></image>
+                    <view class="house-show-btm">
+                        <text class="house-name">
+                {{activeDetail.house.houseName}}
+              </text>
+                        <text class="house-price">
+                ￥{{activeDetail.house.productPrice}}
+              </text>
+                    </view>
+                </navigator>
+                <navigator class="active-time-end-btn to-index-btn" openType="switchTab" url="/pages/index/index" wx:if="{{helpStatus==2}}">去途家逛逛</navigator>
+            </view>
+        </view>
+        <block wx:if="{{helpStatus!==2}}">
+            <view class="helper-rb-container">
+                <image class="icon_help_title_nonum" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_help_nonum.png" wx:if="{{isActiveHelpNum}}"></image>
+                <image class="icon_help_title" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_help_title.png" wx:else></image>
+                <image class="helper-rb-bg" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_help_rb_bg.png"></image>
+                <button bindgetphonenumber="getPhoneNumber" bindtap="getPhoneNumber" class="help-btn" hoverClass="none" openType="{{isOldUser||isActiveHelpNum?'':helpStatus===0?'getPhoneNumber':''}}">{{isHelp?'已助力，去途家逛逛':isActiveHelpNum?'去途家逛逛':'为TA助力'}}</button>
+            </view>
+            <helper-list activityId="{{id}}" id="helperList"></helper-list>
+        </block>
+    </view>
+</view>
+<template is="pageError" data="{{...pageErrorData}}" wx:if="{{isPage==='fail'}}"></template>
+<popup isPopupShow="{{isShowPopup}}">
+    <view class="popup-container" wx:if="{{popupStatus===0}}">
+        <form reportSubmit bindsubmit="formBtn">
+            <view class="help-alert-title">成功为TA助力</view>
+            <view class="help-alert-text">您的途家账户已获得300元旅游基金奖励，可以登录途家小程序查收</view>
+            <button bindtap="toMyRedBagPage" class="active-time-end-btn" formType="submit" hoverClass="none">去查看</button>
+            <button class="space-btn" formType="submit" hoverClass="none">
+                <image bindtap="closeHelpPopup" class="icon-save-close help-success-close" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_save_close.png"></image>
+            </button>
+        </form>
+    </view>
+    <view class="popup-container-img" wx:if="{{popupStatus===1}}">
+        <image class="icon-helper-popup" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_helper_popup_bg.png"></image>
+        <button bindgetphonenumber="getPhoneNumber" bindtap="getPhoneNumber" class="help-btn popup-btn" hoverClass="none" openType="{{isOldUser||isActiveHelpNum?'':'getPhoneNumber'}}">为TA助力</button>
+        <image bindtap="closeHelpPopup" class="icon-save-close" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_save_close.png"></image>
+    </view>
+</popup>
+<template is="back-index-btn" data="{{...pageErrorData}}"></template>
+<get-user-info-popup bindcloseEvent="getUserInfoPopupClose" isShow="{{isGetUserInfoPopup}}" title="授权确认"></get-user-info-popup>

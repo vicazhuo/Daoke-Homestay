@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "填写订单",
+    "usingComponents": {
+        "tj-input": "/components/cell-input/index",
+        "tj-cell": "/components/cell/index",
+        "tj-radio": "/components/radio/radio",
+        "tj-switch": "/components/switch/index",
+        "common-page": "/components/commonPage2/commonPage",
+        "people-reception": "/components/peopleReception/peopleReception",
+        "grey-user-check": "./components/greyUserCheck/greyUserCheck",
+        "promotion": "./components/promotion/promotion",
+        "price-detail": "./components/priceDetail/priceDetail",
+        "input-number": "./components/inputNumber/inputNumber"
+    },
+    "navigationStyle": "custom",
+    "disableSwipeBack": true
+}

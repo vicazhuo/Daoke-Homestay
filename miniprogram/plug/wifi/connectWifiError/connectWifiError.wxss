@@ -1,0 +1,123 @@
+.wrapper {
+    float: left;
+    width: 100%;
+    background: url(https://pwastatic1.fvt.tujia.com/static/wechat/wifitwo/wifi_bg.jpg) no-repeat;
+    background-size: cover;
+    padding-bottom: 10px;
+    height: 100vh;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    padding-top: 5vh;
+    height: 95vh;
+    overflow-y: scroll;
+}
+
+.title {
+    margin-bottom: 20rpx;
+    font-size: 48rpx;
+    font-weight: 500;
+    color: #FF6666;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.title image {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 10rpx;
+    vertical-align: -5rpx;
+}
+
+.text {
+    font-size: 24rpx;
+    color: rgba(218,218,218,0.87);
+    letter-spacing: 1.71px;
+    text-align: center;
+}
+
+.panel {
+    background: #fff;
+    border-radius: 12rpx;
+    margin: 40rpx 40rpx 60rpx 40rpx;
+    padding: 50rpx 40rpx;
+}
+
+.panel .item {
+    margin-bottom: 17rpx;
+    font-size: 32rpx;
+    color: #999;
+}
+
+.panel .item text {
+    margin-left: 10rpx;
+    color: #333;
+}
+
+.copy {
+    width: 590rpx;
+    height: 96rpx;
+    text-align: center;
+    line-height: 96rpx;
+    font-size: 32rpx;
+    color: #fff;
+    margin: 60rpx auto 0 auto;
+    background: #ff9645;
+    border-radius: 12rpx;
+    border: 0;
+}
+
+.tujia-slogan-text {
+    margin-top: 50rpx;
+    text-align: center;
+}
+
+.tujia-slogan-text image {
+    width: 206rpx;
+    height: 34rpx;
+    display: inline-block;
+}
+
+.redbagTip {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 36rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.redbagTip text {
+    font-weight: 600;
+}
+
+.redpacket-small-icon {
+    width: 60rpx;
+    height: 60rpx;
+    display: inline-block;
+    vertical-align: -9px;
+}
+
+.official {
+    width: 91%;
+    margin: 60rpx auto 0 auto;
+    border-radius: 12rpx;
+    overflow: hidden;
+}
+
+.loginstyle {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px 0 25px 0;
+    border-radius: 8px;
+    background: #fff;
+}

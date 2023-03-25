@@ -1,0 +1,7 @@
+<view class="login">
+    <form reportSubmit bindsubmit="formBtn">
+        <image class="tjlogo" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/gather/pin_tjlogo.png"></image>
+        <button bindgetphonenumber="getPhoneNumber" bindtap="backurl" class="phonenumber" hoverClass="login-btn-hover" wx:if="{{tjuserid}}">{{loginBtnText}}</button>
+        <button bindgetphonenumber="getPhoneNumber" class="phonenumber" hoverClass="login-btn-hover" openType="getPhoneNumber" wx:else>{{loginBtnText}}</button>
+    </form>
+</view>

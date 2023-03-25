@@ -1,0 +1,13 @@
+<tj-nav-bar bindback="_back" bindgetNavHeight="_getNavHeight" enable="{{isNavEnableBack}}" title="{{navTitle}}" wx:if="{{isNavBar&&isCanUseNavBar}}"></tj-nav-bar>
+<view class="page-error-container" wx:if="{{isError}}">
+    <image class="error-img" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tujia/common/icon_error_page_share.png"></image>
+    <text class="error-text">{{errorText}}</text>
+    <navigator class="to-tj-btn" openType="switchTab" url="/pages/index/index">去逛逛</navigator>
+</view>
+<view class="common-page" style="padding-bottom:{{isIosCrossBtm&&isIosCrossBar?crossPagePaddingBtm:normalPagePaddingBtm}}rpx;padding-top:{{isNavBar&&isCanUseNavBar?navHeight:0}}px" wx:else>
+    <slot></slot>
+    <view class="common-btm" style="bottom:{{isIosCrossBtm&&isIosCrossBar?crossBtnBtm:0}}rpx">
+        <slot name="bottom-button"></slot>
+    </view>
+    <component-ios-btm></component-ios-btm>
+</view>

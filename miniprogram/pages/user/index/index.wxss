@@ -1,0 +1,500 @@
+page {
+  height: auto;
+  margin-bottom: 60rpx;
+  background: #fff;
+}
+
+.header-user {
+  color: #fff;
+  text-align: center;
+  position: relative;
+  width: 92%;
+  height: 350rpx;
+  border-radius: 27rpx;
+  overflow: hidden;
+  margin-left: 4%;
+}
+
+.header-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.cells__group {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 14rpx;
+  padding-top: 40rpx;
+}
+
+.order-tab {
+  margin-top: 22rpx;
+}
+
+.type-name {
+  font-size: 25rpx;
+}
+
+.user-avatar {
+  display: inline-block;
+  width: 113rpx;
+  height: 113rpx;
+  background: #eee;
+  border: 1rpx solid #fff;
+  border-radius: 120rpx;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.item-icon {
+  color: rgb(105, 104, 104);
+  font-size: 36rpx;
+  vertical-align: middle;
+}
+
+.cell__hd .item-icon {
+  position: absolute;
+  top: 4rpx;
+}
+
+.cell__hd {
+  position: relative;
+  width: 75rpx;
+  height: 50rpx;
+}
+
+.menu-order__item .daoke-icon {
+  margin-right: 5rpx;
+}
+
+.user-name {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  line-height: 52rpx;
+  font-weight: bold;
+}
+
+.icon-naozhong {
+  font-size: 37rpx;
+}
+
+.icon-daizhifu, .icon-yue, .icon-icon-test1, .icon-kefu {
+  font-size: 48rpx;
+  vertical-align: middle;
+}
+
+.user-account {
+  margin-top: 5rpx;
+  font-size: 24rpx;
+  line-height: 44rpx;
+}
+
+.user-account__reg {
+  display: block;
+}
+
+.bing-tel {
+  display: inline-block;
+}
+
+.bing-tel::after {
+  content: "";
+  display: block;
+  margin-left: 3px;
+  width: 10rpx;
+  height: 10rpx;
+  border: 1px solid #fff;
+  border-color: #fff #fff transparent transparent;
+  transform: rotate(45deg);
+  position: relative;
+}
+
+.user-info {
+  padding-top: 10%;
+}
+
+.bing-tel::after {
+  display: inline-block;
+}
+
+.btn-header-login {
+  display: block;
+  margin: 30rpx auto 0;
+  width: 160rpx;
+  font-size: 27rpx;
+  line-height: 48rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  padding: 0rpx;
+  border: 2rpx solid rgb(248, 245, 245);
+  color: rgb(248, 245, 245);
+}
+
+.user-account .btn-header-login-n {
+  padding: 0rpx;
+  border: 1rpx solid #fff;
+  color: #fff;
+}
+
+button[plain] {
+  padding: 0rpx;
+  border: 1rpx solid #fff;
+  color: #fff;
+}
+
+.icon-menu {
+  margin-right: 26rpx;
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.icon-order {
+  margin-right: 16rpx;
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+
+.menu-order__item {
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+  width: 0;
+  text-align: center;
+}
+
+.menu-order__item:not(:last-child) {
+  position: relative;
+}
+
+.menu-order__item:not(:last-child)::before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  transform-origin: 100% 0;
+  transform: scaleX(0.5);
+}
+
+.btn-area {
+  margin-bottom: 40rpx;
+}
+
+button.btn-logout {
+  border-color: rgba(49, 49, 49, 0.15);
+  color: #333;
+  background: #fff;
+}
+
+.power-by {
+  width: 100%;
+  height: 106rpx;
+  margin-top:50rpx;
+  padding-bottom: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.power-by image {
+  width: 125rpx;
+  height: 40rpx;
+}
+
+.power-by text {
+  font-size: 24rpx;
+  color: rgba(189, 189, 189, 1);
+  margin-top: 10rpx;
+}
+
+.collect-text {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: #333;
+    font-weight: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.red {
+    color: red;
+}
+
+.user {
+    padding: 20px 10px 10px 10px;
+    position: relative;
+}
+
+.message {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.message .message-head {
+    display: inline-block;
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 100rpx;
+    overflow: hidden;
+}
+
+.message .message-head image,.message .message-head open-data {
+    width: 100%;
+    height: 100%;
+}
+
+.message .nick-name {
+    margin-top: 30rpx;
+}
+
+.member-code {
+    margin-top: 20rpx;
+    font-size: 26rpx;
+    color: #555;
+    display: flex;
+    align-items: center;
+    width: 200rpx;
+    height: 46rpx;
+    justify-content: center;
+    border-radius: 23rpx;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px 0px rgba(34,35,39,0.1);
+}
+
+.member-code .member {
+    width: 15rpx;
+    margin-right: 12rpx;
+}
+
+.member-code .arrow-right {
+    width: 9rpx;
+    margin-left: 10rpx;
+}
+
+.wallet {
+    margin-top: 90rpx;
+    padding: 0 39rpx 50rpx 39rpx;
+    position: relative;
+    border-bottom: 1px solid rgba(51,51,51,0.1);
+}
+
+.wallet-text {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #484848;
+    font-weight: normal;
+}
+
+.weui-flex {
+    margin-top: 50rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.item-num {
+    align-self: center;
+    width: 44rpx;
+}
+
+.item-text {
+    font-size: 12px;
+    font-family: 'PingFangSC-Regular';
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #555555;
+}
+
+.collect {
+    padding: 50rpx 0 60rpx 0;
+    position: relative;
+    border-bottom: 1px solid rgba(51,51,51,0.1);
+    margin: 0 39rpx;
+}
+
+.collect-text {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: #333;
+    font-weight: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scroll {
+    margin-top: 20rpx;
+    width: 100%;
+}
+
+.collect-list {
+}
+
+.collect-item {
+    width: 244rpx;
+    margin-right: 30rpx;
+    text-align: center;
+    display: inline-block;
+}
+
+.collect-item:last-child {
+    margin-right: 0rpx;
+}
+
+.collect-item image {
+    width: 240rpx;
+    height: 150rpx;
+    border-radius: 10rpx;
+    vertical-align: bottom;
+}
+
+.collect-item .item-prod {
+    margin-top: 26rpx;
+    text-align: left;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.collect-item .item-prod .price {
+    line-height: 12px;
+    color: #484848;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.collect-item .item-prod image {
+    width: 14rpx;
+    margin-right: 3rpx;
+}
+
+.collect-item .item-prod .price .first-img {
+    margin-left: 10rpx;
+}
+
+.collect-item .item-prod .price text {
+    color: #333;
+    letter-spacing: 0px;
+    margin-right: 8rpx;
+    font-family: 'PingFangSC-Semibold';
+    font-weight: 600;
+}
+
+.collect-item .item-prod .owner-name {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #484848;
+    line-height: 12px;
+    margin-top: 10rpx;
+}
+
+.collect-right {
+    margin-top: 12px;
+    float: right;
+}
+
+.collectmore {
+    width: 38rpx;
+    height: 30rpx;
+}
+
+.nomore-collect {
+    width: 100%;
+}
+
+.nomore-collect image {
+    width: 100%;
+}
+
+.cltimg {
+    width: 100%;
+    height: 100%;
+    color: #333;
+}
+
+.service {
+    padding: 60rpx 40rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service .serviceItem {
+    width: 100%;
+    height: 80rpx;
+    font-size: 16px;
+    line-height: 80rpx;
+    border-radius: 40rpx;
+    border: 2rpx solid #ccc;
+    text-align: center;
+    margin-bottom: 40rpx;
+    position: relative;
+}
+
+.service .serviceItem .contact-btn {
+    position: absolute;
+    opacity: 0;
+    border: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.service .serviceItem:last-child {
+    margin-bottom: 0;
+}
+
+.service .serviceItem image {
+    width: 34rpx;
+    margin-right: 24rpx;
+}
+
+.member-card-image {
+    width: 27rpx;
+}
+
+.weui-flex__item {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    text-align: center;
+    height: 110rpx;
+}
+
+.weui-flex__item .image-container {
+    flex-grow: 1;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.is-not-vip {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -35rpx;
+    color: #e84358;
+}

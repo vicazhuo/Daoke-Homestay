@@ -1,0 +1,76 @@
+<template name="landlord-lines-card">
+    <view class="lines-card-wrap">
+        <view bindtap="selectRedpacket" class="lines-card red-packet-card" data-index="{{index}}" style="background-image: linear-gradient(90deg, {{backgroundColorStart}} 0%, {{backgroundColorEnd}} 100%);">
+            <view class="card-left-con">
+                <view class="card-left-tag">当前订单</view>
+                <text class="card-price-text {{amount>999?'card-price-small-text':''}}" style="color:{{fontColor}}">
+                    <text class="card-currency">{{currency}}</text>{{amount}}</text>
+            </view>
+            <view class="card-info-con">
+                <view class="card-desc-list">
+                    <text class="card-desc text-line-omit" wx:if="{{introduction}}" wx:for="{{common.gradRedPacketFilter(introduction)}}" wx:key="{{index}}">{{item}}</text>
+                </view>
+                <text class="card-time text-line-omit" wx:if="{{validityDataText}}">{{validityDataText}}</text>
+            </view>
+            <view class="card-tip" wx:if="{{tip}}">
+                <text>{{tip}}</text>
+            </view>
+            <view class="lines-view" style="background-image: url({{imgHost}}/static/wechat/booking/icon-lines-border.png);"></view>
+        </view>
+        <view class="failure-cause">{{validityDataText}}</view>
+    </view>
+</template>
+<template name="travel-card">
+    <view bindtap="selectRedpacket" class="red-packet-card travel-card" data-index="{{index}}">
+        <text class="card-price-text {{totalAmount>999?'card-price-mid-text':totalAmount>99?'card-price-small-text':''}}">
+            <text class="card-currency">{{currency}}</text>{{common.priceRound(totalAmount)}}</text>
+        <view class="card-info-con">
+            <view class="card-desc-list">
+                <text class="card-name text-line-omit">{{promoSourceTypeName}}</text>
+            </view>
+            <text class="card-time text-line-omit" wx:if="{{validityDataText}}">{{validityDataText}}</text>
+        </view>
+        <view class="active {{select?'selected':''}}"></view>
+    </view>
+</template>
+<template name="lines-card">
+    <view class="lines-card-wrap">
+        <view class="lines-card red-packet-card" style="background-image: linear-gradient(90deg, {{backgroundColorStart}} 0%, {{backgroundColorEnd}} 100%);">
+            <text class="card-price-text {{amount>999?'card-price-mid-text':amount>99?'card-price-small-text':''}}" style="color:{{fontColor}}">
+                <text class="card-currency">{{currency}}</text>{{amount}}</text>
+            <view class="card-info-con">
+                <text class="card-name text-line-omit">{{promoSourceTypeName}}</text>
+                <view class="card-desc-list">
+                    <text class="card-desc text-line-omit" wx:for="{{introduction}}" wx:key="{{index}}">{{item}}</text>
+                </view>
+                <text class="card-time text-line-omit" wx:if="{{validityDataText}}">{{validityDataText}}</text>
+            </view>
+            <view class="card-tip" wx:if="{{tip}}">
+                <text>{{tip}}</text>
+            </view>
+            <view class="lines-view" style="background-image: url(https://pic.tujia.com/upload/festatic/day_190122/201901221104179931.png);"></view>
+        </view>
+        <view bindtap="moreBtnHandle" class="failure-cause" data-index="{{index}}">
+            <view class="disable-text">{{isOpen?disableTextAll:disableText}}</view>
+            <view class="arrow-down-red {{isOpen?'active':''}}" wx:if="{{isMore}}"></view>
+        </view>
+    </view>
+</template>
+<template name="red-packet-card">
+    <view bindtap="selectRedpacket" class="red-packet-card" data-index="{{index}}" style="background-image: linear-gradient(90deg, {{backgroundColorStart}} 0%, {{backgroundColorEnd}} 100%);">
+        <text class="card-price-text {{amount>999?'card-price-mid-text':amount>99?'card-price-small-text':''}}" style="color:{{fontColor}}">
+            <text class="card-currency">{{currency}}</text>{{amount}}</text>
+        <view class="card-info-con">
+            <text class="card-name text-line-omit">{{promoSourceTypeName}}</text>
+            <view class="card-desc-list">
+                <text class="card-desc text-line-omit" wx:for="{{introduction}}" wx:key="{{index}}">{{item}}</text>
+            </view>
+            <text class="card-time text-line-omit" wx:if="{{validityDataText}}">{{validityDataText}}</text>
+        </view>
+        <view class="active" style="background-color:{{fontColor}}" wx:if="{{select}}"></view>
+        <view class="card-tip" wx:if="{{tip}}">
+            <text>{{tip}}</text>
+        </view>
+    </view>
+</template>
+<wxs module="common" src="../../../common/wxs/index.wxs" />

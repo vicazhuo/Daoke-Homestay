@@ -1,0 +1,71 @@
+<import src="templates.wxml"></import>
+<view class="page-search" style="padding-top:{{!keyword&&searchBox.searchType==1?'174rpx':'88rpx'}}">
+    <view class="scroll-fixed">
+        <view class="header-search">
+            <include src="./searchBox/searchBox.wxml"></include>
+        </view>
+        <view class="swiper-tab" wx:if="{{!keyword&&searchBox.searchType==1}}">
+            <view bindtap="switchTap" class="swiper-tab-item {{isTabSelected==0?'selected':''}}" data-index="0">
+                <text class="swiper-tab-item-txt">国内·港台</text>
+            </view>
+            <view bindtap="switchTap" class="swiper-tab-item {{isTabSelected==1?'selected':''}}" data-index="1">
+                <text class="swiper-tab-item-txt">海外</text>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{keyword}}">
+        <include src="./searchSuggestion/searchSuggestion.wxml"></include>
+    </view>
+    <view wx:else>
+        <view class="swiper-box" style="height:{{(!keyword&&searchBox.searchType==1?winHeight-87:winHeight-44)+'px'}};overflow:hidden">
+            <template is="list-letter-bar" data="{{group:overseasCityGroup}}" wx:if="{{isTabSelected==1&&searchBox.searchType==1}}"></template>
+            <view hidden="{{isTabSelected!=1}}">
+                <scroll-view class="swiper-tab-content" scrollIntoView="{{overseasLetters}}" scrollTop="{{scrollTops.searchOverseaTop}}" scrollY="true" style="height: calc(100vh - 174rpx)">
+                    <view class="content-contaniner" id="topOversea">
+                        <template is="historyList" data="{{historyGroup:historyGroup.overseasCityHistoryKey,name:'overseasCityHistoryKey',title:'历史城市'}}"></template>
+                        <template is="cityList" data="{{group:overseasCityGroup,hotGroup:overseasHotCityGroup,id:'oversea'}}"></template>
+                    </view>
+                </scroll-view>
+            </view>
+            <template is="list-letter-bar" data="{{group:group}}" wx:if="{{isTabSelected==0&&searchBox.searchType==1}}"></template>
+            <view hidden="{{isTabSelected!=0}}">
+                <scroll-view class="swiper-tab-content" enableBackToTop="true" scrollIntoView="{{leters}}" scrollTop="{{scrollTops.searchCityTop}}" scrollY="true" style="height: calc(100vh - {{earchBox.searchType==1?'174':'88'}}rpx)">
+                    <block wx:if="{{searchBox.searchType!=1}}">
+                        <template is="historyList" data="{{historyGroup:isOverseas?historyGroup.overseasDestHistoryKey:historyGroup.destHistoryKey,name:isOverseas?'overseasDestHistoryKey':'destHistoryKey',title:'搜索历史'}}"></template>
+                        <view hidden="{{!guessLikeGroup.length}}">
+                            <view class="guess-like-item" wx:for="{{guessLikeGroup}}" wx:key="{{index}}">
+                                <view class="recommend-tit group-tit">{{item.name}}<view bindtap="showAllTap" class="list__clear_more" data-index="{{index}}" wx:if="{{item.isShowAllBtn}}">{{!item.showAllBtnSelected?'展开':'收起'}}<view class="down-icon-show {{item.showAllBtnSelected?'down-icon-open':''}}"></view>
+                                    </view>
+                                </view>
+                                <view class="scroll-history-inner" style="height:{{!item.showAllBtnSelected?item.defaultLineCount*72+44:item.lineCount*72+44}}rpx">
+                                    <view bindtap="clickDest" class="recommend-name-col {{item.showAllBtnSelected?'':index>=8?'recommend-name-col-hide':''}} {{(index+1)%4==0?'recommend-name-col-end':''}}" data-item="{{suggest}}" data-title="{{item.name}}_{{suggest.name?suggest.name:suggest.destinationName}}" wx:for="{{item.suggests}}" wx:for-item="suggest" wx:key="{{index}}">{{suggest.name?suggest.name:suggest.destinationName}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <view class="content-contaniner" wx:else>
+                        <view class="recommend-item" id="top" wx:if="{{searchBox.searchType==1}}">
+                            <view class="recommend-item-top">
+                                <image class="icon-search-page {{locationStatus==0?'icon-portal-loading':''}}" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/{{locationStatus==0?'icon_location_loading':locationStatus==1?'icon_location_fail_refest':locationStatus==2?'icon_disabled_location':'icon_search_page'}}.png"></image>
+                                <view bindtap="myLocationBarTap" class="my-location-right" data-item="{{locationInfo}}" data-type="geo">
+                                    <block wx:if="{{locationStatus==3}}">
+                                        <text class="my-location-tit">我的位置</text>
+                                        <text class="my-location-text">{{locationInfo.name}}</text>
+                                    </block>
+                                    <block wx:else>
+                                        <text class="my-location-alert-text" wx:if="{{locationStatus!==2}}">{{locationStatus==1?'定位失败，点击刷新':locationStatus==4?'网络无法连接':locationStatus==5?'定位权限未开启':'定位中...'}}</text>
+                                        <button bindtap="goOpenSettingTap" class="my-location-auth-button" openType="openSetting" wx:else>定位权限未开启，点击授权</button>
+                                    </block>
+                                </view>
+                            </view>
+                            <text bindtap="myLocationBarTap" class="recommend-name-col current-name-col" data-item="{{locationInfo}}" data-type="city" wx:if="{{locationStatus==3}}">{{locationInfo.destName}}</text>
+                        </view>
+                        <template is="historyList" data="{{historyGroup:historyGroup.cityHistoryKey,name:'cityHistoryKey',title:'历史城市'}}"></template>
+                        <template is="cityList" data="{{group:group,hotGroup:hot,id:''}}"></template>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+    <loading wx:if="{{isLoading}}">加载中</loading>
+</view>

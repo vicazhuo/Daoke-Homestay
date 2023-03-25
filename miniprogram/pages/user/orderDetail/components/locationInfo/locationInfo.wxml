@@ -1,0 +1,35 @@
+<view class="order-locationinfo">
+    <view bindtap="openHouseDetail" class="hotel-name">
+        <view class="n-font">
+            <view class="n-name">{{unitName}}</view>
+            <view class="n-desc">{{unitSummary}}</view>
+        </view>
+        <view class="arrow-right-i">
+            <view class="icon-arrow-right"></view>
+        </view>
+    </view>
+    <view class="o-detail-map">
+        <image bindtap="navAddress" class="map-image" src="{{'https://api.map.baidu.com/staticimage?width=630&height=210&center='+longitude+','+latitude+'&zoom=16&markers='+longitude+','+latitude+'&markerStyles=-1,https://staticfile.tujia.com/mobile/images/h5/housedetail/mapicon.png'}}"></image>
+    </view>
+    <view class="house-addr">
+        <view class="addr-font">
+            <view class="addr-font-text">{{address}}</view>
+        </view>
+        <view bindtap="navAddress" class="addr-icon">
+            <image class="icon-go-to" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-nav.png"></image>
+            <text class="icon-a-text">导航</text>
+        </view>
+    </view>
+    <view class="house-lanlord">
+        <view class="h-l-content br1">
+            <view class="l-info">
+                <view class="l-name">{{hotelName}}</view>
+                <view class="l-type">{{hotelSummary}}</view>
+            </view>
+            <view bindtap="openPhoneCall" class="l-tel-icon">
+                <image class="icon-go-to" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-tel.png"></image>
+                <text class="icon-a-text">电话</text>
+            </view>
+        </view>
+    </view>
+</view>

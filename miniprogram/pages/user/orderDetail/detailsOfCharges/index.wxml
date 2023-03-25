@@ -1,0 +1,91 @@
+<view class="content br1">
+    <view class="description-more-popup">
+        <view class="charge-item">
+            <view bindtap="isShowChargeDetail" class="c-left">
+                <view class="c-left-btn">
+                    <view class="title">全部房费</view>
+                    <view class="solid-arrow-right {{!isShowChargeItem?'arrow-rotate':''}}"></view>
+                </view>
+            </view>
+            <view class="c-right">￥{{orderNew.totalRoomMoney}}</view>
+        </view>
+        <view class="charge-detail" hidden="{{isShowChargeItem}}">
+            <view class="charge-item-d" wx:for="{{orderNew.unitRateList}}" wx:key="{{index}}">
+                <view class="c-left-i">{{item.key}}</view>
+                <view class="c-right-i">¥{{item.value}}×1套</view>
+            </view>
+        </view>
+        <view class="charge-item" wx:if="{{false}}">
+            <view class="c-left">住宿意外险</view>
+            <view class="c-right">￥0</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.needPayCharges.packing!=0}}">
+            <view class="c-left">套餐费</view>
+            <view class="c-right">￥{{orderNew.needPayCharges.packing}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.needPayCharges.invoiceServiceAmount!=0}}">
+            <view class="c-left">发票服务费</view>
+            <view class="c-right">￥{{orderNew.needPayCharges.invoiceServiceAmount}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.needPayCharges.invoiceShippingAmount!=0}}">
+            <view class="c-left">发票邮寄费</view>
+            <view class="c-right">￥{{orderNew.needPayCharges.invoiceShippingAmount}}</view>
+        </view>
+        <view class="charge-item-total br1">
+            <view class="c-left-t">订单总额</view>
+            <view class="c-right-t">￥{{orderNew.orderTotal}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.orderPayInfo.refundByReductionAmount!=0}}">
+            <view class="c-left">立减优惠</view>
+            <view class="c-right">-￥{{orderNew.orderPayInfo.refundByReductionAmount}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.orderPayInfo.refundByIntegrationAmount!=0}}">
+            <view class="c-left">积分支付</view>
+            <view class="c-right">-￥{{orderNew.orderPayInfo.refundByIntegrationAmount}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.orderPayInfo.refundByCashAccountAmount!=0}}">
+            <view class="c-left">余额</view>
+            <view class="c-right">-￥{{orderNew.orderPayInfo.refundByCashAccountAmount}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.orderPayInfo.paidByRedPacketAmount!=0}}">
+            <view class="c-left">红包</view>
+            <view class="c-right">-￥{{orderNew.orderPayInfo.paidByRedPacketAmount}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.orderPayInfo.memberPayCardAmount!=0}}">
+            <view class="c-left">会员权益优惠</view>
+            <view class="c-right">-￥{{orderNew.orderPayInfo.memberPayCard.memberPayCardAmount}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.orderPayInfo.refundByTasteVoucherAmount!=0}}">
+            <view class="c-left">体验券</view>
+            <view class="c-right">-￥{{orderNew.orderPayInfo.refundByTasteVoucherAmount}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.orderPayInfo.refundPyThirdPart!=0}}">
+            <view class="c-left">第三方退款</view>
+            <view class="c-right">-￥{{orderNew.orderPayInfo.refundPyThirdPart}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.orderPayInfo.refundByInnerPayAmount!=0}}">
+            <view class="c-left">内部结算</view>
+            <view class="c-right">-￥{{orderNew.orderPayInfo.refundByInnerPayAmount}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.orderPayInfo.paidByCashAccountAmount!=0}}">
+            <view class="c-left">余额抵扣</view>
+            <view class="c-right">-￥{{orderNew.orderPayInfo.paidByCashAccountAmount}}</view>
+        </view>
+        <view class="charge-item" wx:if="{{orderNew.orderPayInfo.refundByGiftcardAmount!=0}}">
+            <view class="c-left">礼品卡</view>
+            <view class="c-right">-￥{{orderNew.orderPayInfo.refundByGiftcardAmount}}</view>
+        </view>
+        <view class="item-deposint-padding" wx:if="{{orderNew.onlineDeposit!=0}}">
+            <view class="item-border-top br1">
+                <view class="d-c-left">押金</view>
+                <view class="d-c-right">￥{{orderNew.onlineDeposit}}</view>
+            </view>
+        </view>
+        <view class="charge-item-online br1">
+            <view class="r-online-pay">
+                <view class="r-title">线上支付：</view>
+                <view class="r-money">¥{{orderNew.orderOnlinePay}}</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "添加入住人",
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "tj-input": "/components/cell-input/index",
+        "tj-cell": "/components/cell/index",
+        "tj-action-sheet": "/components/action-sheet/index",
+        "tj-radio": "/components/radio/radio",
+        "tj-date-picker": "/components/datePicker/datePicker",
+        "common-page": "/components/commonPage2/commonPage",
+        "topScreen": "/components/topScreen/index"
+    },
+    "disableSwipeBack": true
+}

@@ -1,0 +1,136 @@
+.footprint-house-item {
+    display: flex;
+    margin-bottom: 60rpx;
+    position: relative;
+}
+
+.ft-hotel-info-price-product {
+    font-size: 24rpx;
+    color: #999;
+    text-decoration: line-through;
+    margin-right: 6rpx;
+    line-height: 1;
+}
+
+.ft-hotel-info-price {
+    font-size: 40rpx;
+    color: #333;
+    margin-right: 10rpx;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.ft-hotel-price-line {
+    display: flex;
+    align-items: flex-end;
+}
+
+.ft-hotel-info-name {
+    font-size: 34rpx;
+    color: #333;
+    width: 460rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 40rpx;
+    font-weight: 500;
+    display: inline-block;
+    align-items: center;
+}
+
+.ft-icon-quick-buy-title {
+    vertical-align: -4rpx;
+}
+
+.ft-hotel-info-contaniner {
+    padding: 40rpx 0 80rpx;
+}
+
+.ft-hotel-option-dian {
+    margin: 0 10rpx;
+}
+
+.ft-hotel-info-option {
+    font-size: 24rpx;
+    color: #333;
+    margin: 28rpx 0 22rpx;
+    width: 670rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.ft-price-tag-item {
+    font-size: 10px;
+    display: inline-flex;
+    height: 30rpx;
+    align-items: center;
+    padding: 0 10rpx;
+    border-radius: 4rpx;
+    margin: 0 10rpx 0 0;
+    line-height: 30rpx;
+}
+
+.ft-promotion-tag-line {
+    margin-bottom: 22rpx;
+    line-height: 1;
+}
+
+.foorprint-house-img-box {
+    margin-right: 20rpx;
+    flex: none;
+    background-size: 40%;
+    border-radius: 12rpx;
+}
+
+.foorprint-house-img {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 12rpx;
+    flex: none;
+    background-size: cover;
+    margin-right: 20rpx;
+    position: relative;
+}
+
+.tj-img-size {
+    background-size: 70%;
+}
+
+.ft-hotel-name-bar {
+    line-height: 1;
+}
+
+.ft-house-type-name {
+    background-image: linear-gradient(to right,#F88E30 3%,rgba(255,176,0,0.97) 100%);
+    box-shadow: 2rpx 2rpx 4rpx 0 rgba(0,0,0,0.10);
+    color: #fff;
+    font-size: 11px;
+    height: 18px;
+    padding: 0 12rpx 0 10rpx;
+    left: 0;
+    position: absolute;
+    border-top-right-radius: 36rpx;
+    border-bottom-right-radius: 36rpx;
+    display: inline-flex;
+    align-items: center;
+    bottom: 20rpx;
+    line-height: 18px;
+}
+
+.house-favorite-box2 {
+    position: absolute;
+    right: 10rpx;
+    top: 10rpx;
+}
+
+.ft-icon-quick-buy {
+    width: 18rpx;
+    height: 30rpx;
+    margin-right: 12rpx;
+}
+
+.ft-icon-quick-buy-title {
+    vertical-align: -4rpx;
+}

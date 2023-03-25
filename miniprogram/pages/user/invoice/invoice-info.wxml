@@ -1,0 +1,37 @@
+<view class="contain">
+    <view class="title">发票须知</view>
+    <view class="list">
+        <view class="list-li">
+            <view class="v1">开具时间</view>
+            <view class="v2">离店后10个工作日内</view>
+        </view>
+        <view class="list-li">
+            <view class="v1">派送方式</view>
+            <view class="v2">短信+邮件</view>
+        </view>
+        <view class="list-li">
+            <view class="v1">发票服务费</view>
+            <view class="v2">
+                <text class="t1">减免</text>
+                <text class="t2">实际支付房费的6%</text>
+            </view>
+        </view>
+        <view class="list-li">
+            <view class="v1">开票金额</view>
+            <view class="v2">
+                实际支付房费+开票服务费
+                <view>不含押金、优惠券</view>
+            </view>
+        </view>
+        <view class="list-li">
+            <view class="v1">发票内容</view>
+            <view class="v2">住宿服务费</view>
+        </view>
+    </view>
+    <view class="view-text">注意</view>
+    <view class="view-text">1.<text class="t1">购买储值卡不单独提供发票</text>，在使用储值余额或者返现余额消费时，可与消费订单一同开票。<text class="t1">活动赠送的储值金部分不开发票。</text>
+    </view>
+    <view class="view-text">2.若您中途取消订单，根据退订政策获得全额退款，我们将取消开票，开票服务费将随房费一起原路退还给您;</view>
+    <view class="view-text">3.若您中途取消订单，根据退订政策只获得部分款，我们将继续开票，开票金额不含退款金额</view>
+    <view class="view-text">4.住宿发票有房东提供，服务发票由提供本平台提供</view>
+</view>

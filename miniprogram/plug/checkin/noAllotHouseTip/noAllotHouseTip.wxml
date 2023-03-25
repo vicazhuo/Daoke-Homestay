@@ -1,0 +1,18 @@
+<view class="main">
+    <view class="tit">新鲜出炉</view>
+    <view class="con">哇哦~这是一张新鲜出炉的订单，管家还没来得及给您分配入住的房源，请您联系管家，给您尽快分配房源。</view>
+    <button bindtap="callButler" class="btn" hoverClass="none">联系管家，分配房屋
+    </button>
+    <view class="btm-fix">
+        <view class="contact-steward">
+            <view bindtap="callButler" class="contact-steward-inner">
+                <image src="../../../images/checkin/phone-icon.png"></image>
+                <view>联系管家：{{butlerInfo.name}}</view>
+            </view>
+        </view>
+        <view bindtap="callServer" class="service">
+            <view>客服电话</view>
+            <text>400-606-6767</text>
+        </view>
+    </view>
+</view>

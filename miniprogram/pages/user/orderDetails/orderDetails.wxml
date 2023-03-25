@@ -1,0 +1,241 @@
+<view class="scroll-fixed">
+    <view class="cell  warning-box" hidden="{{isLoadingView}}" wx:if="{{order.IsShowPayment}}">
+        <view class="cell__bd">距离订单关闭还剩
+      <image class="icons-clock" src="/common/images/icons-clock.png"></image>
+            <text class="text-danger">{{leftTimeString}}</text>
+        </view>
+        <view class="cell__fd btn-pay">
+            <button bindtap="goPay" class="btn-lg" size="mini" type="primary">去付款</button>
+        </view>
+    </view>
+</view>
+<scroll-view class="{{order.IsShowPayment?'scroll-view':''}}" hidden="{{isLoadingView}}" scrollY="true">
+    <view class="cells__group cells__group_after-title">
+        <view class="cell cells__header">
+            <view class="cell__bd">订单号:{{order.OrderNumber}}</view>
+            <view class="cell__fd text-desc">状态：
+        <text class="{{order.OrderColorStatus==1?'text-danger':order.OrderColorStatus==2?'text-warn':order.OrderColorStatus==3?'text-sucess':''}}">{{order.OrderStatusToString}}</text>
+            </view>
+        </view>
+        <view class="cell max">
+            <view class="cell__bd">
+                <view>{{order.UnitName}} {{order.BookingCount}}套</view>
+                <view class="cell__desc desc-box">
+                    <view class=" desc-box-item">入住：{{order.CheckInDate}} </view>
+                    <view class=" desc-box-item">退房：{{order.CheckOutDate}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="cell">
+            <view class="cell__fd text-muted ">
+                <text class="big">总房费：¥{{order.TotalAmountToString}} </text>
+                <text bindtap="showUnitPrice" class="price-details-btn text-primary">房费明细</text>
+            </view>
+            <view bindtap="showReturnCashTip" class="cell__bd text-muted " wx:if="{{order.ReturnCash>0}}">
+			返现：<text>¥{{order.ReturnCashToString}}</text>
+                <icon class="info_circle" color="#fd8238" size="18" type="info_circle"></icon>
+            </view>
+        </view>
+    </view>
+    <view class="cells__group">
+        <view class="cell" wx:if="{{order.OrderPay.PaymentAssurePolicy==3||order.OrderPay.PaymentAssurePolicy==2||order.OrderPay.PaymentAssurePolicy==4||order.OrderPay.PaymentAssurePolicy==5}}">
+            <view class="cell__bd">
+                <view class="list-item" wx:if="{{order.OrderPay.PaymentAssurePolicy==3}}">
+                    <view class="column-hd-type text-muted">全额房费：</view>
+                    <view class="list-item-info">
+                        <text>¥{{order.OrderPay.RoomOnlineAmountToString}}</text>
+                    </view>
+                </view>
+                <view class="list-item" wx:elif="{{order.OrderPay.PaymentAssurePolicy==2}}">
+                    <view class="column-hd-type text-muted">首晚房费：</view>
+                    <view class="list-item-info">
+                        <text>¥{{order.OrderPay.RoomOnlineAmountToString}}</text>
+                    </view>
+                </view>
+                <view class="list-item" wx:elif="{{order.OrderPay.PaymentAssurePolicy==4||order.OrderPay.PaymentAssurePolicy==5}}">
+                    <view class="column-hd-type text-muted">担保金：</view>
+                    <view class="list-item-info">
+                        <text>¥{{order.OrderPay.GuaranteeAmountToString}}</text>
+                    </view>
+                </view>
+                <view class="list-item" wx:for="{{order.OrderPay.SDList}}" wx:key="sdID">
+                    <view class="column-hd-type text-muted" wx:if="{{index==0}}">立减优惠：</view>
+                    <view class="list-item-info">
+                        <text>-¥{{item.SDAmountToString}}</text>
+                        <text class="text-muted">({{item.SDName}}）</text>
+                    </view>
+                </view>
+                <view class="list-item" wx:for="{{order.OrderPay.AlreadyPaidList}}" wx:for-item="i" wx:key="alreadyPaidID">
+                    <view class="column-hd-type text-muted">{{index}}：</view>
+                    <view class="list-item-info">
+                        <text>-¥{{i}}</text>
+                        <text class="text-muted"></text>
+                    </view>
+                </view>
+                <view class="list-item" wx:if="{{order.OrderPay.DepositOnlineAmount>0}}">
+                    <view class="column-hd-type text-muted">住房押金：</view>
+                    <view class="list-item-info">
+                        <text>¥{{order.OrderPay.DepositOnlineAmountToString}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cell">
+            <view class="cell__bd">
+                <view class="list-item" wx:if="{{order.OrderPay.NeedPayOnlineAmount>0}}">
+                    <view class="column-hd-type">待付金额：</view>
+                    <view class="list-item-info">
+                        <text class="total-box text-primary">¥{{order.OrderPay.NeedPayOnlineAmountToString}}</text>
+                        <text class="text-muted">({{order.OrderPay.PaymentAssurePolicyName}})</text>
+                    </view>
+                </view>
+                <view class="list-item" wx:else>
+                    <view class="column-hd-type">已付金额：</view>
+                    <view class="list-item-info">
+                        <text class="total-box text-primary">¥{{order.OrderPay.AlreadyPaidOnlineAmountToString}}</text>
+                        <text class="text-muted">({{order.OrderPay.PaymentAssurePolicyName}})</text>
+                    </view>
+                </view>
+                <view class="list-item" wx:if="{{order.OrderPay.NeedPayOnlineAmount<=0&&order.OrderPay.AlreadyPaidOfflineAmount>0}}">
+                    <view class="column-hd-type"></view>
+                    <view class="list-item-info">
+                        <text class="total-box text-primary">¥{{order.OrderPay.AlreadyPaidOfflineAmountToString}}</text>
+                        <text class="text-muted">(当面付)</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{order.OrderPay.NeedPayOfflineAmount>0}}">
+        <view class="cells__title">到店需再支付</view>
+        <view class="cells__group cells__group_after-title">
+            <view class="cell">
+                <view class="cell__bd">
+                    <view class="list-item" wx:if="{{order.OrderPay.RoomOfflineAmount>0}}">
+                        <text class="column-hd text-muted">剩余房费：</text>
+                        <view class="list-item-info">
+                            <text>¥{{order.OrderPay.RoomOfflineAmountToString}}</text>
+                        </view>
+                    </view>
+                    <view class="list-item" wx:if="{{order.OrderPay.DepositOfflineAmount>0}}">
+                        <text class="column-hd text-muted"> 住房押金：</text>
+                        <view class="list-item-info">
+                            <text>¥{{order.OrderPay.DepositOfflineAmountToString}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{order.IsShowRefund}}">
+        <view class="cells__title">退款信息</view>
+        <view class="cells__group">
+            <view class="cell" wx:if="{{isRefundView}}">
+                <view class="cell__bd">
+                    <view class="list-item" wx:for="{{order.RefundList}}" wx:key="refundID">
+                        <view class="column-hd-type text-muted">{{index}}退款：</view>
+                        <view class="list-item-info">
+                            <text>¥{{item.RefundAmountToString}}</text>
+                            <text class="text-muted" wx:if="{{item.RefundRemark!=null&&item.RefundRemark!=''}}">({{item.RefundRemark}})</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="cell" wx:if="{{order.DepositRefund.RefundAmount>0||order.DepositRefund.FineAmount>0}}">
+                <view class="cell__bd">
+                    <view class="list-item">
+                        <view class="column-hd-type text-muted">押金退款：</view>
+                        <view class="list-item-info">
+                            <view>
+                                <text>¥{{order.DepositRefund.RefundAmountToString}}</text>
+                                <text class="text-muted" wx:if="{{order.DepositRefund.FineAmount>0}}">(¥{{order.DepositRefund.OnlineDepositToString}}-¥{{order.DepositRefund.FineAmountToString}})</text>
+                                <text class="text-muted" wx:elif="{{order.DepositRefund.AgreeFineStatus==0||order.DepositRefund.AgreeFineStatus==3}}">(原路退还 7个工作日内到账)</text>
+                            </view>
+                            <view wx:if="{{order.DepositRefund.FineAmount>0}}">
+                                <text class="text-muted">扣除押金¥{{order.DepositRefund.FineAmountToString}}</text>
+                                <text class="status-text" wx:if="{{order.DepositRefund.AgreeFineStatus==2}}">已拒绝 途家处理中</text>
+                            </view>
+                            <view class="text-muted" wx:if="{{order.DepositRefund.AgreeFineStatus==4}}">
+                商户将在您退房后48小时内确认退还押金，逾期将自动退还；如扣除押金需您同意后才会扣款。如有疑问或纠纷请拨打客服
+                <text bindtap="makeTujiaPhone" class="text-primary">400-188-1234</text>
+                            </view>
+                            <view class="text-muted" wx:elif="{{order.DepositRefund.RefundRemark!=null&&order.DepositRefund.RefundRemark!=''}}">
+                {{order.DepositRefund.RefundRemark}}
+              </view>
+                            <view wx:if="{{order.DepositRefund.AgreeFineStatus==1}}">
+                                <button bindtap="agreeChargebacks" class="primary-bnt" data-current="{{true}}" plain="flase" size="mini" type="default">同意扣款</button>
+                                <button bindtap="agreeChargebacks" class="" data-current="{{false}}" plain="flase" size="mini" type="primary">拒绝扣款</button>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="cells__title">房屋信息</view>
+    <view class="cells__group cells__group_after-title">
+        <view class="cell access">
+            <view bindtap="reorderUrl" class="cell__bd">{{order.UnitName}}</view>
+        </view>
+        <view class="cell access">
+            <view bindtap="navAddress" class="cell__bd">地址：{{order.UnitAddress}}</view>
+        </view>
+        <view class="cell" wx:if="{{order.UnitMobile!=null&&order.UnitMobile!=''||order.IsMayiMobile}}">
+            <view class="cell__bd align-center">
+                <button bindtap="cellPhone" plain="false" size="mini" type="primary">电话咨询</button>
+            </view>
+        </view>
+    </view>
+    <view class="cells__title">入住人信息</view>
+    <view class="cells__group cells__group_after-title">
+        <view class="cell ">
+            <view class="cell__bd">
+                <view>姓名：{{order.UserName}}</view>
+                <view>手机：{{order.UserMobile}}</view>
+                <view wx:if="{{order.UserEmail!=null&&order.UserEmail!=''}}">邮箱：{{order.UserEmail}}</view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{order.InsuredList.length>0}}">
+        <view class="cells__title">保险信息</view>
+        <view class="cells__group cells__group_after-title" wx:for="{{order.InsuredList}}" wx:key="insuredID">
+            <view class="cell ">
+                <view class="cell__bd">
+                    <view>被保人:{{item.InsuredUserName}}</view>
+                    <view>{{item.InsuredCardName}}:{{item.InsuredCardNo}}</view>
+                    <view wx:if="{{item.InsurenceNo!=null&&item.InsurenceNo!=''}}">{{item.InsurenceName}}-保单号:{{item.InsurenceNo}}</view>
+                </view>
+                <view class="cell__fd">{{item.InsuredStatusToString}}</view>
+            </view>
+        </view>
+    </block>
+    <view class="rule-group" wx:if="{{order.DateRuleList.length>0}}">
+        <view class="column-title">
+            <text class="text-primary">* </text> 温馨提示：</view>
+        <view class="rule-info">
+            <view wx:for="{{order.DateRuleList}}" wx:key="drID">
+        {{item.DateRule}}
+        <view wx:if="{{item.DataRuleList!=null&&item.DataRuleList.length>0}}" wx:for="{{item.DataRuleList}}" wx:key="drrID">
+          {{item.DateRule}}
+        </view>
+            </view>
+        </view>
+    </view>
+    <view class="button-group">
+        <view class="btn-box" wx:if="{{order.IsShowCancel}}">
+            <button bindtap="cancelOrder" class="button" plain="false" size="default" type="primary">取消订单</button>
+        </view>
+        <view class="btn-box" wx:if="{{order.IsShowDel}}">
+            <button bindtap="deleteOrder" class="button" plain="false" size="default" type="primary">删除订单</button>
+        </view>
+        <view class="btn-box">
+            <button bindtap="reorderUrl" class="button" size="default" type="primary">再次预订</button>
+        </view>
+    </view>
+</scroll-view>
+<modal noCancel bindconfirm="hideReturnCashTip" class="modal" hidden="{{returnCashTip}}">
+    <view>{{order.ReturnCashName}}:¥{{order.ReturnCashToString}}</view>
+    <view>入住完成后的7个工作日内，返现金额将转至您的途家账户，可用于直接订房，也可以提现至您的银行卡。</view>
+</modal>
+<include src="/components/toast/toast.wxml"></include>
+<loading wx:if="{{loadingHidden}}">加载中...</loading>

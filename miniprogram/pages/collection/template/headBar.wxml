@@ -1,0 +1,8 @@
+<view class="collection-head br1">
+    <view bindtap="selectTabBar" class="head-item-box" data-index="0" data-title="收藏房屋">
+        <view class="head-item  {{activeBar==0?'active':''}}">收藏房屋</view>
+    </view>
+    <view bindtap="selectTabBar" class="head-item-box" data-index="1" data-title="浏览记录">
+        <view class="head-item  {{activeBar==1?'active':''}}">浏览记录</view>
+    </view>
+</view>

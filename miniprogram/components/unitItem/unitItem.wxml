@@ -1,0 +1,42 @@
+<template name="com-unit">
+    <view bindtap="goToDetail" class="house-card" data-inTns="{{inTns}}" data-unitId="{{unitId}}">
+        <view class="house-card-top">
+            <image class="house-card-image" mode="aspectFill" src="{{defaultPicUrl}}"></image>
+            <view class="house-card-price">
+                <view class="price-up">
+                    <view wx:if="{{!priceMissingText}}">
+                        <text class="price-final">
+                            <text class="final-price-txt {{disallowBookingTip?'final-price-disallow':''}}">
+                                <text class="price-code">￥</text>{{finalPrice}}</text>
+                            <text class="price-tip">
+                                <text class="{{priceTip.enumPriceTipStyle===1?'price-tip-1':'price-tip-2'}}" wx:if="{{priceTip&&priceTip.upTip}}">{{priceTip.upTip}}</text>
+                            </text>
+                        </text>
+                        <text class="product-price" wx:if="{{!disallowBookingTip&&productPrice!=finalPrice}}">￥{{productPrice}}</text>
+                        <text class="disallow-tip" wx:if="{{disallowBookingTip}}">{{disallowBookingTip}}</text>
+                    </view>
+                    <view class="price-miss" wx:else>{{priceMissingText}}</view>
+                </view>
+                <view class="price-down" style="color:{{priceTip.downTipColour}}" wx:if="{{priceTip&&priceTip.downTip}}">{{priceTip.downTip}}</view>
+            </view>
+            <image class="u-promotion" mode="aspectFit" src="{{promotionPicUrl}}" wx:if="{{promotionPicUrl}}"></image>
+        </view>
+        <view class="house-card-intro">
+            <view class="house-card-tit">
+                <icon class="{{initHouseTag.getHouseLevelTag(unitLevel)}}"></icon>
+                <text class="house-tit" style="margin-right:{{!!logoUrl?'112rpx':'0'}}">{{unitName}}</text>
+            </view>
+            <view class="house-card-info">
+                <text class="{{unitBriefInfo?'h-dot':''}}" wx:if="{{commentOverallScore}}">{{commentOverallScore}}分/{{commentTotalCount}}点评</text>
+                <text class="{{unitInfor?'h-dot':''}}" wx:if="{{unitBriefInfo}}">{{unitBriefInfo}}</text>
+                <text wx:if="{{unitInfor}}">{{unitInfor}}</text>
+            </view>
+            <view class="house-card-tags">
+                <template is="house-tags" data="{{houseTags:houseTags,unitTagsBitValue:unitTagsBitValue}}"></template>
+            </view>
+            <image class="house-card-avatar" mode="aspectFill" src="{{logoUrl}}" wx:if="{{logoUrl}}"></image>
+        </view>
+    </view>
+</template>
+<import src="../unitHouseTag/houseTags/houseTags.wxml"></import>
+<wxs module="initHouseTag" src="../unitHouseTag/houseTags.wxs" />

@@ -1,0 +1,12 @@
+<template name="unit-star">
+    <view class="stars">
+        <image class="star" src="https://nm.tujia.com/static/images/webchatApp/page-unitDetal/star-empty.png" wx:for="{{[1,2,3,4,5]}}"></image>
+        <view class="star-score" style="width:{{unitStar.getStarWidthPer(overall)}}" wx:if="{{overall}}">
+            <image class="star" src="https://nm.tujia.com/static/images/webchatApp/page-unitDetal/star-full.png" wx:for="{{[1,2,3,4,5]}}"></image>
+        </view>
+        <view class="star-score" style="width:{{unitStar.getStarWidthPer(totalScore)}}" wx:if="{{totalScore}}">
+            <image class="star" src="https://nm.tujia.com/static/images/webchatApp/page-unitDetal/star-full.png" wx:for="{{[1,2,3,4,5]}}"></image>
+        </view>
+    </view>
+</template>
+<wxs module="unitStar" src="unitStar.wxs" />

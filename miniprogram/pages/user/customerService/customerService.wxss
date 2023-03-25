@@ -1,0 +1,58 @@
+page {
+    height: auto;
+}
+
+.customer-service {
+    margin: 60rpx 30rpx;
+}
+
+.customer-service__item {
+    margin-bottom: 40rpx;
+    height: 180rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0 30rpx;
+    background: #fff;
+    box-shadow: 0 2rpx 30rpx 0 rgba(0,0,0,0.06);
+    border-radius: 12rpx;
+}
+
+.customer-service__icon {
+    display: block;
+    margin-right: 30rpx;
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.customer-service__tel {
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+}
+
+.customer-service__btn[size="mini"] {
+    display: block;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    height: auto;
+    white-space: nowrap;
+    text-align: center;
+    padding: 16rpx 19rpx;
+    border-radius: 12rpx;
+    color: #ad606a;
+}
+
+.customer-service__dt {
+    font-size: 32rpx;
+    line-height: 32rpx;
+    margin-bottom: 20rpx;
+    color: #333;
+}
+
+.customer-service__dd {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #ad606a;
+}

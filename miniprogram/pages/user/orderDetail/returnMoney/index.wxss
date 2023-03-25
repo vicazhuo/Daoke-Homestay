@@ -1,0 +1,26 @@
+.content {
+    padding: 40rpx;
+    background: #ffffff;
+    height: calc(100% - 42rpx);
+}
+.content::before {
+    border-top: 1px solid #DADADA;
+}
+
+.deposit-title-p {
+    font-size: 28rpx;
+    margin-bottom: 40rpx;
+    color: #666666;
+}
+
+.deposit-title-p text {
+    color: rgb(255, 122, 69);
+}
+
+.deposit-content-p {
+    font-size: 28rpx;
+    line-height: 46rpx;
+    margin-bottom: 20rpx;
+    text-align: left;
+    color: #666666;
+}

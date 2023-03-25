@@ -1,0 +1,290 @@
+.comment-info {
+    background: #fff;
+}
+
+.comment-info .comment-outline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 40rpx;
+    padding: 17rpx 30rpx;
+    border-radius: 12rpx;
+    background: rgba(255, 106, 69, 0.06);
+}
+
+.score-total {
+    display: flex;
+}
+
+.score-total .score {
+    margin-right: 20rpx;
+    font-weight: 400;
+    font-size: 90rpx;
+    line-height: 126rpx;
+    color: #3f4954;
+}
+
+.comment-info .star-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.star-total {
+    margin-top: 6rpx;
+    height: 34rpx;
+}
+
+.comment-info .star-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 78rpx;
+    height: 34rpx;
+    margin-bottom: -6px;
+    font-size: 24rpx;
+    color: #ffffff;
+    background: url('https://pwastatic.tujia.com/static/wechat/tjunitdetail/icon-v3-supergood.png') no-repeat;
+    background-size: 100% 100%;
+    text-indent: 6rpx;
+}
+
+.comment-info .stars {
+    position: relative;
+    margin-top: 6rpx;
+}
+
+.comment-info .stars .star {
+    display: inline-block;
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 6rpx;
+}
+
+.comment-info .stars .star-score {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0%;
+}
+
+.comment-info .total-star .stars {
+    margin-top: -10rpx;
+}
+
+.comment-info .total-star .stars .star {
+    width: 16rpx;
+    height: 16rpx;
+    margin-right: 8rpx;
+}
+
+.comments__pictures {
+    margin-top: 24rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.h60 {
+    height: 60rpx;
+}
+
+.comments__pictures .thumbnails {
+    position: relative;
+    display: block;
+    width: 150rpx;
+    height: 150rpx;
+    font-size: 24rpx;
+    line-height: 120rpx;
+    color: #999;
+    text-align: center;
+    background: rgba(216,216,216,0);
+    margin-right: 20rpx;
+    border: 0;
+}
+
+.comments__pictures .thumbnails image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12rpx;
+}
+
+.comments__pictures .thumbnails .more {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 36rpx;
+    opacity: 0.7;
+    background: #000000;
+    border-radius: 100rpx;
+    right: 10rpx;
+    bottom: 10rpx;
+    font-weight: 400;
+    font-size: 24rpx;
+    color: #ffffff;
+    letter-spacing: 0;
+}
+
+.more .len {
+    margin-right: 10rpx;
+}
+
+.comments__pictures .thumbnails .more image {
+    width: 24rpx;
+    height: 24rpx;
+    margin: 0 10rpx;
+}
+
+.comment-group {
+    display: flex;
+    align-items: center;
+}
+
+.comment-group .photos {
+    text-align: right;
+}
+
+.comment-group .comment {
+    text-align: right;
+    color: #333;
+    font-size: 28rpx;
+}
+
+.comment-group .comment text {
+    margin-left: -4px;
+    color: #999999;
+}
+
+.comment-group .arrowleft {
+    width: 18rpx;
+    height: 18rpx;
+    border-top: 1px solid #ff9645;
+    border-right: 1px solid #ff9645;
+    transform: rotate(45deg);
+}
+
+.comment-list .house-detail__comment-preview {
+    padding: 60rpx 40rpx 0 40rpx;
+}
+
+.preview-detail .user-info {
+    display: flex;
+    justify-content: space-between;
+    height: 90rpx;
+    margin-bottom: 24rpx;
+}
+
+.preview-detail .user-info .user-left {
+    display: flex;
+}
+
+.preview-detail .user-info .user-left .image-container {
+    margin-right: 20rpx;
+}
+
+.preview-detail .user-info .user-left .user-name-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-name-time .user-name {
+    color: #333333;
+    font-size: 32rpx;
+    margin-bottom: 6rpx;
+}
+
+.user-name-time .user-time {
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.comment-list-score {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.comment-list-score .totalscore {
+    font-weight: 400;
+    font-size: 28rpx;
+    color: #3f4954;
+    margin-top: 20rpx;
+    margin-right: 6rpx;
+}
+
+.preview-detail .user-left .image-container image {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 100%;
+}
+
+.y-font {
+    color: #fd8238;
+}
+
+.y-font span {
+    margin-right: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.preview-content .detail-text {
+    font-size: 28rpx;
+    color: #666666;
+    text-align: justify;
+    line-height: 40rpx;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+
+.userImg {
+    position: relative;
+}
+
+.userImg01 {
+    position: relative;
+    z-index: 5;
+}
+
+.userImg02 {
+    position: relative;
+    z-index: 4;
+}
+
+.userImg03 {
+    position: relative;
+    z-index: 3;
+}
+
+.userImg04 {
+    position: relative;
+    z-index: 2;
+}
+
+.userImg05 {
+    position: relative;
+    z-index: 1;
+}
+
+.pb60 {
+    padding-bottom: 60rpx;
+}
+
+.guodu-image {
+    height: 60rpx;
+    background-image: linear-gradient(-180deg,#f7f7f7 0%,rgba(255,255,255,0) 100%);
+}
+
+.comment-footer {
+    margin-bottom: 20rpx;
+    box-shadow: 0 1px 3rpx 0 rgba(0,0,0,0.06);
+}

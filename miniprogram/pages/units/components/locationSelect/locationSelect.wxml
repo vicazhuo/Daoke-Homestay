@@ -1,0 +1,18 @@
+<view class="page-top-border"></view>
+<view class="menu-selector ">
+    <scroll-view class="menu-selector__hd scroll-y" scrollY="true">
+        <view hover bindtap="firstSubItemsSelected" class="menu-selector__bd_item {{item.selected?'menu-selector__hd_item is-selected':'menu-selector__hd_item'}}" data-index="{{index}}" data-title="{{item.label}}" wx:for="{{firstSubItems}}" wx:key="label">{{item.label}}</view>
+    </scroll-view>
+    <scroll-view class="menu-selector__bd scroll-y" hidden="{{!secondSubItems}}" scrollTop="{{secondItemScrollTop}}" scrollY="true">
+        <view hover bindtap="secondSubItemsSelected" class="{{item.selected?'menu-selector__bd_item is-selected':'menu-selector__bd_item'}}" data-index="{{index}}" data-title="{{item.label}}" wx:for="{{secondSubItems}}" wx:key="label">{{item.label}}</view>
+    </scroll-view>
+    <scroll-view class="menu-selector__fd scroll-y" scrollTop="{{lastItemScrollTop}}" scrollY="true">
+        <view hover bindtap="itemsSelected" class="{{isNoLocationSelected?'menu-selector__fd_item is-selected':'menu-selector__fd_item'}}" data-index="{{-1}}">不限<icon class="is-selected__icon" color="#d8646f" size="16" type="success_no_circle" wx:if="{{isNoLocationSelected}}"></icon>
+        </view>
+        <view hover bindtap="itemsSelected" class="{{item.selected?'menu-selector__fd_item is-selected':'menu-selector__fd_item'}}" data-index="{{index}}" data-title="{{item.label}}" wx:for="{{items}}" wx:key="label">
+            <view>{{item.label}}</view>
+            <view class="percent-user" wx:if="{{item.percentageUser}}">{{item.percentageUser}}</view>
+            <icon class="is-selected__icon" color="#d8646f" size="16" type="success_no_circle" wx:if="{{item.selected}}"></icon>
+        </view>
+    </scroll-view>
+</view>

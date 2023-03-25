@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "全部订单",
+    "usingComponents": {
+        "component-popup": "../components/popup/popup",
+        "list": "../components/list/list"
+    },
+    "enablePullDownRefresh": true
+}

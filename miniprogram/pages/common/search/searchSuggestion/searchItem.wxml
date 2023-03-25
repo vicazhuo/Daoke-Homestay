@@ -1,0 +1,54 @@
+<template name="child-suggests">
+    <view wx:for="{{childSuggests}}" wx:key="{{index}}">
+        <template is="common-item" data="{{item:item,keyword:keyword,type:'child',isAliApp:isAliApp}}"></template>
+    </view>
+</template>
+<template name="child-suggest-item">
+    <view wx:for="{{childSuggestGroups}}" wx:key="{{index}}">
+        <template is="common-item" data="{{item:item,keyword:keyword,isAliApp:isAliApp}}"></template>
+    </view>
+</template>
+<template name="common-item">
+    <view bindtap="clickDest" class="s-search-item {{item.childSuggestGroups.length>0||item.childSuggests.length>0?'s-search-item-line':''}}" data-item="{{item}}" style="padding:{{!item.isChild?'30rpx 180rpx 30rpx 82rpx':'0 180rpx 20rpx 82rpx'}};padding-right:{{item.unitPrice||item.moreVisible?'180rpx':'80rpx'}};margin-top:{{item.isChildGroups?'-20rpx':'0'}}">
+        <icon class="s-search-icon {{item.iconType?'s-search-icon-'+item.iconType:''}}" wx:if="{{!item.isChild}}"></icon>
+        <view class="s-search-info {{item.inline?'s-inline':''}} {{type=='child'?'s-search-info-child':''}}">
+            <view class="s-search-title" style="padding-right:{{item.hot?'46rpx':'0'}}">
+                <view class="s-name {{isAliApp?'s-name-ali':'s-name-wx'}} {{type=='child'?'s-hot-name':''}}">
+                    <text class="s-name-box">
+                        <text class="{{handleSearchSuggestion.textTruncate(item,keyword)?'rich-text-highligth':''}}" wx:for="{{item.nameArr}}" wx:key="{{index}}">{{item}}</text>
+                    </text>
+                    <text class="s-search-desc" wx:if="{{item.description&&!item.isChild&&item.inline}}">
+                        <text class="{{handleSearchSuggestion.textTruncate(item,keyword)?'rich-text-highligth':''}}" wx:for="{{item.descriptionArr}}" wx:key="{{index}}">{{item}}</text>
+                    </text>
+                    <text class="s-hot" wx:if="{{item.hot}}"></text>
+                </view>
+                <text class="s-search-desc {{!item.inline?'s-desc-noline':''}}" wx:if="{{item.description&&!item.isChild&&!item.inline}}">
+                    <text class="{{handleSearchSuggestion.textTruncate(item,keyword)?'rich-text-highligth':''}}" wx:for="{{item.descriptionArr}}" wx:key="{{index}}">{{item}}</text>
+                </text>
+            </view>
+        </view>
+        <view class="s-search-right">
+            <view class="s-search-price" wx:if="{{item.unitPrice>0}}">
+        ￥<text class="price-num">{{item.unitPrice}}</text>起
+      </view>
+            <view class="s-search-more" wx:if="{{item.moreVisible}}">更多</view>
+        </view>
+    </view>
+    <view class="s-suggest-item" wx:if="{{item.suggests}}">
+        <view class="suggest-txt" wx:for="{{item.suggests}}" wx:key="{{index}}">
+            <text bindtap="clickDest" class="sug-btn-name" data-item="{{item}}">{{item.name}}</text>
+        </view>
+    </view>
+</template>
+<template name="search-item">
+    <view class="s-search-item-line">
+        <template is="common-item" data="{{item:item,keyword:keyword,isAliApp:isAliApp}}"></template>
+        <view style="padding:20rpx 0" wx:if="{{item.childSuggestGroups.length>0}}">
+            <template is="child-suggest-item" data="{{...item,keyword:keyword,isAliApp:isAliApp}}"></template>
+        </view>
+        <view style="padding:30rpx 0 10rpx 0" wx:if="{{item.childSuggests.length>0}}">
+            <template is="child-suggests" data="{{...item,keyword:keyword,isAliApp:isAliApp}}"></template>
+        </view>
+    </view>
+</template>
+<wxs module="handleSearchSuggestion" src="searchSuggestion.wxs" />

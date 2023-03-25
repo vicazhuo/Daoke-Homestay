@@ -1,0 +1,270 @@
+@import "/common/wxss/main.wxss";
+@import "/common/wxss/icon.wxss";
+
+/* 优惠劵 */
+.scroll-height{
+  max-height: 680rpx;
+}
+.conpon-item .title {
+  text-align: left;
+  color: #999;
+}
+
+.conpon-item  .mt {
+  margin-top: 20px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #fff;
+  box-shadow: 0 15rpx 30rpx -15rpx rgba(184, 111, 98, 0.2);
+}
+
+.notice {
+  width: 28rpx;
+  height: 28rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #ec5814;
+  border-radius: 50%;
+  position: absolute;
+  float: left;
+  top: 5rpx;
+  font-size: 28rpx;
+  right: 30rpx;
+  line-height: 30rpx;
+}
+
+.navbar {
+  flex: none;
+  display: flex;
+  background: #fff;
+  margin-top: 0rpx;
+  z-index: 50;
+  text-align: center;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+}
+
+.navitem {
+  position: relative;
+  width: 50px;
+  margin: 0 auto;
+}
+
+.navbar .item {
+  flex: auto;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #666;
+  font-family: Microsoft YaHei;
+}
+
+.navbar .navitem.active {
+  color: #ad606a;
+  font-size: 28rpx;
+  font-family: Microsoft YaHei;
+}
+
+.navbar .navitem.active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: #ad606a;
+  font-size: 24rpx;
+  color: #666;
+  font-family: Microsoft YaHei;
+}
+
+.infogroup {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 50px;
+}
+
+.topinfo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.topinfo.style01 {
+  background: linear-gradient(to right, #fcefe5, #ffe4cf);
+}
+
+.topinfo.style02 {
+  background: linear-gradient(to right, #fcebe5, #ffd2d2);
+}
+
+.topinfo.style03 {
+  background: linear-gradient(to right, #f2f2f2, #eee);
+}
+
+.outdate .moneycont {
+  color: #999;
+}
+
+.outdate .titcont {
+  color: #999;
+}
+
+.outdate .discount {
+  color: #999;
+}
+
+.outdate .limit {
+  color: #dadada;
+}
+
+.lftinfo {
+  flex: 0.35;
+}
+
+.moneycont {
+  display: inline-block;
+  align-items: center;
+  font-size: 80rpx;
+  color: #ad606a;
+}
+
+.moneytype {
+  font-size: 44rpx;
+}
+
+.rgtinfo {
+  flex: 0.45;
+  padding: 0 20rpx;
+}
+
+.longqu {
+  flex: 0.2;
+  text-align: center;
+  height: 130rpx;
+  position: relative;
+}
+
+.but {
+  width: 88%;
+  height: 40rpx;
+  position: absolute;
+  right: 0;
+  top: 45%;
+  font-size: 23rpx;
+  color: #ad606a;
+  border-radius: 20rpx;
+  line-height: 40rpx;
+  background: linear-gradient(to right, rgb(233, 194, 164), rgb(163, 221, 163));
+}
+
+.active {
+  background: #dadada;
+  color: #fcf8f8;
+}
+
+.titcont {
+  text-align: left;
+  font-weight: bold;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.discount {
+  text-align: left;
+  margin-top: 5px;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.date {
+  margin-top: 5px;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.bottominfo {
+  position: relative;
+  padding-top: 22rpx;
+  padding-bottom: 15px;
+  padding-left: 32rpx;
+  padding-right: 45rpx;
+  width: 95%;
+  text-align: left;
+}
+
+.oneline {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  color: #dadada;
+  -webkit-line-clamp: 1;
+}
+
+.limit {
+  height: 26rpx;
+  font-size: 22rpx;
+  color: #999;
+  word-break: break-all;
+}
+
+.limitinfo {
+  display: block;
+  width: 100%;
+}
+
+.downarrow {
+  display: block;
+  position: absolute;
+  right: 0rpx;
+  top: 20rpx;
+  transition: all 0.35s ease;
+  margin-left: 3px;
+  width: 18rpx;
+  height: 18rpx;
+  border: 2rpx solid #999;
+  border-color: #999 #999 transparent transparent;
+  transform: rotate(135deg);
+}
+
+.uparrow {
+  display: block;
+  position: absolute;
+  right: 0rpx;
+  top: 40rpx;
+  margin-left: 3px;
+  width: 18rpx;
+  height: 18rpx;
+  border: 2rpx solid #999;
+  border-color: #999 #999 transparent transparent;
+  transform: rotate(-45deg);
+}
+
+.nothing image {
+  margin-top: 140rpx;
+  width: 640rpx;
+  height: 480rpx;
+}
+
+.nothing view {
+  text-align: center;
+  margin-top: 33rpx;
+}
+
+.backindex {
+  position: fixed;
+  right: 20rpx;
+  bottom: 60rpx;
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+  z-index: 9;
+  padding: 21rpx;
+}
+
+/* 优惠劵结束 */

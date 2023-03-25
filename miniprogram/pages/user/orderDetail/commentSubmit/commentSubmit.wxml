@@ -1,0 +1,70 @@
+<view class="comment">
+  <view class="top">
+    <view class="tit">入住评价</view>
+    <view class="sanitation">你对房屋卫生满意吗？</view>
+    <view class="sanitationScore">
+      <image bindtap="changeSanitationScore" data-index="{{index+1}}" src="/common/images/order/star_big_light.png" wx:for="{{sanitationScore}}" wx:key="{{index}}"></image>
+      <image bindtap="changeSanitationScore" data-index="{{index+1+sanitationScore}}" src="/common/images/order/star_big_die.png" wx:for="{{5-sanitationScore}}" wx:key="{{index}}"></image>
+      <text>{{meaning[sanitationScore]}}</text>
+    </view>
+  </view>
+  <view class="btn-com" wx:if="{{sanitationScore}}">
+    <view class="list">
+      <view class="list-head">交通位置</view>
+      <image bindtap="changeTrafficScore" data-index="{{index+1}}" src="/common/images/order/star_sm_light.png" wx:for="{{trafficScore}}" wx:key="{{index}}"></image>
+      <image bindtap="changeTrafficScore" data-index="{{index+1+trafficScore}}" src="/common/images/order/star_sm_die.png" wx:for="{{5-trafficScore}}" wx:key="{{index}}"></image>
+      <text>{{meaning[trafficScore]}}</text>
+    </view>
+    <view class="list">
+      <view class="list-head">室内设施</view>
+      <image bindtap="changeFacilityScore" data-index="{{index+1}}" src="/common/images/order/star_sm_light.png" wx:for="{{facilityScore}}" wx:key="{{index}}"></image>
+      <image bindtap="changeFacilityScore" data-index="{{index+1+facilityScore}}" src="/common/images/order/star_sm_die.png" wx:for="{{5-facilityScore}}" wx:key="{{index}}"></image>
+      <text>{{meaning[facilityScore]}}</text>
+    </view>
+    <view class="list">
+      <view class="list-head">周边环境</view>
+      <image bindtap="changeEnvironmentScore" data-index="{{index+1}}" src="/common/images/order/star_sm_light.png" wx:for="{{environmentScore}}" wx:key="{{index}}"></image>
+      <image bindtap="changeEnvironmentScore" data-index="{{index+1+environmentScore}}" src="/common/images/order/star_sm_die.png" wx:for="{{5-environmentScore}}" wx:key="{{index}}"></image>
+      <text>{{meaning[environmentScore]}}</text>
+    </view>
+    <form bindsubmit="formSubmit">
+      <textarea maxlength="800" name="content" placeholder="晒一下你的入住体验吧，大家都很想知道～" placeholderStyle="color: #B4B9BF;"></textarea>
+      <view class="people">
+        <image src="/common/images/order/icon_xxgj_logo.png"></image>
+        <text>{{onlineManagerName}} 专属管家</text>
+      </view>
+      <view class="commentMe">评价一下我的服务吧～</view>
+      <view class="commentMeScore">
+        <view bindtap="changeServiceScore" class="detail" data-index="1">
+          <image src="/common/images/order/evaluate_dissatisfied_sel.png" wx:if="{{serviceScore==1}}"></image>
+          <image src="/common/images/order/evaluate_dissatisfied_unsel.png" wx:else></image>
+          <text class="{{serviceScore==1?'sel':''}}">不满</text>
+        </view>
+        <view bindtap="changeServiceScore" class="detail" data-index="2">
+          <image src="/common/images/order/evaluate_spit_sel.png" wx:if="{{serviceScore==2}}"></image>
+          <image src="/common/images/order/evaluate_spit_unsel.png" wx:else></image>
+          <text class="{{serviceScore==2?'sel':''}}">吐槽</text>
+        </view>
+        <view bindtap="changeServiceScore" class="detail" data-index="3">
+          <image src="/common/images/order/evaluate_common_sel.png" wx:if="{{serviceScore==3}}"></image>
+          <image src="/common/images/order/evaluate_common_unsel.png" wx:else></image>
+          <text class="{{serviceScore==3?'sel':''}}">一般</text>
+        </view>
+        <view bindtap="changeServiceScore" class="detail" data-index="4">
+          <image src="/common/images/order/evaluate_statisfied_sel.png" wx:if="{{serviceScore==4}}"></image>
+          <image src="/common/images/order/evaluate_statisfied_unsel.png" wx:else></image>
+          <text class="{{serviceScore==4?'sel':''}}">满意</text>
+        </view>
+        <view bindtap="changeServiceScore" class="detail" data-index="5">
+          <image src="/common/images/order/evaluate_verygood_sel.png" wx:if="{{serviceScore==5}}"></image>
+          <image src="/common/images/order/evaluate_verygood_unsel.png" wx:else></image>
+          <text class="{{serviceScore==5?'sel':''}}">超赞</text>
+        </view>
+      </view>
+      <view class="h-null"></view>
+      <view class="btm-btn">
+        <button class="sel" formType="submit">提交评价</button>
+      </view>
+    </form>
+  </view>
+</view>

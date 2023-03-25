@@ -1,0 +1,11 @@
+<popup isPopupShow="{{isShow}}">
+    <view class="popup-background">
+        <view class="popup-text">
+            <view class="p-text-c" wx:for="{{popupTextList}}" wx:key="index">{{item}}</view>
+        </view>
+        <view class="popup-btns br1_top">
+            <button bindtap="cancel" class="button br1">{{cancelText}}</button>
+            <button bindtap="ok" class="button btn-ok br1">{{okText}}</button>
+        </view>
+    </view>
+</popup>

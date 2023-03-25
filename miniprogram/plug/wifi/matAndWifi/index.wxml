@@ -1,0 +1,58 @@
+<view class="g-wrapper">
+    <view class="header">
+        <view class="header-txt">
+            <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_ok_icon.png"></image>
+            <text>房客扫码连WiFi，房东轻松赚上万奖励</text>
+        </view>
+        <view class="header-txt">
+            <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_ok_icon.png"></image>
+            <text>途家台卡免费送，方便快捷又省心</text>
+        </view>
+    </view>
+    <view class="main">
+        <view class="navbar">
+            <view bindtap="navbarTap" class="navbaritem" data-idx="{{index}}" wx:for="{{navbar}}" wx:key="unique">
+                <view class="navitem {{currentTab==index?'active':''}}">{{item}}</view>
+                <image class="free" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_free_icon.png" wx:if="{{index==0}}"></image>
+            </view>
+        </view>
+        <view class="infogroup" hidden="{{currentTab!==0}}" id="one">
+            <view class="mattertab">
+                <view class="step">
+                    <image class="line" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_tit_icon.png"></image>
+                    <view class="text">免费领取台卡 <image class="arrow" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_arrow_icon.png"></image> 途家寄送</view>
+                </view>
+                <view class="intro">
+                    <view class="intro-tit">步骤说明</view>
+                    <view class="intro-txt txt01">
+                        <text>1</text>选择门店及房屋，输入申请数量</view>
+                    <view class="intro-txt txt02">
+                        <text>2</text>填入您的收件地址及收件人信息，点击“提交”完成申请</view>
+                    <view class="intro-txt txt03">
+                        <text>3</text>途家即为您免费寄送台卡，收到台卡后，请按照说明手册扫码进行激活</view>
+                </view>
+                <view bindtap="goApplyMatter" class="applybtn">免费领取台卡</view>
+            </view>
+        </view>
+        <view class="infogroup outdate" hidden="{{currentTab!==1}}" id="one">
+            <view class="mattertab">
+                <view class="step">
+                    <image class="line" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_tit_icon.png"></image>
+                    <view class="text">生成二维码  <image class="arrow" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_arrow_icon.png"></image> 自行打印并粘贴</view>
+                </view>
+                <view class="intro">
+                    <view class="intro-tit">步骤说明</view>
+                    <view class="intro-txt txt01">
+                        <text>1</text>选择门店及房屋，填入WiFi名称及密码；</view>
+                    <view class="intro-txt txt02">
+                        <text>2</text>点击“提交”即可生成二维码；</view>
+                    <view class="intro-txt txt03">
+                        <text>3</text>将二维码保存至相册，即可用于打印；</view>
+                    <view class="intro-txt txt04">
+                        <text>4</text>将二维码粘贴在房内醒目位置，并推荐房客扫码连WiFi。</view>
+                </view>
+                <view bindtap="goMakeQR" class="applybtn">自行制作二维码</view>
+            </view>
+        </view>
+    </view>
+</view>

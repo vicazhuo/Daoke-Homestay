@@ -1,0 +1,14 @@
+<view class="wrap" style="background-image:url('{{PWA_STATIC_TUJIA_HOST}}/static/wechat/gather/share_big_bac.jpg') ;">
+    <form reportSubmit bindsubmit="formBtn">
+        <view class="popbg">
+            <image class="tjlogo-image" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/gather/pin_tjlogo1.png"></image>
+            <view class="btns">
+                <button bindtap="toFriendShare" class="shareToFriendsCircle" formType="submit" type="primary">
+            保存图片分享
+          </button>
+                <button class="shareToFriends" formType="submit" openType="share" type="primary">分享给好友</button>
+            </view>
+        </view>
+    </form>
+</view>
+<canvas canvasId="mycanvas2" height="1800" hidden="{{true}}" style="width: {{canvasWidth}}rpx; height: {{canvasHeight}}rpx;" width="1500"></canvas>

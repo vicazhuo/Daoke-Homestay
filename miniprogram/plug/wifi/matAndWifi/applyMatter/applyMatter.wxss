@@ -1,0 +1,136 @@
+.g-wrapper .haveApplyCount {
+    height: 46rpx;
+    text-align: center;
+    line-height: 46rpx;
+    font-size: 24rpx;
+    color: #FF9645;
+    background: #F7ECE4;
+}
+
+.formwrap {
+    margin-top: 20rpx;
+    background: #fff;
+}
+
+button[type="primary"] {
+    width: 80%;
+}
+
+button[type="primary"].btn {
+    margin-top: 60rpx;
+    width: 90%;
+    height: 96rpx;
+    color: #fff;
+    line-height: 96rpx;
+    text-align: center;
+    background: #DADADA;
+    border-radius: 12rpx;
+    border: 0;
+}
+
+button[type="primary"].btn-hover {
+    margin-top: 60rpx;
+    width: 90%;
+    height: 96rpx;
+    color: #fff;
+    line-height: 96rpx;
+    text-align: center;
+    border-radius: 12rpx;
+    border: 0;
+    background: #FF9645;
+}
+
+.formitem {
+    display: flex;
+    margin-left: 40rpx;
+    height: 96rpx;
+    line-height: 96rpx;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.formitem .formtit {
+    flex: 0.3;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.formitem .storelist {
+    position: relative;
+    flex: 0.68;
+    display: inline-block;
+}
+
+.formitem .spect-l {
+    width: 30%;
+}
+
+.formitem .spect-r {
+    width: 70%;
+}
+
+.formitem .select {
+    width: 85%;
+    height: 96rpx;
+    overflow: hidden;
+    color: #dadada;
+    text-align: right;
+}
+
+.formitem .picker {
+    width: 85%;
+    height: 80rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.formitem .storelist input {
+    display: inline-block;
+    line-height: 96rpx;
+    width: 95%;
+    height: 96rpx;
+    text-align: right;
+}
+
+.formitem .storelist input.hotelnameipt {
+    width: 93%;
+}
+
+.formitem .storelist input.hotelnameipt.havearrow {
+    width: 86%;
+}
+
+.formitem .storelist .placeholder {
+    color: #dadada;
+}
+
+.formitem .storelist input.number {
+    width: 86%;
+}
+
+.formitem .storelist .arrow {
+    position: absolute;
+    top: 39rpx;
+    right: 36rpx;
+    display: inline-block;
+    margin-left: 3px;
+    width: 16rpx;
+    height: 18rpx;
+    border: 2rpx solid #ccc;
+    border-color: #ccc #ccc transparent transparent;
+    transform: rotate(45deg);
+}
+
+.formitem .storelist .text {
+    position: absolute;
+    right: 7%;
+    top: 0;
+    text-indent: 20rpx;
+}
+
+.tips {
+    padding-top: 20rpx;
+    padding-left: 40rpx;
+    color: #999;
+}

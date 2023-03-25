@@ -1,0 +1,71 @@
+.header-swiper-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.header-swiper {
+    width: 100%;
+    height: 500rpx;
+}
+
+.header-swiper-item {
+    width: 100%;
+    height: 100%;
+}
+
+.item-image {
+    width: 100%;
+    height: 100%;
+}
+
+.tj-slogn-text {
+    font-size: 36rpx;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.header-bottom-bar {
+    position: absolute;
+    bottom: 150rpx;
+    width: 100%;
+    padding: 0 40rpx;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.header-swiper-dots {
+    display: inline-flex;
+}
+
+.swiper-dots-item {
+    width: 22rpx;
+    height: 8rpx;
+    opacity: 0.4;
+    background: #fff;
+    margin: 0 6rpx;
+    border-radius: 10%;
+    transition: opacity .3s;
+}
+
+.swiper-dots-item.active {
+    opacity: 1;
+}
+
+.header-bottom-bg {
+    width: 120%;
+    left: 50%;
+    margin-left: -60%;
+    height: 200rpx;
+    background: #fff;
+    position: absolute;
+    bottom: -140rpx;
+    border-radius: 50%;
+}
+
+.item-bg {
+    width: 100%;
+    height: 100%;
+}

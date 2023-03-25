@@ -1,0 +1,16 @@
+<view class="image__verify__code" hidden="{{!isShow}}">
+    <form bindsubmit="formSubmit" id="form" reportSubmit="true">
+        <view class="verify__box">
+            <view class="img">
+                <image mode="aspectFill" src="{{picVerCodeUrl}}"></image>
+                <button bindtap="_getPicVerCode" class="change__btn" id="picVerBtn" size="mini" type="default">换一个</button>
+            </view>
+            <view class="input">
+                <input class="verify_code_input" name="picVerCode" placeholder="请输入验证码" value="{{verifyCode}}"></input>
+            </view>
+            <view class="sure__btn">
+                <button formType="submit" id="picVerSureBtn" type="default">确定</button>
+            </view>
+        </view>
+    </form>
+</view>

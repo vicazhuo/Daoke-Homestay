@@ -1,0 +1,52 @@
+.null-content-component {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60rpx;
+}
+
+.null-content-icon {
+    width: 640rpx;
+    height: 480rpx;
+}
+
+.null-content-title {
+    font-size: 36rpx;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30rpx;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.null-content-icon {
+    margin-bottom: 90rpx;
+}
+
+.null-content-text {
+    text-align: center;
+    font-size: 28rpx;
+    line-height: 1;
+    color: #666;
+    font-weight: 300;
+}
+
+.to-tj-btn {
+    background: #d8646f;
+    box-shadow: 0 10rpx 20rpx 0 rgba(255, 69, 69, 0.2);
+    border-radius: 80rpx;
+    height: 80rpx;
+    width: 346rpx;
+    display: flex;
+    color: #fff;
+    font-size: 32rpx;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40rpx;
+}
+
+.null-content-text-box {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+}

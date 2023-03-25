@@ -1,0 +1,34 @@
+.book-module {
+    background: #fff;
+    box-shadow: 0 1px 3rpx 0 rgba(0,0,0,0.06);
+    margin-bottom: 20rpx;
+    box-sizing: border-box;
+}
+
+.title-help-icon {
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: 10rpx;
+}
+
+.booking-form-radio {
+    width: 30rpx!important;
+}
+
+.tj-score-text {
+    vertical-align: middle;
+    font-size: 28rpx;
+    color: #333;
+    margin-right: 10rpx;
+}
+
+.discount-tip-text {
+    font-size: 24rpx;
+    color: #f66;
+    line-height: 1;
+    margin-top: 10rpx;
+}
+
+.tj-radio-box {
+    display: inline-block;
+}

@@ -1,0 +1,39 @@
+<view class="wrapper">
+    <view class="content">
+        <view class="title">
+            <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_err_icon.png"></image>
+      Wi-Fi连接失败
+    </view>
+        <view class="text" wx:if="{{noIosVernLow}}">{{failText}}</view>
+        <view class="text">请复制密码手动连接</view>
+        <view class="panel">
+            <view class="item">
+        Wi-Fi名称：
+        <text>{{wifiListObj.SSID}}</text>
+            </view>
+            <view class="item">
+        Wi-Fi密码：
+        <text wx:if="{{wifiListObj.password}}">{{wifiListObj.password}}</text>
+                <text wx:else>无需密码</text>
+            </view>
+            <form reportSubmit bindsubmit="formBtn">
+                <button bindtap="copyText" class="copy" data-param="{{wifiListObj.password}}" formType="submit">复制密码</button>
+            </form>
+        </view>
+        <view wx:if="{{isLogin&&redPacketAmount>0}}">
+            <component-redpacket money="{{redPacketAmount}}" size="SMALL"></component-redpacket>
+        </view>
+        <view class="redbagTip" wx:if="{{!isLogin}}">
+            <image class="redpacket-small-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/redpacket_small.png"></image>
+    新用户注册，即得<text>{{newUserRedpacketAmount}}</text>元红包</view>
+        <view class="loginstyle" wx:if="{{!isLogin}}">
+            <component-login bindloginSucess="loginSucess" ifWiFi="{{true}}" inviterId="{{inviterId}}" inviterType="{{inviterType}}" wifiId="{{wifiId}}"></component-login>
+        </view>
+        <view class="official">
+            <official-account></official-account>
+        </view>
+        <view class="tujia-slogan-text">
+            <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_text_icon.png"></image>
+        </view>
+    </view>
+</view>

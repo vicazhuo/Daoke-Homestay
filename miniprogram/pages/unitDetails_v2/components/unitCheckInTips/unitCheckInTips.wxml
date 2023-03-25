@@ -1,0 +1,26 @@
+<view class="checkin-notice-wrapper">
+    <view class="checkin-title">入住须知</view>
+    <view class="checkin-content">
+        <view class="{{!item.checkInRuleFloat?'inOrOut':'reception'}} br1" wx:for="{{checkInRules}}" wx:key="{{index}}">
+            <view class="title" wx:if="{{!item.checkInRuleFloat}}">{{item.title}}</view>
+            <view class="time-list" wx:if="{{!item.checkInRuleFloat}}">
+                <view class="time" wx:for="{{item.items}}" wx:for-index="innerIndex" wx:for-item="innerItem" wx:key="{{innerIndex}}">
+                    {{innerItem.introduction}}
+                </view>
+            </view>
+            <view class="" wx:else>
+                <view class="title mb18 mt24">{{item.title}}</view>
+                <view class="reception-list">
+                    <view class="recetption-alone {{innerItem.isDeleted?'disabled':''}}" wx:for="{{item.items}}" wx:for-index="innerIndex" wx:for-item="innerItem" wx:key="{{innerIndex}}">
+                        <view class="icon {{innerItem.isDeleted?'disabled-icon':''}}">
+                            <view class="image-icon">
+                                <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/{{innerItem.isDeleted?'icon-v3-close.png':'icon-v3-right1.png'}}"></image>
+                            </view>
+                        </view>
+                        <view class="name ">{{innerItem.introduction}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,35 @@
+.popup-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,.7);
+    opacity: 0;
+    transition: opacity .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.popup-panel-anim-down-init {
+    transition: all .3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-400px);
+}
+
+.popup-panel-anim-down {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.popup-panel-anim-scale-init {
+    transition: all .2s ease-in-out;
+    transform: scale(1.2);
+}
+
+.popup-panel-anim-scale {
+    transform: scale(1);
+    opacity: 1;
+}

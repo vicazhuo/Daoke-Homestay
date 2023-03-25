@@ -1,0 +1,6 @@
+<view class="cells__group sort-select">
+    <view class="menu-selector br1_top"></view>
+    <view hover bindtap="itemSelected" class="{{item.selected?'sort-select__item cell is-selected':'sort-select__item cell'}} item-bar" data-index="{{index}}" data-title="{{item.label}}" wx:if="{{index!==5}}" wx:for="{{conditions}}" wx:key="value">{{item.label}}
+        <icon class="is-selected__icon" color="#d8646f" size="16" type="success_no_circle" wx:if="{{item.selected}}"></icon>
+    </view>
+</view>

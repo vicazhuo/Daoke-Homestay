@@ -1,0 +1,3 @@
+<view>
+    <login bindloginSucess="loginSucess" ifWiFi="{{false}}" inviterId="{{inviterId}}" inviterType="{{inviterType}}" wifiId="{{wifiId}}"></login>
+</view>

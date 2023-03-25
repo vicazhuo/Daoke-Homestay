@@ -1,0 +1,143 @@
+@import "../../../../common/wxss/base.wxss";
+
+.iconfont {
+    font-family: 'iconfont'!important;
+    font-size: 38rpx;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.service-wrapper {
+    padding: 72rpx 40rpx 60rpx 40rpx;
+}
+
+.service-title-container {
+    margin-bottom: 35rpx;
+}
+
+.service-title-container .service-title {
+    margin-bottom: 8rpx;
+    font-weight: 400;
+    font-size: 40rpx;
+    line-height: 56rpx;
+    color: #333333;
+}
+
+.service-title-container .service-title-desc {
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.services-container {
+    padding: 10rpx 40rpx 54rpx 40rpx;
+    box-shadow: 0 2rpx 60rpx 5rpx rgba(0,0,0,0.07);
+    border-radius: 12rpx;
+    background: #ffffff;
+}
+
+.services-container .service {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 48rpx;
+    padding: 0 0 43rpx 0;
+}
+
+.services-container .service::before {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.service .service-title {
+    width: 130rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.service .service-title .service-icon {
+    display: flex;
+    margin-left: 30rpx;
+}
+
+.service .service-title .service-icon image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.service .service-title .service-name {
+    margin-top: 6rpx;
+    font-weight: 400;
+    font-size: 24rpx;
+    color: #333333;
+    width: 130rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.service .service-facility {
+    flex: 1;
+    overflow: hidden;
+}
+
+.service .service-facility .facility {
+    margin-left: 100rpx;
+    position: relative;
+    display: flex;
+    align-items: center;
+    float: left;
+}
+
+.service-facility .facility .facility-icon {
+    width: 24rpx;
+    height: 24rpx;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin-right: 6rpx;
+}
+
+.facility .facility-icon image {
+    width: 24rpx;
+    height: 24rpx;
+}
+
+.facility .facility-name {
+    width: 96rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 24rpx;
+    color: #666666;
+}
+
+.facility.disabled .facility-name {
+    font-size: 24rpx;
+    color: #c2c2c2;
+}
+
+.see-more-fac {
+    padding-top: 34rpx;
+    font-size: 28rpx;
+    color: #d7616d;
+}
+
+.mb10 {
+    margin-bottom: 10rpx;
+}
+
+.br1::before {
+    width: 200%;
+    height: 200%;
+    transform: scale(.5);
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+}
+
+.br1 {
+    position: relative;
+}

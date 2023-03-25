@@ -1,0 +1,34 @@
+<top-screen isClose isNavBar bindcloseEvent="showPricePop" isPopupShow="{{isShowPopup}}">
+  <view class="price-detail-wrapper" wx:if="{{showPopType==1}}">
+    <view class="price-detail-title">
+      <view class="title">线上支付</view>
+      <view class="num">¥ {{priceDetail.needPayAmount}}</view>
+    </view>
+    <view class="f-border-bottom-line-gray"></view>
+    <view class="price-list-wrapper">
+      <view class="price-list-alone  mt44" wx:for="{{priceDetail.items||[]}}" wx:for-item="wrapItem" wx:key="{{index}}">
+        <view class="alone-title mb17">
+          <text>{{wrapItem.costSummaryName}}</text>
+          <text>¥{{wrapItem.totalAmount}}</text>
+        </view>
+        <view class="alone-sub-title mb10" wx:if="{{isShowAll||index<5}}" wx:for="{{wrapItem.costItems||[]}}" wx:key="{{index}}">
+          <view>{{item.costName}}</view>
+          <view>
+            <text wx:if="{{item.promotion}}">-</text> ¥{{item.price}}
+            <block wx:if="{{wrapItem.costSummaryType==1||wrapItem.costSummaryType==4}}"> x {{item.count}}{{item.company}}</block>
+          </view>
+        </view>
+        <view bindtap="showAll" class="show-more  mt18" wx:if="{{!isShowAll&&wrapItem.showMore}}">展开全部</view>
+        <view class="f-border-bottom-line-gray pt44" wx:if="{{index!=priceDetail.items.length-1}}"></view>
+      </view>
+    </view>
+  </view>
+  <view class="insurance-wrapper" wx:else>
+    <view class="insurance-title">
+      意外险说明
+    </view>
+    <view class="insurance-content">
+      {{insurance.detail}}
+    </view>
+  </view>
+</top-screen>

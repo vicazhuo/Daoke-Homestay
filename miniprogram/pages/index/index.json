@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "modal": "../../components/advModal/modal",
+        "btnFloatLayer": "../../components/btnFloatLayer/index",
+        "component-header-swiper": "./components/headerSwiper/headerSwiper",
+        "component-bottom-banner": "../../miniprogram_npm/@tujia/fe_wx_mp_com/mp-opacify-swiper/index",
+        "component-hot-house-recommend": "./components/houseRecommendModule/houseRecommendModule",
+        "tj-favorite-tip": "/components/favoriteTip/favoriteTip"
+  
+    }
+}

@@ -1,0 +1,21 @@
+<view class="booking-buy-footer" hidden="{{isLoading}}" slot="bottom-button">
+    <form reportSubmit bindsubmit="orderSubmit" report-submit-timeout="1000" report-submit="true" style="width:100%;">
+        <button class="booking-buy-footer-btn" hoverClass="none">
+            <view class="buy-footer-btn-con">
+                <view class="buy-price-con">
+                    <text class="need-pay-amount">¥{{priceDetail.needPayAmount}}</text>
+                    <block wx:if="{{houseInfo.deposit.depositAmount&&houseInfo.deposit.depositAmount>0}}">
+                        <text class="buy-deposit-text" wx:if="{{houseInfo.deposit.supportCredit}}">
+                           已免押金{{houseInfo.deposit.depositAmount*bookingCount}}元</text>
+                        <text class="buy-deposit-text" wx:elif="{{houseInfo.deposit.onlineDeposit}}">
+                           含押金{{houseInfo.deposit.depositAmount*bookingCount}}元（可退）</text>
+                        <text class="buy-deposit-text" wx:else>
+                           需到店支付押金{{houseInfo.deposit.depositAmount*bookingCount}}元</text>
+                    </block>
+                </view>
+                <view bindtap="showPricePop" class="price-detain-btn">明细</view>
+                <button form-type="submit"  class="buy-page-btn" hoverClass="buy-page-btn-hover">提交订单</button>
+            </view>
+        </button>
+    </form>
+</view>

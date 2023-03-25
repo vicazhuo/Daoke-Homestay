@@ -1,0 +1,5 @@
+<template name="back-index-btn">
+    <navigator openType="switchTab" url="/pages/index/index">
+        <image class="back-index-btn {{isNeedShiPei?'shipei':''}} " src="{{imgHost}}/static/wechat/promotion/redpacket/icon_back_index.png"></image>
+    </navigator>
+</template>

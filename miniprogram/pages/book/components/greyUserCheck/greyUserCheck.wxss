@@ -1,0 +1,119 @@
+.gray-list-contaniner {
+    width: 600rpx;
+    height: 533rpx;
+    background: #fff;
+    border-radius: 12rpx;
+    padding: 74rpx 60rpx 60rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.gray-title {
+    font-size: 34rpx;
+    color: #333;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 60rpx;
+}
+
+.input-box {
+    height: 90rpx;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    border: 0 solid #e9e9e9;
+    border-bottom-width: 1px;
+    left: 0;
+    right: 0;
+}
+
+.gray-input {
+    height: 100%;
+    font-size: 32rpx;
+    padding: 0;
+}
+
+.code-btn {
+    height: 48rpx;
+    padding: 0 12rpx;
+    line-height: 48rpx;
+    background: #ff9645;
+    border-radius: 8rpx;
+    font-size: 24rpx;
+    color: #fff;
+    text-align: center;
+    width: 145rpx;
+    flex: none;
+}
+
+.gray-tip {
+    margin: 26rpx 0 56rpx;
+    font-size: 24rpx;
+    line-height: 1;
+    color: #999;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+.phone-text {
+    color: #333;
+}
+
+.gray-check-btn {
+    height: 96rpx;
+    background: #dadada;
+    border-radius: 12rpx;
+    font-size: 36rpx;
+    color: #fff;
+    line-height: 96rpx;
+    text-align: center;
+}
+
+.gray-check-btn.active {
+    background: #ff9645;
+}
+
+.del-icon {
+    position: absolute;
+    width: 40rpx;
+    height: 40rpx;
+    top: 20rpx;
+    right: 10rpx;
+}
+
+.del-icon::after {
+    content: " ";
+    width: 1px;
+    height: 40rpx;
+    position: absolute;
+    background: #dadada;
+    transform: rotate(-45deg);
+    left: 0;
+    top: 0;
+}
+
+.del-icon::before {
+    content: " ";
+    width: 1px;
+    height: 40rpx;
+    position: absolute;
+    background: #dadada;
+    transform: rotate(45deg);
+}
+
+.disabled {
+    background: #dadada;
+}

@@ -1,0 +1,40 @@
+.favorite-tip-com {
+    position: fixed;
+    top: 20rpx;
+    right: 52rpx;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    font-size: 28rpx;
+    border-radius: 4rpx;
+    height: 70rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    border-radius: 15rpx;
+    font-weight: 300;
+    z-index: 3000;
+}
+
+.tip-del-btn-box {
+    width: 60rpx;
+    height: 60rpx;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.favorite-tip-arrow {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-style: dashed solid solid dashed;
+    border-width: 0 4px 8px;
+    opacity: 0.7;
+    border-color: transparent transparent #000 transparent;
+    top: -8px;
+    font-size: 0;
+    line-height: 0;
+    right: 45px;
+}

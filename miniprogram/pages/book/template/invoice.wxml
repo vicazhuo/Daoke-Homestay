@@ -1,0 +1,15 @@
+<view class="book-module book-invoice-content">
+    <text class="invoice-name">如需发票请退房后在个人中心进行操作</text>
+    <text class="invoice-desc">开取路径：个人中心--发票</text>
+</view>
+<view class="book-buy-alert-content" wx:if="{{bookingRule.rules}}">
+    <view class="buy-alert-con">
+        <view class="buy-alert-tit">
+            <text class="buy-alert-tit-text">预订须知</text>
+        </view>
+        <view bindtap="bookingRuleItem" class="buy-alert-item" data-url="{{data.navigateUrl}}" wx:if="{{item.enabled}}" wx:for="{{bookingRule.rules}}" wx:key="{{index}}">
+            <text class="rule-item-name">{{item.title}}：</text>
+            <text class="rule-item-text">{{item.text}}</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,155 @@
+.com-qrcode-wrapper {
+    background: #3f4954;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+
+.com-qrcode-wrapper .qr-content {
+    padding: 40rpx 50rpx 35rpx 50rpx;
+}
+
+.com-qrcode-wrapper .qr-content .qr-top {
+    background: #ff9645;
+    box-shadow: 0 2rpx 60rpx 0 rgba(0,0,0,0.08);
+    border-radius: 24rpx 24rpx 0 0;
+}
+
+.qr-top-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 68rpx 0 48rpx 0;
+    font-size: 60rpx;
+    color: #ffffff;
+}
+
+.qr-title-note {
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    padding-bottom: 35rpx;
+}
+
+.qr-top-title .wifi {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.qr-top-img {
+    width: 64rpx;
+    height: 64rpx;
+    margin-right: 10rpx;
+}
+
+.erweima {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.erweima image {
+    width: 400rpx;
+    height: 400rpx;
+}
+
+.weima_cirle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420rpx;
+    height: 420rpx;
+    background: #fff;
+    border-radius: 100%;
+}
+
+.qr-title-des {
+    margin-top: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 17px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.qr-bottom {
+    background: #fff;
+    border-radius: 0 0 24rpx 24rpx;
+}
+
+.tujia-text {
+    padding-top: 24rpx;
+    margin: 0 0 15rpx 0;
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    color: #000000;
+    text-align: center;
+}
+
+.tujia-icon {
+    text-align: center;
+    padding-bottom: 30rpx;
+}
+
+.tujia-icon image {
+    width: 134rpx;
+    height: 40rpx;
+}
+
+.qr-des {
+    margin-bottom: 85rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #ffffff;
+    text-align: center;
+}
+
+.qr-btn {
+    position: fixed;
+    bottom: 50rpx;
+    width: 100%;
+    display: flex;
+}
+
+.qr-btn .edit {
+    flex: 1;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 0 30rpx 0 50rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #ffffff;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.qr-btn .edit:before {
+    border: 1px solid #fff;
+    border-radius: 100rpx;
+}
+
+.qr-btn .save {
+    flex: 1;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #ffffff;
+    letter-spacing: 0;
+    text-align: center;
+    margin-right: 50rpx;
+    background: #3f4954;
+    border: none;
+    padding: 0;
+    overflow: visible;
+}
+
+.save.button-hover {
+    opacity: 1;
+}
+
+.qr-btn .save:before {
+    border: 1px solid #fff;
+    border-radius: 100rpx;
+}

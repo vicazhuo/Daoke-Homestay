@@ -1,0 +1,114 @@
+<template name="unit-sale-products">
+    <view class="g-layout">
+        <view class="top-bar">
+            <view class="title">
+                <text>选择价格</text>
+            </view>
+            <view bindtap="chuangedDate" class="date-box">
+                <view class="start-time">
+                    <text>{{dateDescObj.beginDateText}}</text>{{dateDescObj.beginDesc}}
+                </view>
+                <view class="dur-time f-border-bottom-line-orange">共{{dateDescObj.dayCount}}晚</view>
+                <view class="end-time">
+                    <text>{{dateDescObj.endDateText}}</text>{{dateDescObj.endDesc}}
+                </view>
+            </view>
+        </view>
+        <view class="choose-products-block">
+            <view :class="{t120:!isLogin || userDiscount === null,'touch-scroll':productData.isShowAll}" class="products-list" ref="scrollView" wx:if="{{productsList&&productsList.length>0}}">
+                <view class="list-item {{product.isShowPackage?'is-show':''}}" wx:for="{{productsList}}" wx:for-item="product">
+                    <view class="flex-box product-info">
+                        <view class="lft-col">
+                            <view bindtap="showOrHideProduct" class="info-box" data-index="{{index}}">
+                                <view class="tit">
+                                    <text class="txt">{{product.ruleSummary}}</text>
+                                    <icon :class="{titleArrowHide:product.showIntroBar}" class="arrow-down" color="#b2b2b2" name="arrow-down" size="13"></icon>
+                                </view>
+                                <view class="strategy">{{product.orderStrategy?product.orderStrategy:''}}</view>
+                                <view class="privilege">
+                                    <text class="span-package" wx:if="{{product.packageIntros&&product.packageIntros.length!==0}}">套餐</text>
+                                    <text class="span-gift" wx:if="{{product.giftIntros&&product.giftIntros.length!==0}}">礼包</text>
+                                    <text class="span-free" wx:if="{{product.serviceIntros&&product.serviceIntros.length!==0}}">{{product.serviceIntros[0].title}}</text>
+                                    <text class="span-more" wx:if="{{product.serviceIntros&&product.serviceIntros.length>1}}">等</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="rgt-col">
+                            <view class="price-box">
+                                <view class="price-cont">
+                                    <view class="total">
+                                        <icon></icon>
+                                        <text>{{product.finalPrice}}</text>
+                                    </view>
+                                    <view class="minus" wx:if="{{product.returnCashSettingType!==0}}">
+                                        <text class="num">{{product.productPrice}}</text>
+                                        <text>{{product.returnCashSettingType===1?'立减':'返现'}}</text>
+                                        <text class="num">{{product.productPrice-product.finalPrice}}</text>
+                                    </view>
+                                </view>
+                                <view bindtap="navBuyPage" class="order-btn {{product.bookingTips.length>1?'small-txt':''}} {{product.allowBooking?'f-btn':'disabled'}}" data-index="{{index}}">
+                                    <text>{{tools.getOrderBtnVal(product.bookingTips)}}</text>
+                                </view>
+                            </view>
+                            <view class="tips-box">
+                                <view class="product-tip" style="{{tools.styleFilter(tip,0)}}" wx:if="{{tip}}" wx:for="{{product.tips}}" wx:for-item="tip">
+                                    <text>{{tip.text}}</text>
+                                    <text class="tip-cont" style="{{tools.styleFilter(tip,1)}}"></text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="rule-intros-wrap">
+                        <view class="rule-intros f-border-top-line-gray">
+                            <view class="cash-txt" wx:for="{{product.cashIntros}}" wx:for-item="cashIntro">
+                                <text class="cash-intro">{{cashIntro.intro}}</text>
+                                <block wx:if="{{cashIntro.badge}}">
+                                    <view class="product-tip" style="{{tools.styleFilter(cashIntro.badge,0)}}" wx:if="{{cashIntro.badge}}">
+                                        <text>{{cashIntro.badge.text}}</text>
+                                        <text class="tip-cont" style="{{tools.styleFilter(cashIntro.badge,1)}}"></text>
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="rules-list">
+                                <view wx:for="{{product.ruleIntros}}" wx:for-item="rule">
+                                    <text class="tit">{{rule.title}}:</text>
+                                    <text class="con">{{rule.introduction}}</text>
+                                </view>
+                                <view wx:for="{{product.serviceIntros}}" wx:for-item="service">
+                                    <text class="tit">{{service.title}}:</text>
+                                    <text class="con">{{service.introduction}}</text>
+                                </view>
+                                <view wx:if="{{product.giftIntros&&product.giftIntros.length>0}}">
+                                    <text class="tit">礼包:</text>
+                                    <text class="con">
+                                        <block wx:for="{{product.giftIntros}}" wx:for-item="gift">{{gift.introduction}}</block>
+                                    </text>
+                                </view>
+                                <view wx:if="{{product.packageIntros&&product.packageIntros.length>0}}">
+                                    <text class="tit">套餐:</text>
+                                    <text class="con">
+                                        <block wx:for="{{product.packageIntros}}" wx:for-item="package">{{package.introduction}}</block>
+                                    </text>
+                                </view>
+                            </view>
+                            <navigator bindtap="showIntros(product,index)" class="arrow-up">
+                                <icon color="#fd8238" name="arrow-up" size="13"></icon>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+                <navigator bindtap="showMore()" class="show-more" href="javascript:;" vIf="productData.products.length > 3 && !productData.isShowAll ">
+                    <icon class="arrow-down" color="#b2b2b2" name="arrow-down" size="13" vShow="!productData.isShowAll"></icon>
+                    <icon class="arrow-up" color="#b2b2b2" name="arrow-up" size="13" vShow="productData.isShowAll"></icon>
+                </navigator>
+            </view>
+            <view class="empty-page" wx:else>
+                <view class="empty-txt">
+                    <text class="empty-icon"></text>
+                    <view>当前日期无可订产品</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<wxs module="tools" src="unitSaleProductsView.wxs" />

@@ -1,0 +1,8 @@
+<view class="house-list-wrapper">
+    <view bindtap="selectedHouse" class="house-alone" data-index="{{index}}" wx:for="{{showHouseList}}">
+        <view class="alone_left">{{item.houseName}}</view>
+        <view class="alone_right" wx:if="{{item.selected}}">
+            <view class="icon"></view>
+        </view>
+    </view>
+</view>

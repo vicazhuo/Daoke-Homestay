@@ -1,0 +1,30 @@
+.house-detail-desc {
+    padding: 0 40rpx;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.house-special .special-title {
+    padding-top: 54rpx;
+    line-height: 40rpx;
+    margin-bottom: 15rpx;
+    font-weight: 400;
+    font-size: 28rpx;
+    color: #333333;
+}
+
+.pt54 {
+    padding-top: 54rpx;
+}
+
+.house-special .special-text {
+    width: 100%;
+    font-size: 28rpx;
+    color: #666666;
+    line-height: 46rpx;
+    word-wrap: break-word;
+}
+
+.house-special:last-child {
+    padding-bottom: 300rpx;
+}

@@ -1,0 +1,90 @@
+.container {
+    padding: 0 30rpx;
+}
+
+.container .tit {
+    font-family: PingFangSC-Medium;
+    font-size: 50rpx;
+    color: #2A2A2A;
+}
+
+.container .tit2 {
+    font-family: PingFangSC-Medium;
+    font-size: 42rpx;
+    color: #2A2A2A;
+    margin-top: 100rpx;
+}
+
+.container .red {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #E03846;
+    margin-top: 40rpx;
+}
+
+.container .viewcon {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #2A2A2A;
+    margin-top: 40rpx;
+}
+
+.container .viewcon text {
+    font-weight: bold;
+}
+
+.container .viewconbold {
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    color: #2A2A2A;
+    font-weight: bold;
+    margin-top: 40rpx;
+}
+
+.container .v1 {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #B4B9BF;
+    margin-top: 20rpx;
+}
+
+.container .table {
+    margin-top: 40rpx;
+    border-right: 1px solid #DCDEE0;
+    border-top: 1px solid #DCDEE0;
+}
+
+.container .table .list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .table .list view {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #2A2A2A;
+    flex: 1;
+    text-align: center;
+    padding: 20rpx 0;
+    border-left: 1px solid #DCDEE0;
+    border-bottom: 1px solid #DCDEE0;
+}
+
+.container .table .list .bold {
+    font-weight: bold;
+    height: 160rpx;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .table .list .bold {
+    padding: 0 20rpx;
+}
+
+.null {
+    height: 100rpx;
+}

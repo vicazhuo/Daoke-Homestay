@@ -1,0 +1,8 @@
+<view class="select-bar {{isFixed?'select-bar-hide':''}}" hidden="{{activeBar!=0}}">
+    <view bindtap="selectCity" class="select-bar-item">
+        <view class="bar-item-text">{{cityNameText}}({{activeListCount}})</view>
+    </view>
+    <view bindtap="toDatePage" class="select-bar-item">
+        <view class="bar-item-text">{{showBeginDate?showBeginDate+'-'+showEndDate:'入离日期'}}</view>
+    </view>
+</view>

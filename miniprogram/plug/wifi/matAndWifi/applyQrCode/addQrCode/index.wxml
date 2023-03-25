@@ -1,0 +1,53 @@
+<view class="add-qrcode-wrapper">
+  <view class="haveApplyCount" wx:if="{{activeCount>0&&scene}}">当前房屋已激活{{activeCount}}套</view>
+  <view class="formcss">
+    <view class="wifi_name" wx:if="{{scene}}">
+      <text>台卡编号</text>
+      <input disabled placeholder="" value="{{scene}}"></input>
+    </view>
+    <view bindtap="selectStore" class="store_list" wx:if="{{storeList.length>1}}">
+      <text>门店名称</text>
+      <input disabled placeholder="请选择门店" style="margin-right:{{storeList&&storeList.length>1?'25rpx':'0rpx'}}" value="{{selectedHotelName}}"></input>
+      <icon class="arrow" wx:if="{{storeList&&storeList.length>1}}"></icon>
+    </view>
+    <view bindtap="selectHouseSize" class="house_size_list">
+      <text>需摆放的房屋名称</text>
+      <input disabled placeholder="请选择房屋" style="margin-right:{{houseSizeList&&houseSizeList.length>1?'25rpx':'0rpx'}}" value="{{selectedHouseName}}"></input>
+      <icon class="arrow" wx:if="{{houseSizeList&&houseSizeList.length>1}}"></icon>
+    </view>
+    <view class="wifi_name">
+      <text>Wi-Fi名称</text>
+      <input bindfocus="wifiBindFocus" bindinput="bindName" placeholder="请输入Wi-Fi名称" type="text" value="{{wifiName}}"></input>
+    </view>
+    <view class="wifi_password">
+      <text>Wi-Fi密码</text>
+      <input bindinput="bindPassword" placeholder="请输入Wi-Fi密码" type="text" value="{{wifiPassword}}"></input>
+    </view>
+    <view class="wifi_note">
+      <text>门牌号</text>
+      <input bindinput="bindWifiNote" maxlength="15" placeholder="选填" type="text" value="{{wifiNote}}"></input>
+    </view>
+  </view>
+  <view class="sweet-tips" wx:if="{{scene}}">
+    <text>温馨提示：Wi-Fi名称和密码请尽量不要包含中文或特殊字符，
+因为可能会导致扫码连接失败。建议您激活台卡后自行测试，
+如失败请调整。</text>
+  </view>
+  <view class="sweet-tips" wx:else>
+    <text>温馨提示：Wi-Fi名称和密码请尽量不要包含中文或特殊字符，
+因为可能会导致扫码连接失败。建议您创建/激活二维码后自
+行测试，如失败请调整。</text>
+  </view>
+  <view class="btn-submit">
+    <button bindtap="submitBtn" class="btn {{submitActive?'active':''}}" formType="submit">
+      提交
+    </button>
+  </view>
+</view>
+<scroll-view scrollY class="show-dropdown-list" style="height: 200px;" wx:if="{{selectStatus&&wifiList.length>0}}">
+  <view class="list-inner">
+    <view bindtap="selectWifi" class="list-alone" data-index="{{index}}" wx:for="{{wifiList}}">
+      <view class="text">{{item.SSID}}</view>
+    </view>
+  </view>
+</scroll-view>

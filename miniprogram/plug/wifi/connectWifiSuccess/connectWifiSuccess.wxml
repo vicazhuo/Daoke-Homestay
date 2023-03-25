@@ -1,0 +1,45 @@
+<include src="/components/toast/toast.wxml"></include>
+<view class="connent-success">
+  <view class="connent-success-container">
+    <block wx:if="{{userStatus==='2'||userStatus==='0'}}">
+      <image class="wifi-success-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjwifi/icon_connect_success.png"></image>
+      <text class="wifi-success-text">Wi-Fi连接成功</text>
+      <view class="tujia-slogan-text" wx:if="{{isLogin}}">
+        <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_text_icon.png"></image>
+      </view>
+      <view class="loginstyle" wx:if="{{isLogin&&redPacketAmount>0}}">
+        <component-redpacket money="{{redPacketAmount}}" size="BIG"></component-redpacket>
+      </view>
+      <button bindtap="toMainPage" class="wifi-action-btn" type="primary">
+        {{userStatus==='2'?'去途家逛逛':'去途家逛逛'}}
+      </button>
+    </block>
+    <view class="user-cancel-auth" wx:if="{{userStatus==='1'}}">
+      <view class="user-cancel-tit">
+        <image class="wifi-success-small-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjwifi/icon_connect_success.png"></image>
+        <text class="wifi-success-text wifi-success-small-text">Wi-Fi连接成功</text>
+      </view>
+      <view class="tujia-slogan-text" wx:if="{{isLogin}}">
+        <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_text_icon.png"></image>
+      </view>
+      <view wx:if="{{isLogin&&redPacketAmount>0}}">
+        <component-redpacket money="{{redPacketAmount}}" size="BIG"></component-redpacket>
+      </view>
+      <view class="redbagTip" wx:if="{{!isLogin}}">
+        <image class="redpacket-small-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/redpacket_small.png"></image>
+        新用户注册，即得
+        <text>{{newUserRedpacketAmount}}</text>元红包</view>
+      <view class="loginstyle" wx:if="{{!isLogin}}">
+        <component-login bindloginSucess="loginSucess" ifWiFi="{{true}}" inviterId="{{inviterId}}" inviterType="{{inviterType}}" wifiId="{{wifiId}}"></component-login>
+      </view>
+    </view>
+  </view>
+  <view class="official">
+    <official-account></official-account>
+  </view>
+  <view class="tujia-slogan-text-bottom" wx:if="{{!isLogin}}">
+    <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_text_icon.png"></image>
+  </view>
+</view>
+<loading hidden="{{!isLoading}}">请稍后...</loading>
+<imageVerifyCode bindgetCodeChange="getSMSCode" isShow="{{isImageVerCode}}"></imageVerifyCode>

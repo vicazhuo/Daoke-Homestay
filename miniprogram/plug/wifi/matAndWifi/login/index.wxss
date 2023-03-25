@@ -1,0 +1,240 @@
+button {
+    font-size: 32rpx;
+    line-height: 80rpx;
+    padding: 0 30rpx;
+    border-radius: 4rpx;
+}
+
+.btn-area {
+    margin: 50rpx 0 0 0;
+    padding: 0 30rpx;
+}
+
+.cell {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    font-size: 28rpx;
+    line-height: 48rpx;
+    color: #333;
+}
+
+.cell:not(:first-child) {
+    position: relative;
+}
+
+.cell:not(:first-child)::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 30rpx;
+    right: 0;
+    height: 0;
+    border-top: 1px solid #e9e9e9;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}
+
+.cell__bd {
+    display: block;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    width: 0;
+}
+
+.cell__fd {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.cells__group {
+    margin-top: 20rpx;
+    background: #fff;
+    position: relative;
+}
+
+.cells__group::before {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    border-bottom: 1px solid #e9e9e9;
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
+}
+
+.form_mobile {
+    display: flex;
+    padding: 20rpx 0;
+    margin: 0 40rpx;
+    border-bottom: 1px solid #DADADA;
+}
+
+.form_mobile .mobile {
+    flex: 1;
+}
+
+.form_ver {
+    display: flex;
+    padding: 20rpx 0;
+    margin: 0 40rpx;
+    border-bottom: 1px solid #DADADA;
+}
+
+.wifi_btn {
+    padding: 0 40rpx;
+}
+
+.wifi_wrapper {
+    text-align: left;
+    background: rgba(0,0,0,0);
+}
+
+.wifi_confrim {
+    border: 1px solid #DADADA;
+    border-radius: 12rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    color: #999999;
+    text-align: center;
+    height: 96rpx;
+    line-height: 96rpx;
+    margin-bottom: 30rpx;
+    background: none;
+}
+
+.wifi_confrim.button_hover {
+    background: none;
+}
+
+.wifi_confrim.active {
+    color: #fff;
+    background: #ff9645;
+    border: none;
+}
+
+.wifi_quick {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 96rpx;
+    line-height: 96rpx;
+    border-radius: 12rpx;
+    color: #fff;
+    background: #ff9645;
+    border: none;
+}
+
+.wifi_quick image {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 10rpx;
+}
+
+.wifi_quick.active {
+    color: #ff9645;
+    border: 1px solid #ff9645;
+    background: none;
+}
+
+.icon-bing-tel,.icon-bing-password {
+    display: block;
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 16rpx;
+}
+
+.bing-phonewifi__input {
+    color: #333333;
+    width: 100%;
+}
+
+.bing-phone__input {
+    width: 100%;
+}
+
+.btn-bing__code {
+    width: 145rpx;
+    padding: 0;
+    font-size: 24rpx;
+    line-height: 48rpx;
+    text-align: center;
+    background: #dadada!important;
+    transition: background 0.2s;
+    border-radius: 8rpx;
+}
+
+.btn-bingwifi__code {
+    width: 145rpx;
+    padding: 0;
+    font-size: 24rpx;
+    line-height: 48rpx;
+    text-align: center;
+    color: #fff;
+    border: none;
+    background: #DADADA;
+    transition: background 0.2s;
+    border-radius: 12rpx;
+}
+
+.btn-bingwifi__code.active {
+    background: #ff9645!important;
+}
+
+.btn-bing__code.active {
+    background: #ff9645!important;
+}
+
+.login-btn {
+    height: 96rpx;
+    line-height: 96rpx;
+    border: 1px solid #dadada!important;
+    color: #dadada!important;
+    background: #f7f9fb!important;
+}
+
+.login-btn.active {
+    color: #fff!important;
+    background: #ff9645!important;
+    border: none!important;
+}
+
+.btn-area button {
+    border-radius: 6px;
+}
+
+.role_bar {
+    font-size: 22rpx;
+    padding: 16rpx 0 0 40rpx;
+    color: #979797;
+}
+
+.role_bar.wifi_role_bar {
+    padding: 16rpx 0 0 40rpx;
+    color: #dadada;
+}
+
+.role_link_text {
+    color: #ff9645;
+}
+
+.mb40 {
+    margin-bottom: 40rpx;
+}
+
+.mt30 {
+    margin-top: 30rpx;
+}
+
+.pt0 {
+    padding-top: 0;
+}
+
+.pt60 {
+    padding-top: 60rpx;
+}

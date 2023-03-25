@@ -1,0 +1,435 @@
+
+
+.super-house-contaniner {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 1px 36rpx 0 rgba(0,0,0,0.15);
+    border-radius: 4rpx;
+    padding: 40rpx;
+    box-sizing: border-box;
+    width: 670rpx;
+    left: 50%;
+    top: 430rpx;
+    transform: translateX(-50%);
+}
+
+.super-top-text {
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 14rpx;
+}
+
+.super-top-name {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.super-top-introduce {
+    font-size: 24rpx;
+    color: #666;
+}
+
+.super-info {
+    border-bottom: 1px dotted #dadada;
+    padding-bottom: 35rpx;
+    display: flex;
+    align-items: center;
+}
+
+.super-desc {
+    display: flex;
+    justify-content: space-between;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.hotel-item-pic {
+    height: 446rpx;
+    width: 100%;
+}
+
+.hotel-item {
+    position: relative;
+}
+
+.hotel-info-price-product {
+    font-size: 24rpx;
+    color: #999;
+    text-decoration: line-through;
+    margin-right: 6rpx;
+    line-height: 1;
+}
+
+.hotel-info-price {
+    font-size: 40rpx;
+    color: #333;
+    margin-right: 10rpx;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.hotel-price-line {
+    display: flex;
+    align-items: flex-end;
+}
+
+.hotel-info-name {
+    font-size: 34rpx;
+    color: #333;
+    width: 740rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: normal;
+    font-weight: 500;
+    display: inline-block;
+    align-items: center;
+}
+
+.icon-quick-buy-title {
+    vertical-align: -4rpx;
+}
+
+.hotel-info-contaniner {
+    padding: 40rpx 0 80rpx;
+}
+
+.hotel-option-dian {
+    margin: 0 10rpx;
+}
+
+.hotel-info-option {
+    font-size: 24rpx;
+    color: #333;
+    margin: 14rpx 0;
+    width: 670rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.landlord-hotel-img-box {
+    position: relative;
+    width: 108rpx;
+    height: 108rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landlord-hotel-img-container {
+    position: absolute;
+    right: 50rpx;
+    bottom: -50rpx;
+    z-index: 100;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4rpx 7rpx rgba(255,150,69,0.2);
+    transform: translateZ(0);
+}
+
+.hotel-user-icon {
+    width: 108rpx;
+    height: 108rpx;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-size: 40% auto;
+}
+
+.price-tag-item {
+    font-size: 20rpx;
+    display: inline-flex;
+    height: 30rpx;
+    align-items: center;
+    padding: 0 10rpx;
+    border-radius: 4rpx;
+    margin: 0 0 2rpx 10rpx;
+}
+
+.space-view {
+    background-color: #f7f9fb;
+    height: 20rpx;
+}
+
+.item-contaniner {
+    padding: 40rpx 43rpx 0;
+    box-sizing: border-box;
+}
+
+.hotal-super-btm {
+    width: 100%;
+    position: absolute;
+    height: 145rpx;
+    bottom: -120rpx;
+}
+
+.icon_super-comment {
+    background-repeat: no-repeat;
+    background-size: auto 110rpx;
+}
+
+.description-speek {
+    font-size: 30rpx;
+    color: #333;
+    margin-bottom: 30rpx;
+}
+
+.description-more-popup {
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 26rpx;
+}
+
+.description-more-text {
+    line-height: 36rpx;
+}
+
+.icon-hotel-super-box {
+    background-color: #fff;
+    width: 36rpx;
+    height: 36rpx;
+    position: absolute;
+    bottom: 0;
+    right: -10rpx;
+    z-index: 10;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 6rpx 10rpx rgba(255,150,69,0.4);
+    padding-top: 4rpx;
+    box-sizing: border-box;
+}
+
+.icon-hotel-super {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.hotel-img-box {
+    position: relative;
+    font-size: 0;
+}
+
+.house-pic-content {
+    position: relative;
+}
+
+.units-list-container {
+    padding: 0 40rpx;
+}
+
+.icon-quick-buy {
+    width: 18rpx;
+    height: 30rpx;
+    margin-right: 12rpx;
+}
+
+.hotel-name-bar {
+    display: flex;
+    align-items: center;
+}
+
+.house-type-name {
+    background-image: linear-gradient(to right,#f88e30 3%,rgba(255,176,0,0.97) 100%);
+    box-shadow: 2rpx 2rpx 4rpx 0 rgba(0,0,0,0.10);
+    color: #fff;
+    font-size: 22rpx;
+    height: 36rpx;
+    padding: 0 12rpx 0 10rpx;
+    left: 0;
+    position: absolute;
+    border-top-right-radius: 36rpx;
+    border-bottom-right-radius: 36rpx;
+    display: inline-flex;
+    align-items: center;
+    bottom: 40rpx;
+    z-index: 51;
+    transform: translateZ(0);
+}
+
+.no-allow-icon {
+    width: 382rpx;
+    height: 126rpx;
+    position: absolute;
+    transform: translateZ(0) translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    z-index: 201;
+}
+
+.no-allow-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.65);
+    transform: translateZ(0);
+}
+
+.house-item {
+    background-color: #fff;
+}
+
+.house-promotion {
+    position: absolute;
+    bottom: 86rpx;
+    left: 0;
+    height: 36rpx;
+    width: 200rpx;
+}
+
+.house-promotion-one {
+    bottom: 40rpx;
+}
+
+.hotel-type-tag-scroll {
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+}
+
+.tag-scroll-content {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20rpx;
+}
+
+.tag-scroll-item {
+    font-size: 10px;
+    color: #999;
+    padding: 0 5rpx;
+    height: 15px;
+    line-height: 15px;
+    margin-right: 15rpx;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.ali-tag-item {
+    display: inline-block;
+    line-height: 17px;
+}
+
+.tag-scroll-content .tag-scroll-item:nth-last-child(2) {
+    margin-right: 0;
+}
+
+.br1 {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.br1::before {
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+}
+
+.tag-scroll-item::before {
+    border: 1px solid #dadada;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+}
+
+.scroll-end-mask {
+    width: 94rpx;
+    height: 35rpx;
+    position: absolute;
+    background-image: linear-gradient(to right,rgba(255,255,255,0.00) 0%,#fff 25%,#fff 100%);
+    right: 0;
+    top: 0;
+}
+
+.hotel-type-tag-bar {
+    position: relative;
+    width: 76%;
+}
+
+.tag-scroll-item-end {
+    width: 94rpx;
+    height: 30rpx;
+    flex: none;
+}
+
+.is-rba-house {
+    position: absolute;
+    width: 108rpx;
+    height: 108rpx;
+    box-sizing: border-box;
+    font-size: 18rpx;
+    color: #fff;
+    top: 79rpx;
+    left: 0;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 32rpx;
+    background-image: linear-gradient(to bottom,rgb(255,175,2) 6%,#f9902d 20%);
+}
+
+.no-tag-bar {
+    margin-top: 10rpx;
+}
+
+.ali-info-name {
+    padding-right: 8rpx;
+}
+
+.house-favorite-box {
+    position: absolute;
+    right: 40rpx;
+    top: 40rpx;
+}
+
+.house-pic-swiper {
+    height: 446rpx;
+    border-radius: 12rpx;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.house-swiper-dots {
+    position: absolute;
+    bottom: 20rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 40;
+}
+
+.house-swiper-box {
+    display: inline-flex;
+    align-items: center;
+}
+
+.swiper-dots-item {
+    width: 16rpx;
+    height: 16rpx;
+    background: #fff;
+    border-radius: 100%;
+    display: inline-block;
+    margin: 0 6rpx;
+    transition: all .2s;
+    opacity: 0.8;
+}
+
+.swiper-dots-item.active {
+    opacity: 1;
+}

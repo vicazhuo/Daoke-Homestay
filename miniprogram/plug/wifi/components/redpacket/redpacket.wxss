@@ -1,0 +1,148 @@
+.wrapper {
+    float: left;
+    width: 100%;
+    color: #FEEFD6;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.big {
+    width: 628rpx;
+    height: 706rpx;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 36rpx;
+    border: 1px solid rgba(146,5,5,0);
+    background-size: cover;
+}
+
+.big.close .text {
+    height: 66rpx;
+    margin-top: 334rpx;
+}
+
+.big.open .text {
+    height: 132rpx;
+    margin-top: 312rpx;
+}
+
+.big .value {
+    font-size: 64rpx;
+    transform: translateY(10rpx);
+    display: inline-block;
+    font-weight: bold;
+}
+
+.big.close .btn {
+    width: 400rpx;
+    height: 96rpx;
+    line-height: 96rpx;
+    background-image: linear-gradient(90deg,#F1C18D 0%,#E2A15F 100%);
+    box-shadow: 0 13rpx 13rpx 0 rgba(146,5,5,0.30),inset 0 0 1rpx 0 #FFFFFF;
+    border-radius: 48rpx;
+    margin: 0 auto;
+    margin-top: 100rpx;
+    text-align: center;
+    border: none;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+.big.open .btn {
+    width: 400rpx;
+    height: 96rpx;
+    line-height: 96rpx;
+    background-image: linear-gradient(90deg,#F1C18D 0%,#E2A15F 100%);
+    box-shadow: 0 13rpx 13rpx 0 rgba(146,5,5,0.30),inset 0 0 1rpx 0 #FFFFFF;
+    border-radius: 48rpx;
+    margin: 0 auto;
+    margin-top: 56rpx;
+    text-align: center;
+    border: none;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+.small {
+    width: 670rpx;
+    height: 134rpx;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.small .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.small.close .text {
+    margin: 0 0 0 150rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.small .value {
+    font-size: 40rpx;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.small.open .value {
+    font-size: 40rpx;
+    display: inline-block;
+    transform: translateY(6rpx);
+}
+
+.small .formBtn {
+    width: 162rpx!important;
+    height: 50rpx!important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.small.close .btn {
+    width: 115rpx;
+    height: 47rpx;
+    border: 1rpx solid #FEEFD6;
+    border-radius: 12rpx;
+    margin: 0 40rpx 0 1rpx;
+    font-size: 24rpx;
+    padding: 0;
+    background: none;
+    color: #FEEFD6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.small.open .btn {
+    width: 115rpx;
+    height: 47rpx;
+    border: 1rpx solid #FEEFD6;
+    border-radius: 12rpx;
+    margin: 0 40rpx 0 1rpx;
+    font-size: 24rpx;
+    padding: 0;
+    background: none;
+    color: #FEEFD6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.small.open .text {
+    margin: 0 0 0 150rpx;
+    float: left;
+}
+
+.small.open .text .congratulations {
+    margin-bottom: -8rpx;
+}

@@ -1,0 +1,71 @@
+<view class="header">
+    <view class="calendar-title {{!selectDate.begin&&!selectDate.end?'aligincenter':''}}">
+        <view class="checkin">
+            <view class="checkin-title {{showSelectDateText.beginText?'small-title':'big-bottom'}}">入住日期</view>
+            <view class="checkin-date" wx:if="{{showSelectDateText.beginText}}">
+                <view class="date">{{showSelectDateText.beginText}}</view>
+                <view class="week">{{showSelectDateText.sWeekText}}</view>
+            </view>
+        </view>
+        <view class="total-day">
+            <view class="totalday {{!actionStatus.status?'disactive':''}}">
+        共{{showSelectDateText.interval}}晚
+      </view>
+            <view class="line {{!actionStatus.status?'disactive':''}} br1"></view>
+        </view>
+        <view class="checkout">
+            <view class="checkout-title  {{showSelectDateText.endText?'small-title':'big-bottom'}}">离店日期</view>
+            <view class="checkout-date" wx:if="{{showSelectDateText.endText}}">
+                <view class="date">{{showSelectDateText.endText}}</view>
+                <view class="week">{{showSelectDateText.eWeekText}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="weekend  br1">
+        <view class="weekend-day" wx:for="{{['日','一','二','三','四','五','六']}}" wx:key="{{index}}">
+      {{item}}
+    </view>
+    </view>
+</view>
+<scroll-view class="scroll_view {{platform=='ios'?'scroll':''}}" scrollIntoView="m{{scrollIntoView}}" scrollY="true">
+    <view class="calendar">
+        <view class="calendar-month " id="m{{mitem.year+''+mitem.month}}" wx:for="{{showMonths}}" wx:for-item="mitem" wx:key="{{index}}">
+            <view class="calendar-month-title">{{mitem.year}}年{{mitem.month}}月</view>
+            <view class="calendar-days">
+                <view class="calendar-days__item" wx:for="{{mitem.firstDayWeek}}" wx:key="{{index}}"></view>
+                <view bindtap="dateSelected" class="calendar-days__item {{ditem.date==selectDate.begin?'select-start':''}} {{selectDate.begin&&!selectDate.end?'border-radius':''}} {{ditem.date>selectDate.begin&&ditem.date<selectDate.end?'select-range':''}} {{ditem.date==selectDate.end?'select-end':''}}  {{ditem.isDisable?'disable':''}} {{ditem.isDuration?'duration':''}} {{!ditem.isDisable&&fullHouse[ditem.dateS]==true?'nohouse':''}} {{ditem.isCancelNoHouse?'isCancelNoHouse':''}} {{ditem.isWeekend?'activeWeekend':''}}{{ditem.date>=selectDate.begin&&ditem.date<=selectDate.end||ditem.date==selectDate.begin||ditem.festival.length==0?'':'special'}} " data-item="{{ditem}}" wx:for="{{mitem.allDays}}" wx:for-index="dindex" wx:for-item="ditem" wx:key="{{dindex}}">
+                    <view class="calendar-days__num">
+                        <view>
+                {{ditem.date>=selectDate.begin&&ditem.date<=selectDate.end||ditem.date==selectDate.begin||ditem.festival.length==0?dindex+1:ditem.festival}}
+              </view>
+                        <view class="line-through" wx:if="ditem.isDisable"></view>
+                    </view>
+                    <view class="calendar-days__status {{ditem.isDisable?'disable':''}}">
+                        <view wx:if="{{ditem.isDisable}}">{{ditem.jrDate}}</view>
+                        <view wx:elif="{{ditem.isCancelNoHouse}}">
+                {{ditem.date==selectDate.end?'离开':fullHouse[ditem.dateS]==true?'无房':ditem.jrDate}}
+              </view>
+                        <view wx:elif="{{ditem.date==selectDate.begin}}">入住</view>
+                        <view wx:elif="{{ditem.date==selectDate.end}}">离开</view>
+                        <view wx:elif="{{fullHouse[ditem.dateS]==true}}">无房</view>
+                        <view wx:elif="{{ditem.dateS==todayDate}}">今天</view>
+                        <view wx:elif="{{ditem.jrDate}}">{{ditem.jrDate}}</view>
+                        <view wx:else></view>
+                    </view>
+                    <view class="calendar-days__rest {{ditem.isDisable?'disable':''}}" wx:if="{{restDay[ditem.dateS]==true}}">
+                        <view class="rest br1">休</view>
+                    </view>
+                </view>
+                <view class="calendar-days__item" wx:for="{{6-mitem.lastDayWeek}}" wx:key="{{index}}"></view>
+            </view>
+        </view>
+        <view class="footer-tips" wx:if="{{footerStatus}}">到底了，最长可订近6个月内的房屋</view>
+    </view>
+</scroll-view>
+<view class="footer-action  {{isNeedShiPei?'footer-action-shipei':''}}">
+    <view bindtap="clearStatus" class="clear">清空</view>
+    <view bindtap="goBack" class="action {{actionStatus.status?'active':''}}">
+    {{actionStatus.text}}
+  </view>
+</view>
+<component-shipei wx:if="{{isNeedShiPei}}"></component-shipei>

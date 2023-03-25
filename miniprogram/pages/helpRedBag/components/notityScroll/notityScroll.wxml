@@ -1,0 +1,12 @@
+<form reportSubmit bindsubmit="formBtn">
+    <view class="notity-scroll">
+        <image class="icon-notity" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_notity.png"></image>
+        <button class="notity-mask" formType="submit"></button>
+        <swiper autoplay circular vertical class="notity-list" interval="2000" style="height:70rpx;width:100%;">
+            <swiper-item class="notity-scroll-item" wx:for="{{list}}" wx:key="{{index}}">
+                <text class="scroll-text">{{item.nickName}} 刚刚赚了{{item.redPacketValue}}元红包</text>
+            </swiper-item>
+        </swiper>
+        <button bindtap="toRulePage" class="active-rule br1" formType="submit">活动规则</button>
+    </view>
+</form>

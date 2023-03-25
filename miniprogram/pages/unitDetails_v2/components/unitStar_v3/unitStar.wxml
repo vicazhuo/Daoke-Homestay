@@ -1,0 +1,12 @@
+<template name="unit-star">
+    <view class="stars">
+        <image class="star" src="{{imgHost}}/static/wechat/tjunitdetail/icon-v3-bigstarempty.png" wx:for="{{[1,2,3,4,5]}}" wx:key="{{index}}"></image>
+        <view class="star-score" style="width:{{unitStar.getStarWidthPer(overall)}}" wx:if="{{overall}}">
+            <image class="star" src="{{imgHost}}/static/wechat/tjunitdetail/icon-v3-bigstar.png" wx:for="{{[1,2,3,4,5]}}" wx:key="{{index}}"></image>
+        </view>
+        <view class="star-score" style="width:{{unitStar.getStarWidthPer(totalScore)}}" wx:if="{{totalScore}}">
+            <image class="star" src="{{imgHost}}/static/wechat/tjunitdetail/icon-v3-bigstar.png" wx:for="{{[1,2,3,4,5]}}" wx:key="{{index}}"></image>
+        </view>
+    </view>
+</template>
+<wxs module="unitStar" src="unitStar.wxs" />

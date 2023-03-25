@@ -1,0 +1,90 @@
+var saleProduct = ({});
+var orderModel = (function(productsArr) {
+    var products = productsArr || [];
+    var productsLen = products.length;
+    var orderModel = [({
+        text: '立即预订',
+        pointer: 1,
+        class: '',
+    }), ({
+        text: '立即预订',
+        pointer: 2,
+        class: '',
+    }), ({
+        text: '暂无价格(修改日期)',
+        pointer: 3,
+        class: 'disabled no-products',
+    }), ({
+        text: '已订满(修改日期)',
+        pointer: 4,
+        class: 'disabled',
+    })];
+    var orderModelFromServer = false;
+    if (products.length > 0) {
+        orderModelFromServer = ({
+            text: products[(0)].disallowBookingReason + '(修改日期)',
+            pointer: '',
+            class: 'disabled no-products',
+        })
+    };
+    if (productsLen === 0) {
+        return (({
+            orderModel: orderModel[(2)],
+        }))
+    } else if (productsLen === 1) {
+        if (products[(0)].allowBooking) {
+            saleProduct = products[(0)];
+            saleProduct.finalPrice = products[(0)].finalPrice;
+            saleProduct.productPrice = products[(0)].productPrice;
+            return (({
+                orderModel: orderModel[(0)],
+                saleProduct: saleProduct,
+            }))
+        } else {
+            return (products[(0)].disallowBookingReason ? ({
+                orderModel: orderModelFromServer,
+            }) : ({
+                orderModel: orderModel[(3)],
+            }))
+        }
+    } else {
+        var allowBookingArr = products.filter((function(val) {
+            return (val.allowBooking)
+        }));
+        var priceArr = allowBookingArr.map((function(val) {
+            return (val.finalPrice)
+        }));
+        var oldPriceArr = allowBookingArr.map((function(val) {
+            return (val.productPrice)
+        }));
+        for (i = 0; i < priceArr.length; i++) {
+            if (i == 0) {
+                saleProduct.finalPrice = priceArr[(0)]
+            } else if (priceArr[((nt_10 = (i), null == nt_10 ? undefined : 'number' === typeof nt_10 ? nt_10 : "" + nt_10))] < productsArr.finalPrice) {
+                saleProduct.finalPrice = priceArr[((nt_11 = (i), null == nt_11 ? undefined : 'number' === typeof nt_11 ? nt_11 : "" + nt_11))]
+            }
+        };
+        for (i = 0; i < oldPriceArr.length; i++) {
+            if (i == 0) {
+                saleProduct.productPrice = priceArr[(0)]
+            } else if (priceArr[((nt_13 = (i), null == nt_13 ? undefined : 'number' === typeof nt_13 ? nt_13 : "" + nt_13))] < productsArr.productPrice) {
+                saleProduct.productPrice = oldPriceArr[((nt_14 = (i), null == nt_14 ? undefined : 'number' === typeof nt_14 ? nt_14 : "" + nt_14))]
+            }
+        };
+        if (allowBookingArr.length < 1) {
+            return (products[(0)].disallowBookingReason ? ({
+                orderModel: orderModelFromServer,
+            }) : ({
+                orderModel: orderModel[(3)],
+            }))
+        } else {
+            return (({
+                orderModel: orderModel[(1)],
+                saleProduct: saleProduct,
+            }))
+        }
+    }
+});
+module.exports = ({
+    orderModel: orderModel,
+});

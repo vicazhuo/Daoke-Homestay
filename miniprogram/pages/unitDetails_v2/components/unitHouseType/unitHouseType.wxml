@@ -1,0 +1,32 @@
+<view class="house-style {{promotionLinks.length?'border':''}}">
+    <view bindtap="closeTips" class="house-style__item" wx:for="{{baseBrief}}" wx:key="{{index}}">
+        <view class="house-style_top">
+            <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/{{item.icon}}.png"></image>
+            <view class="title">{{item.title}}</view>
+            <view class="des">{{item.description}}</view>
+        </view>
+        <view catchtap="showTipsMore" class="more-house" wx:if="{{item.tips&&item.tips.length>1||item.description.length>14&&index==2}}">
+            <image mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-gantan.png"></image>
+        </view>
+        <view class="info" wx:if="{{item.tips && item.tips.length>1 && showTipsStatus}}">
+            <view class="pt6 pb6 tips-wrapper">
+                <view class="tips-info" wx:for="{{item.tips}}" wx:key="{{index}}">
+                        {{item}}
+                    </view>
+            </view>
+            <view class="arrow">
+                <image mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-morebed.png"></image>
+            </view>
+        </view>
+        <view class="info top95" wx:elif="{{item.description.length>14&&showTipsStatus&&index==2}}">
+            <view class="pt6 pb6 tips-wrapper">
+                <view class="tips-info">
+                         {{item.description}}
+                     </view>
+            </view>
+            <view class="arrow top6">
+                <image mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-morebed.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

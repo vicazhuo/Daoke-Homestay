@@ -1,0 +1,21 @@
+<template name="house-tags-detail">
+    <view class="pop-tag-intro">
+        <block wx:if="{{initHouseTags.getHouseTags(houseTags,unitTagsBitValue).houseUpTag.text}}">
+            <view class="tag-name">
+                <text class="house-tag">{{initHouseTags.getHouseTags(houseTags,unitTagsBitValue).houseUpTag.text}}</text>
+            </view>
+            <view class="tag-intro">
+          {{initHouseTags.getHouseTags(houseTags,unitTagsBitValue).houseUpTag.introducion}}
+      </view>
+        </block>
+        <block wx:for="{{initHouseTags.getHouseTags(houseTags,unitTagsBitValue).houseTags}}">
+            <view class="tag-name">
+                <text class="house-tag" style="background:{{item.background.color}};color:{{item.color}};">{{item.text}}</text>
+            </view>
+            <view class="tag-intro">
+          {{item.introducion}}
+      </view>
+        </block>
+    </view>
+</template>
+<wxs module="initHouseTags" src="../houseTags.wxs" />

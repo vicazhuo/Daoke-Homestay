@@ -1,0 +1,64 @@
+.area-code-page {
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.scroll-view-content {
+    padding: 0 0 0 40rpx;
+}
+
+.area-letter-list {
+    height: 100vh;
+    width: 90%;
+}
+
+.area-letter-key {
+    font-size: 28rpx;
+    color: #333;
+    padding-bottom: 20rpx;
+    font-weight: 400;
+}
+
+.area-letter-key::before {
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.area-letter-list-item {
+    margin-bottom: 60rpx;
+    box-sizing: border-box;
+}
+
+.area-letter-list-item:last-child {
+    margin-bottom: 0;
+}
+
+.area-list-item {
+    height: 96rpx;
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    color: #333;
+    justify-content: space-between;
+}
+
+.area-code-text {
+    font-size: 32rpx;
+    color: #999;
+}
+
+.slider-letters-list {
+    position: fixed;
+    right: 0;
+    width: 60rpx;
+    top: 280rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-letter-item {
+    font-size: 24rpx;
+    color: #333;
+    line-height: 30rpx;
+    width: 100%;
+    text-align: center;
+}

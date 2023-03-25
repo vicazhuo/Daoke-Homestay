@@ -1,0 +1,64 @@
+<import src="./template/template.wxml"></import>
+<common-page isIosCrossBtm isNavBar bindnavback="navback" crossBtnBtm="64" crossPagePaddingBtm="184" isNavEnableBack="{{false}}" navTitle="填写订单" normalPagePaddingBtm="120">
+  <view bindtap="globalTap" hidden="{{isLoading}}">
+    <form reportSubmit bindsubmit="formBtn">
+      <view class="book-page">
+        <include src="./template/houseInfo.wxml"></include>
+        <view class="book-module book-form-content people-input-box">
+          <input-number bindselectInput="selectInputTap" max="{{productInfo.stock}}" min="1" number="{{bookingCount}}" title="房屋套数" unit="套"></input-number>
+          <input-number acceptRule="{{productInfo.productFilter.acceptRule}}" bindselectInput="selectInputTap" bindtapAcceptRule="tapAcceptRule" isRecetionShow="{{isRecetionShow}}" max="{{productInfo.productFilter.maxPeopleCount}}" min="{{productInfo.productFilter.minPeopleCount}}"
+            number="{{productInfo.productFilter.currentPeopleCount}}" title="{{common.peopleCountTitle(productInfo.productFilter.introduction)}}" unit="人"></input-number>
+          <tj-input right title="入住人" type="slot">
+            <view class="book-people-info">
+              <text class="no-people-placeholder" wx:if="{{!guests.contactId}}">添加1名入住人</text>
+              <view class="default-guests-con" wx:else>
+                <text class="guests-name text-line-omit">{{guestsLastIdType==3?guests.familyName+' '+guests.firstName:guests.name}}</text>
+                <text class="guests-info" wx:if="{{common.idTypeNumberFilter(guests,guestsLastIdType)!==false}}">{{guests.idTypeInfo.type +' '+ guests.idTypeInfo.idNumber}}</text>
+              </view>
+              <button bindtap="selectPeople" class="add-people-btn" data-title="{{guests.contactId?'更换':'添加'}}" hoverClass="add-people-btn-hover">{{guests.contactId?'更换':'添加'}}</button>
+            </view>
+          </tj-input>
+          <view>
+            <view hidden="{{isShowPopup}}">
+              <tj-input isClearBtn right slotTitle bindchange="inputChange" isAliApp="{{isAliApp}}" isBorder="{{isSeaOver}}" name="guests.mobile" placeholder="用于接收订单信息" type="number" value="{{guests.mobile}}">
+                <view bindtap="selectAreaCode" class="input-con-title" slot="title">手机号+{{guests.countryCode||86}}</view>
+                <view catchtap="getPhoneContact" class="input-add-phone-slot br1" slot="right" wx:if="{{isAliApp}}">
+                  <image class="add-phone-btn" src="https://pic.tujia.com/upload/festatic/day_190122/201901221105431545.png"></image>
+                </view>
+              </tj-input>
+              <tj-input isClearBtn right bindchange="inputChange" isAliApp="{{isAliApp}}" isBorder="{{false}}" name="email" placeholder="用于接收确认函、详细入住说明" title="邮箱" value="{{email}}" wx:if="{{isSeaOver}}"></tj-input>
+            </view>
+          </view>
+        </view>
+        <promotion bindsaleRadioChange="saleRadioChange" promotion="{{promotion}}"></promotion>
+        <view class="book-module " wx:if="{{insurance.freeGive}}">
+          <view class="book-insurance-content  f-border-bottom-line-gray">
+            <view class="book-insurance-left  ">
+              <image class="insurance-icon" src="https://pic.tujia.com/upload/festatic/day_190122/201901221106232945.png"></image>
+              <view class="insurance-con">
+                <view bindtap="goToInsurDetail" class="insurance-name">{{insurance.insuranceName}}
+                  <text class="free-give" wx:if="{{insurance.freeGive}}">(免费赠送{{bookingCount}}份)</text>
+                  <image class="icon-help-inst" src="https://pic.tujia.com/upload/festatic/day_190122/201901221105502512.png" wx:if="{{insurance.detail}}"></image>
+                </view>
+                <text class="insurance-desc" wx:if="{{insuranceSwitchValue&&insuranceLength}}">已添加{{insuranceLength}}份保险</text>
+                <text class="insurance-desc" wx:else>{{insurance.description}}</text>
+              </view>
+            </view>
+            <tj-switch bindchange="insuranceSwtichChange" value="{{insuranceSwitchValue}}"></tj-switch>
+          </view>
+          <view bindtap="goToInsurance" wx:if="{{insuranceSwitchValue}}">
+            <tj-cell isLink isLastCell title="被保险人">
+              <view class="insurance-names {{guestName==='请添加'?'insurance-no-name':''}}" slot="footer">{{guestName}}</view>
+            </tj-cell>
+          </view>
+        </view>
+        <include src="./template/invoice.wxml"></include>
+
+      </view>
+    </form>
+  </view>
+  <include src="./template/buyFooter.wxml"></include>
+</common-page>
+<price-detail bindpriceClose="showPricePop" insurance="{{insurance}}" isShowPopup="{{isShowPopup}}" priceDetail="{{priceDetail}}" showPopType="{{showPopType}}"></price-detail>
+<grey-user-check bindcloseEvent="userGrayCheck" bindgetcode="getGaryCode" phone="{{tjUserPhone}}" wx:if="{{isUserGrayCheck}}"></grey-user-check>
+<wxs module="common" src="../../common/wxs/index.wxs" />

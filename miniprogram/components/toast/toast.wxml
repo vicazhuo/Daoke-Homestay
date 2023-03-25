@@ -1,0 +1,3 @@
+<view class="toast-basic toast-{{position}}" hidden="{{!showToast}}">
+    {{toastTitle}}
+</view>

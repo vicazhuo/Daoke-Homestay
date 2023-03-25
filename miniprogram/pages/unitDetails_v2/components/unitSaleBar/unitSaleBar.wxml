@@ -1,0 +1,42 @@
+<template name="unit-sale-bar">
+    <view class="g-unit-sale-bar f-border-top-line-gray-deep">
+        <view bindtap="callPhone" class="g-phone f-btn">
+            <image class="phoneicon" src="https://pwastatic.tujia.com/static/wechat/tjunitdetail/phone.png"></image>
+            <text class="phonedesc">电话</text>
+        </view>
+        <view class="g-product f-btn {{getUnitSaleBar.orderModel(productsList).saleProduct.defaultProductStatus===1?'redbg':''}}">
+            <form reportSubmit bindsubmit="formBtn">
+                <button bindgetphonenumber="getPhoneNumber" bindtap="getPhoneNumber" class=" g-product-btn go-product-inner {{getUnitSaleBar.orderModel(productsList).orderModel.class}}" data-index="{{0}}" formType="submit" hoverClass="none" openType="{{isAlreadyLogin?'':'getPhoneNumber'}}">
+                    <view class="m-price {{getUnitSaleBar.orderModel(productsList).saleProduct.cashIntros.length>1?'mt6':''}}" wx:if="{{getUnitSaleBar.orderModel(productsList).orderModel.pointer&&getUnitSaleBar.orderModel(productsList).orderModel.pointer!==3}}">
+                        <view class="clearfix">
+                            <view class="u-price-inline" style="display:inline; float:left">
+                                <text class="u-price">
+                                    ¥ {{getUnitSaleBar.orderModel(productsList).saleProduct.finalPrice}}
+                                </text>
+                                <view wx:for="{{getUnitSaleBar.orderModel(productsList).saleProduct.cashIntros}}">
+                                    <view class="bubble {{getUnitSaleBar.orderModel(productsList).saleProduct.defaultProductStatus===1?'redbg':'orgbg'}}" wx:if="{{item.intro==1}}">
+                                            {{item.badge.text}}
+                                        </view>
+                                </view>
+                            </view>
+                            <text class="u-delete" wx:if="{{getUnitSaleBar.orderModel(productsList).saleProduct.finalPrice<getUnitSaleBar.orderModel(productsList).saleProduct.productPrice}}">
+                                ￥{{getUnitSaleBar.orderModel(productsList).saleProduct.productPrice}}
+                            </text>
+                        </view>
+                        <view wx:for="{{getUnitSaleBar.orderModel(productsList).saleProduct.cashIntros}}">
+                            <block wx:if="{{item.intro==0}}">
+                                <view class="u-text-desc u-price-desc" wx:if="{{getUnitSaleBar.orderModel(productsList).saleProduct.returnCashSettingType!=0&&getUnitSaleBar.orderModel(productsList).orderModel.pointer===1}}">
+                                    <view>{{item.badge.text}}</view>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="u-pay-status">
+                        {{getUnitSaleBar.orderModel(productsList).orderModel.text}}
+                    </view>
+                </button>
+            </form>
+        </view>
+    </view>
+</template>
+<wxs module="getUnitSaleBar" src="unitSaleBar.wxs" />

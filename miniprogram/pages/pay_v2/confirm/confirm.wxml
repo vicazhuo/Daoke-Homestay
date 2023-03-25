@@ -1,0 +1,16 @@
+<view hidden="{{loadingHidden}}">
+    <view class="state-group align-center page-wrap">
+        <icon size="80" type="waiting"></icon>
+        <view class="title-box">订单待确认(已支付完成）</view>
+        <view class="text-desc">该订单需房东确认，房东会在<text class="text-danger">2小时</text> 内完成确认。</view>
+    </view>
+    <view class="btn-area page-wrap">
+        <button bindtap="orderClick" class="see-order" type="primary">查看订单</button>
+    </view>
+    <view class="page-btm-btns">
+        <button bindtap="makeMerchantPhoto" plain="flase" type="primary">联系房东</button>
+        <button bindtap="indexClick" class="" plain="flase" type="primary">返回首页</button>
+    </view>
+</view>
+<banner bannerData="{{order.banner}}"></banner>
+<loading wx:if="{{loadingHidden}}">加载中...</loading>

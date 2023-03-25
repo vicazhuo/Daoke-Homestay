@@ -1,0 +1,52 @@
+<common-page isIosCrossBtm crossBtnBtm="64" crossPagePaddingBtm="184" normalPagePaddingBtm="120">
+    <block wx:if="{{contactList.length}}">
+        <view class="people-list-page">
+            <button bindtap="addPeople" class="add-people-btn">
+                <text class="form-number-add"></text>
+                <text class="add-people-btn-f">添加{{title}}</text>
+            </button>
+            <view class="people-list-content">
+                <view class="list-item" wx:for="{{contactList}}" wx:key="{{index}}">
+                    <tj-swipeout operateWidth="80">
+                        <view slot="content">
+                            <view bindtap="peopleItemClick" class="people-item" data-id="{{item.contactId}}">
+                                <view catchtap="radioChange" class="people-item-content" data-index="{{index}}" slot="title">
+                                    <view class="people-item-content-box">
+                                        <image class="no-msg-icon" src="https://pic.tujia.com/upload/festatic/day_190122/201901221105069693.png" wx:if="{{item.isNoInfo}}"></image>
+                                        <tj-radio checked="{{item.isSelect}}" styleType="{{houseCount==1?'spot':''}}" wx:else></tj-radio>
+                                        <view class="list-title-con">
+                                            <text class="list-title-name text-line-omit">{{item.name}}</text>
+                                            <view class="item-info-alert" wx:if="{{item.isNoInfo}}">信息不全，点击补充</view>
+                                            <view class="list-title-desc" wx:elif="{{item.idTypeInfo}}">
+                                                <text class="title-desc-name">{{item.lastIdTypeName}}：</text>
+                                                <text class="title-desc-text">{{item.idTypeInfo}}</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="arrow-icon"></view>
+                            </view>
+                        </view>
+                        <view bindtap="delPeople" class="people-list-del-button" data-index="{{index}}" slot="button">
+                            <image class="people-del-icon" src="https://pic.tujia.com/upload/festatic/day_190122/201901221105426216.png"></image> 删除
+            </view>
+                    </tj-swipeout>
+                </view>
+            </view>
+        </view>
+        <view class="people-list-btn-content" slot="bottom-button">
+            <form reportSubmit bindsubmit="formBtn" formType="submit" style="width:100%">
+                <button bindtap="peopleListSubmit" class="people-list-btn {{isSelectNumber?'active':''}}" formType="submit" hoverClass="btn-hover">确定</button>
+            </form>
+        </view>
+    </block>
+</common-page>
+<view class="no-peole-wrapper" wx:if="{{!isLoading&&!contactList.length}}">
+    <image class="search-no-icon" src="https://pwastatic.tujia.com/static/wechat/units_search_page/icon_no_house.png"></image>
+    <view class="tips-action">
+        <view class="text">暂无常用{{title}}</view>
+        <view bindtap="addPeople" class="add-people">
+            <text>添加{{title}}</text>
+        </view>
+    </view>
+</view>

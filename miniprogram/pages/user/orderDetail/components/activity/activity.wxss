@@ -1,0 +1,54 @@
+.order-activity {
+    width: 100%;
+}
+
+.order-activity .activity-body {
+    padding: 40rpx 20rpx 0rpx;
+    text-align: center;
+    position: relative;
+}
+
+.order-activity .activity-body image {
+    width: 100%;
+}
+
+.order-activity .activity-body .activity-text {
+    position: absolute;
+    top: 40rpx;
+    left: 166rpx;
+    width: calc(100% - 206rpx);
+}
+
+.order-activity .activity-body .activity-text .activity-name {
+    font-size: 28rpx;
+    color: #FEEFD6;
+    letter-spacing: 0;
+    line-height: 28rpx;
+    margin-top: 36rpx;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.order-activity .activity-body .activity-text .activity-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14rpx;
+}
+
+.activity-btns .btn-action {
+    border: 2rpx solid #FEEFD6;
+    border-radius: 12rpx;
+    font-size: 24rpx;
+    color: #FEEFD6;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 24rpx;
+    padding: 10rpx;
+}
+
+.activity-text .btn-text {
+    font-size: 22rpx;
+    color: #FEEFD6;
+    letter-spacing: 0;
+    line-height: 22rpx;
+}

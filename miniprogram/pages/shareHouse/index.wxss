@@ -1,0 +1,65 @@
+.units-list-container {
+    padding: 0 40rpx 74rpx 40rpx;
+    background-color: #fff;
+    flex: 1;
+}
+
+.link_btn {
+    width: 100%;
+    z-index: 101;
+    position: fixed;
+    bottom: 0rpx;
+    background-color: #FFFFFF;
+    box-shadow: 0 -1px 3rpx 0 #E9E9E9;
+}
+
+.btn {
+    background-color: #FF9645;
+    color: #fff;
+    border: none;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    margin: 20rpx;
+}
+
+.i-description-popup {
+    position: relative;
+    width: 522rpx;
+    height: 336rpx;
+    text-align: center;
+    font-size: 28rpx;
+    line-height: 46rpx;
+    color: #030303;
+    background: #f1f1f1;
+    border-radius: 18rpx;
+}
+
+.i-description-popup .top {
+    padding: 60rpx;
+}
+
+.title {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+
+.con {
+    font-size: 28rpx;
+}
+
+.btn_list {
+    position: absolute;
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    bottom: 0;
+    border: none;
+    border-top: 1rpx solid #9d9d9d;
+    font-size: 32rpx;
+    color: #0076FF;
+}
+
+.houser-error-load {
+    text-align: center;
+}

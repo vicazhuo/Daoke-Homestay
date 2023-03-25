@@ -1,0 +1,49 @@
+<view class="wrapper">
+    <view class="content">
+        <view class="status">
+            <image class="statusImg" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/wifitwo/wifi_ok_icon.png"></image>
+      激活成功
+    </view>
+        <view class="card">
+            <view class="title">台卡使用说明</view>
+            <view class="text">
+                <text class="num">1</text>确认Wi-Fi信息</view>
+            <view class="text">
+                <text class="num">2</text>将台卡摆放至房间醒目处</view>
+            <view class="text">
+                <text class="num">3</text>打开微信扫一扫</view>
+            <view class="text lastOne">
+                <text class="num">4</text>测试是否能够成功连接</view>
+        </view>
+        <view class="card">
+            <view class="tkDetail">
+                <text class="left">台卡编号</text>
+                <text class="right">{{wifiListObj.hotelWifiId}}</text>
+            </view>
+            <view class="tkDetail" wx:if="{{wifiListObj.mulplyStore}}">
+                <text class="left">关联门店名称</text>
+                <text class="right">{{wifiListObj.hotelName}}</text>
+            </view>
+            <view class="tkDetail">
+                <text class="left">需摆放的房屋名称</text>
+                <text class="right">{{wifiListObj.houseName}}</text>
+            </view>
+            <view class="tkDetail">
+                <text class="left">Wi-Fi名称</text>
+                <text class="right">{{wifiListObj.name}}</text>
+            </view>
+            <view class="tkDetail {{wifiListObj.houseNo?'':'lastOne'}}">
+                <text class="left">Wi-Fi密码</text>
+                <text class="right">{{wifiListObj.password||'无需密码'}}</text>
+            </view>
+            <view class="tkDetail lastOne" wx:if="{{wifiListObj.houseNo}}">
+                <text class="left">门牌号</text>
+                <text class="right">{{wifiListObj.houseNo}}</text>
+            </view>
+        </view>
+        <text class="message">温馨提示：如需修改请返回上一页面</text>
+        <view class="bottomBtn">
+            <view bindtap="gotoWifiList" class="btns">完成</view>
+        </view>
+    </view>
+</view>

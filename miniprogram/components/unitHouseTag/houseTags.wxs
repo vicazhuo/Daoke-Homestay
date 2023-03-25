@@ -1,0 +1,63 @@
+var getHouseTags = (function(tagsArr, bitVal) {
+    var tagObj = ({
+        houseTags: [],
+        houseUpTag: ({}),
+    });
+    if (!bitVal || tagsArr.length === 0) {
+        tagObj = null;
+        return
+    };
+    for (var i = 0; i < tagsArr.length; i++) {
+        var item = tagsArr[((nt_0 = (i), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))];
+        var itemValue = 1;
+        for (var j = 0; j < i; j++) {
+            itemValue *= 2
+        };
+        if ((itemValue & bitVal) === itemValue && item.isUpShow) {
+            tagObj.houseUpTag = item
+        };
+        if ((itemValue & bitVal) === itemValue && !item.isUpShow && item.visibleInUnitList) {
+            tagObj.houseTags.push(item)
+        }
+    };
+    return (tagObj)
+});
+var getHouseLevelTag = (function(level) {
+    var levelTag = '';
+    switch (level) {
+        case 1:
+            levelTag = 'level-haohua';
+            break;
+        case 2:
+            levelTag = 'level-jingpin';
+            break;
+        case 3:
+            levelTag = 'level-shushi';
+            break;
+        default:
+            return;
+    };
+    return (levelTag)
+});
+var getHouseLevelTagText = (function(level) {
+    var levelTag = '';
+    switch (level) {
+        case 1:
+            levelTag = '豪华';
+            break;
+        case 2:
+            levelTag = '精品';
+            break;
+        case 3:
+            levelTag = '舒适';
+            break;
+        default:
+            return;
+    };
+    return (levelTag)
+});
+module.exports = ({
+    getHouseTags: getHouseTags,
+    getHouseLevelTag: getHouseLevelTag,
+    getHouseLevelTagText: getHouseLevelTagText,
+});

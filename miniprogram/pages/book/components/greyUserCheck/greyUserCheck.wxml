@@ -1,0 +1,15 @@
+<popup isPopupShow animType="scale">
+    <view class="gray-list-contaniner">
+        <view class="gray-title">{{title}}</view>
+        <view class="gray-input-contaniner">
+            <view class="input-box">
+                <input bindinput="_codeChange" class="gray-input" placeholder="请输入短信验证码"></input>
+                <view bindtap="_getCode" class="code-btn {{time!=60?'disabled':''}}">{{time!=60?time+'s':'获取验证码'}}</view>
+            </view>
+            <view class="gray-tip">验证码将以短信形式发送至手机<text class="phone-text">{{phone}}</text>
+            </view>
+        </view>
+        <view bindtap="_submit" class="gray-check-btn {{code?'active':''}}">验证</view>
+        <view bindtap="_close" class="del-icon"></view>
+    </view>
+</popup>

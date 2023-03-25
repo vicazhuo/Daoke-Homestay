@@ -1,0 +1,5 @@
+<template name="house-tags-v2">
+    <text class="house-tag-v2" style="background:{{initHouseTags.getHouseTags(houseTags,unitTagsBitValue).houseUpTag.background.color}};color:{{initHouseTags.getHouseTags(houseTags,unitTagsBitValue).houseUpTag.color}};" wx:if="{{initHouseTags.getHouseTags(houseTags,unitTagsBitValue).houseUpTag.text}}">{{initHouseTags.getHouseTags(houseTags,unitTagsBitValue).houseUpTag.text}}</text>
+    <text class="house-tag-v2" style="background:{{item.background.color}};color:{{item.color}};" wx:for="{{initHouseTags.getHouseTags(houseTags,unitTagsBitValue).houseTags}}">{{item.text}}</text>
+</template>
+<wxs module="initHouseTags" src="../houseTags.wxs" />

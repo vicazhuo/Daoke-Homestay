@@ -1,0 +1,49 @@
+.auth-contaniner {
+    background: #fff;
+    border-radius: 8rpx;
+    width: 560rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 54rpx 60rpx;
+    box-sizing: border-box;
+}
+
+.auth-title {
+    font-size: 34rpx;
+    color: #333;
+    font-weight: 500;
+}
+
+.auth-text {
+    font-size: 28rpx;
+    color: #666;
+    font-weight: 300;
+    margin: 24rpx 0 60rpx;
+    text-align: center;
+}
+
+.auth-btn-confirm {
+    width: 440rpx;
+    height: 80rpx;
+    background: rgb(255, 69, 69);
+    border-radius: 12rpx;
+    font-size: 32prx;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.auth-btn-cancel {
+    font-size: 28rpx;
+    color: #999;
+    margin-top: 44rpx;
+    text-decoration: underline;
+}
+
+.auth-btn-hover {
+    opacity: 0.8;
+    transition: opacity .2s;
+}

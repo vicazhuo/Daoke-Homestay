@@ -1,0 +1,107 @@
+<view class="container">
+  <button bindgetuserinfo="getUserInfo" class="tit tit1" data-type="1" hoverClass="none" openType="getUserInfo" wx:if="{{!isAuth}}">
+    <view class="tit-top">
+      <view class="header-img">
+       <text class="cuIcon-my lg text-gray"></text>
+      </view>
+      <view class="text2">登录/注册</view>
+    </view>
+  </button>
+  <view class="tit" wx:else>
+    <block wx:if="{{isLogin}}">
+      <view class="tit-top">
+        <image src="{{userInfo.avatarUrl}}"></image>
+        <view class="text1">
+          <view class="name">{{userInfo.nickname}}</view>
+          <view class="grade-no" wx:if="{{userLevel==0}}">您还不是VIP用户</view>
+          <text class="grade" wx:else>{{userInfo.userTitle}}</text>
+        </view>
+      </view>
+      <view bindtap="goMember" class="vip-no" wx:if="{{userLevel==1}}">
+        <image src="/common/images/vip.png"></image>
+      </view>
+      <view bindtap="goMember" class="vip-user" wx:else>
+        <image class="vip-user-bg" src="http://minsu.image.zhiyinfo.com/member/vip/vip-card-4.png"></image>
+        <view class="vip-user-left">
+          <image src="https://m.iyoujia.com/images/vip/icon-V@2x.png"></image>
+          <text class="text">累计为你节省了￥{{totalSaveAmount}}</text>
+          <view class="icon">
+          <text class="cuIcon-right lg text-gray"></text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view bindtap="goAuthorize" class="tit-top">
+        <view class="header-img">
+          <text class="cuIcon-my lg text-gray"></text>
+        </view>
+        <view class="text2">登录/注册</view>
+      </view>
+    </block>
+  </view>
+  <view class="money-detail" wx:if="{{isAuth&&isLogin}}">
+    <view bindtap="goWallet" class="money-detail-v2">
+      <view class="money-detail-v2-v">
+        <view class="v1">{{payGiftRemainAmount}}</view>
+        <view class="v2">储值余额(元)</view>
+      </view>
+    </view>
+    <view bindtap="goWallet" class="money-detail-v money-detail-v1">
+      <view class="v1">{{backRemainAmount}}</view>
+      <view class="v2">返现余额</view>
+    </view>
+    <view bindtap="goCoupon" class="money-detail-v">
+      <view class="v1">{{couponCount}}</view>
+      <view class="v2">优惠券(张)</view>
+    </view>
+  </view>
+  <view class="list-view">
+    <button bindgetuserinfo="getUserInfo" wx:if="{{isShowrechange}}" class="list list2 list1" data-type="1" hoverClass="none" openType="getUserInfo" wx:if="{{!isAuth}}">
+         邀请储值
+    </button>
+    <block wx:else>
+      <view bindtap="showInviteModal" wx:if="{{isShowrechange}}" class="list list1" wx:if="{{isLogin}}">
+        邀请储值
+      </view>
+    </block>
+    <view bindtap="goWebView" wx:if="{{isShowinves}}" data-url="{{investmentintroUrl}}" class="list list1">投资招商</view>
+    <view bindtap="goWebView" wx:if="{{isShowlandlord}}" data-url="{{landlordintroUrl}}" class="list list1">业主加盟</view>
+    <view bindtap="collection" wx:if="{{isShowcolle}}" class="list list1" wx:if="{{isLogin}}">收藏/足迹</view>
+    <view bindtap="phoneCall"  wx:if="{{isShowserver}}" class="list">联系客服</view>
+  </view>
+  <!-- 稻客活动广告 -->
+  <view bindtap="goNewPullMain" class="new-pull-main-banner" wx:if="{{activeInfo}}" data-url="{{activeInfo.url}}">
+    <image src="{{activeInfo.bannerUrl}}"></image>
+  </view>
+  <!-- 微信广告位 -->
+   <view class="new-pull-main-banner" wx:if="{{bannerManage.memberBanner.adShow}}">
+       <ad ad-intervals="10000" unit-id="{{bannerManage.memberBanner.bannerId}}"></ad>  
+   </view>
+
+  <button bindtap="logout" class="btn1" hoverClass="none" wx:if="{{isLogin}}">退出登录</button>
+  <view class="null-h"></view>
+</view>
+<view catchtouchmove="preventTouchMove" class="share-btns" wx:if="{{inviteModalIsShow}}">
+  <view bindtap="hideInviteModal" class="btns-bg"></view>
+  <view class="btns">
+    <view class="btn">
+      <button hoverClass="none" openType="share"></button>
+      <image src="https://m.iyoujia.com/images/wx-wap/newPull/share1.png"></image>
+      <text>微信好友</text>
+    </view>
+    <view bindtap="showMergeImg" class="btn">
+      <image src="https://m.iyoujia.com/images/wx-wap/newPull/share2.png"></image>
+      <text>微信朋友圈</text>
+    </view>
+  </view>
+</view>
+<view catchtouchmove="preventTouchMove" class="share-img" wx:if="{{mergeImgIsShow}}">
+  <view bindtap="hideMergeImg" class="share-img-com-bg"></view>
+  <view class="share-img-com">
+    <canvas canvasId="myCanvas" class="img1"></canvas>
+    <view bindtap="saveMergeImg" class="btn saveImage" wx:if="{{writePhotosAlbumIsAllow}}">保存图片分享朋友圈</view>
+    <button bindopensetting="opensettingCbk" class="btn" hoverClass="none" openType="openSetting" wx:else>保存图片分享朋友圈</button>
+  </view>
+</view>
+<auth-drawer-box bind:callbackEvent="callbackEvent" id="auth-drawer-box" isGetUserInfoPopup="{{isGetUserInfoPopup}}" notSubscribed="{{notSubscribed}}"></auth-drawer-box>

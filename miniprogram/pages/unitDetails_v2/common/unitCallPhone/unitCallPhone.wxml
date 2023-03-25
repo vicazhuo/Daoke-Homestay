@@ -1,0 +1,42 @@
+<view class="phone">
+    <form bindsubmit="getServiceHotline">
+        <view class="info">
+      请先确认本机号码
+    </view>
+        <view class="form {{mobile?'has-reset':''}}">
+            <input bindinput="bindKeyInput" class="form-input" name="phone" placeholder="请输入您的手机号" placeholderClass="input-placeholder" type="number" value="{{mobile}}"></input>
+            <view catchtouchstart="clearPhone" class="form-reset">
+                <icon color="#c1c1c1" size="16" type="clear"></icon>
+            </view>
+        </view>
+        <view class="btn-call">
+            <button disabled="{{!isCanSubmit}}" formType="submit" type="primary">获取号码</button>
+        </view>
+    </form>
+</view>
+<view class="process">
+    <view class="title">呼叫房东流程</view>
+    <view class="process-item">
+        <view class="not-lastitem">
+            <i>1</i>输入本机号</view>
+        <view class="not-lastitem">
+            <i>2</i>获取房东临时号码</view>
+        <view>
+            <i>3</i>拨打</view>
+    </view>
+</view>
+<view class="rule">
+    <view class="rule-item">
+        <i>1. </i>需输入本机号码，才能拨出
+  </view>
+    <view class="rule-item">
+        <i>2. </i>房东手机号是临时匹配的一次性号码，下次直接拨打无效，需点击获取号码重新拨打
+  </view>
+    <view class="rule-item">
+        <i>3. </i>请确保在{{appName}}平台进行交易，以防诈骗！如与房东线下交易纠纷，{{appName}}不承担任何责任
+  </view>
+    <view class="rule-item">
+        <i>4. </i>此功能仅支持中国大陆手机号码使用，请确保输入的是中国大陆手机号
+  </view>
+</view>
+<loading wx:if="{{isLoading}}">加载中</loading>

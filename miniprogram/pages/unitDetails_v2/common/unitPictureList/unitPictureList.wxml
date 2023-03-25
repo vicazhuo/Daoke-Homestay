@@ -1,0 +1,19 @@
+<view class="pictureBlock">
+    <view class="scrollBg fixed {{titleTags.length==0?'hide':''}}">
+        <view class="scrollTab" style="width: 90%">
+            <view class="similar-units_list">
+                <view class="similar-units_item" wx:for="{{titleTags}}">
+                    <text bindtap="chooseTag" class="tags {{tagIndex==index?'active':''}}" data-desc="{{item}}" data-index="{{index}}">{{item}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <scroll-view scrollY bindscrolltolower="loadMoreEvent" class="scrollbody">
+        <view class="picturelist {{titleTags.length>0?'mt':''}}">
+            <view bindtap="imageSelected" class="item" data-selectedindex="{{index}}" wx:for="{{imglist}}">
+                <image mode="aspectFill" src="{{item.url}}"></image>
+                <text class="info" wx:if="{{item.title}}">{{item.title}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>

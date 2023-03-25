@@ -1,0 +1,103 @@
+.unit-people-number {
+    background: #ffffff;
+    margin-bottom: 20rpx;
+    box-shadow: 0 1px 3rpx 0 rgba(0,0,0,0.06);
+    padding: 60rpx 40rpx;
+}
+
+.inputNumber {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    font-size: 14px;
+    color: #666;
+    background: #fff;
+    position: relative;
+    background: rgba(63,73,84,0.05);
+    border-radius: 32rpx;
+    height: 64rpx;
+    padding: 0 5rpx;
+}
+
+.inputNumber-input {
+    display: block;
+    border: 0;
+    background: transparent;
+    line-height: 25rpx;
+    padding: 10rpx 0;
+    color: #333;
+    text-align: center;
+    -webkit-box-flex: 1;
+    flex: 1;
+    width: 0;
+    font-size: 24rpx;
+    color: #333;
+    position: relative;
+    font-weight: 400;
+}
+
+.inputNumber-minus,.inputNumber-plus {
+    position: relative;
+    display: flex;
+    width: 56rpx;
+    height: 56rpx;
+    background: #ffffff;
+    border-radius: 50%;
+    -webkit-box-flex: 0;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2rpx 3rpx 0 rgba(0,0,0,0.08),0 2rpx 14rpx 0 rgba(0,2,4,0.08);
+}
+
+.inputNumber-minus:after {
+    content: '';
+    width: 30rpx;
+    height: 4rpx;
+    border-radius: 2rpx;
+    background-color: #fd8238;
+    background-image: linear-gradient(to right,rgba(255,176,0,0.97) 0%,#f88e30 100%);
+    box-shadow: 0 2rpx 8rpx 0 rgba(255,144,47,0.3);
+}
+
+.inputNumber-plus:before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    content: '';
+    width: 4rpx;
+    height: 30rpx;
+    border-radius: 2rpx;
+    background-image: linear-gradient(to bottom,rgba(255,176,0,0.97) 0%,#f88e30 100%);
+    box-shadow: 0 2rpx 8rpx 0 rgba(255,144,47,0.3);
+}
+
+.inputNumber-plus:after {
+    content: '';
+    width: 32rpx;
+    height: 4rpx;
+    border-radius: 2rpx;
+    background-image: linear-gradient(to right,rgba(255,176,0,0.97) 0%,#f88e30 100%);
+    box-shadow: 0 2rpx 8rpx 0 rgba(255,144,47,0.3);
+}
+
+.inputNumber-minus.is-disabled:after,.inputNumber-plus.is-disabled:before,.inputNumber-plus.is-disabled:after {
+    background: #dadada;
+    box-shadow: none;
+}
+
+.unit-people-number-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40rpx;
+    position: relative;
+}
+
+.inputNumber {
+    width: 286rpx;
+}

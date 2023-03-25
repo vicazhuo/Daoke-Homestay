@@ -1,0 +1,13 @@
+<!--pages/user/money/index.wxml-->
+<view class='box'>
+  <view class='box-shadow'>
+    <text class='title'>当前余额  </text>
+    <view class='mt10'>
+      <text class='ixon corle'>￥</text>
+       <text class='price'>{{user.money}}</text>
+    </view>
+    <view class='desd'>当前积分:
+      <text class='corle'>{{user.score}}</text>
+    </view>
+  </view>
+</view>

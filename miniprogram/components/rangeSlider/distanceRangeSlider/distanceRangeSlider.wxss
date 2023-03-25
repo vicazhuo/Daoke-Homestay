@@ -1,0 +1,6 @@
+@import "../rangeSlider/rangeSlider.wxss";
+
+.distanceRangeSlider-layout {
+    width: 100%;
+    margin-bottom: 80rpx;
+}

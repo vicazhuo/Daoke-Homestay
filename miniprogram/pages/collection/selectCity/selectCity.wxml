@@ -1,0 +1,5 @@
+<view>
+    <view bindtap="selectCity" class="city-item br1_bottom {{item.isSelect?'active':''}}" data-index="{{index}}" wx:for="{{cityList}}" wx:key="{{index}}">
+      {{item.name}}({{item.val}})
+    </view>
+</view>

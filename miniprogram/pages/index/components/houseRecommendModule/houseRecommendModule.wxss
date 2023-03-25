@@ -1,0 +1,339 @@
+
+
+.home-module-title {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40rpx 0;
+}
+
+.main-module-title {
+    font-size: 48rpx;
+    color: #333;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.sub-module-title {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 12rpx;
+}
+
+.home-module-container {
+    margin-bottom: 80rpx;
+}
+
+.module-content {
+    margin-top: 40rpx;
+}
+
+.hot-recommend-contaniner {
+    padding: 80rpx 0 0;
+}
+
+.week-house-card-item {
+    width: 438rpx;
+}
+
+.week-house-img {
+    width: 100%;
+}
+
+.week-house-title {
+    font-size: 32rpx;
+    color: #333;
+    line-height: 38rpx;
+    margin: 28rpx 0 12rpx;
+    font-weight: 500;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.week-house-desc {
+    font-size: 26rpx;
+    color: #999;
+    width: 438rpx;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.week-house-img {
+    width: 100%;
+    height: 292rpx;
+    border-radius: 12rpx;
+}
+
+.week-house-list {
+    width: 100%;
+    height: 440rpx;
+}
+
+.week-house-card-item {
+    display: flex;
+    flex-direction: column;
+    flex: none;
+}
+
+.week-swiper-item {
+}
+
+.neigh-scroll-view,.week-scroll-view {
+    width: 100%;
+    white-space: nowrap;
+}
+
+.neigh-scroll-view-content {
+    display: flex;
+    padding: 0 40rpx;
+    height: 210rpx;
+}
+
+.week-scroll-view-content {
+    display: flex;
+    padding: 0 40rpx;
+    height: 440rpx;
+}
+
+.week-house-card-item {
+    margin-right: 30rpx;
+}
+
+.neigh-borhood-contaniner {
+    margin-bottom: 60rpx;
+}
+
+.neigh-house-card-item {
+    width: 280rpx;
+    height: 186rpx;
+    position: relative;
+    margin-right: 30rpx;
+    flex: none;
+}
+
+.neigh-house-img {
+    width: 100%;
+    height: 100%;
+}
+
+.neigh-house-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.neigh-house-img {
+    border-radius: 12rpx;
+}
+
+.neigh-mask {
+    background: rgba(51,51,51,0.40);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 12rpx;
+    letter-spacing: 5rpx;
+}
+
+.space-view {
+    width: 10rpx;
+    flex: none;
+}
+
+.final-price {
+    font-size: 28rpx;
+    color: #d8646f;
+    font-weight: 500;
+    line-height: 1;
+    margin-right: 10rpx;
+}
+
+.product-price {
+    font-size: 24rpx;
+    color: #999;
+    font-weight: 300;
+    text-decoration: line-through;
+}
+
+.hot-price-bar {
+    display: flex;
+    align-items: baseline;
+}
+
+.hot-house-name {
+    font-size: 28rpx;
+    color: #333;
+    font-weight: 400;
+    line-height: 38rpx;
+    margin: 6rpx 0 8rpx;
+    height: 76rpx;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.hot-house-tag {
+    font-size: 24rpx;
+    color: #666;
+    font-weight: 300;
+    margin-top: 12rpx;
+}
+
+.hot-house-img {
+    width: 320rpx;
+    height: 214rpx;
+    border-radius: 12rpx;
+}
+.unit{
+  color: #83868f;
+  font-size: 20rpx
+}
+.hot-house-list {
+    height: 946rpx;
+}
+
+.swiper-hot-house-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hot-house-card-item {
+    width: 320rpx;
+    margin-right: 30rpx;
+    font-size: 0;
+    margin-bottom: 25rpx;
+}
+
+.hot-house-card-item:nth-child(2n) {
+    margin-right: 0;
+}
+
+.more-house-btn {
+    background: #F4F6F8;
+    border-radius: 80rpx;
+    height: 80rpx;
+    width: 460rpx;
+    font-size: 30rpx;
+    color: #464646;
+    letter-spacing: 2rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 44rpx auto 0;
+}
+
+.hot-list-nav {
+    display: flex;
+    font-size: 28rpx;
+    color: #666;
+    padding: 0 40rpx;
+    margin-top: 20rpx;
+}
+
+.nav-title {
+    transition: all .2s;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.nav-title.active {
+    font-size: 28rpx;
+    color: #333;
+    font-weight: 500;
+}
+
+.list-nav-item {
+    margin-right: 76rpx;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 26%;
+}
+
+.hot-list-nav .list-nav-item:last-child {
+    margin-right: 0;
+}
+
+.nav-active-border {
+    background-image: linear-gradient(to right,#d8646f 0%,#d8646f 100%);
+    box-shadow: 0 5rpx 10rpx -2rpx rgba(245,223,226,0,0.50);
+    border-radius: 6rpx;
+    height: 6rpx;
+    width: 100%;
+    margin-top: 6rpx;
+}
+
+.hot-house-list-contaniner {
+    padding: 0 40rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.desc-item-img {
+    width: 56rpx;
+    height: 56rpx;
+}
+
+.desc-item-title {
+    font-size: 26rpx;
+    color: #5a5e6a;
+    letter-spacing: 2rpx;
+    font-weight: 500;
+    margin: 30rpx 0 6rpx;
+}
+
+.desc-item-text {
+    font-size: 20rpx;
+    color: #83868f;
+    font-weight: 300;
+    text-align: center;
+}
+
+.tj-desc-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 60rpx 0 22rpx;
+    background-image: linear-gradient(-179deg,#F7F9FB 0%,rgba(247,249,251,0.00) 100%);
+}
+
+.desc-bar-item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hot-module-list {
+    margin-bottom: 68rpx;
+}
+
+.more-house-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400rpx;
+    text-align: center;
+}

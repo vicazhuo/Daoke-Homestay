@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "地图搜索",
+    "disableScroll": true,
+    "usingComponents": {
+        "component-unitSearchHeader": "../components/searchHeader/searchHeader",
+        "cover-view-slider": "/components/coverViewSlider/coverViewSlider"
+    }
+}

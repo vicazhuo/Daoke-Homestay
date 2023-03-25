@@ -1,0 +1,18 @@
+<view class="customer-service">
+    <view class="customer-service__item">
+        <image class="customer-service__icon" src="/common/images/icon_menu_service.png"></image>
+        <view class="customer-service__tel">
+            <view class="customer-service__dt">{{desc1}}</view>
+            <view class="customer-service__dd">{{phoneNumber}}</view>
+        </view>
+        <button bindtap="makeInternalPhone" class="customer-service__btn" plain="true" size="mini" type="primary">立即咨询</button>
+    </view>
+    <view class="customer-service__item">
+        <image class="customer-service__icon" src="/common/images/icon_menu_service_w.png"></image>
+        <view class="customer-service__tel">
+            <view class="customer-service__dt">{{desc2}}</view>
+            <view class="customer-service__dd">{{mobileNumber}}</view>
+        </view>
+        <button bindtap="makeOverseasPhone" class="customer-service__btn" plain="true" size="mini" type="primary">立即咨询</button>
+    </view>
+</view>

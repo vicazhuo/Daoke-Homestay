@@ -1,0 +1,38 @@
+
+<view catchtouchmove="preventTouchMove" class="invoice" wx:if="{{invoiceIsShow}}">
+    <view class="invoice-con">
+        <view class="invoice-con-tit">发票信息</view>
+        <view class="invoice-con-list">
+            <view class="invoice-con-li">
+                <view class="invoice-con-li-l">发票内容</view>
+                <view class="invoice-con-li-r">住宿服务费</view>
+            </view>
+            <view class="invoice-con-li" wx:if="{{data.invoice.type==1}}">
+                <view class="invoice-con-li-l">企业名称</view>
+                <view class="invoice-con-li-r">{{data.invoice.company}}</view>
+            </view>
+            <view class="invoice-con-li" wx:if="{{data.invoice.type==1}}">
+                <view class="invoice-con-li-l">纳税人识别号</view>
+                <view class="invoice-con-li-r">{{data.invoice.taxpayerNumber}}</view>
+            </view>
+            <view class="invoice-con-li" wx:if="{{data.invoice.type==2}}">
+                <view class="invoice-con-li-l">发票抬头</view>
+                <view class="invoice-con-li-r">{{data.invoice.title}}</view>
+            </view>
+            <view class="invoice-con-li">
+                <view class="invoice-con-li-l">收票人手机号</view>
+                <view class="invoice-con-li-r">{{data.invoice.receiveMobile}}</view>
+            </view>
+            <view class="invoice-con-li">
+                <view class="invoice-con-li-l">收票人邮箱</view>
+                <view class="invoice-con-li-r">{{data.invoice.receiveMail}}</view>
+            </view>
+            <view class="invoice-con-li">
+                <view class="invoice-con-li-l">发票备注</view>
+                <view class="invoice-con-li-r">{{data.invoice.detailRemark}}</view>
+            </view>
+        </view>
+        <view bindtap="goInvoiceIntro" class="invoice-intro">发票须知</view>
+        <view bindtap="closeInvoice" class="invoice-btn">关闭</view>
+    </view>
+</view>

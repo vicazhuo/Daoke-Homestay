@@ -1,0 +1,67 @@
+.fixed-border {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.9);
+    border-top: 1px solid #f4f4f4;
+}
+
+.house-position {
+    padding: 0 40rpx 0 40rpx;
+    background: #ffffff;
+    min-height: 100vh;
+}
+
+.house-scene {
+    padding: 57rpx 0 0 0;
+}
+
+.house-scene:last-child {
+    padding-bottom: 130rpx;
+}
+
+.house-scene .house-scene-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 28rpx;
+    color: #333333;
+    margin-bottom: 10rpx;
+}
+
+.house-scene-title .scene-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.house-scene-title .scene-icon image {
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 10rpx;
+    margin-bottom: 4rpx;
+}
+
+.house-scene-title .scene-icon .icon-left {
+    display: flex;
+}
+
+.scene-list {
+    font-size: 28rpx;
+    color: #666666;
+    padding-bottom: 54rpx;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.house-scene:last-child .scene-list {
+    border: 0;
+}
+
+.scene-list .scene {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18rpx;
+}

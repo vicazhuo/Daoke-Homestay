@@ -1,0 +1,465 @@
+page {
+}
+
+button {
+    line-height: 1;
+    padding: 0;
+    border: none;
+}
+
+.redbag-page-wrapper {
+    background: linear-gradient(to bottom,#fff6f2,#feecef);
+    min-height: 100%;
+}
+
+.redbag-page {
+    text-align: center;
+    width: 100%;
+    padding: 0 40rpx;
+    box-sizing: border-box;
+}
+
+.header-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 70rpx;
+    color: #CB6F76;
+    font-size: 30rpx;
+}
+
+.title-bg {
+    height: 126rpx;
+    width: 358rpx;
+    position: absolute;
+    top: 0;
+}
+
+.title-left-icon {
+    width: 15rpx;
+    height: 40rpx;
+}
+
+.title-text {
+    margin: 0 10rpx;
+    letter-spacing: 2rpx;
+}
+
+.title-right-icon {
+    transform: rotate(180deg);
+}
+
+.icon-title-main {
+    width: 600rpx;
+    height: 79rpx;
+}
+
+.icon-title-success {
+    width: 655rpx;
+    height: 69rpx;
+}
+
+.icon-title-refuse {
+    width: 616rpx;
+    height: 70rpx;
+}
+
+.header-img {
+    margin-top: 40rpx;
+}
+
+.redbag-active {
+    width: 100%;
+    background-color: #fffafb;
+    border-radius: 12rpx;
+    box-shadow: 2rpx 5rpx 50rpx rgba(152,48,51,.1);
+    margin-top: 40rpx;
+    text-align: center;
+    padding: 50rpx 33rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.active-time-text {
+    color: #7D4A4A;
+    font-size: 28rpx;
+    letter-spacing: 2rpx;
+    display: inline;
+    align-items: center;
+}
+
+.active-number {
+    margin: 0 10rpx;
+    color: #c73840;
+    font-size: 28rpx;
+    letter-spacing: 0;
+    font-weight: bold;
+}
+
+.active-time-box {
+    background-color: #7d4a4a;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #FEE9EA;
+    font-size: 24rpx;
+    width: 32rpx;
+    height: 32rpx;
+    padding: 2rpx;
+    border-radius: 3rpx;
+    margin: 0 14rpx;
+    letter-spacing: 0;
+}
+
+.active-text-line {
+    margin-top: 24rpx;
+}
+
+.active-progress-container {
+    margin-top: 40rpx;
+}
+
+.active-progress {
+    width: 100%;
+    height: 20rpx;
+    background-color: #fae1e8;
+    border-radius: 40rpx;
+    position: relative;
+}
+
+.active-progress-line {
+    position: absolute;
+    background: linear-gradient(to right,#f3494a,#f56691);
+    display: inline-flex;
+    left: 0;
+    align-items: center;
+}
+
+.progress-redbag-nums {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.nums-item {
+    flex: 1;
+    text-align: left;
+    color: #c98f90;
+    font-size: 18rpx;
+    padding-left: 16rpx;
+    box-sizing: border-box;
+    line-height: 0;
+    margin-top: 30rpx;
+}
+
+.nums-item:last-child {
+    flex: 0.5;
+}
+
+.progress-end {
+    background: linear-gradient(45deg,#f44e57,#f6648b);
+    width: 36rpx;
+    height: 36rpx;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    box-shadow: 3rpx 3rpx 30rpx rgba(234,67,84,.5);
+    border-radius: 100%;
+}
+
+.active-redbag-img {
+    width: 199rpx;
+    height: 226rpx;
+    z-index: 100;
+    position: relative;
+}
+
+.active-redbag-icon {
+    margin-bottom: 40rpx;
+    position: absolute;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    left: 0;
+}
+
+.now-redbag-text {
+    position: absolute;
+    top: 132rpx;
+    color: #fff2f2;
+    font-size: 50rpx;
+    line-height: 1;
+    z-index: 120;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.now-redbag-down-icon {
+    width: 0;
+    height: 0;
+    border: 16rpx solid transparent;
+    border-top: 22rpx solid #d64145;
+    position: absolute;
+    bottom: -32rpx;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.now-redbag-down-icon-right {
+    width: 0;
+    height: 0;
+    border: 20rpx solid transparent;
+    border-right: 16rpx solid #d64145;
+    position: absolute;
+    right: 0;
+    bottom: -16rpx;
+    z-index: 0;
+}
+
+.now-redbag-down-icon-left {
+    width: 0;
+    height: 0;
+    border: 20rpx solid transparent;
+    border-left: 16rpx solid #d64145;
+    position: absolute;
+    left: 0;
+    bottom: -16rpx;
+    z-index: 0;
+}
+
+.hotel-info-text {
+    font-size: 22rpx;
+    color: #837071;
+}
+
+.show-hotel-info {
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.show-hotel-label {
+    height: 100%;
+    display: inline-block;
+}
+
+.show-hotel-info-icon {
+    width: 22rpx;
+    height: 22rpx;
+}
+
+checkbox .wx-checkbox-input {
+    width: 22rpx;
+    height: 22rpx;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #837071;
+}
+
+.checked .wx-checkbox-input {
+    border: 1px solid #e91c36;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    width: 22rpx;
+    height: 22rpx;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22rpx;
+    font-size: 20rpx;
+    color: #837071;
+    background-color: transparent;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.checked .wx-checkbox-input.wx-checkbox-input-checked::before,.show-hotel-info {
+    color: #e91c36;
+    transition: all .2s;
+}
+
+.redbag-btn {
+    width: 100%;
+    height: 88rpx;
+    border-radius: 88rpx;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34rpx;
+}
+
+.redbag-btn-firend {
+    background: linear-gradient(to left,#ff7f7b,#de5854);
+    box-shadow: 0rpx 8rpx 20rpx 4rpx rgba(215,93,90,.3);
+    margin-bottom: 30rpx;
+    border: none;
+}
+
+.redbag-btn-more {
+    background: linear-gradient(to left,#fdd19e,#eeb06f);
+    box-shadow: 0rpx 8rpx 40rpx 0rpx rgba(141,87,31,.3);
+}
+
+.active-time-end-container {
+    background: #FFFFFF;
+    border-radius: 12rpx;
+    width: 560rpx;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 80rpx 0 60rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.active-time-end-text {
+    font-size: 32rpx;
+    color: #333;
+    line-height: 46rpx;
+    padding: 0 40rpx;
+}
+
+.active-time-end-btn {
+    background: linear-gradient(to left,#ff7f7b,#de5854);
+    box-shadow: 0rpx 8rpx 20rpx 4rpx rgba(215,93,90,.3);
+    margin-top: 60rpx;
+    width: 360rpx;
+    height: 80rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+    color: #fff;
+    border-radius: 80rpx;
+}
+
+.active-redbag-icon-container {
+    height: 270rpx;
+    position: relative;
+}
+
+.icon_redbag_bg {
+    width: 712rpx;
+    height: 302rpx;
+}
+
+.redbag-success-container {
+    padding: 50rpx 0 60rpx;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.redbg-cash-text {
+    color: #f9dcd1;
+    font-size: 64rpx;
+    position: absolute;
+    bottom: 110rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.icon_time_end_tag {
+    position: absolute;
+    width: 150rpx;
+    height: 134rpx;
+    top: 0rpx;
+    right: 74rpx;
+}
+
+.form-btn {
+    background: none;
+    border: none;
+    height: auto;
+}
+
+.btn-hover {
+    opacity: 0.8;
+}
+
+.help-list-container {
+    margin-top: 50rpx;
+}
+
+.reset-buy-btn {
+    margin-top: 30rpx;
+}
+
+.helper-header-container {
+    padding: 0 30rpx;
+}
+
+.helper-header-top {
+    display: flex;
+    align-items: center;
+}
+
+.helper-header {
+    margin-top: 40rpx;
+    box-sizing: border-box;
+    padding: 30rpx 30rpx;
+    font-size: 36rpx;
+    color: #6a5656;
+    border-radius: 12rpx;
+    background: #fff;
+    box-shadow: 0 0rpx 30rpx 6rpx rgba(0,0,0,0.08);
+}
+
+.house-show-btm {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,.6) 100%);
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    left: 0;
+    border-bottom-left-radius: 12rpx;
+    border-bottom-right-radius: 12rpx;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    height: 100rpx;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+
+.house-show-btm text {
+    line-height: 100%;
+    height: 100%;
+    padding-top: 10rpx;
+}
+
+.house-name {
+    height: 100%;
+    width: 400rpx;
+    overflow: hidden;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    align-items: center;
+    text-align: left;
+}
+
+.active-house-img {
+    border-radius: 12rpx;
+    width: 100%;
+    height: 460rpx;
+    background-color: #f7f9fb;
+}
+
+.active-house-container {
+    margin-top: 16rpx;
+    position: relative;
+    font-size: 0;
+}
+
+.to-index-btn {
+    width: 100%;
+    margin-top: 30rpx;
+    box-shadow: none;
+}

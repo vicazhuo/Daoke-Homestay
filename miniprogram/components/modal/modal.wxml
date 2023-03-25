@@ -1,0 +1,8 @@
+<popup animType="scale" isPopupShow="{{isShow}}">
+    <view class="modal-wrap">
+        <view class="modal-panel">
+            <slot></slot>
+        </view>
+        <view bindtap="closeModal" class="bottom-btn">{{confirmText}}</view>
+    </view>
+</popup>

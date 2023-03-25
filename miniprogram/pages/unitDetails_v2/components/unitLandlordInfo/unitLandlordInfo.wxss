@@ -1,0 +1,100 @@
+.landlord-info {
+  padding: 0rpx 40rpx 60rpx 40rpx;
+}
+
+.landlord-info__landlord {
+  display: flex;
+  align-items: center;
+}
+
+.house-desc-title {
+  display: flex;
+  padding: 50rpx 0;
+}
+
+.house-desc-title .title {
+  width: 50%;
+  font-weight: 400;
+  font-size: 40rpx;
+  color: #333;
+}
+
+.house-desc-title .landlord-page {
+  width: 50%;
+  font-size: 28rpx;
+  color: #d8646f;
+  text-align: right;
+  position: relative;
+  padding-right: 20rpx;
+}
+
+.house-desc-title .landlord-page::after {
+  content: " ";
+  display: inline-block;
+  width: 14rpx;
+  height: 14rpx;
+  position: absolute;
+  top: 37%;
+  right: 0;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #d8646f;
+  border-style: solid;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.landlord-info__landlord .landlord-image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+  overflow: hidden;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.landlord-info__landlord .title {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 34rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.landlord-info__landlord .title .text {
+  max-width: 480rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 48rpx;
+}
+
+.landlord-info__landlord .title .smallwidth.text {
+  max-width: 342rpx;
+}
+
+.landlord-info__landlord .title .super-good {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 10rpx;
+}
+
+.landlord-info__landlord .title .super-good image {
+  width: 130rpx;
+  height: 46rpx;
+}
+
+.landlord-info__landlord .landlord-tag {
+  display: flex;
+}
+
+.landlord-info__landlord .landlord-tag .label {
+  margin-right: 20rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.landlord-info__landlord .landlord-tag .masterPage {
+  font-size: 24rpx;
+  color: #666;
+}

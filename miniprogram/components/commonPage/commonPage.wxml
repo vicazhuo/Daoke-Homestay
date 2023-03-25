@@ -1,0 +1,6 @@
+<view class="page-error-container" wx:if="{{isError}}">
+    <image class="error-img" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tujia/common/icon_error_page_share.png"></image>
+    <text class="error-text">{{errorText}}</text>
+    <view bindtap="errorBtnHandle" class="to-tj-btn">{{btnText}}</view>
+</view>
+<slot wx:else></slot>

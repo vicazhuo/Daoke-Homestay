@@ -1,0 +1,22 @@
+<view bindtap="onTap" class="date-wrapper">
+    <view class="date-title">入离日期</view>
+    <view class="date-checkin-checkout">
+        <view class="checkin">
+            <view class="checkin-title">入住</view>
+            <view class="checkin-date">
+                <view class="date">{{selectBegin}}</view>
+                <view class="weekend-text">{{sWeekText}}</view>
+            </view>
+        </view>
+        <view class="total-day">
+            <view class="day br1">共{{interval}}晚</view>
+        </view>
+        <view class="checkout">
+            <view class="checkout-title">离店</view>
+            <view class="checkout-date">
+                <view class="date">{{selectEnd}}</view>
+                <view class="weekend-text">{{eWeekText}}</view>
+            </view>
+        </view>
+    </view>
+</view>

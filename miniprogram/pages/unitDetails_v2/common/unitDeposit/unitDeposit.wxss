@@ -1,0 +1,13 @@
+.shuo-wrapper {
+    background: #fff;
+    height: 100%;
+    overflow: scroll;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 0;
+    padding: 26rpx 40rpx 0 40rpx;
+}
+
+.despoit {
+    padding-top: 28rpx;
+}

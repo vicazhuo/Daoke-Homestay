@@ -1,0 +1,7 @@
+<template name="pageError">
+    <view class="page-errpr-container">
+        <image class="page-error-icon" src="{{imgHost}}/static/wechat/promotion/redpacket/icon_page_err.png"></image>
+        <text class="page-error-text">{{errorText?errorText:'出错了，请刷新重试'}}</text>
+        <view bindtap="pageReload" class="page-error-btn br1">刷新</view>
+    </view>
+</template>

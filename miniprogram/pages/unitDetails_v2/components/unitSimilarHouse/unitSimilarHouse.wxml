@@ -1,0 +1,10 @@
+<view class="similar-units" wx:if="{{similarUnitsList.length}}">
+    <view class="similar-units__hd">周边房屋推荐</view>
+    <swiper class="similar-units__list" nextMargin="20px">
+        <swiper-item class="similar-units__item" wx:for="{{similarUnitsList}}" wx:key="{{index}}">
+            <view class="swiper-class" hoverClass="none" hoverStopPropagation="false">
+                <component-house-card date="{{dateObj}}" houseInfo="{{item}}"></component-house-card>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

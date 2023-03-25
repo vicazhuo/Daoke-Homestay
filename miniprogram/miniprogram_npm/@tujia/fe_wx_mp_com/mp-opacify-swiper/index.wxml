@@ -1,0 +1,8 @@
+<view bindtouchend="touchend" bindtouchmove="touchmove" bindtouchstart="touchstart" class="ad-swiper-contaniner">
+    <view class="ad-swiper-item tj-img-background" style="opacity:{{adSwiperCurrent===index?activeOpacityValue:1}};z-index:{{zIndexItems[index]}};transition:opacity {{isTouch?0:0.3}}s" wx:for="{{navigations}}" wx:key="{{index}}">
+        <view bindtap="bottomBannerJump" class="ad-item-image" data-index="{{index}}" data-title="{{item.name}}" data-url="{{item.navigateUrl}}" style="background:url({{item.pictureUrl}}) top center no-repeat;background-size: 100% auto;"></view>
+    </view>
+    <view class="ad-swiper-dots" wx:if="{{navigations.length>1}}">
+        <view class="ad-swiper-dots-item {{adSwiperCurrent===index?'active':''}}" wx:for="{{navigations.length}}" wx:key="{{index}}"></view>
+    </view>
+</view>

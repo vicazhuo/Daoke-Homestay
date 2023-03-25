@@ -1,0 +1,9 @@
+var textTruncate = (function(txt, filterTxt) {
+    if (!filterTxt) {
+        return (false)
+    };
+    return (filterTxt.indexOf(txt) !== -1)
+});
+module.exports = ({
+    textTruncate: textTruncate,
+});

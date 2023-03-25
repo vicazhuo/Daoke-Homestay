@@ -1,0 +1,13 @@
+function introductionsFilter(arr) {
+    console.log(arr);
+    return (arr.join('/'))
+};
+
+function commentScoreTitle(score) {
+    if (!score && score != 0) return ('');;
+    return (score > 5 ? '很满意' : score > 4 ? '满意' : score > 3 ? '一般' : '不满意')
+};
+module.exports = ({
+    introductionsFilter: introductionsFilter,
+    commentScoreTitle: commentScoreTitle,
+});

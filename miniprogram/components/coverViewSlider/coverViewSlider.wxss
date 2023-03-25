@@ -1,0 +1,95 @@
+.map-range-layout {
+    background: #fff;
+    position: absolute;
+    right: 40rpx;
+    bottom: 54rpx;
+    width: 544rpx;
+    height: 96rpx;
+    border-radius: 12rpx;
+    box-sizing: border-box;
+}
+
+.map-range-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20rpx;
+    color: #333;
+    padding: 0 23rpx;
+}
+
+.map-name-item {
+    position: relative;
+}
+
+.map-name-item.active {
+    color: #F88E30;
+}
+
+.map-range-tag {
+    width: 16rpx;
+    height: 16rpx;
+    background: #F88E30;
+    border-radius: 50%;
+}
+
+.range-contaniner {
+    height: 40rpx;
+    box-sizing: border-box;
+    padding: 0 23rpx;
+    padding-top: 30rpx;
+    margin-bottom: 16rpx;
+}
+
+.range-no-selected {
+    background: #E9E9E9;
+    border-radius: 30rpx;
+    height: 8rpx;
+}
+
+.map-range-tags {
+    position: absolute;
+    width: 100%;
+    height: 60rpx;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 26rpx 23rpx 0;
+    top: 0rpx;
+}
+
+.map-range-tap-tags {
+    padding-top: 0;
+}
+
+.map-range-tag-box {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.range-handle-btn {
+    width: 30rpx;
+    height: 32rpx;
+}
+
+.range-handle-btn-box {
+    position: absolute;
+    z-index: 1000;
+    top: 20rpx;
+    left: 23rpx;
+    width: 60rpx;
+    height: 60rpx;
+    display: inline-flex;
+}
+
+.range-transition-open {
+    transition: transform .2s;
+    transition: transform .2s,-webkit-transform .2s;
+}
+
+.map-range-bg {
+    width: 580rpx;
+    height: 132rpx;
+    right: 20rpx;
+    bottom: 34rpx;
+    position: absolute;
+}

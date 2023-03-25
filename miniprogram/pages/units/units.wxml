@@ -1,0 +1,61 @@
+<view class="page-top-border"></view>
+<view class="units-page">
+  <view class="units-header-container">
+    <component-unitSearchHeader isOpenFixed bindclearSearchEvent="clearSearchCondition" bindconditionsChange="headerCreateConditions" bindgetHeaderHeight="getHeaderHeight" conditionsGroups="{{conditionsGroups}}" hotTags="{{hotTags}}" id="searchHeader" isheaderFixed="{{isFixed}}"
+      params="{{optionsParams}}"></component-unitSearchHeader>
+  </view>
+  <view class="units-list-container" style="padding-top:{{hotTags.length?260:170}}rpx">
+    <block wx:if="{{!isNoHouseList&&!isHouseLoadError}}">
+      <block wx:for="{{houseList}}" wx:key="{{index}}">
+        <view class="show-redbag-item" wx:if="{{index ==0&&conponList}}" bindtap="openCouponPopup">
+        </view>
+        <component-house-item date="{{optionsParams}}" houseInfo="{{item}}" wx:if="{{!item.showTip}}"></component-house-item>
+        <view class="show-tip-item" wx:else>
+          <text class="tip-title">{{item.title}}</text>
+          <text class="tip-sub-title">{{item.subTitle}}</text>
+          <view class="tip-btn-bar">
+            <view bindtap="recommendNavigationTap" class="link-item" data-gtype="{{item.filterGroup}}" data-name="{{linkItem.title}}" data-title="{{linkItem.title}}" data-url="{{linkItem.navigateUrl}}" wx:if="{{linkItem.enabled}}" wx:for="{{item.links}}" wx:for-item="linkItem"
+              wx:key="{{index}}">
+              <view class="link-title">{{linkItem.title}}</view>
+              <text class="link-sub-title">{{linkItem.text}}</text>
+            </view>
+            <view class="link-item link-more-item" wx:if="{{item.filterGroup==2}}">
+              <text bindtap="recommendNavigationTap" class="link-title" data-title="更多位置" data-type="all">更多位置</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="list-loading-contaniner">
+        <block wx:if="{{houseListIsLoading}}">
+          <image class="loading-icon" src="/common/images/loading.gif"></image>加载中
+        </block>
+        <block wx:else>
+          {{houseListIsEnd?'End':'上拉继续加载'}}
+        </block>
+      </view>
+    </block>
+    <view class="houser-error-load" wx:elif="{{isHouseLoadError}}">
+      房屋数据加载错误啦
+    </view>
+    <view class="search-no-house-contaniner" wx:else>
+      <image class="search-no-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_no_house.png"></image>
+      <text class="search-no-text">囧，未找到符合条件的房屋</text>
+      <text class="search-no-text">您可以修改条件再试一下</text>
+      <view class="condintion-list-menu">
+        <view class="condintion-type-item" wx:for="{{noHouseFilterTypes}}" wx:key="{{index}}">
+          <view class="condintion-type-item-text">{{item.label}}</view>
+          <view bindtap="noListDelCondintion" class="clear-btn-box" data-item="{{item}}">
+            <icon class="header-search__reset" color="#dadada" size="14" type="clear"></icon>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 优惠劵区块 -->
+  <component-coupon-popup isPopupShow="{{isPopupShow}}" CouponList="{{conponList}}"></component-coupon-popup>
+  <!-- 优惠劵区块结束 -->
+  <!-- 微信广告位 -->
+  <view class="new-pull-main-banner"  wx:if="{{bannerManage.unitList.adShow}}">
+    <ad ad-intervals="10000" binderror="binderror" unit-id="{{bannerManage.unitList.bannerId}}"></ad>
+  </view>
+</view>

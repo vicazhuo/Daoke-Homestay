@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "房东主页",
+    "usingComponents": {
+        "list": "./components/list/index",
+        "top-screen": "/components/topScreen/index",
+        "house-item": "./components/houseItem/houseItem",
+        "common-page": "/components/commonPage/commonPage"
+    }
+}

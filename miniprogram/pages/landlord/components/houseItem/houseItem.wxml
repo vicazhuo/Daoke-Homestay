@@ -1,0 +1,46 @@
+<view bindtap="goDetail" class="hotel-item" data-unitid="{{houseInfo.unitId}}" wx:if="{{!houseInfo.showTip}}">
+    <view class="hotel-img-box">
+        <image lazyLoad class="hotel-item-pic" mode="aspectFill" src="{{houseInfo.defaultPicture}}"></image>
+        <view class="landlord-hotel-img-box">
+            <image class="hotel-user-icon" src="{{houseInfo.logoUrl}}"></image>
+            <view class="icon-hotel-super-box" wx:if="{{houseInfo.great}}">
+                <image class="icon-hotel-super" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/landlord/icon_super-comment.png"></image>
+            </view>
+        </view>
+        <view class="house-type-name" wx:if="{{houseInfo.qualityCertification}}">{{houseInfo.qualityCertification}}</view>
+        <image class="no-allow-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_no_allow_booking.png" wx:if="{{!houseInfo.allowBooking}}"></image>
+    </view>
+    <view class="hotel-info-contaniner">
+        <view class="hotel-name-bar">
+            <image class="icon-quick-buy" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/landlord/icon_quick_buy.png" wx:if="{{houseInfo.expressBooking}}"></image>
+            <text class="hotel-info-name">{{houseInfo.unitName}}</text>
+        </view>
+        <view class="hotel-info-option">
+            <block wx:for="{{houseInfo.unitSummeries}}" wx:for-item="unitSummerie" wx:key="{{index}}">
+                <text style="font-weight:{{unitSummerie.bold?'bold':'normal'}}">{{unitSummerie.text}}</text>
+                <text class="hotel-option-dian" wx:if="{{index!=houseInfo.unitSummeries.length-1}}">·</text>
+            </block>
+        </view>
+        <view class="hotel-price-line">
+            <text class="hotel-info-price">￥{{houseInfo.finalPrice}}</text>
+            <text class="hotel-info-price-product" wx-if="{{houseInfo.productPrice >houseInfo.finalPrice }}">
+            ￥{{houseInfo.productPrice}}
+            </text>
+            <text class="price-tag-item" style="background-color:{{item.background.color}};color:{{item.color}}" wx:for="{{houseInfo.priceTags}}" wx:key="{{index}}">{{item.text}}</text>
+        </view>
+    </view>
+    <view class="no-allow-mask" wx:if="{{!houseInfo.allowBooking}}"></view>
+</view>
+<view class="show-tip-item" wx:else>
+    <text class="tip-title">{{houseInfo.title}}</text>
+    <text class="tip-sub-title">{{houseInfo.subTitle}}</text>
+    <view class="tip-btn-bar">
+        <view class="link-item" wx:if="{{item.enabled}}" wx:for="{{houseInfo.links}}" wx:key="{{index}}">
+            <text class="link-title">{{item.title}}</text>
+            <text class="link-sub-title">{{item.text}}</text>
+        </view>
+        <view class="link-item" wx:if="{{houseInfo.filterGroup==2}}">
+            <text class="link-title">更多位置</text>
+        </view>
+    </view>
+</view>

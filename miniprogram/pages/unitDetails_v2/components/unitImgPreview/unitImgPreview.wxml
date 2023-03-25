@@ -1,0 +1,42 @@
+<view class="house-images">
+    <view class="img-swiper">
+        <swiper circular animation="{{animationPicSwiper}}" bindchange="pictureListChuanged">
+            <swiper-item bindtap="goPictureListPage" data-selectedIndex="{{index}}" wx:for="{{pictureList}}" wx:key="{{url}}">
+                <image mode="aspectFill" src="{{item.url}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="img-swiper__pages">
+            <view bindtap="selectTabPicture" class="picBlock {{isVideoOrVR?'':'paddingRight20'}}">
+                <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon_pic{{picActiveStatus?'2':''}}.png"></image>
+                <view class="{{picActiveStatus?'':'opacity'}} text">
+                    <view wx:if="{{picActiveStatus}}">{{pictureListCurrentIndex}}/</view>
+                    <view>{{pictureList.length}}</view>
+                </view>
+            </view>
+            <view class="hrline" wx:if="{{unitVideoUrl}}"></view>
+            <view bindtap="selectTabVideoOrVR" class="tvwrap">
+                <view class="videoBlock" wx:if="{{unitVideoUrl}}">
+                    <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon_video{{videoActiveStatus?'2':''}}.png"></image>
+                </view>
+                <view class="vrBlock" wx:elif="{{unitVrUrl}}">
+                    <view class="hrline"></view>
+                    <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon_vrtext{{videoActiveStatus?'2':''}}.png"></image>
+                </view>
+            </view>
+        </view>
+        <view animation="{{animationVideoOrVR}}" bindtap="goVideoOrVR" bindtouchend="touchEndVideoOrVR" bindtouchmove="touchMoveVideoOrVR" bindtouchstart="touchStartVideoOrVR" class="vrBg" wx:if="{{videoActiveStatus}}">
+            <image mode="aspectFill" src="{{pictureList[0].url}}"></image>
+            <view>
+                <view class="video" wx:if="{{unitVideoUrl}}">
+                    <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/play_btn.png"></image>
+                    <text>{{unitVideoTimeSpan}}</text>
+                </view>
+                <view bindtap="goVideoLink" class="vr" wx:elif="{{unitVrUrl}}">
+                    <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon_vr.png"></image>
+                    <text class="vrtext">VR看房</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <tj-favorite-btn styles="right:40rpx;top:40rpx" unitid="{{unitid}}"></tj-favorite-btn>
+</view>

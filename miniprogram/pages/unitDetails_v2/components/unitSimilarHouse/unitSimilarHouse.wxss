@@ -1,0 +1,111 @@
+.similar-units {
+    padding: 60rpx 0 30rpx 0;
+    background: #ffffff;
+    box-shadow: 0 1px 3rpx 0 rgba(0,0,0,0.06);
+}
+
+.similar-units__hd {
+    line-height: 56rpx;
+    font-weight: 400;
+    font-size: 40rpx;
+    color: #333333;
+    letter-spacing: 0;
+    margin-bottom: 24rpx;
+    margin-left: 20rpx;
+}
+
+.similar-units__list {
+    width: 100%;
+    height: 711rpx;
+}
+
+.similar-units__item {
+}
+
+.swiper-class {
+    padding-left: 20rpx;
+}
+
+.similar-units__item .picblock {
+    position: relative;
+}
+
+.similar-house__pic {
+    width: 630rpx;
+    height: 446rpx;
+    border-radius: 10rpx;
+}
+
+.landlogo {
+    position: absolute;
+    right: 50rpx;
+    bottom: -50rpx;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.simlar-house-label {
+    margin-top: 40rpx;
+    display: flex;
+    margin-bottom: 14rpx;
+}
+
+.lable {
+    border: 1px solid #dadada;
+    border-radius: 4rpx;
+    padding: 0 5rpx;
+    font-size: 20rpx;
+    color: #999999;
+    margin-right: 10rpx;
+}
+
+.similar-house__title {
+    width: 627rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    font-size: 34rpx;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 48rpx;
+    margin-bottom: 10rpx;
+}
+
+.similar-house__tags {
+    font-size: 24rpx;
+    color: #333333;
+    letter-spacing: 0;
+    margin-bottom: 28rpx;
+}
+
+.similar-house-price {
+    display: flex;
+    align-items: flex-end;
+}
+
+.similar-house-price .price {
+    font-size: 40rpx;
+    color: #333333;
+    letter-spacing: 0;
+    margin-right: 10rpx;
+    line-height: 40rpx;
+}
+
+.dis-price {
+    font-size: 24rpx;
+    color: #999999;
+    margin-right: 20rpx;
+}
+
+.dis-des {
+    background: rgba(255,102,102,0.1);
+    border-radius: 4rpx;
+    font-weight: 400;
+    font-size: 20rpx;
+    color: #ff6666;
+    line-height: 28rpx;
+    padding: 0 10rpx;
+}

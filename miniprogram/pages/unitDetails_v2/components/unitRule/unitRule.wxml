@@ -1,0 +1,54 @@
+<view class="order-notice-wrapper" wx:if="{{cancelTexts.length&&cancelRules.length}}">
+    <view class="order-title">预订须知</view>
+    <view class="order-process" wx:for="{{cancelTexts}}" wx:key="{{index}}">
+        <view>
+            <view class="order-title">
+                <view>{{item.title}}</view>
+                <view class="quick" wx:if="{{item.icon}}">
+                    <image class="" mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-quick.png"></image>
+                </view>
+                <view bindtap="openShuoMing" class="more-house" wx:if="{{item.tips&&item.tips.length}}">
+                    <image mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-gantan.png"></image>
+                </view>
+            </view>
+            <view class="order-subtitle {{item.link&&item.link.navigateUrl?'link':''}}">
+                <view class="intro">
+                    <view bindtap="openH5page" data-url="{{item.link&&item.link.navigateUrl?item.link.navigateUrl:''}}">
+                        {{item.introduction}}
+                        <text class="arrow" wx:if="{{item.link&&item.link.navigateUrl}}"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="scroll" wx:if="{{cancelTexts.length&&cancelRules.length}}">
+    <scroll-view scrollX class="order-process-swipper">
+        <view class="order-process-inner">
+            <view class="order-success" wx:if="{{cancelRules.length}}">
+                <view class="order-success-icon">
+                    <image class="right" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-right.png"></image>
+                </view>
+                <view class="order-success-text">预订成功</view>
+            </view>
+            <view class="d-flex" wx:for="{{cancelRules}}" wx:key="{{index}}">
+                <view class="tips1">
+                    <view class="order-cancel-tips bot30">
+                        <view class="cancel-tips" wx:for="{{item.tips}}" wx:for-index="innerIndex" wx:key="{{innerIndex}}">
+                             {{item}}
+                         </view>
+                        <image class="tri" mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-triangle.png"></image>
+                    </view>
+                    <view class="{{index==0?'line1':index==1?'line2':index==2?'line3':'line1'}}"></view>
+                </view>
+                <view class="order-before {{index==cancelRules.length-1?'pr40':''}}">
+                    <view class="order-before-date">{{item.strDate}}</view>
+                    <view class="before-pos">
+                        <view class="order-before-text">{{item.introduction}}</view>
+                        <view>{{item.strTime}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

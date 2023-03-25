@@ -1,0 +1,205 @@
+.red-packet-card {
+    width: 100%;
+    box-shadow: 0 15rpx 30rpx -15rpx rgba(0,0,0,0.06);
+    border-radius: 12rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40rpx;
+    position: relative;
+    overflow: hidden;
+    padding: 56rpx 40rpx 56rpx 0;
+    min-height: 240rpx;
+}
+
+.card-price-text {
+    font-size: 100rpx;
+    line-height: 1;
+    display: inline-block;
+    min-width: 240rpx;
+    padding-left: 40rpx;
+    box-sizing: border-box;
+}
+
+.card-price-mid-text {
+    font-size: 60rpx;
+}
+
+.card-price-small-text {
+    font-size: 80rpx;
+}
+
+.card-currency {
+    font-size: 40rpx;
+    line-height: 1;
+}
+
+.card-info-con {
+    display: inline-flex;
+    flex-direction: column;
+    width: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.card-name {
+    font-size: 32rpx;
+    color: #666;
+    line-height: 46rpx;
+    font-weight: 500;
+    max-width: 100%;
+}
+
+.card-time {
+    font-size: 24rpx;
+    color: #999;
+    line-height: 1;
+    max-width: 100%;
+    line-height: 42rpx;
+}
+
+.text-line-omit {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-desc {
+    font-size: 24rpx;
+    color: #666;
+    line-height: 42rpx;
+    max-width: 100%;
+    display: block;
+}
+
+.red-packet-card .active {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    right: -40rpx;
+    top: -40rpx;
+    width: 80rpx;
+    height: 80rpx;
+    transform: rotate(45deg);
+}
+
+.red-packet-card .active::after {
+    border: 1px solid transparent;
+    border-left: 0;
+    border-top: 0;
+    content: " ";
+    position: absolute;
+    width: 8rpx;
+    height: 16rpx;
+    top: 56rpx;
+    left: 36rpx;
+    border-color: #fff;
+    transform: rotate(0deg) scale(1);
+}
+
+.travel-card {
+    background-image: linear-gradient(to right,#ecedfc 0%,#d6daec 100%);
+    box-shadow: 0 15rpx 30rpx -15rpx rgba(0,0,0,0.06);
+    border-radius: 12rpx;
+}
+
+.travel-card .card-price-text {
+    color: #8e86b2;
+}
+
+.travel-card .active {
+    background: #eaecf5;
+}
+
+.travel-card .active::after {
+    border-color: #d9d8e8;
+}
+
+.travel-card .active.selected::after {
+    border-color: #fff;
+}
+
+.travel-card .active.selected {
+    background: #8e86b2;
+}
+
+.card-tip {
+    border-radius: 0 40rpx 40rpx 0;
+    display: inline-flex;
+    line-height: 1;
+    align-items: center;
+    font-size: 22rpx;
+    color: #fff;
+    padding: 8rpx 10rpx 8rpx 6rpx;
+    position: absolute;
+    top: 24rpx;
+    left: 0;
+    background-image: linear-gradient(to right,#f88e30 3%,rgba(255,176,0,0.97) 100%);
+    box-shadow: 2rpx 1rpx 8rpx 0 rgba(0,0,0,0.10);
+}
+
+.failure-cause {
+    padding: 16rpx 40rpx;
+    background: #fff;
+    border-radius: 0 0 12rpx 12rpx;
+    position: relative;
+}
+
+.arrow-down-red {
+    position: absolute;
+    right: 40rpx;
+    top: 10rpx;
+    width: 22rpx;
+    height: 22rpx;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+    transition: transform .2s;
+    transition: transform .2s,-webkit-transform .2s;
+}
+
+.arrow-down-red.active {
+    transform: rotate(225deg);
+    top: 24rpx;
+}
+
+.lines-card-wrap {
+    margin-bottom: 40rpx;
+    box-shadow: 0 15rpx 30rpx -15rpx rgba(0,0,0,0.06);
+    border-radius: 0 0 12rpx 12rpx;
+}
+
+.lines-card {
+    margin-bottom: 0;
+    box-shadow: none;
+    border-radius: 12rpx 12rpx 0 0;
+    position: relative;
+}
+
+.lines-view {
+    background-image: url(https://pic.tujia.com/upload/festatic/day_190122/201901221104179931.png);
+    height: 9rpx;
+    background-size: 32rpx 9rpx,contain;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+}
+
+.card-left-tag {
+    font-size: 22rpx;
+    color: #ff9645;
+    line-height: 1;
+    margin-bottom: 10rpx;
+}
+
+.disable-text {
+    width: 86%;
+    font-size: 22rpx;
+    color: #999;
+    line-height: 32rpx;
+}

@@ -1,0 +1,65 @@
+.discount-info {
+    padding: 60rpx 0rpx 60rpx 40rpx;
+}
+
+.discount-info .discount-bar {
+    margin-bottom: 20rpx;
+    font-size: 22rpx;
+    color: #666;
+}
+
+.discount-info .discount-bar:last-child {
+    margin-bottom: 0;
+}
+
+.discount-info .discount-type {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    margin-right: 20rpx;
+    width: 100rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 20rpx;
+    color: #f3717e;
+    border-radius: 4rpx;
+    border: 1px solid #f3717e;
+    height: 30rpx;
+    line-height:30rpx;
+}
+
+.discount {
+    display: flex;
+}
+
+.discount-info .discount-type.dacu {
+    color: #fff;
+    background: #ff6666;
+    border: none;
+}
+
+.discountItem {
+    max-width: 486rpx;
+}
+
+.discount.dacu {
+    color: #ff6666;
+}
+
+.red-arrow {
+    width: 24rpx;
+    height: 19rpx;
+    display: inline-block;
+    position: relative;
+}
+
+.red-arrow image {
+    position: absolute;
+    top: 80%;
+    transform: translateY(-50%);
+    width: 24rpx;
+    height: 24rpx;
+}

@@ -1,0 +1,46 @@
+<view class="order-goodsorder">
+  <view class="goodsorder-item" wx:if="{{!isFromList&&item.tyingGoodsSnapshot.tyingProductType!==4||isFromList&&item.tyingGoodsSnapshot.tyingProductType===3}}" wx:for="{{goodsOrderDetails.items}}" wx:key="{{item.packingOrderNo}}">
+    <view class="item-title">
+      <view class="icon" style="background-image: url({{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-ticket.png" wx:if="{{item.tyingGoodsSnapshot.tyingProductType===1}}"></view>
+      <view class="icon" style="background-image: url({{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-gift.png" wx:if="{{item.tyingGoodsSnapshot.tyingProductType===2}}"></view>
+      <view class="icon" style="background-image: url({{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-service.png" wx:if="{{item.tyingGoodsSnapshot.tyingProductType===3}}"></view>
+      <view class="name">{{item.tyingGoodsSnapshot.tyingProductTypeName}}</view>
+      <view class="info">{{item.tyingGoodsSnapshot.priceInfo}}</view>
+    </view>
+    <view class="item-body br1">
+      <image class="image" src="{{item.tyingGoodsSnapshot.productImages}}"></image>
+      <view class="desc service">
+        <view class="text sub-name">{{item.tyingGoodsSnapshot.name}}</view>
+        <view class="text sub-text">{{item.tyingGoodsSnapshot.shortDesc}}</view>
+        <view class="text" wx:if="{{item.tyingGoodsSnapshot.tyingProductType===3}}">
+          <text class="sub-subname">{{item.tyingGoodsSnapshot.subName}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="item-footer">
+      <block wx:if="{{item.tyingGoodsSnapshot.tyingProductType!==1}}">
+        <view class="intros br1" wx:if="{{intro.value}}" wx:for="{{item.tyingGoodsSnapshot.intros}}" wx:for-item="intro" wx:key="{{index}}">
+          <view>{{intro.key}}</view>
+          <view class="val-font">{{intro.value}}</view>
+          <view class="intors-value1" wx:if="{{intro.value2}}">{{intro.value2}}</view>
+        </view>
+      </block>
+      <block wx:if="{{item.tyingGoodsSnapshot.tyingProductType===1}}">
+        <view class="intros br1">
+          <view>游玩时间</view>
+          <view>{{item.useDate}}</view>
+        </view>
+        <view class="intros">
+          <view>游玩的人</view>
+          <view>共{{item.contactList.length}}人</view>
+          <view class="intors-value2" wx:if="{{item.contactList.length>0}}">
+            <text wx:for="{{item.contactList}}" wx:for-item="person" wx:key="{{person.idNumber}}">
+              {{person.name}}
+            </text>
+          </view>
+        </view>
+      </block>
+      <view class="tip" wx:if="{{item.tip}}">{{item.tip}}</view>
+    </view>
+  </view>
+</view>

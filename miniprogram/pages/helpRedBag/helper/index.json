@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "住民宿，上途家",
+    "usingComponents": {
+        "popup": "/components/popup/popup",
+        "notity-scroll": "../components/notityScroll/notityScroll",
+        "helper-list": "../components/helperList/helperList",
+        "get-user-info-popup": "/components/getAuthPopup/popup"
+    }
+}

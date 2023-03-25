@@ -1,0 +1,4 @@
+module.exports = ({
+    tabListInfo: ["综述", "位置", "点评", "须知"],
+    selectedIndex: 0,
+});

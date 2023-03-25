@@ -1,0 +1,5 @@
+<view bindtransitionend="_bgTranstionend" class="popup-bg" style="opacity:{{bgOpacity}}" wx:if="{{isShow}}">
+    <view class="popup-panel-anim-{{animType}}-init {{panelAnimFlag?'popup-panel-anim-'+animType:''}}">
+        <slot></slot>
+    </view>
+</view>

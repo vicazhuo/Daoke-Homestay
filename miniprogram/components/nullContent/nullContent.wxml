@@ -1,0 +1,9 @@
+<view class="null-content-component">
+    <image class="null-content-icon" src="https://pic.tujia.com/upload/festatic/day_190221/201902212040195954.png"></image>
+    <view class="null-content-title" wx:if="{{title}}">{{title}}</view>
+    <view class="null-content-text-box">
+        <view class="null-content-text" wx:if="{{text}}">{{text}}</view>
+        <slot name="text" wx:else></slot>
+        <view bindtap="errorBtnHandle" class="to-tj-btn" wx:if="{{btnText}}">{{btnText}}</view>
+    </view>
+</view>

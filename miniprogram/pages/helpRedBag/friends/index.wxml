@@ -1,0 +1,17 @@
+<import src="../components/pageError/index.wxml"></import>
+<view class="create-firend-img-page" hidden="{{!(isPage==='success')}}">
+    <view class="create-firend-img-container">
+        <image class="create-firend-img-bg" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_redbag_firend_show.png"></image>
+        <view class="user-info">
+            <image class="user-img-icon" src="{{picurl}}"></image>
+            <text class="user-name">“{{nickname}}”</text>
+        </view>
+        <image class="qr-code-icon" src="{{qrCodeUrl}}"></image>
+    </view>
+    <text class="save-img-text"></text>
+    <button bindtap="saveImageToPhotosAlbumTap" class="save-img-btn br1" openType="{{btnText==='去授权保存到相册的权限'?'openSetting':''}}">{{btnText}}
+  </button>
+    <image bindtap="backPage" class="page-close-btn" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_save_close.png"></image>
+</view>
+<canvas canvasId="canvas" height="1344" hidden="{{true}}" style="width: {{canvasWidth}}rpx; height: {{canvasHeight}}rpx;" width="1008"></canvas>
+<template is="pageError" data="{{...pageErrorData}}" wx:if="{{isPage==='fail'}}"></template>

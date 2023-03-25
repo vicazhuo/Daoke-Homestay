@@ -1,0 +1,82 @@
+<common-page isIosCrossBtm isNavBar bindnavback="navback" crossBtnBtm="64" crossPagePaddingBtm="204" isNavEnableBack="{{false}}" navTitle="{{title}}" normalPagePaddingBtm="140">
+  <view class="add-people-page" hidden="{{isShowPopup}}">
+    <view class="add-peolple-form book-module">
+      <tj-input isClearBtn bindchange="inputChange" isAliApp="{{isAliApp}}" maxlength="20" name="name" placeholder="请输入正确的姓名" title="姓名" value="{{contactItem.name}}" wx:if="{{activeIdType!==3}}"></tj-input>
+      <block wx:if="{{activeIdType===3}}">
+        <tj-input isClearBtn slotTitle bindblur="nameInputBlur" bindchange="inputChange" isAliApp="{{isAliApp}}" maxlength="20" name="familyName" placeholder="例 MAO" value="{{contactItem.familyName||''}}">
+          <view class="name-input-title" slot="title">姓(拼音)
+            <text class="name-text-en">Surname</text>
+          </view>
+        </tj-input>
+        <tj-input isClearBtn slotTitle bindblur="nameInputBlur" bindchange="inputChange" isAliApp="{{isAliApp}}" maxlength="20" name="firstName" placeholder="例 XIAOMI" value="{{contactItem.firstName||''}}">
+          <view class="name-input-title" slot="title">名(拼音)
+            <text class="name-text-en">Givenname</text>
+          </view>
+        </tj-input>
+      </block>
+      <tj-input bindclick="openIdTypeActionSheet" title="证件类型" type="slot">
+        <view class="add-id-type">{{activeIdTypeName}}</view>
+      </tj-input>
+      <tj-input isClearBtn bindchange="cardInputChange" isAliApp="{{isAliApp}}" name="cardNumber" placeholder="请填写正确的证件信息{{activeIdType==3?'（选填）':''}}" title="证件号码" value="{{cardNumber}}"></tj-input>
+      <tj-input isClearBtn slotTitle bindchange="inputChange" isAliApp="{{isAliApp}}" isBorder="{{!(activeIdType==1)}}" name="mobile" placeholder="请填写正确的手机号码" type="number" value="{{contactItem.mobile}}">
+        <view bindtap="toSelectAreaCode" class="input-con-title" slot="title">手机号+{{contactItem.countryCode||86}}</view>
+      </tj-input>
+      <tj-input isClearBtn bindchange="cardInputChange" name="email" placeholder="请填写正确的邮箱地址" title="邮箱" value="{{email}}" wx:if="{{activeIdType===3}}"></tj-input>
+      <block wx:if="{{activeIdType!==1}}">
+        <tj-input title="性别" type="slot">
+          <view class="sex-radio-content">
+            <view bindtap="radioChange" class="sex-radio-item" data-value="0">
+              <tj-radio checked="{{contactItem.sexType==0||!contactItem.sexType}}" label="男" styleType="spot"></tj-radio>
+            </view>
+            <view bindtap="radioChange" class="sex-radio-item" data-value="1">
+              <tj-radio checked="{{contactItem.sexType==1}}" label="女" styleType="spot"></tj-radio>
+            </view>
+          </view>
+        </tj-input>
+        <tj-input bindclick="openBirthPicker" isBorder="{{false}}" title="出生日期" type="slot">
+          <view class="brith-slot">
+            <view class="birth-date-con {{contactItem.birthDay?'':'birth-no-value'}}">
+            {{contactItem.birthDay?contactItem.birthDay:'请选择出生日期'}}</view>
+          </view>
+        </tj-input>
+      </block>
+    </view>
+    <view catchtap="passportTipAction" class="passport-tip" wx:if="{{activeIdType===3}}">
+      <image class="passport-tip-icon" src="https://pic.tujia.com/upload/festatic/day_190122/201901221105069693.png"></image>
+      查看护照使用须知
+    </view>
+    <view class="add-people-tip-content">
+      <view class="add-people-tip" wx:if="{{saveInfo.show}}">
+        <image class="insurance-icon" src="https://pic.tujia.com/upload/festatic/day_190122/201901221057498087.png"></image>
+        <view class="add-people-tip-right">
+          <text class="people-tip-right-name">{{saveInfo.name}}</text>
+          <text class="people-tip-right-desc">{{saveInfo.desc}}</text>
+        </view>
+      </view>
+      <view class="peolple-insurance-alert">
+        <text class="insurance-alert-text">根据公安局酒店管理条例，入住经营性质的酒店／民宿，需要提供入住人的身份证明信息。</text>
+        <text class="insurance-alert-text">入住人的身份信息只用于必要的身份核实和保险理赔事项，平台会为您严格保密。</text>
+      </view>
+    </view>
+  </view>
+  <view class="people-list-btn-content" slot="bottom-button">
+    <button bindtap="submit" class="people-list-btn" hoverClass="people-list-btn-hover">保存</button>
+  </view>
+</common-page>
+<tj-action-sheet actions="{{idTypeList}}" bindcancel="openIdTypeActionSheet" bindclick="idTypeASConfirm" visible="{{isIdTypeActionSheet}}">
+  <view class="action-sheet-header" slot="header">选择证件类型</view>
+</tj-action-sheet>
+<tj-date-picker bindcancel="openBirthPicker" bindchange="birthdayChange" isAliApp="{{isAliApp}}" mode="date" start="1920-01-01" title="请选择出生日期" value="{{contactItem.birthDay?contactItem.birthDay:''}}" visible="{{isShowDatePicker}}"></tj-date-picker>
+<topScreen isClose isNavBar bindcloseEvent="passportTipAction" isPopupShow="{{isShowPopup}}">
+  <view class="passport-tip--wrapper">
+    <view class="passport-title">法律义务告知:</view>
+    <view class="passport-text">
+      根据我国法律规定，外国人、港澳台居民应当在抵达住宿地后24小时内办理住宿登记。住宿宾馆的，请在宾馆内办理。住宿宾馆以外地区的，请前往居住地派出所办理。未依法办理住宿登记将承担相应法律责任。 请随身携带您的出入境证件以备公安机关查验。
+    </view>
+    <view class="">
+      According to the Chinese laws,foreign nationals and residents from Hong Kong,Macao and Taiwan should register their accommodation within 24 hours of arrival.The hotel residents can complete it in the hotel.Those who stay elsewhere should go to the local
+      police station for registration.Failure to comply with the regulations will result in legal liability.
+    </view>
+    <view>Please carry your travel document with you for possible examination by the police.</view>
+  </view>
+</topScreen>

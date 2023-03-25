@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "房屋列表",
+    "usingComponents": {
+        "component-coupon-popup": "components/couponPopup/index",
+        "component-unitSearchHeader": "components/searchHeader/searchHeader",
+        "component-house-item": "../../miniprogram_npm/@tujia/fe_wx_mp_com/mp-house-card/index"
+    }
+}

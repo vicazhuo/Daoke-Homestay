@@ -1,0 +1,18 @@
+{
+  "extEnable": true,
+  "extAppid": "wx569825e306a7a842",
+  "ext": {
+    "name": "稻客民宿",
+    "logoUrl": "http://zhiyinfo.com/assets/images/logo_white_2018_05_15-985826b6e5.png",
+    "landlordid": 2,
+    "apiurl": "http://api.daoke.com/minsu.",
+    "appid": 209,
+    "appkey": "b76ad6098e49de795a91f0b96eb6697a",
+    "skinColor": "skin1"
+  },
+  "extPages": {},
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

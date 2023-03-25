@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "收藏·浏览记录",
+    "usingComponents": {
+        "tj-null-content": "/components/nullContent/nullContent",
+        "tj-list": "/components/list/index",
+        "tj-house-card": "../../miniprogram_npm/@tujia/fe_wx_mp_com/mp-house-card/index",
+        "tj-footprint-house": "./components/footprintHouse/footprintHouse"
+    },
+    "disableScroll": true
+}

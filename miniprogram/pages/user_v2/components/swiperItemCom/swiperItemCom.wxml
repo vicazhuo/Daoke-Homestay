@@ -1,0 +1,14 @@
+<view class="swiper-item-com">
+  <image class="swiper-item-com-img" src="{{'http://minsu.image.zhiyinfo.com/member/vip/vip-card-'+info.level+'.png'}}"></image>
+  <view class="swiper-item-com-view">
+    <view class="swiper-item-com-view-tit">
+      <view class="{{'color-'+(info.level*10)}} swiper-item-com-view-tit-v">{{info.levelName}}会员</view>
+      <image class="swiper-item-com-view-tit-img" src="http://minsu.image.zhiyinfo.com/member/vip/vip-icon.png"></image>
+    </view>
+    <view class="{{'color-'+(info.level*10)}} swiper-item-com-view-e" wx:if="{{info.level==1}}">Silver</view>
+    <view class="{{'color-'+(info.level*10)}} swiper-item-com-view-e" wx:elif="{{info.level==2}}">Gold</view>
+    <view class="{{'color-'+(info.level*10)}} swiper-item-com-view-e" wx:elif="{{info.level==3}}">Platinum</view>
+    <view class="{{'color-'+(info.level*10)}} swiper-item-com-view-e" wx:elif="{{info.level==4}}">Diamonds</view>
+    <view class="{{'color-'+(info.level*10)}} swiper-item-com-view-t">累计储值￥{{info.totalPayAmount}}或累计入住{{info.totalNight}}晚</view>
+  </view>
+</view>

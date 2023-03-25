@@ -1,0 +1,22 @@
+<view class="house-detail {{descLen>40?'':'mb40'}}">
+    <view class="f-border-bottom-line-gray">
+        <view class="title-h1">房屋详情</view>
+        <view class="house-detail__tip" wx:if="{{unitDetailTags}}">
+            <text class="tip-label" wx:for="{{unitDetailTags}}">{{item}}</text>
+        </view>
+        <view class="house-detail__light" wx:if="{{unitHighLights.length>0}}">
+            <view class="title-h2">房屋亮点</view>
+            <view class="list-itme" wx:for="{{unitHighLights}}">{{item}}</view>
+        </view>
+        <view class="house-detail__description {{descLen>50?'':'pt40'}}">
+            <text wx:for="{{introduction}}">
+                <text class="title-h2">{{item.title}}</text>
+                <text wx:if="{{descLen<=50}}">{{item.introduction}}</text>
+                <text class="house-description {{isShowAll?'':'description-twoline'}}" wx:else>{{item.introduction}}</text>
+            </text>
+        </view>
+        <view class="temp-more-btn turnArrow" wx:if="{{descLen>50}}">
+            <text bindtap="showmore" class="{{isShowAll?'upArrow':'downArrow'}}" data-statu="open" data-template-name="unit-house-info">{{moreBtnText}}</text>
+        </view>
+    </view>
+</view>

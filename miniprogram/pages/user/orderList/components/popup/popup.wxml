@@ -1,0 +1,12 @@
+<popup isPopupShow="{{isShow}}">
+    <view class="popup-background">
+        <view class="popup-title">{{popTitle}}</view>
+        <view class="popup-text">
+      {{popupText}}
+    </view>
+        <view class="popup-btns br1_top">
+            <button bindtap="cancel" class="button br1">{{cancelText}}</button>
+            <button bindtap="ok" class="button btn-ok br1">{{okText}}</button>
+        </view>
+    </view>
+</popup>

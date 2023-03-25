@@ -1,0 +1,30 @@
+.modal-panel {
+    width: 84%;
+    background: #fff;
+    padding: 40rpx;
+    box-sizing: border-box;
+    word-break: break-all;
+    border-top-right-radius: 4rpx;
+    border-top-left-radius: 4rpx;
+}
+
+.modal-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom-btn {
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #fff;
+    width: 84%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 4rpx;
+    border-bottom-right-radius: 4rpx;
+    border-top: 1px solid #e6e6e6;
+    font-size: 28rpx;
+    color: #fd8238;
+}

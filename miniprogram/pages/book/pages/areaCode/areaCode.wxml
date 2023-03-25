@@ -1,0 +1,20 @@
+<view class="area-code-page">
+    <scroll-view scrollY class="area-letter-list" scrollTop="{{scrollTop}}">
+        <view class="scroll-view-content">
+            <view class="area-letter-list-item" wx:for="{{cities}}" wx:key="{{index}}">
+                <view class="area-letter-key br1_bottom" id="{{item.key==='常用'?'top':item.key}}">
+              {{item.key}}
+          </view>
+                <view class="area-list">
+                    <view bindtap="selectItemPageBack" class="area-list-item" data-code="{{item.code}}" wx:for="{{item.list}}" wx:key="{{index}}">  
+                  {{item.name}}
+                  <text class="area-code-text">+{{item.code}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view catchtouchmove="letterMove" class="slider-letters-list" id="letter">
+        <text catchtap="letterTap" class="slider-letter-item" data-index="{{index}}" wx:for="{{words}}" wx:key="{{index}}">{{item}}</text>
+    </view>
+</view>

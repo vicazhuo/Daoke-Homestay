@@ -1,0 +1,4 @@
+<scroll-view class="scroll-view" scrollY="true" style="height:100%;">
+    <view bindtap="selectPeople" class="people-row" data-selected="{{item}}" wx:for="{{counts}}" wx:key="{{index}}">{{item}}<icon class="success-icon" color="#ff6600" hidden="{{isSelected!=index}}" size="16" type="success_no_circle"></icon>
+    </view>
+</scroll-view>

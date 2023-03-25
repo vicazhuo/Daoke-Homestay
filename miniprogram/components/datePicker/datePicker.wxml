@@ -1,0 +1,19 @@
+<view bindtap="handleClickMask" class="i-as-mask {{visible?'i-as-mask-show':''}}"></view>
+<view class="date-picker-component i-as {{visible?'i-as-show':''}}">
+    <view class="date-picker-action-bar br1_bottom">
+        <text catchtap="dateCancel" class="date-picker-cancel">取消</text>
+        <text class="date-picker-title" wx:if="{{title}}">{{title}}</text>
+        <text catchtap="dateConfirm" class="date-picker-confirm">确定</text>
+    </view>
+    <picker-view bindchange="dateChange" bindpickend="pickend" bindpickstart="pickstart" class="date-picker-view" indicatorStyle="height:48px;" value="{{valueIndexs}}">
+        <picker-view-column class="column-item">
+            <view class="col-item" wx:for="{{years}}" wx:key="{{index}}">{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column class="column-item">
+            <view class="col-item" wx:for="{{months}}" wx:key="{{index}}">{{item}}月</view>
+        </picker-view-column>
+        <picker-view-column class="column-item">
+            <view class="col-item" wx:for="{{days}}" wx:key="{{index}}">{{item}}日</view>
+        </picker-view-column>
+    </picker-view>
+</view>

@@ -1,0 +1,239 @@
+.search-header-top {
+    background: #fff;
+    padding: 20rpx 0 0 40rpx;
+}
+
+.search-header-options {
+    display: flex;
+    align-items: center;
+    background: #F0F3F6;
+    border-radius: 33rpx;
+    height: 66rpx;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.header-left-date {
+    font-size: 26rpx;
+    color: #333;
+    padding: 0 20rpx;
+    font-weight: 500;
+}
+
+.search-header-right {
+    display: inline-flex;
+    align-items: center;
+    flex: 1;
+    padding-left: 28rpx;
+    font-size: 26rpx;
+    color: #666;
+    width: 0;
+}
+
+.search-header-map-btn {
+    width: 45rpx;
+    height: 45rpx;
+    margin-left:10rpx;
+}
+
+.serach-input-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-options-item {
+    flex: 1;
+    width: 0;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.search-options-container {
+    display: flex;
+    justify-content: space-around;
+    font-size: 28rpx;
+    color: #333;
+    height: 70rpx;
+    padding-right: 40rpx;
+    align-items: center;
+}
+
+.triangle-down {
+    position: relative;
+    padding-right: 24rpx;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.triangle-down::after {
+    width: 0;
+    height: 0;
+    content: '';
+    bottom: 10rpx;
+    right: 0;
+    position: absolute;
+    border-style: dashed solid solid dashed;
+    border-width: 8rpx 10rpx 0 0;
+    border-color: transparent #555 #555 transparent;
+}
+
+.search-header-scroll {
+    width: 100%;
+    white-space: nowrap;
+    background-image: linear-gradient(-180deg,#F2F6F9 0%,#FFFFFF 100%);
+}
+
+.search-header-btm {
+    line-height: 90rpx;
+    height: 90rpx;
+    padding: 0 40rpx;
+    display: flex;
+    align-items: center;
+}
+
+.search-header-btm-box {
+    height: 90rpx;
+}
+
+.house-type-btn {
+    width: 148rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 24rpx;
+    color: #666;
+    background: #fff;
+    box-shadow: 0 2px 14rpx 0 rgba(0,2,4,0.08);
+    border-radius: 27rpx;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+}
+
+.house-type-btn {
+    margin-right: 20rpx;
+}
+
+.house-type-btn:last-child {
+}
+
+.house-type-btn.active {
+    font-size: 24rpx;
+    color: #fc799b;
+}
+
+.icon-quick-buy {
+    width: 15rpx;
+    height: 24rpx;
+    margin-right: 10rpx;
+}
+
+.space-content {
+    width: 20rpx;
+    height: 40rpx;
+    flex: none;
+}
+
+.search-header-btn-box {
+    padding: 10rpx 40rpx 10rpx 10rpx;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-search__reset {
+    margin: 0 20rpx;
+}
+
+.text-omit {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 340rpx;
+    font-weight: 300;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.text-omit-yes {
+    color: #333;
+    font-weight: 400;
+}
+
+.clear-btn-box {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+
+.overseas-city {
+    padding-right: 40rpx;
+}
+
+.map-btm-box {
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.br1::before {
+    width: 200%;
+    height: 200%;
+    transform: scale(.5);
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+}
+
+.br1,.br1_bottom,.br1_top {
+    position: relative;
+}
+
+.br1_top::before {
+    height: 0;
+    width: 200%;
+    transform: scale(.5);
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+}
+
+.br1_bottom::before {
+    height: 0;
+    width: 200%;
+    transform: scale(.5);
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    transform-origin: 0 0;
+}
+
+.component-search-header-contaniner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all .2s;
+}
+
+.component-search-header-map-contaniner {
+    width: 100%;
+    z-index: 100;
+    transition: all .2s;
+}
+
+.is-fixed {
+    transform: translateY(-156rpx);
+}

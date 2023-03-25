@@ -1,0 +1,69 @@
+.swiper-item-com {
+    position: relative;
+    width: 580rpx;
+    height: 300rpx;
+}
+
+.swiper-item-com .swiper-item-com-img {
+    width: 580rpx;
+    height: 300rpx;
+    display: block;
+}
+
+.swiper-item-com .swiper-item-com-view {
+    position: absolute;
+    top: 0rpx;
+    left: 40rpx;
+}
+
+.swiper-item-com .swiper-item-com-view .swiper-item-com-view-tit {
+    display: flex;
+    align-items: center;
+    margin-top: 40rpx;
+}
+
+.swiper-item-com .swiper-item-com-view .swiper-item-com-view-tit .swiper-item-com-view-tit-v {
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+    color: #04082D;
+}
+
+.swiper-item-com .swiper-item-com-view .swiper-item-com-view-tit .swiper-item-com-view-tit-img {
+    width: 34rpx;
+    height: 32rpx;
+    display: block;
+}
+
+.swiper-item-com .swiper-item-com-view .swiper-item-com-view-e {
+    opacity: 0.3;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #04082D;
+}
+
+.swiper-item-com .swiper-item-com-view .swiper-item-com-view-t {
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #04082D;
+    margin-top: 100rpx;
+}
+
+.color-0 {
+    color: #2A2A2A!important;
+}
+
+.color-10 {
+    color: #04082D!important;
+}
+
+.color-20 {
+    color: #6A482E!important;
+}
+
+.color-30 {
+    color: #673033!important;
+}
+
+.color-40 {
+    color: #FFEBBA!important;
+}

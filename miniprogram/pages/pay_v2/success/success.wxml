@@ -1,0 +1,17 @@
+<view hidden="{{loadingHidden}}">
+    <view class="state-group align-center page-wrap">
+        <icon size="80" type="success"></icon>
+        <view class="title-box">恭喜您，预订成功</view>
+        <view class="text-desc">[{{order.unitName}}]</view>
+        <view class="text-desc">{{checkInDate}}至{{checkOutDate}}  {{stayNight}}</view>
+    </view>
+    <view class="btn-area page-wrap">
+        <button bindtap="orderClick" class="see-order" type="primary">查看订单</button>
+    </view>
+</view>
+<view class="page-btm-btns">
+    <button bindtap="makeMerchantPhoto" plain="flase" type="primary">联系房东</button>
+    <button bindtap="indexClick" class="" plain="flase" type="primary">返回首页</button>
+</view>
+<banner bannerData="{{order.banner}}"></banner>
+<loading wx:if="{{loadingHidden}}">加载中...</loading>

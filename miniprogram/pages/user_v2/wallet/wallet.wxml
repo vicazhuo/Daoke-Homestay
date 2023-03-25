@@ -1,0 +1,93 @@
+<view class="container">
+    <view class="top">
+        <view class="top-view">
+            <view class="total">{{payGiftRemainAmount}}</view>
+            <view bindtap="goRecharge" class="save">
+                <text>储值</text>
+            </view>
+        </view>
+        <view class="top-v2">储值余额(元)</view>
+        <view class="top-v3">累计储值{{totalPayAmount}}，累计赠金{{totalGiftAmount}}</view>
+    </view>
+    <view class="return-cash">
+        <view class="return-cash-view">
+            <view class="total">{{backRemainAmount}}</view>
+        </view>
+        <view class="return-cash-v2">
+            <view>返现余额(元)</view>
+             <text  bindtap="goTeturnCash" class="cuIcon-question lg text-gray" style="margin-left: 8rpx;"></text>
+        </view>
+        <view class="return-cash-v3">累计返现￥{{totalBackAmount}}，当前返现比例{{backRate}}%</view>
+    </view>
+    <view class="line-bottom"></view>
+    <view class="couple">
+        <view class="couple-view">
+            <view class="total">{{couponCount}}</view>
+            <view bindtap="goCoupon" class="save">
+                <text>查看</text>
+            </view>
+        </view>
+        <view class="couple-v2">优惠券(张)</view>
+    </view>
+    <view class="line-bottom"></view>
+    <view class="money-change">余额变动记录</view>
+    <view class="tab">
+        <view bindtap="changeType1" class="{{amountRecordType==1?'sel':''}}">储值余额</view>
+        <view bindtap="changeType2" class="{{amountRecordType==2?'sel':''}}">返现余额</view>
+    </view>
+    <view class="list">
+        <view class="list-item" wx:for="{{amountRecordList}}" wx:key="{{index}}">
+            <view class="list-item-top" wx:if="{{item.amountType==10}}">
+                <view class="v1">
+                    <text class="t1">账户储值</text>
+                </view>
+                <view class="v2 v3">+{{item.amount}}</view>
+            </view>
+            <view class="list-item-top" wx:elif="{{item.amountType==20}}">
+                <view class="v1">
+                    <text class="t1">储值赠金</text>
+                </view>
+                <view class="v2 v3">+{{item.amount}}</view>
+            </view>
+            <view class="list-item-top" wx:elif="{{item.amountType==30}}">
+                <view class="v1">
+                    <text class="t1">民宿预订</text>
+                    <text bindtap="goOrderDetail" class="t2" data-id="{{item.orderId}}">查看订单></text>
+                </view>
+                <view class="v2">-{{item.amount}}</view>
+            </view>
+            <view class="list-item-top" wx:elif="{{item.amountType==40}}">
+                <view class="v1">
+                    <text class="t1">提现</text>
+                </view>
+                <view class="v2">-{{item.amount}}</view>
+            </view>
+            <view class="list-item-top" wx:elif="{{item.amountType==50}}">
+                <view class="v1">
+                    <text class="t1">提现手续费</text>
+                </view>
+                <view class="v2">-{{item.amount}}</view>
+            </view>
+            <view class="list-item-top" wx:elif="{{item.amountType==60}}">
+                <view class="v1">
+                    <text class="t1">订单返现</text>
+                    <text bindtap="goOrderDetail" class="t2" data-id="{{item.orderId}}">查看订单></text>
+                </view>
+                <view class="v2 v3">+{{item.amount}}</view>
+            </view>
+            <view class="list-item-top" wx:elif="{{item.amountType==70}}">
+                <view class="v1">
+                    <text class="t1">民宿预定</text>
+                    <text bindtap="goOrderDetail" class="t2" data-id="{{item.orderId}}">查看订单></text>
+                </view>
+                <view class="v2 v3">+{{item.amount}}</view>
+            </view>
+            <view class="list-item-btm">
+                <view class="v1">{{item.createTime}}</view>
+                <view class="v2" wx:if="{{item.refundAmount>0}}">已退款(￥{{item.refundAmount}})</view>
+            </view>
+        </view>
+    </view>
+    <view class="null-text" wx:if="{{!amountRecordList||amountRecordList.length==0}}">暂无变动记录</view>
+    <view class="null"></view>
+</view>

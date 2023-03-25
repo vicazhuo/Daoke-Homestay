@@ -1,0 +1,22 @@
+<view class="list-component">
+    <view class="list-loading" style="height:{{isPullDownRefesh?'80rpx':0}}">
+        <view class="global-loading-black-icon loading-icon" hidden="{{isRefeshEnd}}"></view>
+        <view class="loading-text" hidden="{{!isRefeshEnd}}">刷新成功</view>
+    </view>
+    <view bindtouchend="touchEnd" bindtouchstart="touchStart" wx:if="{{!isLoading&&(isError||isNullContent)}}">
+        <tj-null-content binderrorBtnHandle="errorBtnHandle" btnText="{{btnText}}" text="{{!isError?nullText:errorText}}" title="{{!isError?nullTitle:errorTitle}}"></tj-null-content>
+    </view>
+    <scroll-view scrollY trapScroll bindscroll="scrollChange" bindscrolltolower="bindscrolltolower" enableBackToTop="true" scrollTop="{{scrollTop}}" style="height:{{heightValue}}" wx:else>
+        <view bindtouchend="touchEnd" bindtouchstart="touchStart" style="min-height:{{heightValue}}">
+            <view class="list-content-contaniner">
+                <slot></slot>
+            </view>
+            <view class="list-loading-contaniner">
+                <block wx:if="{{isEnd&&!isLoading}}">
+                {{isEnd?endText:''}}
+              </block>
+                <view class="global-loading-black-icon loading-icon" wx:if="{{isLoading&&!isPullDownRefesh}}"></view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,18 @@
+<view>
+    <view class="text-content">
+        <textarea bindinput="refuseReasonText" class="refuse-view" cols="30" id="" maxlength="100" name="" placeholder="请输入拒绝原因，限100字" rows="10"></textarea>
+        <view class="text-number">
+            <view>{{textData.length}}</view>
+      /100
+    </view>
+    </view>
+    <view class="money-tips">输入可接受金额，房东同意则自动扣除</view>
+    <view class="money-view">
+        <view class="money-icon">¥</view>
+        <input bindinput="moneyText" class="money-input" placeholder="0" type="text"></input>
+    </view>
+    <view bindtap="postNotAgree" class="btn-view">
+        <view class="sure-btn">提交</view>
+    </view>
+</view>
+<include src="../../../../components/toast/toast.wxml"></include>

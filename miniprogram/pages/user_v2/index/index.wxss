@@ -1,0 +1,478 @@
+@import "/common/wxss/main.wxss";
+@import "/common/wxss/icon.wxss";
+
+page {
+  background: #f8f8f8;
+}
+
+.header-img {
+  width: 108rpx;
+  height: 108rpx;
+  background: #f8f8f8;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 108rpx;
+}
+
+.header-img text {
+  font-size: 61rpx;
+  color: #d4cdcd;
+}
+
+.tit {
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+
+.tit .tit-top {
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.tit .text1 {
+  margin-left: 20rpx;
+}
+
+.tit .text1 .name {
+  font-family: PingFangSC-Medium;
+  font-size: 42rpx;
+  font-weight: bold;
+  color: #2a2a2a;
+}
+
+.tit .text1 .phone {
+  font-family: PingFangSC-Light;
+  font-size: 30rpx;
+  color: #2a2a2a;
+}
+
+.tit .text1 .grade-no {
+  font-family: PingFangSC-Light;
+  font-size: 30rpx;
+  color: #2a2a2a;
+}
+
+.tit .text1 .grade {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #6a482e;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 4rpx 20rpx;
+  border-radius: 20rpx;
+}
+
+.tit .text2 {
+  font-family: PingFangSC-Light;
+  font-size: 42rpx;
+  font-weight: bold;
+  color: #6a482e;
+  margin-left: 20rpx;
+}
+
+.tit .tit-top image {
+  width: 120rpx;
+  height: 120rpx;
+  display: block;
+  border-radius: 50%;
+}
+
+.tit .vip-no {
+  position: relative;
+  top: 10rpx;
+  background: #f8f8f8;
+}
+
+.tit .vip-no image {
+  width: 90%;
+  height: 314rpx;
+  display: block;
+}
+
+.tit .vip-no text {
+  background: red;
+  width: 110rpx;
+  height: 60rpx;
+  display: block;
+  position: absolute;
+  bottom: 4rpx;
+  right: 70rpx;
+}
+
+.tit .vip-user {
+  position: relative;
+  top: 10rpx;
+  width: 100%;
+  height: 108rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.tit .vip-user .vip-user-bg {
+  width: 92%;
+  margin: auto;
+  display: block;
+}
+
+.tit .vip-user .vip-user-left {
+  position: absolute;
+  top: 40rpx;
+  padding: 0 62rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tit .vip-user .vip-user-left image {
+  width: 34rpx;
+  height: 32rpx;
+  display: block;
+}
+
+.tit .vip-user .vip-user-left .text {
+  font-family: PingFangSC-Semibold;
+  font-size: 30rpx;
+  color: #f4d690;
+  margin-left: 4rpx;
+}
+
+.tit .vip-user .vip-user-left .icon {
+  font-size: 30rpx;
+  color: #f4d690;
+  flex: 1;
+  text-align: right;
+}
+
+.tit .vip-user .vip-user-r {
+  width: 0;
+  height: 0;
+  border: 12rpx solid transparent;
+  border-left: 12rpx solid #f4d690;
+}
+
+.list-view {
+  background: #fff;
+  width: 690rpx;
+  margin-left: 30rpx;
+  margin-top: 40rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  border-radius: 6rpx;
+}
+
+.list {
+  height: 120rpx;
+  line-height: 120rpx;
+  font-family: PingFangSC-Light;
+  font-size: 34rpx;
+  color: #2a2a2a;
+  position: relative;
+}
+
+.list1::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #ebebeb;
+  transform: scaleY(0.5);
+}
+
+.list2 {
+  background: #fff;
+  padding: 0;
+  text-align: left;
+  border-radius: 0;
+}
+
+.btn1 {
+  width: 690rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin: 60rpx auto 0;
+  border: 1rpx solid #b4b9bf;
+  border-radius: 6rpx;
+  background: #f8f8f8;
+  font-family: PingFangSC-Regular;
+  font-size: 34rpx;
+  color: #2a2a2a;
+}
+
+.null-h {
+  height: 60rpx;
+}
+
+.new-pull-main-banner {
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+}
+
+.new-pull-main-banner image {
+  width: 690rpx;
+  height: 200rpx;
+  display: block;
+}
+
+.money-detail {
+  width: 690rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  padding: 40rpx 0;
+  border-radius: 6rpx;
+  margin-top: 40rpx;
+}
+
+.money-detail .money-detail-v {
+  flex: 1;
+  padding-left: 60rpx;
+}
+
+.money-detail .money-detail-v1 {
+  position: relative;
+}
+
+.money-detail .money-detail-v1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: #ebebeb;
+  transform: scaleX(0.5);
+}
+
+.money-detail .money-detail-v1::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: #ebebeb;
+  transform: scaleX(0.5);
+}
+
+.money-detail .money-detail-v .v1 {
+  font-family: PingFangSC-Medium;
+  font-size: 42rpx;
+  color: #2a2a2a;
+  font-weight: bold;
+}
+
+.money-detail .money-detail-v .v2 {
+  opacity: 0.5;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #2a2a2a;
+}
+
+.money-detail .money-detail-v2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.money-detail .money-detail-v2 .money-detail-v2-v {
+  display: inline-block;
+}
+
+.money-detail .money-detail-v2 .money-detail-v2-v .v1 {
+  font-family: PingFangSC-Medium;
+  font-size: 42rpx;
+  color: #2a2a2a;
+  font-weight: bold;
+}
+
+.money-detail .money-detail-v2 .money-detail-v2-v .v2 {
+  opacity: 0.5;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #2a2a2a;
+}
+
+.scroll-view-cpt {
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 40rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.scroll-view-cpt .scroll-view-cpt-v {
+  width: 214rpx;
+  height: 120rpx;
+  position: relative;
+  display: inline-block;
+  margin-right: 16rpx;
+}
+
+.scroll-view-cpt .scroll-view-cpt-v .scroll-view-cpt-v-img {
+  width: 214rpx;
+  height: 120rpx;
+  display: block;
+}
+
+.scroll-view-cpt .scroll-view-cpt-v .scroll-view-cpt-v-con {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50rpx;
+}
+
+.scroll-view-cpt .scroll-view-cpt-v .scroll-view-cpt-v-con .v1 {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #2a2a2a;
+}
+
+.scroll-view-cpt .scroll-view-cpt-v .scroll-view-cpt-v-con .v2 {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #2a2a2a;
+}
+
+.scroll-view-cpt .scroll-view-cpt-v .scroll-view-cpt-v-con .v2 text {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #000;
+  font-weight: bold;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.inviteModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.inviteModal .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.inviteModal .con {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.share-btns .btns-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.share-btns .btns {
+  position: fixed;
+  left: 50rpx;
+  bottom: 50rpx;
+  width: 650rpx;
+  height: 250rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 140rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 20rpx;
+}
+
+.share-btns .btns .btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.share-btns .btns .btn button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.share-btns .btns .btn image {
+  width: 120rpx;
+  height: 120rpx;
+  display: block;
+}
+
+.share-btns .btns .btn text {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #5e646b;
+  margin-top: 20rpx;
+}
+
+.share-img .share-img-com-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.share-img .share-img-com {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 810rpx;
+}
+
+.share-img .share-img-com .img1 {
+  margin: 0 auto;
+  width: 300px;
+  height: 340px;
+}
+
+.share-img .share-img-com .btn {
+  margin: 60rpx auto 0;
+  width: 490rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #2a2a2a;
+  background: #fff;
+  border-radius: 12rpx;
+}

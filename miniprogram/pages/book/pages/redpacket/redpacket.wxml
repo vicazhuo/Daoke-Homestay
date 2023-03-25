@@ -1,0 +1,27 @@
+<import src="../../template/template.wxml"></import>
+<common-page isIosCrossBtm crossBtnBtm="64" crossPagePaddingBtm="184" normalPagePaddingBtm="120">
+  <view class="red-packet-page">
+    <view class="red-packet-header" wx:if="{{subTopIntroduction.enabled}}">
+      <text class="packet-header-title">{{subTopIntroduction.title}}</text>
+      <view class="packet-desc">{{subTopIntroduction.text}}。
+        <text bindtap="toRedPacketDetail" class="packet-desc-h5" data-url="{{subTopIntroduction.navigateUrl}}" wx:if="{{subTopIntroduction.navigateUrl}}">详情</text>
+      </view>
+    </view>
+    <view class="red-picket-enabled-list">
+      <template is="red-packet-card" data="{{...item,index:index}}" wx:for="{{redpacketList}}" wx:key="{{index}}"></template>
+    </view>
+    <block wx:if="{{unRedpacketList.length}}">
+      <view bindtap="openUnRedPacket" class="un-rp-title">
+        <view class="un-rp-text">以下优惠不可用
+          <text class="rp-title-arrow {{isOpenUnRedPacket?'active':''}}"></text>
+        </view>
+      </view>
+      <view class="red-picket-unenabled-list" wx:if="{{isOpenUnRedPacket}}">
+        <template is="lines-card" data="{{...item,imgHost:PWA_STATIC_TUJIA_HOST,index:index}}" wx:for="{{unRedpacketList}}" wx:key="{{index}}"></template>
+      </view>
+    </block>
+  </view>
+  <view class="people-list-btn-content" slot="bottom-button">
+    <button bindtap="unSelectPromotion" class="people-list-btn {{isSelectNumber?'active':''}}" hoverClass="btn-hover">不使用优惠</button>
+  </view>
+</common-page>

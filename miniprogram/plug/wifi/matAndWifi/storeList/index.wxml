@@ -1,0 +1,8 @@
+<view class="store-list-wrapper">
+    <view bindtap="selectedStore" class="store-alone {{!item.active&&isSource=='matter'?'failed':''}}" data-index="{{index}}" wx:for="{{storeList}}">
+        <view class="alone_left">{{item.hotelName}}</view>
+        <view class="alone_right" wx:if="{{item.selected}}">
+            <view class="icon"></view>
+        </view>
+    </view>
+</view>

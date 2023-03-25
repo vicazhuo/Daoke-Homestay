@@ -1,0 +1,119 @@
+.main {
+    padding: 0 40rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main .tit {
+    font-family: PingFangSC-Medium;
+    font-size: 50rpx;
+    color: #2A2A2A;
+    padding-top: 40rpx;
+    font-weight: bold;
+}
+
+.main .tit-r {
+    color: #FF4151;
+}
+
+.main .tit-g {
+    color: #22CA92;
+}
+
+.main .con {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #5E646B;
+    padding: 10rpx 0 140rpx;
+}
+
+.main .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30rpx;
+}
+
+.main .list .list-l {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #5E646B;
+}
+
+.main .list .list-r {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #2A2A2A;
+}
+
+.main .list .list-strong {
+    font-weight: bold;
+}
+
+.main button {
+    width: 670rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    background: #FAD330;
+    border-radius: 6rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 34rpx;
+    color: #2A2A2A;
+    margin-top: 100rpx;
+}
+
+.main .contact-steward {
+    display: inline-block;
+    margin: 0 auto 24rpx;
+    border: 1px solid #DCDEE0;
+    border-radius: 6rpx;
+    padding: 12rpx 24rpx;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main .contact-steward .contact-steward-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .contact-steward .contact-steward-inner image {
+    width: 28rpx;
+    height: 36rpx;
+    display: block;
+}
+
+.main .contact-steward .contact-steward-inner view {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #2A2A2A;
+    margin-left: 16rpx;
+}
+
+.main .service {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .service view {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #B4B9BF;
+}
+
+.main .service text {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #22CA92;
+    margin-left: 10rpx;
+}
+
+.btm-fix {
+    width: 100%;
+    position: fixed;
+    bottom: 100rpx;
+    left: 0;
+}

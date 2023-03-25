@@ -1,0 +1,93 @@
+<view class="header-user">
+  <view class='user-info'>
+    <image class="header-bg" mode="aspectFill" src="{{user.memberCardImg?user.memberCardImg:'/common/images/banner_menu.png'}}"></image>
+    <image class="user-avatar" mode="aspectFill" src="{{user.avatarUrl}}"></image>
+    <view class='user-info-login' wx:if="{{isBtnShow}}">
+      <view class="user-name" wx:if="{{user.status==0||user.status==1}}">
+        <navigator class="btn-header-login" url="/pages/user/login/login" wx:if="{{isAlreadyLogin}}">
+          登录/注册
+        </navigator>
+        <button binderror="openDataError" bindgetphonenumber="getPhoneNumber" class="btn-header-login btn-header-login-n" hoverClass="none" openType="getPhoneNumber" plain="true" wx:elif="{{!isAlreadyLogin}}">
+          登录/注册
+        </button>
+      </view>
+      <view class="user-account default_user" wx:elif="{{user.status==2}}">
+        {{user.mobile}}
+        <text class="user-account__reg">{{user.userTitle}}</text>
+      </view>
+    </view>
+    <view wx:else>
+      <button class="btn-header-login btn-header-login-n load" hoverClass="none" loading="true" plain="true"></button>
+    </view>
+  </view>
+</view>
+<view class="cells__group cells__group_after-title order-tab">
+  <view class="cell cells__header">
+    <view class="cell__bd collect-text">我的特权</view>
+  </view>
+  <view class="cell menu-order" style='padding-bottom:34rpx; border-top:none'>
+    <view bindtap='showMemberInerests' class="menu-order__item">
+      <text class='item-icon daoke-icon icon-jingpin1'></text>
+      <view class='type-name'>权益</view>
+    </view>
+    <view  bindtap='playbus' class="menu-order__item">
+      <text class='item-icon daoke-icon icon-jingpin'></text>
+      <view class='type-name'>玩商</view>
+    </view>
+    <view class="menu-order__item">
+      <navigator url="/pages/user/customerService/customerService">
+        <text class='item-icon daoke-icon icon-kefu'></text>
+        <view class='type-name'>客服</view>
+      </navigator>
+    </view>
+    <view class="menu-order__item"></view>
+  </view>
+</view>
+<!-- 我的钱包 -->
+<view class="cells__group cells__group_after-title order-tab">
+  <view bindtap="goOrderList" class="cell cells__header">
+    <view class="cell__bd collect-text">我的钱包</view>
+  </view>
+  <view class="cell menu-order" style='padding-bottom:34rpx;'>
+    <view bindtap="showMomeyPage" class="menu-order__item">
+      <text class='item-icon daoke-icon icon-yue'></text>
+      <view class='type-name'>余额</view>
+    </view>
+    <view bindtap="showRedBagPage" class="menu-order__item" data-current="4">
+      <text class='item-icon daoke-icon icon-youhuiquan'></text>
+      <view class='type-name'>优惠劵</view>
+    </view>
+    <view  bindtap='toulsCrad' class="menu-order__item">
+      <text class='item-icon daoke-icon icon-qiapian'></text>
+      <view class='type-name'>旅途卡</view>
+    </view>
+    <view bindtap="showFapiaoPage" class="menu-order__item">
+      <text class='item-icon daoke-icon icon-fapiao-'></text>
+      <view class='type-name'>发票</view>
+    </view>
+  </view>
+</view>
+<!-- 加盟托管 -->
+<view class="collect">
+  <view class="collect-text">
+    加盟托管
+    <view bindtap="tojump" class="collectmore" data-type="3">
+      <image class="cltimg" mode="widthFix" src="https://oss.localhome.cn/new_icon/more.png"></image>
+    </view>
+  </view>
+  <scroll-view scrollX class="scroll">
+    <view bindtap="taplist" class="nomore-collect">
+      <image mode="widthFix" src="http://minsu.image.zhiyinfo.com/tuoguanbanners.png"></image>
+    </view>
+  </scroll-view>
+</view>
+<view class="btn-area" wx:if="{{user.status==2}}">
+  <button bindtap="logOff" class="btn-logout" type="default">退出登录</button>
+</view>
+<loading wx:if="{{loadingHidden}}">加载中...</loading>
+<get-user-info-popup bindcloseEvent="getUserInfoPopupClose" bindsuccessEvent="getUserInfoPopupSuccess" isShow="{{isGetUserInfoPopup}}">
+</get-user-info-popup>
+ <!-- <view class="power-by" wx:if="{{showRecommendQuickbass}}">
+  <image src="{{DAOKE_STATIC_HOST}}/static/power/power_by.png"></image>
+  <text>由致一信息提供技术支持</text>
+</view> -->

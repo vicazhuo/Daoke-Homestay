@@ -1,0 +1,8 @@
+<popup animType="scale" isPopupShow="{{isShow}}">
+    <view class="auth-contaniner">
+        <text class="auth-title">{{title}}</text>
+        <text class="auth-text">{{text}}</text>
+        <button bindgetuserinfo="_getUserInfo" class="auth-btn-confirm" hoverClass="auth-btn-hover" openType="getUserInfo">允许</button>
+        <view bindtap="_close" class="auth-btn-cancel">取消</view>
+    </view>
+</popup>

@@ -1,0 +1,35 @@
+<view>
+  <view class="house-detail" id="unitLocal">
+    <view class="title-h1">
+      房屋位置
+    </view>
+    <view class="house-detail__local">
+      <view class="map">
+        <view bindtap="navAddress" class="nav-address">
+          <image class="map-image" src="https://api.map.baidu.com/staticimage?width=750&height=400&center={{longitude}},{{latitude}}&zoom=19&markers={{longitude}},{{latitude}}&markerStyles=-1,http://mapp.alicdn.com/1544079046704Gq25RHeyZTQ7hJd.jpg"></image>
+          <view catchtap="copyAddress" class="address" data-param="{{address}}">
+            <view class="address-text">{{address}}</view>
+            <view class="address-copy">
+              <view class="line"></view>
+              <view class="text">复制</view>
+            </view>
+          </view>
+        </view>
+        <view class="scenery-distance-list">
+          <view class="scenery-distance" wx:if="{{index<4}}" wx:for="{{geoHandPosition}}" wx:key="{{index}}">
+            <view class="icon">
+              <image mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/{{item.groupIcon?item.groupIcon+'_small':'sceneries_icon'}}.png"></image>
+            </view>
+            <view class="desc">
+              <view class="desc-title">
+                {{item.positionLen==1?item.title:item.title+'等'+item.positionLen+'个'+item.groupName}}
+              </view>
+              <view class="desc-distance">{{item.description}}</view>
+            </view>
+          </view>
+        </view>
+        <view bindtap="gotoHouseDetailPosition" class="see-more" wx:if="{{geoHandPosition.length>0}}">查看更多</view>
+      </view>
+    </view>
+  </view>
+</view>

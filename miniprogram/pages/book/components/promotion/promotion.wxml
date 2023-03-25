@@ -1,0 +1,20 @@
+<view class="book-module book-form-content">
+  <view bindtap="promotionHandleTap" data-index="{{index}}" data-subtype="{{item.subType}}" wx:for="{{promotion.items}}" wx:key="{{index}}">
+    <tj-cell isLastCell="{{index==promotion.items.length-1}}" isLink="{{item.subType!=0}}" label="{{item.leftBottomRemarks?item.leftBottomRemarks.text:''}}" title="{{item.leftText.title}}">
+      <image bindtap="bookingRuleItem" class="title-help-icon" data-url="{{item.leftText.navigateUrl}}" slot="title-help" src="https://pic.tujia.com/upload/festatic/day_190122/201901221105502512.png" wx:if="{{item.leftText.navigateUrl}}"></image>
+      <view slot="footer">
+        <block wx:if="{{item.subType===0}}">
+          <text class="tj-score-text" style="color:{{item.rightText.color}}">{{item.rightText.text}}</text>
+          <view bindtap="saleRadioChange" class="tj-radio-box" data-index="{{index}}">
+            <tj-radio checked="{{item.select}}" color="#d7616d" wx:if="{{item.enabled}}"></tj-radio>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="discount-price-text" style="color:{{item.rightText.color}}">{{item.rightText.text}}</view>
+          <view class="discount-tip-text" style="color:{{item.rightBottomRemarks.color}}" wx:if="{{item.rightBottomRemarks}}">
+          {{item.rightBottomRemarks.text}}</view>
+        </block>
+      </view>
+    </tj-cell>
+  </view>
+</view>

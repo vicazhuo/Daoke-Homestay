@@ -1,0 +1,287 @@
+.main {
+    padding: 0 40rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main .tit {
+    padding-top: 40rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 50rpx;
+    color: #2A2A2A;
+    font-weight: bold;
+}
+
+.main .con {
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #5E646B;
+    margin-top: 10rpx;
+}
+
+.con-warn {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #e97171;
+    margin-top: 15rpx;
+}
+
+.main .list {
+    width: 670rpx;
+    margin-top: 40rpx;
+    background: #F4F4F4;
+    border-radius: 4rpx;
+}
+
+.main .list-red {
+    background: #feebed;
+}
+
+.main .list .common-tit {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #2A2A2A;
+}
+
+.main .list .common-bold {
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    color: #2A2A2A;
+    font-weight: bold;
+    margin-top: 20rpx;
+}
+
+.common-bold_pwd {
+    font-family: PingFangSC-Medium;
+    font-size: 40rpx;
+    color: #2A2A2A;
+    font-weight: bold;
+    margin-top: 20rpx;
+}
+
+.main .list .list-address {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 60rpx 40rpx 40rpx;
+    border: 1px solid #EBEBEB;
+}
+
+.main .list .list-address1 {
+    padding-top: 50rpx;
+    padding-bottom: 50rpx;
+}
+
+.main .list .list-address .list-address-tit {
+    position: relative;
+}
+
+.main .list .list-address .list-address-tit::before {
+    content: '';
+    position: absolute;
+    top: 8rpx;
+    left: -40rpx;
+    width: 14rpx;
+    height: 28rpx;
+    opacity: 0.5;
+    background: #22CA92;
+}
+
+.main .list .list-address .list-address-tit-warn::before {
+    background: #E97171;
+}
+
+.main .list .list-address .list-address-tit-r::before {
+    background: #FF4151;
+}
+
+.main .list .list-address .list-address-tit-y::before {
+    background: #FAD330;
+}
+
+.main .list .list-pwd {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40rpx;
+    border: 1px solid #EBEBEB;
+}
+
+.main .list .list-pwd .list-pwd-num {
+    display: flex;
+    align-items: center;
+}
+
+.main .list .list-pwd .list-pwd-num view {
+    margin-right: 18rpx;
+}
+
+.main .list .list-time {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40rpx 40rpx 60rpx;
+}
+
+.main .list .list-info {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #5E646B;
+}
+
+.no-info {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40rpx;
+    padding-left: 0;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #5E646B;
+}
+
+.btm-height-null {
+    height: 100rpx;
+}
+
+.btm {
+}
+
+.btm .contact-steward {
+    display: inline-block;
+    margin: 0 auto 24rpx;
+    border: 1px solid #DCDEE0;
+    border-radius: 6rpx;
+    padding: 12rpx 24rpx;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btm .contact-steward .contact-steward-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btm .contact-steward .contact-steward-inner image {
+    width: 28rpx;
+    height: 36rpx;
+    display: block;
+}
+
+.btm .contact-steward .contact-steward-inner view {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #2A2A2A;
+    margin-left: 16rpx;
+}
+
+.btm .service {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40rpx;
+}
+
+.btm .service view {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #B4B9BF;
+}
+
+.btm .service text {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #22CA92;
+    margin-left: 10rpx;
+}
+
+.pay {
+    width: 100%;
+    height: 150rpx;
+    background: #fff;
+    border-top: 1px solid #EBEBEB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.pay view {
+    width: 670rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    background: #FAD330;
+    border-radius: 6rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 34rpx;
+    color: #2A2A2A;
+}
+
+.callManger {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 20rpx;
+}
+
+.callText {
+    width: 100%;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    color: #B4B9BF;
+    text-align: center;
+}
+
+.callNumber {
+    width: 100%;
+    margin-top: 5rpx;
+    color: #B4B9BF;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    text-align: center;
+}
+
+.offlineMobile {
+    color: #22CA92;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+}
+
+.tipimage {
+    margin-left: 16rpx;
+    width: 39rpx;
+    height: 39rpx;
+}
+
+.common-con {
+    color: #5e646b;
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+}
+
+.todaytime-view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.common-con-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.common-con-statetip {
+    margin-left: 38rpx;
+    color: #5e646b;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular;
+    display: inline-block;
+    border: 1px solid #5e646b;
+    border-radius: 6rpx;
+    padding: 4rpx 8rpx;
+}

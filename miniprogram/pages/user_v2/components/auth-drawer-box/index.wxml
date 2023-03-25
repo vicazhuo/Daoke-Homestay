@@ -1,0 +1,15 @@
+<import src="template.wxml"></import>
+<scroll-view class="auth_drawer_box" scrollY="{{false}}" wx:if="{{!isLogin&&!isGetUserInfoPopup}}">
+    <view catch:tap="cancelLogin" catchtouchmove="stopTouchMove" class="mask"></view>
+    <view wx:if="{{!isCancelBindMobile}}">
+        <template is="defaultLoginBox" data="{{tpData}}" wx:if="{{mobile}}"></template>
+        <block wx:elif="{{notSubscribed}}">
+            <template is="notSubscribedLoginBox" data="{{tpData}}" wx:if="{{!showBindMobile}}"></template>
+            <template is="mobileLoginBox" data="{{tpData}}" wx:else></template>
+        </block>
+        <template is="mobileLoginBox" data="{{tpData}}" wx:else></template>
+    </view>
+    <view wx:else>
+        <template is="bindPhoneBox" data="{{tpData}}"></template>
+    </view>
+</scroll-view>

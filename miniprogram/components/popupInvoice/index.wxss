@@ -1,0 +1,104 @@
+
+.invoice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 100;
+}
+
+.invoice .invoice-con {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+.invoice .invoice-con .invoice-con-tit {
+    padding-top: 30rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 50rpx;
+    color: #2B2F33;
+    font-weight: bold;
+    padding-bottom: 20rpx;
+}
+
+.invoice .invoice-con .invoice-con-li {
+    padding: 20rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.invoice .invoice-con .invoice-con-li view {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #2A2A2A;
+}
+
+.invoice .invoice-con .invoice-con-li .invoice-con-li-l {
+    flex-shrink: 0;
+    margin-right: 40rpx;
+}
+
+.invoice .invoice-con .invoice-intro {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #22CA92;
+    margin-top: 40rpx;
+}
+
+.invoice .invoice-con .invoice-btn {
+    background: #FAD330;
+    border-radius: 6rpx;
+    width: 690rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #2B2F33;
+    margin-top: 90rpx;
+}
+
+.vip-tips {
+    width: 692rpx;
+    height: 100rpx;
+    position: relative;
+    margin-top: 60rpx;
+}
+
+.vip-tips .img1 {
+    width: 692rpx;
+    height: 100rpx;
+    display: block;
+}
+
+.vip-tips .con {
+    width: 100%;
+    height: 100%;
+    padding: 0 30rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.vip-tips .con .v1 {
+    display: flex;
+    align-items: center;
+}
+
+.vip-tips .con .v1 text {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #04082D;
+}

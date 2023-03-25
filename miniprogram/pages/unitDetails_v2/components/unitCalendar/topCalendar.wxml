@@ -1,0 +1,9 @@
+<wxs module="unitCalendar" src="unitCalendar.wxs" />
+<view class="top-calendar">
+    <view bindtap="changedDate" class="top-calendar-content">
+        <view>
+            <text class="date-text">{{unitCalendar.topCalendarDate(selectBegin)}}入住</text> - <text class="date-text">{{unitCalendar.topCalendarDate(selectEnd)}}离店</text>
+        </view>
+        <view class="date-night-text">共{{interval}}晚</view>
+    </view>
+</view>

@@ -1,0 +1,13 @@
+function unitTagJoin(arr) {
+    return (arr.map((function(v) {
+        return (v.text)
+    })).join(' '))
+};
+
+function finalPriceFilter(finalPrice) {
+    return (finalPrice && finalPrice > 0 ? '￥' + finalPrice : '暂无价格')
+};
+module.exports = ({
+    unitTagJoin: unitTagJoin,
+    finalPriceFilter: finalPriceFilter,
+});

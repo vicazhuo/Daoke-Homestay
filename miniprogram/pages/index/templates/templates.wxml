@@ -1,0 +1,139 @@
+<!-- 砍价活动 -->
+<template name="new-user-module">
+  <view bindtap="newUserTap" class="new-pull-main-banner" wx:if="{{activityInfo.help}}">
+    <image src="{{activityInfo.help.imageUrl}}"></image>
+  </view>
+</template>
+<!-- 成为体验师 -->
+<template name="division-module"  wx:if="{{activityInfo.division}}">
+  <view class="index-main">
+    <view class="carousel-wrapper">
+      <view class="carousel-title">
+        <view bindtap="gotest" class="text-b">
+          <image class="carousel-title-img" src="http://image01.iyoujia.com/m0/1907/mP7pCtwD28iFKjiTkd3iTj3yt8Z56wGQ.png?x-oss-process=style/o7"></image>
+          住进有家·发现美好生活</view>
+      </view>
+      <view class="video">
+        <video controls loop id="myVideo" objectFit="fill" poster="http://image01.iyoujia.com/m0/1907/A5EYCeRMDnhPKBt8R7D2fcMRwdPXDFTy.png?x-oss-process=style/o7" src="https://image01.iyoujia.com/video/index2.mp4"></video>
+      </view>
+      <view class="video-bottom-view">
+        <view class="video-bottom-view-left">
+          <view class="video-bottom-left-toptitle">成为民宿体验师</view>
+          <view class="video-bottom-left-bottitle">高颜值民宿免费住</view>
+        </view>
+        <view bindtap="goToExperienceActivity" class="video-bottom-view-right">
+          <view>立即加入</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<!-- vip计划 -->
+<template name="daoke-vip-plance">
+  <view class="vip">
+    <view class="text-b index-main">有家VIP计划</view>
+    <view bindtap="goMember" class="vipImgView">
+      <image class="vip-img" mode="aspectFit" src="http://image01.iyoujia.com/m0/1907/mfm6Myz5WBDEbMeStkPym53X8hkZHaD3.png?x-oss-process=style/o7"></image>
+    </view>
+  </view>
+</template>
+<template name="tj-desc-bar">
+  <view class="tj-desc-bar">
+    <view bindtap="toWebviewPage" class="desc-bar-item" data-title="品牌介绍_{{item.name}}" data-url="{{item.navigateUrl}}" wx:for="{{navigations}}" wx:key="{{index}}">
+      <image class="desc-item-img" mode="aspectFit" src="{{item.pictureUrl}}"></image>
+      <text class="desc-item-title">{{item.name}}</text>
+      <text class="desc-item-text">{{item.subTitle}}</text>
+    </view>
+  </view>
+</template>
+<template name="hot-house-card">
+  <view bindtap="houseJump" class="hot-house-card-item" data-title="{{module}}_房屋" data-unitid="{{unitId}}">
+    <image class="hot-house-img tj-img-background" mode="aspectFill" src="{{defaultPicture}}"></image>
+    <view class="hot-house-tag">{{common.unitTagJoin(unitSummeries)}}</view>
+    <view class="hot-house-name">{{unitName}}</view>
+    <view class="hot-price-bar">
+      <text class="final-price">{{common.finalPriceFilter(finalPrice)}}<text class="unit">/晚</text></text>
+      <text class="product-price" wx:if="{{finalPrice!==productPrice}}">￥{{productPrice}}</text>
+    </view>
+  </view>
+</template>
+<template name="hot-get-house">
+  <view class="home-module-container">
+    <template is="home-module-title" data="{{title:title,text:text}}"></template>
+    <view class="hot-house-list-contaniner module-content">
+      <template is="hot-house-card" data="{{...item,module:title}}" wx:for="{{items[0].items}}" wx:key="{{index}}"></template>
+      <view bindtap="toUnitSearchPage" class="more-house-btn" data-title="{{title+'_'+items[0].link.text}}" data-url="{{items[0].link.navigateUrl}}">
+        <view class="more-house-text">{{items[0].link.text}}</view>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="hot-house-recommend">
+  <view class="home-module-container hot-module-list">
+    <template is="home-module-title" data="{{title:title,text:text}}"></template>
+    <view class="hot-list-nav">
+      <view bindtap="hotHouseRecommendNavTap" class="list-nav-item" data-index="{{index}}" data-title="{{item.title}}" wx:for="{{items}}" wx:key="{{index}}">
+        <text class="nav-title {{navActiveIndex===index?'active':''}}">{{item.title}}</text>
+        <view class="nav-active-border" wx:if="{{navActiveIndex===index}}"></view>
+      </view>
+    </view>
+    <view class="module-content">
+      <swiper bindchange="hotHouseRecommendChange" class="hot-house-list" current="{{navActiveIndex}}">
+        <swiper-item class="hot-swiper-item" id="hotSliderItem_{{index}}" wx:for="{{items}}" wx:key="{{index}}">
+          <view class="swiper-hot-house-list">
+            <template is="hot-house-card" data="{{...item,module:title}}" wx:for="{{item.items}}" wx:key="{{index}}"></template>
+            <view bindtap="toUnitSearchPage" class="more-house-btn" data-title="{{title+'_'+item.link.text}}" data-url="{{item.link.navigateUrl}}" wx:if="{{item.link.enabled}}">
+              <view class="more-house-text">{{item.link.text}}</view>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</template>
+<template name="neigh-house-card">
+  <view bindtap="toUnitSearchPage" class="neigh-house-card-item" data-cityname="{{title}}" data-title="邻城探索_{{title}}" data-url="{{navigateUrl}}">
+    <image class="neigh-house-img tj-img-background" mode="aspectFill" src="{{imageUrl}}"></image>
+    <view class="neigh-mask">{{title}}</view>
+  </view>
+</template>
+<template name="neigh-borhood">
+  <view class="home-module-container neigh-borhood-contaniner">
+    <template is="home-module-title" data="{{title:title,text:text}}"></template>
+    <view class="module-content">
+      <scroll-view scrollX class="neigh-scroll-view" scrollLeft="{{scrollLeft}}">
+        <view class="neigh-scroll-view-content">
+          <template is="neigh-house-card" data="{{...item}}" wx:if="{{item.enabled}}" wx:for="{{destinations}}" wx:key="{{index}}"></template>
+          <view class="space-view"></view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</template>
+<template name="week-house-card">
+  <view bindtap="toUnitSearchPage" class="week-house-card-item" data-title="{{title}}" data-url="{{navigateUrl}}">
+    <image class="week-house-img tj-img-background" mode="aspectFill" src="{{imageUrl}}"></image>
+    <text class="week-house-title">{{title}}</text>
+    <text class="week-house-desc">{{text}}</text>
+  </view>
+</template>
+<template name="week-to-where">
+  <view class="home-module-container">
+    <template is="home-module-title" data="{{title:title,text:text}}"></template>
+    <view class="module-content">
+      <scroll-view scrollWithAnimation scrollX class="week-scroll-view" scrollLeft="{{scrollLeft}}">
+        <view class="week-scroll-view-content">
+          <template is="week-house-card" data="{{...item}}" wx:for="{{destinations}}" wx:key="{{index}}"></template>
+          <view class="space-view"></view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</template>
+<template name="home-module-title">
+  <view class="home-module-title">
+    <text class="main-module-title">{{title}}</text>
+    <text class="sub-module-title">{{text}}</text>
+  </view>
+</template>
+<wxs module="common" src="../../../common/wxs/index.wxs" />

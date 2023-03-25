@@ -1,0 +1,8 @@
+<image class="ico" src="../../../images/checkin/ico.png"></image>
+<view class="tit">密码获取失败</view>
+<view class="con">你已通过人脸实名认证，但是门锁刚刚开了小差，密码获取失败，请尝试重新获取！如遇问题，请联系您的线下管家！</view>
+<view bindtap="callButler" class="butler">
+    <image src="../../../images/checkin/phone.png"></image>
+    <view>管家：{{butlerInfo.name}}</view>
+</view>
+<view bindtap="goGetPwd" class="btn">重新获取</view>

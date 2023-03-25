@@ -1,0 +1,16 @@
+<view class="page-hd">
+    <view class="total-box text-primary">
+        <text class="rmb">¥</text>{{totalAmount}}</view>
+    <view class="title-box text-desc">{{unitName}}</view>
+</view>
+<view class="cells__group">
+    <scroll-view class="scroll-view" scrollY="true">
+        <view class="cell" wx:for="{{dailyPrice}}" wx:key="id">
+            <view class="cell__bd">
+                <view>{{item.date}}</view>
+                <view class="cell__desc">{{item.weekday}}</view>
+            </view>
+            <view class="cell__fd unit-price text-primary">¥<text class="number-box">{{item.price}}</text> x{{item.bookCount}}套</view>
+        </view>
+    </scroll-view>
+</view>

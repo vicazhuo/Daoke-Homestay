@@ -1,0 +1,38 @@
+page {
+    background: #fff;
+}
+
+.sort-select {
+    margin-top: 0;
+}
+
+.sort-select__item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 32rpx;
+}
+
+.sort-select__item.is-selected,.sort-select__item.view-hover {
+    padding-right: 40rpx;
+    color: #d8646f;
+    position: relative;
+}
+
+.sort-select__item.is-selected .is-selected__icon,.sort-select__item.view-hover .is-selected__icon {
+    line-height: 1;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.item-bar {
+    padding: 0 0 0 40rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.item-bar::before {
+    left: 0;
+}

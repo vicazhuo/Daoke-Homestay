@@ -1,0 +1,31 @@
+.page-btm-btns button[type='primary'] {
+    width: 325rpx;
+    height: 80rpx;
+    margin: 0;
+    border: 1px solid #DADADA;
+    border-radius: 12rpx;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.page-btm-btns {
+    position: fixed;
+    bottom: 40rpx;
+    width: 100%;
+    padding: 0 40rpx;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.see-order[type='primary'] {
+    height: 96rpx;
+    line-height: 96rpx;
+    background: #d8646f;
+    border-radius: 12rpx;
+}
+
+.page-wrap {
+    padding-left: 40rpx;
+    padding-right: 40rpx;
+}

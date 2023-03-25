@@ -1,0 +1,13 @@
+function errorText(isLogin, activeBar) {
+    return (isLogin ? '服务出错' : '登录后可查看管理您的' + (activeBar == 0 ? '收藏' : '浏览记录'))
+};
+
+function getListLength(list) {
+    return (list.filter((function(v) {
+        return (v)
+    })).length)
+};
+module.exports = ({
+    errorText: errorText,
+    getListLength: getListLength,
+});

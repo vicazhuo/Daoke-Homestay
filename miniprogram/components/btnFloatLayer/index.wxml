@@ -1,0 +1,4 @@
+<view class="float-layer-box {{isAnim?'btnAnim':''}}" wx:if="{{btnShow}}">
+    <image bindtap="closeBtn" class="float-layer-close" src="{{HOST_STATIC+'icon_close.png'}}"></image>
+    <image bindtap="_routeToWeb" class="float-layer-bg" mode="aspectFit" src="{{btnImgSrc}}"></image>
+</view>

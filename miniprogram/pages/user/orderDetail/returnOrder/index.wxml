@@ -1,0 +1,25 @@
+<view class="content br1">
+    <view class="contentGroup">
+        <view class="nodesgroup">
+            <view class="{{isCancelrule?'rule-node':'rule-node-gray'}}">预订成功</view>
+            <view wx:for="{{orderNew.cancelRules}}" wx:key="{{index}}">
+                <view class="{{item.isDeleted?'rule-prop-gray':'rule-prop '}}">{{item.tip}}</view>
+                <view class="{{item.isDeleted?'rule-node-gray':'rule-node'}}">
+          {{item.strDate}}{{item.introduction}}{{item.strTime}}
+        </view>
+            </view>
+        </view>
+        <view class="titleGroup">
+            <view class="mainTitle">
+                <i>*</i>
+        以上规则由房东制定
+      </view>
+        </view>
+    </view>
+    <view class="ruletips">
+        <view class="ruletips-title">温馨提示：</view>
+        <view wx:for="{{orderNew.cancelTips}}" wx:key="item">
+            <text class="ruletips-text">{{item}}</text>
+        </view>
+    </view>
+</view>

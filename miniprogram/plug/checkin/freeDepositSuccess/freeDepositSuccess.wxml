@@ -1,0 +1,8 @@
+<view class="con">
+    <view class="tit">认证成功</view>
+    <view class="tit-con">恭喜您获得免押特权，本次入住无需支付押金。</view>
+    <view class="instruce">我们会在您退房后上门保洁验房，若有物品设施损坏，需要您照价赔偿，同时会影响您在有家的信用，请您爱护房屋与设施。</view>
+    <view class="bto">
+        <view bindtap="go" class="btn">查看门锁密码</view>
+    </view>
+</view>

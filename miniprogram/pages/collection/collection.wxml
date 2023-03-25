@@ -1,0 +1,25 @@
+<view class="collection-page">
+    <include src="./template/headBar.wxml"></include>
+    <swiper bindchange="swiperChange" class="collection-swiper" current="{{activeBar}}">
+        <swiper-item>
+            <view class="collection-list-item">
+                <include src="./template/selectBar.wxml" wx:if="{{!isPageError&&collection.getListLength(favoriteHouseList)}}"></include>
+                <tj-list isScroll binderrorBtnHandle="errorBtnHandle" bindgetScrollTop="getFavoriteScollTop" bindpullDownRefesh="onPullDownRefresh" bindscrolltolowerChange="favoriteScrolltolower" btnText="{{isLogin?isPageError?'重新加载':'随便去逛逛':'登录/注册'}}" errorText="{{collection.errorText(isLogin,0)}}" heightValue="calc(100vh - 80rpx)" isClosePullDown="{{pullDownList[0]}}" isEnd="{{isFavoriteEnd}}" isError="{{isPageError}}" isLoading="{{isFavoriteLoading}}" isNullContent="{{!collection.getListLength(favoriteHouseList)}}" nullText="点击 ❤ 即可收藏对应的房屋" nullTitle="暂无收藏" scrollTop="{{favoriteScrollTop}}">
+                    <view class="tj-list-item tj-favorite-list">
+                        <tj-house-card isFavoritePage beginDate="{{beginDate}}" bindremoveFavorite="removeFavorite" endDate="{{endDate}}" houseInfo="{{item}}" wx:if="{{item}}" wx:for="{{favoriteHouseList}}" wx:key="{{item.unitId}}"></tj-house-card>
+                    </view>
+                </tj-list>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="collection-list-item">
+                <tj-list binderrorBtnHandle="errorBtnHandle" bindpullDownRefesh="onPullDownRefresh" bindscrolltolowerChange="recordScrolltolower" btnText="{{isLogin?isRecordError?'重新加载':'随便去逛逛':'登录/注册'}}" errorText="{{collection.errorText(isLogin,1)}}" heightValue="calc(100vh - 80rpx)" isClosePullDown="{{pullDownList[1]}}" isEnd="{{isRecordEnd}}" isError="{{isRecordError||!isLogin}}" isLoading="{{isRecordLoading}}" isNullContent="{{!recordList.length}}" nullTitle="暂无浏览记录">
+                    <view class="tj-list-item footprint-item">
+                        <tj-footprint-house houseInfo="{{item}}" wx:for="{{recordList}}" wx:key="{{\"re\" + index}}"></tj-footprint-house>
+                    </view>
+                </tj-list>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+<wxs module="collection" src="collection.wxs" />

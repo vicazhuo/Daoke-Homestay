@@ -1,0 +1,11 @@
+<import src="../rangeSlider/rangeSlider.wxml"></import>
+<view class="distanceRangeSlider-layout">
+    <view class="select-more__title" wx:if="{{distanceRangeSliderText}}">{{distanceRangeSliderText}}</view>
+    <view class="select-price">
+        <template is="rangeSlider" data="{{...distanceRangeSlider_rangeSlider_data}}"></template>
+        <view class="select-price__footer">
+            <view class="select-distance__item select-price__item {{index==distanceRangeSliderRightIndex?'is-selected':''}}" style="left:{{100/(distanceRangeSliderTextDatas.length-1)*index}}%" wx:for="{{distanceRangeSliderTextDatas}}" wx:key="item">
+                <view catchtap="distanceRangeSlider_itemTap" class="select-distance-dian" data-index="{{index}}"></view>{{item}}</view>
+        </view>
+    </view>
+</view>

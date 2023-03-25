@@ -1,0 +1,125 @@
+<scroll-view hidden="{{isLoadingView}}" scrollY="true">
+  <component-chargeback bindchargebackEvent="chargebackHandle" depositRefundDes="{{orderNew.depositRefundDes}}" depositRefundTip="{{orderNew.depositRefundTip}}" fineAmount="{{orderNew.fineAmount}}" wx:if="{{orderNew.enumDepositStatus==3}}"></component-chargeback>
+  <!-- 订单状态 -->
+  <component-orderstatus binddepositEvent="depositDetail" bindrefreshEvent="getOrderInfo" countdown="{{orderNew.countdown}}" enumOrderOperationFlag="{{orderNew.enumOrderOperationFlag}}" help="{{orderNew.help}}" isExempteDeposit="{{orderNew.isExempteDeposit}}"
+    onlineDeposit="{{orderNew.onlineDeposit}}" status="{{orderNew.enumOrderStatus}}" statusColor="{{orderNew.orderStatusDescColor}}" statusText="{{orderNew.enumOrderStatusDesc}}" summory="{{orderNew.summary}}" totalNeedPay="{{totalNeedPay}}"></component-orderstatus>
+  <!-- 红包 -->
+  <component-activity redPacket="{{orderNew.redPacketPowerNavigation}}" wx:if="{{orderNew.redPacketPowerNavigation!==null}}"></component-activity>
+  <!-- 入住信息 -->
+  <component-checkinfo bindreturnOrderEvent="showReturnOrder" infoData="{{checkInfoData}}"></component-checkinfo>
+  <component-locationinfo address="{{orderNew.unitAddress}}" hotelName="{{orderNew.hotelName}}" hotelSummary="{{orderNew.hotelSummary}}" latitude="{{orderNew.latitude}}" longitude="{{orderNew.longitude}}" realTimeServiceHotlinePattern="{{orderNew.realTimeServiceHotlinePattern}}"
+    hotelPhonePaySuccess="{{orderNew.hotelPhonePaySuccess}}" unitId="{{orderNew.unitID}}" unitName="{{orderNew.unitName}}" unitSummary="{{orderNew.unitSummary}}"></component-locationinfo>
+  <view class="resident-block">
+    <view class="r-name">
+      <text class="resident-block-t">入住人：</text>
+      <text class="resident-block-c">{{guestVos.name}}</text>
+    </view>
+    <view class="r-tel">
+      <text class="resident-block-t">手机号：</text>
+      <text class="resident-block-c">{{guestVos.mobile}}</text>
+    </view>
+  </view>
+  <view class="money-block">
+    <view bindtap="seeOnlineMoneyDetail" class="bottom_line m-pay-money">
+      <view class="m-p-content br1_bottom">
+        <view class="online-pay">线上支付</view>
+        <view class="online-right">
+          <view class="mon-font">¥{{orderNew.orderOnlinePay}}</view>
+          <view class="icon-arrow-right"></view>
+        </view>
+      </view>
+    </view>
+    <view bindtap="seeMoreDepositPopup" class="bottom_line m-deposit" wx:if="{{!orderNew.isExempteDeposit&&orderNew.onlineDeposit>0}}">
+      <view class="m-d-content  br1_bottom">
+        <view class="online-pay">押金</view>
+        <view class="online-right">
+          <view class="mon-font">¥{{orderNew.onlineDeposit}}</view>
+          <view class="icon-arrow-right"></view>
+        </view>
+      </view>
+    </view>
+    <view class="bottom_line m-deposit" wx:if="{{orderNew.isExempteDeposit}}">
+      <view class="m-d-content  br1_bottom">
+        <view class="online-pay-m">
+          <text class="free-deposit-l">押金-</text>
+          <text class="free-deposit-f">信用免押金</text>
+        </view>
+        <view class="online-right">
+          <view class="f-mon-font">¥{{orderNew.depositNjudge}}</view>
+        </view>
+      </view>
+    </view>
+    <view bindtap="seeReturnMoneyPopup" class="bottom_line  m-pay-money" wx:if="{{orderNew.returnAmount>0}}">
+      <view class="m-p-content">
+        <view class="online-pay">入住返现</view>
+        <view class="online-right">
+          <view class="mon-font">¥{{orderNew.returnAmount}}</view>
+          <view class="icon-arrow-right"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="house-point" wx:if="{{orderNew.integration>0}}">
+    办理入住完成后可获得积分{{orderNew.integration}}
+  </view>
+  <block wx:if="{{orderNew.insuranceList.length>0}}">
+    <view class="house-insurance" wx:for="{{orderNew.insuranceList}}" wx:key="insuredID">
+      <view class="h-i-left">
+        <view class="h-i-title">住宿意外险</view>
+        <view class="h-i-name">被保人：{{item.policyHolderName}}</view>
+      </view>
+      <view class="h-i-right">
+        <text class="h-i-sec-b">{{item.insuranceOrderStatus}}</text>
+        <view class="h-i-content"></view>
+      </view>
+    </view>
+  </block>
+  <view bindtap="goodsOrderClick" class="goods-order" wx:if="{{orderNew.tyingGoodsOrderDetail}}">
+    <view class="h-i-left">
+      <view class="h-i-title">附加套餐</view>
+    </view>
+    <view class="h-i-right">
+      <text class="h-i-sec">{{goodsOrderText}}</text>
+      <view class="h-i-content">
+        <view class="icon-arrow-right"></view>
+      </view>
+    </view>
+  </view>
+  <view class="rule-group" wx:if="{{orderNew.checkInRuleList.length>0}}">
+    <view class="column-title">
+      <text class="text-primary">*</text> 入住提示：
+    </view>
+    <view class="rule-info">
+      <view wx:for="{{orderNew.checkInRuleList}}" wx:key="drID">{{item}}</view>
+    </view>
+  </view>
+</scroll-view>
+<view class="button-group">
+  <view class="btn-content">
+    <view bindtap="linkDeleteOrder" class="order-del-btn br1" data-orderId="{{orderNew.orderID}}" wx:if="{{(enumOrderOperationFlag&64)===64}}">
+      删除
+    </view>
+    <view bindtap="linkCancelOrder" class="order-del-btn br1" data-orderId="{{orderNew.orderID}}" wx:if="{{(enumOrderOperationFlag&8)===8}}">
+      取消订单
+    </view>
+    <view bindtap="linkGoThisLocation" class="order-pay-btn margin-left-btn" data-address="{{orderNew.address}}" data-latitude="{{orderNew.latitude}}" data-longitude="{{orderNew.longitude}}" data-unitName="{{orderNew.unitName}}" wx:if="{{(enumOrderOperationFlag&16)===16}}">
+      导航
+    </view>
+    <button class="order-share-btn margin-left-btn br1" openType="share" wx:if="{{orderNew.enumOrderStatus!==5&&orderNew.enumOrderStatus!==13}}">
+      分享房屋
+    </button>
+    <view bindtap="linkOrderAgain" class="order-again-btn margin-left-btn br1" data-unitId="{{orderNew.unitID}}" wx:if="{{(enumOrderOperationFlag&32)===32}}">
+      再次预订
+    </view>
+    <view bindtap="linkGoPay" class="order-pay-btn margin-left-btn" data-orderid="{{orderNew.orderId}}" data-tnsOrder="{{orderNew.tnsOrder}}" wx:if="{{(enumOrderOperationFlag&1)===1}}">
+      去支付
+    </view>
+  </view>
+</view>
+<!-- 取消订单扣款 -->
+<component-popup bindpopupCancelEvent="chargebackCancel" bindpopupOkEvent="chargebackAgree" cancelText="{{cancelText}}" extra="{{popupExtra}}" isShow="{{chargebackDlg}}" okText="{{okText}}" popupText="{{popupText}}"></component-popup>
+<!-- 取消订单 -->
+<component-popup bindpopupCancelEvent="delOrderCancel" bindpopupOkEvent="delOrderAgree" cancelText="点错了" extra="" isShow="{{isShowDelOrder}}" okText="删除" popTitle="确定删除订单？" popupText="订单删除了将无法还原"></component-popup>
+<component-popup bindpopupCancelEvent="cancelOrderCancel" bindpopupOkEvent="cancelOrderAgree" cancelText="点错了" extra="" isShow="{{isShowCancelOrder}}" okText="取消订单" popTitle="" popupText="{{orderNew.hasCancelFine?'您确定要取消订单？':'订单可免费取消_您确定要取消订单？'}}"></component-popup>
+<loading hidden="{{!isLoading}}">加载中...</loading>
+<include src="../../../components/toast/toast.wxml"></include>

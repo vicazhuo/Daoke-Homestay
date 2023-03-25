@@ -1,0 +1,205 @@
+image {
+    display: block;
+}
+
+.house-card-top {
+    position: relative;
+}
+
+.house-card-image {
+    width: 100%;
+    height: 500rpx;
+}
+
+.house-card-price {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 15rpx 12rpx;
+    min-width: 104rpx;
+    background: rgba(0,0,0,.7);
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.price-code {
+    font-size: 20rpx;
+}
+
+.price-miss {
+    color: #999;
+}
+
+.price-final {
+    position: relative;
+}
+
+.final-price-txt {
+    font-size: 38rpx;
+    line-height: 38rpx;
+    font-weight: bold;
+}
+
+.final-price-disallow {
+    color: #999;
+}
+
+.price-tip {
+    position: absolute;
+    left: 100%;
+    bottom: 100%;
+    margin-left: 5rpx;
+    margin-bottom: -5rpx;
+}
+
+.price-tip-1 {
+    display: block;
+    padding: 10rpx;
+    background-image: url(https://nm.tujia.com/static/images/webchatApp/unit-tip-1.png);
+    background-size: cover;
+    width: 40rpx;
+    height: 44rpx;
+    font-size: 20rpx;
+    line-height: 20rpx;
+}
+
+.price-tip-2 {
+    position: relative;
+    margin-left: 4px;
+    display: inline-block;
+    height: 36rpx;
+    line-height: 36rpx;
+    padding: 0 8rpx;
+    border-radius: 4rpx;
+    background-color: #ff6666;
+    white-space: nowrap;
+    font-size: 24rpx;
+}
+
+.price-tip-2::after {
+    position: absolute;
+    left: -8rpx;
+    top: 0;
+    content: "";
+    background-image: url(https://nm.tujia.com/static/images/webchatApp/unit-tip-2.png);
+    height: 36rpx;
+    width: 12rpx;
+    background-size: cover;
+}
+
+.product-price {
+    margin-left: 12rpx;
+    font-size: 24rpx;
+    color: #b2b2b2;
+    line-height: 24rpx;
+    text-decoration: line-through;
+}
+
+.disallow-tip {
+    margin-left: 12rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.price-down {
+    font-size: 20rpx;
+    line-height: 20rpx;
+    margin-top: 6rpx;
+}
+
+.house-card-intro {
+    position: relative;
+    padding: 40rpx 40rpx 60rpx 40rpx;
+    background: #fff;
+}
+
+.house-tit {
+    flex: 1;
+    width: 0%;
+    font-size: 34rpx;
+    line-height: 1;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.house-card-info {
+    margin: 20rpx 0;
+    font-size: 28rpx;
+    color: #999999;
+}
+
+.house-card-tag {
+    display: inline-block;
+    padding: 0 10rpx;
+    margin-right: 20rpx;
+    line-height: 28rpx;
+    background: rgba(253,130,56,.1);
+    font-size: 20rpx;
+    color: #FD8238;
+}
+
+.house-card-avatar {
+    position: absolute;
+    top: -56rpx;
+    right: 44rpx;
+    width: 112rpx;
+    height: 112rpx;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.h-dot:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10rpx;
+    width: 3px;
+    height: 3px;
+    background: #999999;
+    border-radius: 50%;
+}
+
+.text-price-miss {
+}
+
+.u-promotion {
+    position: absolute;
+    display: inline-block;
+    left: 0px;
+    top: 16rpx;
+    width: 180rpx;
+    height: 40rpx;
+}
+
+.house-card-tit {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+}
+
+.level-haohua,.level-jingpin,.level-shushi {
+    display: inline-block;
+    flex: none;
+    margin-right: 10rpx;
+    width: 94rpx;
+    height: 34rpx;
+}
+
+.level-haohua {
+    background: url(https://nm.tujia.com/static/images/webchatApp/level-list-haohua.png);
+    background-size: cover;
+}
+
+.level-jingpin {
+    background: url(https://nm.tujia.com/static/images/webchatApp/level-list-jingpin.png);
+    background-size: cover;
+}
+
+.level-shushi {
+    background: url(https://nm.tujia.com/static/images/webchatApp/level-list-shushi.png);
+    background-size: cover;
+}

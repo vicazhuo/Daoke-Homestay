@@ -1,0 +1,39 @@
+.extracost-wrapper {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.tips {
+    background: #fff3df;
+    font-size: 24rpx;
+    color: #ff9645;
+    padding: 7rpx 0;
+    text-align: center;
+}
+
+.extracost-list {
+    padding: 60rpx 0 0 40rpx;
+}
+
+.extracost {
+    display: flex;
+    margin-bottom: 34rpx;
+}
+
+.extracost-left {
+    min-width: 64rpx;
+    font-size: 28rpx;
+    color: #999999;
+    letter-spacing: 0;
+    margin-right: 20rpx;
+    line-height: 40rpx;
+}
+
+.extracost-right {
+    flex: 1;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 40rpx;
+    max-width: 482rpx;
+}

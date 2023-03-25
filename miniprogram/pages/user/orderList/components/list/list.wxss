@@ -1,0 +1,22 @@
+.list-loading-contaniner {
+    padding: 40rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24rpx;
+}
+
+.loading-icon {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+.tab-content-item {
+    padding: 0 0 0;
+    height: 90vh;
+}
+
+.item-contaniner {
+    box-sizing: border-box;
+}

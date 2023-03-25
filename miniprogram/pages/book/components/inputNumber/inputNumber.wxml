@@ -1,0 +1,15 @@
+<view class="book-input-number">
+    <tj-input right isBorder="{{!acceptRule.introduction}}" title="{{title}}" type="slot">
+        <view class="book-form-number-con">
+            <view bindtap="selectInputTap" class="form-number-reduce {{number>min?'active':''}}" data-btn="-" data-max="{{max}}" data-min="{{min}}" data-title="{{title}}_left" data-type="{{unit}}"></view>
+            <text class="from-num-text">{{number}}{{unit}}</text>
+            <view bindtap="selectInputTap" class="form-number-add {{number<max?'active':''}}" data-btn="+" data-max="{{max}}" data-min="{{min}}" data-title="{{title}}_right" data-type="{{unit}}"></view>
+        </view>
+    </tj-input>
+    <block wx:if="{{acceptRule.introduction}}">
+        <view class="book-reception">
+            <people-reception bindclick="receptionAction" isShow="{{isRecetionShow}}" text="{{acceptRule.introduction}}" textLink="{{acceptRule.textLink}}"></people-reception>
+        </view>
+        <view class="f-border-bottom-line-gray reception-j"></view>
+    </block>
+</view>

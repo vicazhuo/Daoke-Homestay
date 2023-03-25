@@ -1,0 +1,69 @@
+<include src="/components/toast/toast.wxml"></include>
+<view wx:if="{{isShowChangeBtn&&user.showMobile!=''}}">
+    <view class="header-user">
+        <image class="user-avatar" mode="aspectFill" src="{{!!wxUser.avatarUrl?wxUser.avatarUrl:'/common/images/default_user.png'}}"></image>
+        <view class="user-name">{{wxUser.nickName}}</view>
+        <view class="user-account">{{user.showMobile}}</view>
+    </view>
+    <view class="btn-area">
+        <button bindtap="immediateLogin" type="primary">直接登录</button>
+        <button bindtap="changeUser" type="default">换个账号登录</button>
+    </view>
+</view>
+<form bindsubmit="formSubmit" id="form" reportSubmit="true">
+    <view wx:if="{{isShowForm||user.showMobile==''}}">
+        <view>
+            <view class="cells__group">
+                <view class="cell">
+                    <view class="cell__hd">
+                        <image class="icon-bing__tel" src="/common/images/icon_login_tel.png"></image>
+                    </view>
+                    <view class="cell__bd">
+                        <input class="bing-phone__input" focus="true" maxlength="11" name="mobile" placeholder="请填写手机号码" type="number"></input>
+                    </view>
+                    <view class="cell__fd">
+                        <button class="btn-bing__code" disabled="{{verCodeDisabled}}" formType="submit" id="btncode" loading="{{btnVerCodeLoading}}" type="primary">
+              {{verCodeTitle}}
+            </button>
+                    </view>
+                </view>
+                <view class="cell">
+                    <view class="cell__hd">
+                        <image class="icon-bing__password" src="/common/images/icon_login_password.png"></image>
+                    </view>
+                    <view class="cell__bd">
+                        <input class="bing-phone__input" maxlength="4" name="vercode" placeholder="请输入验证码" type="number"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button formType="submit" id="btnsubmit" loading="{{btnBindLoading}}" type="primary">
+          确认
+        </button>
+            </view>
+            <view class="role_bar">
+        注册/登录即表示同意
+        <text bindtap="goRoleH5Page" class="role_link_text" data-type="1">《服务协议》</text>
+                <text bindtap="goRoleH5Page" class="role_link_text" data-type="2">《隐私政策》</text>
+            </view>
+        </view>
+        <view class="image__verify__code" hidden="{{!isShowImgVerifyCode}}">
+            <view class="verify__box">
+                <view class="img">
+                    <image mode="aspectFill" src="{{picVerCode}}"></image>
+                    <button class="change__btn" formType="submit" id="picVerBtn" size="mini" type="default">
+            换一个
+          </button>
+                </view>
+                <view class="input">
+                    <input class="verify_code_input" name="picVerCode" placeholder="请输入验证码"></input>
+                </view>
+                <view class="sure__btn">
+                    <button formType="submit" id="picVerSureBtn" type="default">确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</form>
+<loading hidden="{{!isLoading}}">请稍后...</loading>
+<get-user-info-popup bindcloseEvent="getUserInfoPopupClose" isShow="{{isGetUserInfoPopup}}"></get-user-info-popup>

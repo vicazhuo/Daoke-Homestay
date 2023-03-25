@@ -1,0 +1,1245 @@
+
+
+page {
+    color: #333;
+    background: #f7f9fb;
+}
+
+.img-preview {
+    display: block;
+    height: 500rpx;
+}
+
+.g-bbm-dashed {
+    border-bottom: 1px dashed #dadada;
+}
+
+.bgwt {
+    padding: 60rpx 0 0 0;
+    background: #ffffff;
+    box-shadow: 0 1px 3rpx 0 rgba(0,0,0,0.06);
+}
+
+.lord-info {
+    margin-top: 20rpx;
+    background: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.06);
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: '';
+    visibility: hidden;
+    height: 0;
+}
+
+.arrowleft {
+    position: absolute;
+    top: 30rpx;
+    right: 40rpx;
+    display: inline-block;
+    margin-left: 3px;
+    width: 16rpx;
+    height: 18rpx;
+    border: 2rpx solid #d8d8d8;
+    border-color: #d8d8d8 #d8d8d8 transparent transparent;
+    transform: rotate(45deg);
+}
+
+.margin60 {
+    margin-bottom: 60rpx;
+}
+
+.marginTop60 {
+    margin-top: -60rpx;
+}
+
+.sec-local {
+    margin-top: 20rpx;
+}
+
+.sec-summary,.sec-local,.sec-comment,.sec-checkin {
+    background-color: #fff;
+    padding: 2rpx 40rpx;
+}
+
+.summary-info__score .score {
+    color: #fd8238;
+    margin-right: 20rpx;
+}
+
+.summary-info__score .score text {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 1px;
+    margin-right: 2px;
+    position: relative;
+    top: 1px;
+}
+
+.summary-info__score .stars {
+    position: relative;
+    display: inline-block;
+    margin-right: 20rpx;
+}
+
+.summary-info__score .stars .star {
+    display: inline-block;
+    width: 20rpx;
+    height: 20rpx;
+    margin-right: 6rpx;
+    background: url(https://nm.tujia.com/static/images/webchatApp/page-unitDetal/star-empty.png) no-repeat;
+    background-size: 100%;
+}
+
+.summary-info__score .stars .star-score {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0%;
+}
+
+.summary-info__score .stars .star-score .star {
+    background: url(https://nm.tujia.com/static/images/webchatApp/page-unitDetal/star-full.png) no-repeat;
+    background-size: 100%;
+}
+
+.f-border-bottom-line-gray {
+    position: relative;
+    border: none;
+}
+
+.f-border-bottom-line-gray::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: left top;
+    border-radius: 0;
+    pointer-events: none;
+}
+
+.f-border-right-line-gray {
+    position: relative;
+    border: none;
+}
+
+.f-border-right-line-gray::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: left top;
+    border-radius: 0;
+    pointer-events: none;
+}
+
+.border-right-line-gray {
+    position: relative;
+    border: none;
+}
+
+.border-right-line-gray::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: left top;
+    border-radius: 0;
+    pointer-events: none;
+}
+
+.f-border-top-bottom-line-gray-deep {
+    position: relative;
+    border: none;
+}
+
+.f-border-top-bottom-line-gray-deep:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 1px solid #dadada;
+    border-right: 0 solid #dadada;
+    border-bottom: 1px solid #dadada;
+    border-left: 0 solid #dadada;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: left top;
+    border-radius: 0;
+    pointer-events: none;
+}
+
+.temp-more-btn {
+    line-height: 144rpx;
+    text-align: center;
+    color: #fd8238;
+}
+
+.temp-more-btn text {
+    display: inline-block;
+    position: relative;
+}
+
+.temp-more-btn text::after {
+    content: '';
+    display: block;
+    margin-left: 3px;
+    width: 16rpx;
+    height: 16rpx;
+    border: 2rpx solid #fd8238;
+    border-color: #fd8238 #fd8238 transparent transparent;
+    transform: rotate(135deg);
+    position: absolute;
+    top: 55rpx;
+    right: -40rpx;
+}
+
+.temp-more-btn2 {
+    padding: 60rpx 0;
+    text-align: center;
+}
+
+.temp-more-btn2 .more-btn2 {
+    line-height: 70rpx;
+    height: 70rpx;
+    padding: 0 40rpx;
+    margin: 0 auto;
+    border: 2rpx solid #fd8238;
+    border-radius: 2rpx;
+    color: #fd8238;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.temp-more-btn2 .hover-btn2 {
+    color: #fd8238;
+}
+
+.noscroll {
+    height: 100%;
+    overflow: hidden;
+}
+
+.drawer-screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+}
+
+.drawer-box {
+    width: 100%;
+    height: 90%;
+    overflow-y: scroll;
+    position: fixed;
+    top: 10%;
+    left: 0;
+    z-index: 1001;
+    background: #fff;
+    border-radius: 0;
+    box-sizing: border-box;
+    padding-top: 114rpx;
+}
+
+.drawer-box .close-drawer {
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    padding-right: 20rpx;
+    padding-top: 20rpx;
+    width: 32rpx;
+    height: 32rpx;
+    background: url(https://nm.tujia.com/static/images/webchatApp/page-unitDetal/icon_close.png) no-repeat;
+    background-size: 32rpx;
+    z-index: 1000;
+}
+
+.drawer-box .title {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    margin: 0 40rpx;
+    line-height: 114rpx;
+    font-size: 34rpx;
+    font-weight: bold;
+    text-align: center;
+}
+
+.drawer-box .title::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    border-top: 1px solid #e9e9e9;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}
+
+.pop-tag-intro {
+    height: auto;
+    padding: 10rpx 60rpx 30px;
+    background: #fff;
+}
+
+.pop-tag-intro .tag-name {
+    margin-top: 30rpx;
+}
+
+.pop-tag-intro .tag-name text {
+    padding: 0;
+    font-size: 28rpx;
+}
+
+.pop-tag-intro .tag-intro {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    line-height: 44rpx;
+    color: #555;
+}
+
+.house-tag-v2 {
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    color: #fd8238;
+    height: 20px;
+    line-height: 10px;
+    margin-right: 13px;
+    background: #f00;
+}
+
+.house-tag-v2::after {
+    content: '';
+    position: absolute;
+    right: -7px;
+    bottom: 13px;
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #d8d8d8;
+}
+
+.house-tag-v2:last-child::after {
+    bottom: 11px;
+    width: 0;
+    height: 0;
+    border-radius: 0;
+    border-width: 3px 0 3px 3px;
+    border-style: solid;
+    border-color: transparent transparent transparent #999;
+    background: transparent;
+}
+
+.leveltag {
+    position: relative;
+    display: inline-block;
+    height: 28rpx;
+    margin-right: 26rpx;
+    line-height: 20rpx;
+}
+
+.leveltag::after {
+    content: '';
+    position: absolute;
+    right: -14rpx;
+    bottom: 16rpx;
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #d8d8d8;
+}
+
+.info-group {
+    width: 100%;
+    margin: 30rpx 0;
+    color: #999;
+    font-size: 28rpx;
+    line-height: 48rpx;
+}
+
+.info-group:not(:first-child) {
+    position: relative;
+    padding-top: 30rpx;
+}
+
+.info-group:not(:first-child)::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    border-top: 1px solid #e9e9e9;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}
+
+.info-title {
+    font-size: 28rpx;
+    line-height: 48rpx;
+    color: #333;
+}
+
+.info-des {
+    margin: 10rpx 0;
+}
+
+.info-des__item {
+    padding-left: 40rpx;
+    position: relative;
+}
+
+.info-des__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20rpx;
+    width: 8rpx;
+    height: 8rpx;
+    background: #fcaf2b;
+    border-radius: 8rpx;
+}
+
+.info-des__dt {
+    color: #333;
+}
+
+.tag-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag-list__item {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-right: 10rpx;
+    margin-top: 10rpx;
+    white-space: nowrap;
+    padding: 0 7rpx;
+    font-size: 20rpx;
+    line-height: 30rpx;
+    border-radius: 4rpx;
+    background: #3f4954;
+    color: #fff;
+}
+
+.facilities {
+    margin-top: 20rpx;
+    padding: 0 40rpx;
+    background: #fff;
+}
+
+.title-h1 {
+    margin-top: 18rpx;
+    padding: 40rpx 0;
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.list-col {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    color: #555;
+    border-bottom: 0;
+}
+
+.list-col__item {
+    width: 25%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+[class*='icon-facility-'] {
+    display: inline-block;
+    margin-top: 20rpx;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    padding-top: 56rpx;
+    font-size: 22rpx;
+    line-height: 42rpx;
+}
+
+.scroll-y {
+    height: 100%;
+    background-color: #fff;
+}
+
+.comments {
+    position: relative;
+    color: #666;
+    padding: 40rpx 0;
+    margin: 0 40rpx;
+}
+
+.comments::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: left top;
+    border-radius: 0;
+    pointer-events: none;
+}
+
+.comments__user {
+    position: relative;
+    font-size: 24rpx;
+    line-height: 34rpx;
+}
+
+.comments__score {
+    margin: 24rpx 0 16rpx;
+}
+
+.comments__detail {
+    margin-top: 10rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+
+.comments__pictures {
+    margin-top: 24rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.comments__pictures .thumbnails {
+    position: relative;
+    display: block;
+    width: 150rpx;
+    height: 150rpx;
+    font-size: 24rpx;
+    line-height: 120rpx;
+    color: #999;
+    text-align: center;
+    background: #f0f3f6;
+    margin-right: 20rpx;
+    border: 0;
+}
+
+.comments__pictures .thumbnails image {
+    width: 100%;
+    height: 100%;
+}
+
+.comments__pictures .thumbnails text {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    text-align: center;
+    line-height: 75px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.user-avatar {
+    display: inline-block;
+    float: left;
+    width: 64rpx;
+    height: 64rpx;
+    margin-right: 20rpx;
+    border-radius: 64rpx;
+    background: url(https://staticfile.tujia.com/WechatApp/images/user_avatar.png) no-repeat center center;
+    background-size: cover;
+}
+
+.user-date {
+    top: 5rpx;
+    color: #999;
+}
+
+.reply-detail {
+    margin-top: 32rpx;
+    padding: 20rpx 22rpx;
+    background-color: #f7f9fa;
+    color: #666;
+    font-size: 24rpx;
+    line-height: 30rpx;
+}
+
+.reply-detail__name {
+    color: #fd8238;
+}
+
+.text-nowrap {
+    word-break: break-all;
+}
+
+.house-style__bd {
+    -webkit-box-flex: 1;
+    flex: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.house-style__bd::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 120rpx;
+    background: -webkit-gradient(linear,left top,right top,color-stop(0,rgba(255,255,255,0)),to(white));
+    background: -webkit-linear-gradient(left,rgba(255,255,255,0) 0,white 100%);
+    background: linear-gradient(to right,rgba(255,255,255,0) 0,white 100%);
+}
+
+.house-style__more {
+    font-size: 24rpx;
+}
+
+.house-style.navigator-hover {
+    background: transparent;
+}
+
+.house-address {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 24rpx 30rpx;
+    position: relative;
+}
+
+.house-address::after {
+    content: '';
+    display: block;
+    margin-left: 3px;
+    width: 16rpx;
+    height: 16rpx;
+    border: 1px solid #dadada;
+    border-color: #dadada #dadada transparent transparent;
+    transform: rotate(45deg);
+    position: relative;
+}
+
+.house-address::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    border-top: 1px solid #e9e9e9;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}
+
+.house-address__bd {
+    -webkit-box-flex: 1;
+    flex: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    font-size: 28rpx;
+    line-height: 42rpx;
+    color: #333;
+}
+
+.house-address__icon {
+    display: block;
+    width: 46rpx;
+    height: 52rpx;
+    margin-right: 20rpx;
+}
+
+.customer-reviews {
+    margin: 40rpx;
+    border-radius: 4rpx;
+    background: #fff;
+    box-shadow: 2rpx 2rpx 6rpx 2rpx rgba(0,0,0,0.1);
+}
+
+.reviews__header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 90rpx;
+    padding: 0 30rpx;
+    position: relative;
+}
+
+.reviews__header::before {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    border-bottom: 1px solid #e9e9e9;
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
+}
+
+.reviews__header::after {
+    content: '';
+    display: block;
+    margin-left: 3px;
+    width: 16rpx;
+    height: 16rpx;
+    border: 1px solid #dadada;
+    border-color: #dadada #dadada transparent transparent;
+    transform: rotate(45deg);
+    position: relative;
+}
+
+.reviews__bd {
+    -webkit-box-flex: 1;
+    flex: auto;
+}
+
+.reviews__scoring {
+    color: #fd8238;
+    padding-right: 20rpx;
+    margin-right: 20rpx;
+    position: relative;
+}
+
+.reviews__scoring::before {
+    content: ' ';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    border-right: 1px solid #e9e9e9;
+    transform-origin: 100% 0;
+    transform: scaleX(0.5);
+}
+
+.reviews__scoring .em {
+    margin-right: 4rpx;
+    font-size: 40rpx;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.reviews__num .em {
+    margin-right: 4rpx;
+    font-weight: bold;
+}
+
+.range-star,.range-star__inner {
+    width: 110rpx;
+    height: 18rpx;
+    background: url(https://staticfile.tujia.com/WechatApp/images/range_star.png) no-repeat left bottom;
+    background-size: 110rpx 36rpx;
+}
+
+.range-star__inner {
+    background-position: left top;
+}
+
+.customer__content {
+    padding: 30rpx 40rpx 36rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.customer__avatar {
+    margin-top: 10rpx;
+    margin-right: 30rpx;
+    width: 80rpx;
+    height: 80rpx;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    border-radius: 80rpx;
+    background: url(https://staticfile.tujia.com/WechatApp/images/user_avatar.png) no-repeat center center;
+    background-size: cover;
+}
+
+.customer__bd {
+    -webkit-box-flex: 1;
+    flex: auto;
+}
+
+.customer__name {
+    font-size: 28rpx;
+    line-height: 48rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.customer__text {
+    margin-top: 6rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    font-size: 28rpx;
+    line-height: 36rpx;
+    color: #666;
+}
+
+.product-block,.cells__group {
+    margin-bottom: 40rpx;
+    background: #fff;
+    box-shadow: 0 4rpx 6rpx rgba(0,0,0,0.1);
+}
+
+.product-date {
+    height: 90rpx;
+    padding: 0 30rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.product-date::before {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    border-bottom: 1px solid #e9e9e9;
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
+}
+
+.product-date::after {
+    content: '';
+    display: block;
+    margin-left: 3px;
+    width: 16rpx;
+    height: 16rpx;
+    border: 1px solid #dadada;
+    border-color: #dadada #dadada transparent transparent;
+    transform: rotate(45deg);
+    position: relative;
+}
+
+.product-date__icon {
+    display: block;
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 20rpx;
+    font-size: 28rpx;
+}
+
+.product-date__range {
+    -webkit-box-flex: 1;
+    flex: 1;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.product__item:not(:first-child) {
+    position: relative;
+}
+
+.product__item:not(:first-child)::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 30rpx;
+    right: 0;
+    height: 0;
+    border-top: 1px solid #e9e9e9;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}
+
+.product__item:not(:first-child)::before {
+    top: -1rpx;
+}
+
+.panel__hd {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 30rpx;
+}
+
+.product-title {
+    -webkit-box-flex: 1;
+    flex: auto;
+    color: #333;
+}
+
+.product-title__dt {
+    display: inline-block;
+    font-size: 28rpx;
+    line-height: 38rpx;
+    font-weight: bold;
+    padding-right: 40rpx;
+    position: relative;
+}
+
+.product-title__dd {
+    margin-top: 12rpx;
+    font-size: 24rpx;
+    line-height: 34rpx;
+}
+
+.product-title__dd text {
+    display: inline-block;
+    margin-right: 20rpx;
+    white-space: nowrap;
+}
+
+.ellipsis2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.price-area {
+    margin-left: 20rpx;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.product-price {
+    font-size: 24rpx;
+    color: #b2b2b2;
+}
+
+.price-des {
+    display: inline-block;
+    color: #ffb000;
+    font-size: 18rpx;
+    line-height: 22rpx;
+    border: 2rpx solid;
+    padding: 0 8rpx;
+    border-radius: 4rpx;
+    margin-left: 6rpx;
+}
+
+.price-original {
+    margin-right: 10rpx;
+    font-size: 24rpx;
+    color: #b2b2b2;
+    text-decoration: line-through;
+}
+
+.price-cashback {
+    margin-right: 10rpx;
+    font-size: 20rpx;
+    color: #fd8238;
+}
+
+.price-current {
+    margin-top: 6rpx;
+    font-size: 36rpx;
+    line-height: 56rpx;
+    color: #fd8238;
+    font-weight: bold;
+}
+
+.price-current .rmb {
+    font-weight: normal;
+    font-size: 20rpx;
+    vertical-align: baseline;
+}
+
+.btn-price-book {
+    display: inline-block;
+    font-size: 28rpx;
+    line-height: 32rpx;
+    padding: 14rpx 10rpx;
+    min-width: 160rpx;
+    max-width: 280rpx;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-title__intro {
+    display: none;
+    background: #f0f3f6;
+    padding: 30rpx;
+    font-size: 24rpx;
+    line-height: 36rpx;
+    color: #999;
+}
+
+.product-title__intro view {
+    margin-top: 4rpx;
+}
+
+.product-title__intro_dt {
+    color: #333;
+}
+
+.product-title__intro .dt {
+    color: #333;
+}
+
+.product-inventory {
+    text-align: right;
+}
+
+.product-inventory text {
+    display: inline-block;
+    color: #fd8238;
+    padding-left: 40rpx;
+    background: url(https://staticfile.tujia.com/WechatApp/images/icon_date.png) no-repeat left center;
+    background-size: 30rpx;
+}
+
+.panel__icon {
+    position: absolute;
+    top: 8rpx;
+    right: 0;
+    width: 25rpx;
+    height: 19rpx;
+}
+
+.panel__icon::after {
+    content: '';
+    display: block;
+    margin-left: 3px;
+    width: 16rpx;
+    height: 16rpx;
+    border: 1px solid #dadada;
+    border-color: #dadada #dadada transparent transparent;
+    transform: rotate(135deg);
+    position: relative;
+}
+
+.panel__icon::after {
+    position: absolute;
+    top: -4px;
+    left: -2px;
+}
+
+.panel.is-active .panel__icon {
+    transform: rotate(180deg);
+}
+
+.panel.is-active .panel__bd {
+    display: block;
+}
+
+.product-list-more {
+    font-size: 28rpx;
+    line-height: 90rpx;
+    color: #fd8238;
+    text-align: center;
+    position: relative;
+}
+
+.product-list-more::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0rpx;
+    right: 0;
+    height: 0;
+    border-top: 1px solid #e9e9e9;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}
+
+.tujia-promise {
+    margin: 40rpx;
+    padding: 40rpx 0;
+    font-size: 24rpx;
+    line-height: 44rpx;
+    color: #b2b2b2;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+    border-radius: 4rpx;
+    overflow: hidden;
+}
+
+.tujia-promise-slogin {
+    display: inline-block;
+    margin-top: 3px;
+    font-size: 32rpx;
+    line-height: 52rpx;
+    font-weight: 400;
+    color: #fd8238;
+}
+
+.tujia-promise .icon-promise {
+    display: inline-block;
+    width: 32rpx;
+    height: 36rpx;
+    margin-right: 16rpx;
+    vertical-align: text-bottom;
+}
+
+.house-num {
+    padding-bottom: 160rpx;
+    text-align: center;
+    font-size: 24rpx;
+    line-height: 44rpx;
+    color: #b2b2b2;
+}
+
+.house-num text {
+    display: inline-block;
+    padding: 0 78rpx;
+    position: relative;
+}
+
+.house-num text::before,.house-num text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 21rpx;
+    height: 1px;
+    width: 36rpx;
+    background: #b2b2b2;
+}
+
+.house-num text::after {
+    left: auto;
+    right: 0;
+}
+
+.temp-more-btn {
+    line-height: 144rpx;
+    text-align: center;
+    color: #fd8238;
+}
+
+.temp-more-btn view {
+    display: inline-block;
+    position: relative;
+}
+
+.temp-more-btn view::after {
+    content: '';
+    display: block;
+    margin-left: 3px;
+    width: 16rpx;
+    height: 16rpx;
+    border: 2rpx solid #fd8238;
+    border-color: #fd8238 #fd8238 transparent transparent;
+    transform: rotate(135deg);
+    position: absolute;
+    top: 55rpx;
+    right: -40rpx;
+}
+
+.turnArrow view.downArrow::after {
+    transform: rotate(135deg);
+}
+
+.turnArrow view.upArrow::after {
+    top: 65rpx;
+    transform: rotate(-45deg);
+}
+
+.moveAnimation {
+    transition: transform 350ms linear 0ms;
+    transition: transform 350ms linear 0ms,-webkit-transform 350ms linear 0ms;
+    transform: translate(100%,0);
+}
+
+.top-calendar {
+    padding: 0 40rpx;
+    box-sizing: border-box;
+    margin-bottom: 60rpx;
+}
+
+.top-calendar-content {
+    display: flex;
+    background: rgba(253, 131, 74, 0.1);
+    border-radius: 12rpx;
+    justify-content: space-between;
+    align-items: center;
+    height: 84rpx;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    font-size: 28rpx;
+    color: #d8646f;
+}
+
+.top-calendar .date-text {
+    font-size: 28rpx;
+    color: #d8646f;
+}
+
+.top-calendar .date-night-text {
+    font-size: 28rpx;
+    color: #d8646f;
+    font-weight: 300;
+    position: relative;
+    padding-right: 20rpx;
+}
+
+.top-calendar .date-night-text::after {
+    content: " ";
+    display: inline-block;
+    width: 14rpx;
+    height: 14rpx;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border-width: 2rpx 2rpx 0 0;
+    border-color: #d8646f;
+    border-style: solid;
+    transform: translateY(-50%) rotate(45deg);
+}

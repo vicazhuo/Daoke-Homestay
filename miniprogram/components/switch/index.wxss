@@ -1,0 +1,91 @@
+.i-switch {
+    display: inline-block;
+    width: 96rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-radius: 60rpx;
+    vertical-align: middle;
+    border: 1px solid #E0E2E6;
+    background-color: #E0E2E6;
+    position: relative;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.i-switch-hide-input {
+    display: none;
+    opacity: 0;
+}
+
+.i-switch-inner {
+    color: #fff;
+    font-size: 24rpx;
+    position: absolute;
+    left: 50rpx;
+    vertical-align: middle;
+}
+
+.i-switch-inner .i-icon {
+    width: 24rpx;
+    height: 24rpx;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.i-switch:after {
+    content: '';
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 55px;
+    background-color: #fff;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    cursor: pointer;
+    transition: left 0.2s ease-in-out,width 0.2s ease-in-out;
+    box-shadow: 0 0 8rpx 0 rgba(0,0,0,0.20),0 8rpx 46rpx 0 rgba(0,0,0,0.08),-4rpx 8rpx 8rpx 0 rgba(0,0,0,0.10);
+}
+
+.i-switch-checked:after {
+    left: 16rpx;
+}
+
+.i-switch-large {
+    width: 120rpx;
+}
+
+.i-switch-large.i-switch-checked:after {
+    left: 62rpx;
+}
+
+.i-switch-checked:after {
+    left: 50rpx;
+}
+
+.i-switch-checked {
+    border-color: #d7616d;
+    background-color: #d7616d;
+}
+
+.i-switch-checked .i-switch-inner {
+    left: 16rpx;
+}
+
+.i-switch-checked:after {
+    left: 39rpx;
+}
+
+.i-switch-disabled {
+    background: #f3f3f3;
+    border-color: #f3f3f3;
+}
+
+.i-switch-disabled:after {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.i-switch-disabled .i-switch-inner {
+    color: #ccc;
+}

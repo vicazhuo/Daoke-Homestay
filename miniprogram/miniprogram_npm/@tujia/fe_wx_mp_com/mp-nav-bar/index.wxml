@@ -1,0 +1,16 @@
+<view class="{{bgClass}} _nav {{isAndroid?'tj-title-android':''}}" id="nav" style="padding-top:{{barHeight}}px; {{navBgStyle}} {{bgStyle}}" wx:if="{{isCanUseNavBar}}">
+    <view class="nav-contaniner">
+        <view bindtap="_onTap" class="nav-back">
+            <image class="nav-icon" src="{{navIconUrl}}"></image>
+        </view>
+        <view class="loading {{!isHideBackBtn?'hide-back':''}}">
+            <view wx:if="{{showLoading}}">
+                <image class="loading-icon"></image>
+            </view>
+            <text class="nav-text {{titleClass}}" style="{{navTitleStyle}} {{titleStyle}}">{{title}}</text>
+        </view>
+        <view class="slot">
+            <slot></slot>
+        </view>
+    </view>
+</view>

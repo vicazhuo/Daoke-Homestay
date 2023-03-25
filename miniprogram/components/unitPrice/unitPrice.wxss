@@ -1,0 +1,31 @@
+.page-hd {
+    line-height: 36rpx;
+    height: 242rpx;
+    padding-top: 100rpx;
+    font-size: 30rpx;
+    text-align: center;
+}
+
+.total-box {
+    line-height: 72rpx;
+    font-size: 90rpx;
+}
+
+.rmb {
+    font-size: 50rpx;
+    vertical-align: 0;
+}
+
+.title-box {
+    margin-top: 20rpx;
+    padding: 0 15px;
+}
+
+.unit-price {
+    font-size: 30rpx;
+}
+
+.number-box {
+    font-size: 48rpx;
+    vertical-align: -2rpx;
+}

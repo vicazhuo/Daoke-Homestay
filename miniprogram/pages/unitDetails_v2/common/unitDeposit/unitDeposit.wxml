@@ -1,0 +1,3 @@
+<view class="shuo-wrapper">
+    <view :key="{{index}}" class="despoit" wx:for="{{depositTip}}">{{index+1}}、 {{item}}</view>
+</view>

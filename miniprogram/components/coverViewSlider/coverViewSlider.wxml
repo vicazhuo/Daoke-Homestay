@@ -1,0 +1,22 @@
+<cover-image class="map-range-bg" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_distance_bg.png"></cover-image>
+<cover-view class="map-range-layout">
+    <cover-view class="range-contaniner">
+        <cover-view class="range-no-selected">
+            <cover-view class="range-selected"></cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view class="map-range-tags">
+        <cover-view class="map-range-tag" wx:for="{{rangeList.length}}" wx:key="{{index}}"></cover-view>
+    </cover-view>
+    <cover-view class="map-range-tags map-range-tap-tags">
+        <cover-view bindtap="itemTap" class="map-range-tag-box" data-index="{{index}}" wx:for="{{rangeList.length}}" wx:key="{{index}}"></cover-view>
+    </cover-view>
+    <cover-view catchtouchend="handleTouchEnd" catchtouchmove="handleTouchMove" catchtouchstart="handleTouchStart" class="range-handle-btn-box" style="transform:translateX({{scrollX}}px)">
+        <cover-image class="range-handle-btn" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_distance_btn.png"></cover-image>
+    </cover-view>
+    <cover-view class="map-range-footer">
+        <cover-view class="map-name-item {{nowIndex==index?'active':''}}" wx:for="{{rangeList}}" wx:key="{{index}}">
+            {{item}}
+        </cover-view>
+    </cover-view>
+</cover-view>

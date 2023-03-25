@@ -1,0 +1,23 @@
+<import src="./templates/index"></import>
+<view class="page-top-border"></view>
+<view class="options-page">
+  <view class="options-item {{item.label==='价格区间'?'item-display-type-1':'item-display-type'}}" wx:for="{{filterConditionGroup.subGroups}}" wx:key="{{index}}">
+    <view class="item-title">
+      {{item.label}}
+    </view>
+    <block wx:for="{{item.subGroups}}" wx:key="{{index}}">
+      <include src="/components/rangeSlider/priceRangeSlider/priceRangeSlider.wxml" wx:if="{{item.style.displayType==1}}"></include>
+      <include src="/components/rangeSlider/distanceRangeSlider/distanceRangeSlider.wxml" wx:elif="{{item.style.displayType==5}}"></include>
+      <template is="display-type-{{item.style.displayType}}" data="{{...item,leaseTypeDisabledValue:leaseTypeDisabledValue,imgHost:PWA_STATIC_TUJIA_HOST}}" wx:else></template>
+    </block>
+  </view>
+  <view class="btm-btn-bar">
+    <button bindtap="resetOptions" class="option-clear" disabled="{{!conditionTypes.length}}" hoverClass="none">清空</button>
+    <button bindtap="submitOptions" class="option-submit" disabled="{{total==0}}" hoverClass="none" loading="{{isMoreSelectLoading}}">
+      <block wx:if="{{isMoreSelectLoading}}">
+        查询中
+      </block>
+      <block wx:else>查看房屋（{{total>300?'300套以上':total+'套'}}）</block>
+    </button>
+  </view>
+</view>

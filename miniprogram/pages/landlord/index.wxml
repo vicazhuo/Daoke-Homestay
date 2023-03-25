@@ -1,0 +1,132 @@
+<import src="/components/backIndexBtn/index.wxml"></import>
+<common-page isError="{{isPageError}}">
+    <view class="landlord-page" hidden="{{!pageLoading}}">
+        <view id="page-header" style="background:url({{bannerImageUrl}}) 50% 18% no-repeat;">
+            <view class="landlord-header {{hotelDetail.qualificationVo?'super-header':''}}">
+                <image class="hotel-logo" src="{{hotelDetail.logoUrl}}"></image>
+                <text class="hotal-name">{{hotelDetail.hotelName}}</text>
+                <text class="hotal-type">{{common.introductionsFilter( hotelDetail.introductions||[] )}}</text>
+                <image class="hotal-super-btm" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/landlord/icon_super_btm.png" wx:if="{{hotelDetail.qualificationVo}}"></image>
+                <view class="super-house-contaniner" wx:if="{{hotelDetail.qualificationVo}}">
+                    <view class="super-info">
+                        <image class="icon-super-comment" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/landlord/icon_super-comment.png"></image>
+                        <view class="super-top-text">
+                            <text class="super-top-name">{{hotelDetail.qualificationVo.name}}</text>
+                            <text class="super-top-introduce">{{hotelDetail.qualificationVo.description}}</text>
+                        </view>
+                    </view>
+                    <view class="super-desc">
+                        <text wx:for="{{hotelDetail.qualificationVo.introduction}}" wx:key="{{index}}">
+                    {{item}}
+                </text>
+                    </view>
+                </view>
+            </view>
+            <view class="landlord-slogn-contaniner {{hotelDetail.qualificationVo?'isSuper':''}}">
+                <text class="landlord-welcome">{{hotelDetail.welcome}}</text>
+                <text class="landlord-description {{isMoreDescText?'moreDescText':''}}" id="description">{{hotelDetail.description}}</text>
+                <button bindtap="seeMoreDescription" class="see-more" wx:if="{{isMoreDescText}}">查看全部</button>
+            </view>
+            <view class="landlord-auth-contaniner" style='display:none;'>
+                <view class="contaniner-title">认证信息</view>
+                <view class="contaniner-auth">
+                    <view class="auth-item br1" wx:if="{{hotelDetail.c2cInfo.isRealNameVerified}}">
+                        <view class="auth-item-left">
+                            <image class="smrz-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/landlord/{{hotelDetail.c2cInfo.isRealNameVerified?'tj-certificate':'tj-certificate'}}.png"></image>
+                            <view class="auth-item-info">
+                                <text class="auth-name">实名认证</text>
+                                <text class="auth-info-text">通过公安网数据校验</text>
+                            </view>
+                        </view>
+                        <image class="auth-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/landlord/{{hotelDetail.c2cInfo.isRealNameVerified?'certificated':'certificated-disabled'}}.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="space-view"></view>
+        </view>
+        <view class="landlord-houses-comment-contaniner">
+            <view class="tab-box">
+                <view class="landlord-tab-bar br1_bottom {{isFixed?'isfixed':''}}">
+                    <view bindtap="selectTab" class="landlord-tab-bar-item" data-index="{{0}}" wx:if="{{!(hotelTotalCount===0)}}">
+                        <text class="tab-item-text {{swiperCurrent==0?'active':''}}">房源({{hotelTotalCount}})</text>
+                    </view>
+                    <view bindtap="selectTab" class="landlord-tab-bar-item" data-index="{{1}}" wx:if="{{commentSummary.totalCount}}">
+                        <text class="tab-item-text {{swiperCurrent==1?'active':''}}">房客点评{{'('+commentSummary.totalCount+')'}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="landlord-tab-content-contaniner">
+                <view hidden="{{!(swiperCurrent==0)}}" wx:if="{{hotelTotalCount}}">
+                    <list isEnd="{{hotelIsEnd}}" isLoading="{{hotelIsLoading}}">
+                        <view class="item-contaniner">
+                            <house-item houseInfo="{{item}}" landlordId="{{hotelDetail.landlordId}}" pageType="{{pageType}}" wx:for="{{hotelList}}" wx:key="{{index}}"></house-item>
+                        </view>
+                    </list>
+                </view>
+                <view hidden="{{!(swiperCurrent==1)}}" wx:if="{{hotelDetail.commentSummary.totalCount}}">
+                    <list id="hotelListComponents" isEnd="{{commentIsEnd}}" isLoading="{{commentIsLoading}}">
+                        <view class="comment-msg-contaniner">
+                            <view class="comment-score">
+                                <text class="comment-score-text">{{commentSummary.overall}}</text>
+                                <view class="comment-score-icon comment-score-text-bg" wx:if="{{commentSummary.overall>=4}}">{{commentSummary.scoreTitle?commentSummary.scoreTitle:common.commentScoreTitle(commentSummary.overall)}}</view>
+                            </view>
+                            <view class="comment-level-icon" wx:if="{{commentScoreStars.length}}">
+                                <image class="icon-star" mode="aspectFit" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/landlord/icon_{{item}}_star.png" wx:for="{{commentScoreStars}}" wx:key="{{index}}"></image>
+                            </view>
+                        </view>
+                        <view class="space-view"></view>
+                        <view class="item-contaniner">
+                            <view class="comment-item br1_bottom" wx:for="{{commentList}}" wx:key="{{index}}">
+                                <view class="comment-item-header">
+                                    <image class="comment-item-userImg" src="{{item.userPicture?item.userPicture:defaultUserImg}}"></image>
+                                    <view class="comment-item-user-info">
+                                        <view class="comment-item-info-line">
+                                            <text class="comment-user-name">{{item.name}}</text>
+                                            <text class="comment-user-level">{{item.totalScore}}分</text>
+                                        </view>
+                                        <view class="comment-item-info-line">
+                                            <text class="comment-user-time">{{item.submitDate}}</text>
+                                            <text class="comment-user-score-text">{{common.commentScoreTitle(item.totalScore)}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="comment-content">
+                                    <view class="comment-house-option">
+                                {{item.unitName}}
+                                    </view>
+                                    <view class="comment-text">
+                                    {{item.commentDetail}}<text wx:if="{{item.commentDetailMore&&!commentListIsAll[index]}}">...</text>
+                                        <text wx:if="{{item.commentDetailMore&&commentListIsAll[index]}}">{{item.commentDetailMore}}</text>
+                                        <view class="comment-open-box" wx:if="{{item.commentDetailMore}}">
+                                            <text bindtap="openCommentAll" class="comment-open-btn" data-index="{{index}}">{{commentListIsAll[index]?'收起':'全文'}}</text>
+                                        </view>
+                                    </view>
+                                    <view class="comment-img-list" wx:if="{{item.pictureList&&item.pictureList.length}}">
+                                        <view bindtap="openPreviewImage" class="comment-img-box" data-index="{{imgIndex}}" data-parentindex="{{index}}" wx:if="{{imgIndex<=5}}" wx:for="{{item.pictureList}}" wx:for-index="imgIndex" wx:for-item="imgItem" wx:key="{{index}}">
+                                            <image lazyLoad class="comment-img" mode="aspectFill" src="{{imgItem.url}}"></image>
+                                            <view class="comment-img-mask" wx:if="{{item.pictures.length>6&&imgIndex==5}}">
+                                            +{{item.pictureList.length-6}}
+                                          </view>
+                                        </view>
+                                    </view>
+                                    <view class="landlord-replty" wx:if="{{item.replyContent}}">
+                                        <text class="landlord-name">房东回复：</text>
+                                        <text class="landlord-text">{{item.replyContent}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </list>
+                </view>
+            </view>
+        </view>
+    </view>
+    <template is="back-index-btn" data="{{imgHost:PWA_STATIC_TUJIA_HOST}}" wx:if="{{isShare}}"></template>
+</common-page>
+<top-screen bindcloseEvent="seeMoreDescription" isPopupShow="{{isShowTopScreen}}">
+    <view class="description-more-popup">
+        <view class="description-speek">房东自述</view>
+        <view class="description-more-text">{{hotelDetail.description}}</view>
+    </view>
+</top-screen>
+<wxs module="common" src="common.wxs" />

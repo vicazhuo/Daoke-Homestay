@@ -1,0 +1,28 @@
+<view class="landlord-info">
+<view class="house-desc-title">
+ <view class="title">房东</view>
+ <view wx:if="{{landlordInfo.isShow}}" bindtap="toLandlordPage" class="landlord-page">房东主页</view>
+</view>
+  <view class="landlord-info__box">
+    <view class="landlord-info__landlord">
+      <image class="landlord-image" mode="aspectFill" src="{{landlordInfo.logoUrl}}" wx:if="landlordInfo.logoUrl"></image>
+      <image class="landlord-image" mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-lardavater.png" wx:else></image>
+      <view>
+        <view class="title">
+          <view class="text {{landlordInfo.isGreat==1?'smallwidth':''}}">
+            {{landlordInfo.hotelName}}
+          </view>
+          <view class="super-good" wx:if="{{landlordInfo.isGreat==1}}">
+            <image mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-supergoodlard.png"></image>
+          </view>
+        </view>
+        <view class="landlord-tag">
+          <view class="label" wx:if="{{businessTypeName}}">{{businessTypeName}}</view>
+          <view class="label" wx:if="{{landlordInfo.verifiedDetail}}">
+            {{landlordInfo.verifiedDetail}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

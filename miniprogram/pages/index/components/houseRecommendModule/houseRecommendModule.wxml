@@ -1,0 +1,2 @@
+<import src="../../templates/templates.wxml"></import>
+<template is="hot-house-recommend" data="{{...data,navActiveIndex:current}}"></template>

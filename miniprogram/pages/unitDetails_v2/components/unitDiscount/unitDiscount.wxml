@@ -1,0 +1,22 @@
+<view class="discount-info " wx:if="{{promotionLinks.length>0}}">
+    <view class="discount-bar" wx:for="{{promotionLinksForUnit}}" wx:key="{{index}}">
+        <view bindtap="_goPromotionLinkForUnit" class="discount {{item.promotion?'dacu':''}}" data-index="{{index}}">
+            <view class="discount-type {{item.promotion?'dacu':''}}">{{item.title}}</view>
+            <view class="discountItem">
+                {{item.text}}
+                <view class="red-arrow" wx:if="{{item.navigateUrl}}">
+                    <image mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-dacuarr.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="discount-bar" wx:for="{{promotionLinks}}" wx:key="{{index}}">
+        <view bindtap="_goPromotionLink" class="discount {{item.promotion?'dacu':''}}" data-index="{{index}}">
+            <view class="discount-type {{item.promotion?'dacu':''}}">{{item.title}}</view>
+            <view class="discountItem">{{item.text}}</view>
+            <view class="red-arrow" wx:if="{{item.navigateUrl}}">
+                <image mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-dacuarr.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

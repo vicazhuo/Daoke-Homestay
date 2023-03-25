@@ -1,0 +1,75 @@
+.notity-scroll {
+    background-color: #fde5e2;
+    width: 100%;
+    height: 70rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 40rpx 0 90rpx;
+    overflow: hidden;
+}
+
+.active-rule {
+    padding: 0 20rpx;
+    height: 40rpx;
+    color: #e08074;
+    font-size: 24rpx;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e08074;
+    border-radius: 40rpx;
+    position: absolute;
+    right: 40rpx;
+    z-index: 20;
+    background: none;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.notity-scroll-item {
+    font-size: 28rpx;
+    color: #65444a;
+}
+
+.icon-notity {
+    width: 34rpx;
+    height: 31rpx;
+    position: absolute;
+    left: 40rpx;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.notity-scroll-item {
+    height: 70rpx;
+    display: flex;
+    align-items: center;
+}
+
+.notity-scroll-anim {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    top: 0;
+    position: absolute;
+}
+
+.notity-mask {
+    position: absolute;
+    height: 70rpx;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    border: none;
+    background: none;
+}
+
+.scroll-text {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 470rpx;
+}

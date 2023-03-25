@@ -1,0 +1,115 @@
+@import "../../template/template.wxss";
+
+.red-packet-page {
+    padding: 0 40rpx 0;
+    overflow: hidden;
+    background: #fff;
+}
+
+.packet-header-title {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 40rpx;
+    font-weight: 500;
+}
+
+.packet-desc {
+    font-size: 24rpx;
+    color: #999;
+    line-height: 36rpx;
+    margin-top: 10rpx;
+}
+
+.packet-desc-h5 {
+    font-size: 24rpx;
+    color: #FF9645;
+    text-decoration: underline;
+}
+
+.red-packet-header {
+}
+
+.red-picket-enabled-list {
+    margin-top: 60rpx;
+}
+
+.red-picket-unenabled-list {
+}
+
+.un-rp-title {
+    padding: 34rpx 0;
+    font-size: 28rpx;
+    color: #999;
+    text-align: center;
+    position: relative;
+}
+
+.un-rp-title::before,.un-rp-title::after {
+    content: '';
+    background: #E0E0E0;
+    height: 1px;
+    position: absolute;
+    width: 28%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.un-rp-title::before {
+    left: 0;
+}
+
+.un-rp-title::after {
+    right: 0;
+    width: 28%;
+}
+
+.rp-title-arrow {
+    width: 0;
+    height: 0;
+    top: 40rpx;
+    margin-left: 8rpx;
+    position: absolute;
+    border-style: solid;
+    border-width: 10rpx 8rpx 8rpx 8rpx;
+    border-color: #000 transparent transparent transparent;
+    transform: rotate(180deg);
+}
+
+.rp-title-arrow.active {
+    transform: rotate(0deg);
+    top: 48rpx;
+}
+
+.people-list-btn-content {
+    background: #fff;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 120rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    box-shadow: 0 -1px 3rpx 0 #E9E9E9;
+}
+
+.people-list-btn {
+    background: #FF9645;
+    border-radius: 12rpx;
+    border: none;
+    height: 80rpx;
+    padding: 0;
+    margin: 0;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.people-list-btn-hover {
+    opacity: 0.9;
+}
+
+.travel-card-page {
+}
+
+.btn-hover {
+    opacity: 8;
+}

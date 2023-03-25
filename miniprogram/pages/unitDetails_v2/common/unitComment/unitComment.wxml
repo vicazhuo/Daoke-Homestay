@@ -1,0 +1,64 @@
+<import src="../../components/unitStar/unitStar.wxml"></import>
+<scroll-view scrollY bindscrolltolower="loadMoreEvent" class="scroll-y" wx:if="{{comments.length>0}}">
+    <view class="preview-head" wx:if="{{unitCommentSummary}}">
+        <view class="list-itme f-border-right-line-gray">
+            <view class="y-font">
+                <text>{{unitCommentSummary.overallDesc}}</text>分</view>
+            <template is="unit-star" data="{{...unitCommentSummary}}" wx:if="{{unitCommentSummary}}"></template>
+            <view class="six-font">{{unitCommentSummary.totalCount}}条点评</view>
+        </view>
+        <view class="list-itme">
+            <view>卫生环境
+              <text class="point">:</text>
+                <text class="y-font">{{unitCommentSummary.cleanlinessDesc}}</text>
+            </view>
+            <view>房东服务
+              <text class="point">:</text>
+                <text class="y-font">{{unitCommentSummary.servicesDesc}}</text>
+            </view>
+        </view>
+        <view class="list-itme score">
+            <view>交通位置
+              <text class="point">:</text>
+                <text class="y-font">{{unitCommentSummary.trafficDesc}}</text>
+            </view>
+            <view>室内装修
+              <text class="point">:</text>
+                <text class="y-font">{{unitCommentSummary.houseDecorationDesc}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="comments" wx:for="{{comments}}" wx:key="id">
+        <view class="comments__user">
+            <image class="user-avatar" src="{{item.customerAvatarUrl&&item.customerAvatarUrl.length>0?item.customerAvatarUrl:'https://pwastatic.tujia.com/static/wechat/tjunitdetail/user_avatar.png'}}"></image>
+            <view class="user-name">{{item.name}}</view>
+            <text class="user-date">{{item.submitDate}}</text>
+        </view>
+        <view class="comments__score">{{item.totalScore}}分
+        <template is="unit-star" data="{{...item}}"></template>
+        </view>
+        <view class="comments__detail text-nowrap">
+            <text>{{item.commentDetail}}</text>
+        </view>
+        <view class="comments__pictures" wx:if="{{item.pictureList.length>0}}">
+            <view class="thumbnails" wx:if="{{imgIndex<=3}}" wx:for="{{item.pictureList}}" wx:for-index="imgIndex" wx:for-item="imgItem">
+                <image bindtap="showMoreImages" data-comment-id="{{index}}  " data-index="{{imgIndex}}" src="{{imgItem.url}}"></image>
+                <text bindtap="showMoreImages" data-comment-id="{{index}}" data-index="{{3}}" wx:if="{{imgIndex==3}}">更多</text>
+            </view>
+        </view>
+        <view class="reply-detail text-nowrap" wx:if="{{item.replyContent}}">
+            <text class="reply-detail__name">{{replayText}}：</text>
+            <text>{{item.replyContent}}</text>
+        </view>
+    </view>
+    <view style="display:flex;justify-content: center;align-items: center;margin-bottom: 40rpx;" wx:if="{{isLoading&&isMoreLoading}}">
+        <include src="/components/loading/loading.wxml"></include>
+    </view>
+    <view class="loading-end" style="margin-top:-20rpx" wx:if="{{!isNeedMoreLoading&&comments.length>0}}">这里是最后一条啦~</view>
+</scroll-view>
+<view hidden="{{!isShowEmpty}}" style="text-align: center;padding-top:260rpx">
+    <image src="/common/images/hint-img2.png" style="width:180rpx;height:153rpx;display:inline-block"></image>
+    <view style="margin-top:40rpx;font-size:28rpx;color:#666;">暂无点评数据</view>
+</view>
+<loading wx:if="{{isLoading&&!isMoreLoading}}">加载中</loading>
+<component-shipei wx:if="{{isNeedShiPei}}"></component-shipei>

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "swiper-item-com": "../components/swiperItemCom/swiperItemCom",
+    "benefit": "../components/benefit/benefit",
+    "auth-drawer-box":"../components/auth-drawer-box/index"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "dark"
+}

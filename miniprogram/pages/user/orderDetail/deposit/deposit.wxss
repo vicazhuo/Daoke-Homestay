@@ -1,0 +1,39 @@
+.content {
+    background-color: #fff;
+    padding-top: 42rpx;
+    height: calc(100% - 42rpx);
+}
+
+.content::before {
+    border-top: 1px solid #DADADA;
+}
+
+.description-deposit-popup {
+    padding: 0rpx 40rpx;
+}
+
+.popup-title {
+    font-size: 34rpx;
+    color: #333333;
+    font-weight: 500;
+    margin-left: 40rpx;
+    margin-bottom: 40rpx;
+}
+
+.deposit-title-p {
+    font-size: 28rpx;
+    margin-bottom: 40rpx;
+    color: #666666;
+}
+
+.deposit-title-p text {
+    color: #FF9645;
+}
+
+.deposit-content-p {
+    font-size: 28rpx;
+    line-height: 46rpx;
+    margin-bottom: 20rpx;
+    text-align: left;
+    color: #666666;
+}

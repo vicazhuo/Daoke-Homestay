@@ -1,0 +1,173 @@
+.comment {
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+
+.comment .tit {
+    font-family: PingFangSC-Medium;
+    font-size: 50rpx;
+    color: #2A2A2A;
+    padding-top: 40rpx;
+    font-weight: bold;
+}
+
+.comment .sanitation {
+    font-family: PingFangSC-Medium;
+    font-size: 38rpx;
+    color: #2A2A2A;
+    font-weight: bold;
+    margin-top: 100rpx;
+}
+
+.comment .sanitationScore {
+    margin-top: 40rpx;
+    padding-bottom: 100rpx;
+    display: flex;
+    align-items: center;
+}
+
+.comment .sanitationScore image {
+    width: 64rpx;
+    height: 64rpx;
+    display: block;
+    margin-right: 38rpx;
+}
+
+.comment .sanitationScore text {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #B4B9BF;
+    padding-left: 24rpx;
+}
+
+.comment .btn-com .list {
+    display: flex;
+    margin-top: 40rpx;
+    align-items: center;
+}
+
+.comment .btn-com .list .list-head {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #2A2A2A;
+    margin-right: 30rpx;
+}
+
+.comment .btn-com .list image {
+    width: 44rpx;
+    height: 44rpx;
+    display: block;
+    margin-right: 24rpx;
+}
+
+.comment .btn-com .list text {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #B4B9BF;
+    padding-left: 42rpx;
+}
+
+.comment .btn-com textarea {
+    width: 690rpx;
+    height: 240rpx;
+    box-sizing: border-box;
+    padding: 30rpx;
+    background: #F4F4F4;
+    border: 1rpx solid #DCDEE0;
+    border-radius: 6rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #2A2A2A;
+    margin-top: 100rpx;
+    line-height: 1.5;
+}
+
+.comment .btn-com .people {
+    margin-top: 100rpx;
+    display: flex;
+    align-items: center;
+}
+
+.comment .btn-com .people image {
+    width: 80rpx;
+    height: 80rpx;
+    display: block;
+    margin-right: 20rpx;
+}
+
+.comment .btn-com .people text {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #2A2A2A;
+}
+
+.comment .btn-com .commentMe {
+    margin-top: 60rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 38rpx;
+    font-weight: bold;
+    color: #2A2A2A;
+}
+
+.comment .btn-com .commentMeScore {
+    margin-top: 40rpx;
+    display: flex;
+    align-items: center;
+}
+
+.comment .btn-com .commentMeScore .detail {
+    margin-right: 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment .btn-com .commentMeScore .detail image {
+    width: 64rpx;
+    height: 64rpx;
+    display: block;
+}
+
+.comment .btn-com .commentMeScore .detail text {
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #B4B9BF;
+    padding-top: 20rpx;
+}
+
+.comment .btn-com .commentMeScore .detail text.sel {
+    color: #2A2A2A;
+}
+
+.comment .btn-com .h-null {
+    height: 220rpx;
+}
+
+.comment .btn-com .btm-btn {
+    width: 100%;
+    height: 150rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.comment .btn-com .btm-btn button {
+    width: 690rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    background: #EBEBEB;
+    color: #B4B9BF;
+    border-radius: 6rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 34rpx;
+}
+
+.comment .btn-com .btm-btn button.sel {
+    background: #e84358;
+    color: #fff;
+}

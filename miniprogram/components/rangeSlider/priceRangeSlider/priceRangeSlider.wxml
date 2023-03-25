@@ -1,0 +1,10 @@
+<import src="../rangeSlider/rangeSlider.wxml"></import>
+<view class="priceRangeSlider-layout">
+    <view class="select-more__title" wx:if="{{priceRangeSliderText}}">{{priceRangeSliderText}}</view>
+    <view class="select-price">
+        <template is="rangeSlider" data="{{...priceRangeSlider_rangeSlider_data}}"></template>
+        <view class="select-price__header">
+            <text class="{{'select-price__item '+(index==priceRangeSliderLeftIndex||index==priceRangeSliderRightIndex?'is-selected':'')}}" style="left:{{100/(priceRangeSliderTextDatas.length-1)*index}}%" wx:for="{{priceRangeSliderTextDatas}}" wx:key="item">{{item}}</text>
+        </view>
+    </view>
+</view>

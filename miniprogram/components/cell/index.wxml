@@ -1,0 +1,18 @@
+<view bindtap="handleTap" class="i-class i-cell {{isLastCell?'i-cell-last':''}} {{isLink?isArrowImg?'tj-arrow-img':'i-cell-access':''}}">
+    <view class="i-cell-icon">
+        <slot name="icon"></slot>
+    </view>
+    <view class="i-cell-bd">
+        <slot name="title"></slot>
+        <view class="i-cell-text" wx:if="{{title}}">{{title}}
+         <slot name="title-help"></slot>
+        </view>
+        <view class="i-cell-desc" wx:if="{{label}}">{{label}}</view>
+        <slot></slot>
+    </view>
+    <view bindtap="navigateTo" class="i-cell-ft i-cell-value i-access">
+        <view class="arrow-img" wx:if="{{isArrowImg}}"></view>
+        <block wx:if="{{value}}">{{value}}</block>
+        <slot name="footer" wx:else></slot>
+    </view>
+</view>

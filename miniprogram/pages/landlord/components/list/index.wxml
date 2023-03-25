@@ -1,0 +1,9 @@
+<slot></slot>
+<view class="list-loading-contaniner">
+    <block wx:if="{{isLoading}}">
+        <image class="loading-icon" src="/common/images/loading.gif"></image>加载中
+        </block>
+    <block wx:else>
+          {{isEnd?'End':'上拉继续加载'}}
+        </block>
+</view>

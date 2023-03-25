@@ -1,0 +1,85 @@
+.order-status {
+    width: 100%;
+    background: #fff;
+    padding: 50rpx 60rpx 42rpx 60rpx;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 2px 36px 0 RGBA(0,0,0,.1);
+}
+
+.order-status .status-text {
+    text-align: center;
+    font-size: 48rpx;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+
+.order-status .status-warn {
+    text-align: center;
+    font-size: 28rpx;
+    letter-spacing: 0;
+}
+
+.order-status .status-warn i {
+    color: #ff9645;
+}
+
+.order-status .status-info {
+    text-align: center;
+    font-size: 24rpx;
+    color: #666666;
+    font-weight: 300;
+    margin: 20rpx auto 60rpx;
+}
+
+.order-status .status-info i {
+    color: #ff6462;
+    font-weight: 500;
+}
+
+.order-status .button {
+    border: 1rpx solid #d6525f;
+    border-radius: 4rpx;
+    font-size: 28rpx;
+    color: #d6525f;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 28rpx;
+    padding: 16rpx 40rpx;
+    width: 295rpx;
+    margin-bottom: 60rpx;
+    white-space: nowrap;
+}
+
+.order-status .ask-entry {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0rpx 5rpx;
+}
+
+.order-status .ask-entry .ask-item {
+    flex-grow: 0;
+    flex-shrink: 1;
+    width: 300rpx;
+    background: #f7f9f8;
+    border-radius: 4rpx;
+    text-align: center;
+    color: #666;
+    font-size: 24rpx;
+    padding: 10rpx 0rpx;
+    margin-bottom: 20rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.order-status .ask-entry .ask-item:nth-child(2n-1) {
+    margin-right: 20rpx;
+}
+
+.status-footer {
+    height: 16rpx;
+    background-size: 32rpx 16rpx,contain;
+    background-position: bottom;
+    position: relative;
+}

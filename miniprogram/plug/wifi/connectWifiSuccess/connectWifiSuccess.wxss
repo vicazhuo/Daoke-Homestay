@@ -1,0 +1,275 @@
+.connent-success {
+    float: left;
+    width: 100%;
+    background: url(https://pwastatic1.fvt.tujia.com/static/wechat/wifitwo/wifi_bg.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.wifi-success-icon {
+    display: block;
+    margin: 190rpx auto 40rpx auto;
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.connect-success-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #66707a;
+}
+
+.connent-success-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow-y: scroll;
+    text-align: center;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.wifi-success-text {
+    font-size: 40rpx;
+    color: #44D39F;
+    margin: 40rpx 0 60rpx;
+}
+
+.tujia-slogan-text {
+    margin-top: 40rpx;
+    text-align: center;
+}
+
+.tujia-slogan-text image {
+    display: inline-block;
+    width: 322rpx;
+    height: 54rpx;
+}
+
+.tujia-slogan-text-bottom {
+    margin-top: 40rpx;
+    text-align: center;
+}
+
+.tujia-slogan-text-bottom image {
+    display: inline-block;
+    width: 90px;
+    height: 16px;
+}
+
+.red-bag-icon {
+    width: 30rpx;
+    height: 36rpx;
+    margin-right: 10rpx;
+}
+
+.red-bag-container {
+    padding: 0 36rpx;
+    height: 56rpx;
+    background: rgba(0,0,0,0.2);
+    border-radius: 100rpx;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    font-size: 34rpx;
+    color: #FF6666;
+    margin: 60rpx 0 0;
+}
+
+.wifi-btn-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100rpx;
+}
+
+.wifi-action-btn[type='primary'] {
+    color: #fff;
+    font-size: 32rpx;
+    background: #FF9645;
+    display: inline-block;
+    width: 85%;
+    height: 96rpx;
+    line-height: 96rpx;
+    transition: all .2s;
+    border-radius: 12rpx;
+    margin-top: 100rpx;
+}
+
+.wifi-success-small-icon {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 16rpx;
+}
+
+.user-cancel-tit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80rpx 0 40rpx;
+}
+
+.wifi-success-small-text {
+    font-weight: 500;
+    margin: 0;
+    font-size: 48rpx;
+}
+
+.user-cancel-auth .tujia-slogan-text {
+    margin-bottom: 40rpx;
+}
+
+.user-cancel-auth {
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-register-contanier {
+    margin-top: 80rpx;
+    width: 670rpx;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 2px 60rpx 0 rgba(0,0,0,0.08);
+    border-radius: 24rpx;
+}
+
+.red-bag-small-container {
+    display: flex;
+    align-items: center;
+    font-size: 34rpx;
+    color: #FF6666;
+    margin-bottom: 60rpx;
+}
+
+.user-input-icon {
+    width: 28rpx;
+    height: 40rpx;
+}
+
+.user-input-pwd-icon {
+    width: 34rpx;
+    height: 37.47rpx;
+}
+
+.user-input-item {
+    display: flex;
+    align-items: center;
+    height: 88rpx;
+    margin-bottom: 40rpx;
+    padding: 0 20rpx;
+    background: #FCFCFC;
+}
+
+.user-input-item:before {
+    border: 1px solid #E9E9E9;
+    border-radius: 12rpx;
+}
+
+.item-user-input {
+    margin-left: 20rpx;
+    padding-left: 20rpx;
+    border-left: 1px solid #e9e9e9;
+    flex: 1;
+}
+
+.user-get-code {
+    min-width: 130rpx;
+    padding: 0 6rpx;
+    height: 38rpx;
+    background: #DADADA;
+    border-radius: 6rpx;
+    font-size: 22rpx;
+    color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20rpx;
+    transition: background .2s;
+    position: relative;
+    z-index: 20;
+}
+
+.user-get-code.active {
+    background: #FF9645;
+}
+
+.user-play-register {
+    background: #DADADA;
+    border-radius: 4rpx;
+    height: 96rpx;
+    border: none;
+    line-height: 96rpx;
+    font-size: 36rpx;
+    margin-top: 80rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: background .2s;
+}
+
+.user-play-register.active {
+    background: #FF9645;
+}
+
+.user-play-register:active {
+    background: #dadada;
+}
+
+.role_bar {
+    font-size: 22rpx;
+    color: #979797;
+}
+
+.role_link_text {
+    color: #FF9645;
+}
+
+.img-box {
+    flex-shrink: 0;
+    width: 40rpx;
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.official {
+    width: 91%;
+    margin: 60rpx auto 0 auto;
+    border-radius: 12rpx;
+    overflow: hidden;
+}
+
+.redbagTip {
+    margin-bottom: 20px;
+    font-size: 36rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.redbagTip text {
+    font-weight: 600;
+}
+
+.redpacket-small-icon {
+    width: 60rpx;
+    height: 60rpx;
+    display: inline-block;
+    vertical-align: -9px;
+}
+
+.loginstyle {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px 0 25px 0;
+    border-radius: 8px;
+    background: #fff;
+}

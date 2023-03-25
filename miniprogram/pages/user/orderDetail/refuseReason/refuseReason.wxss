@@ -1,0 +1,87 @@
+.text-content {
+    position: relative;
+}
+
+.text-number {
+    position: absolute;
+    bottom: 35rpx;
+    right: 35rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.refuse-view {
+    width: calc(100% - 64rpx);
+    height: 400rpx;
+    padding: 30rpx 24rpx 35rpx 40rpx;
+    font-size: 28rpx;
+    color: #333333;
+    line-height: 28rpx;
+    background-color: #fff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.04);
+}
+
+.refuse-view::-webkit-input-placeholder {
+    color: #999999;
+}
+
+.refuse-view::placeholder {
+    color: #999999;
+}
+
+.btn-view {
+    padding: 0 40rpx;
+}
+
+.sure-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96rpx;
+    width: 100%;
+    background: #FF9645;
+    border-radius: 12rpx;
+    color: #FFFFFF;
+}
+
+.money-tips {
+    font-size: 28rpx;
+    color: #FF6666;
+    margin-top: 40rpx;
+    margin-left: 40rpx;
+    margin-bottom: 20rpx;
+}
+
+.money-view {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 120rpx;
+    margin-bottom: 40rpx;
+    background-color: #fff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.04);
+}
+
+.money-icon {
+    margin-left: 40rpx;
+    font-size: 36rpx;
+    color: #333333;
+}
+
+.money-input {
+    font-size: 36rpx;
+    margin-left: 10rpx;
+    color: #333333;
+}
+
+.money-input::-webkit-input-placeholder {
+    color: #999999;
+}
+
+.money-input::placeholder {
+    color: #999999;
+}

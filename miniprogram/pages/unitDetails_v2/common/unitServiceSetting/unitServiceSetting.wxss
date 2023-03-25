@@ -1,0 +1,534 @@
+@import "../../../../common/wxss/base.wxss";
+
+.iconfont {
+    font-family: 'iconfont'!important;
+    font-size: 38rpx;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.service-setting-wrapper {
+    padding: 0 40rpx;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.base-setting {
+    padding: 54rpx 0 0 0;
+}
+
+.base-setting:last-child {
+    padding-bottom: 130rpx;
+}
+
+.base-set-title {
+    font-weight: 400;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 0;
+    margin-bottom: 34rpx;
+    line-height: 40rpx;
+}
+
+.base-list {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.icon {
+    height: 64rpx;
+}
+
+.text {
+    font-size: 24rpx;
+    color: #666666;
+}
+
+.base {
+    display: inline-block;
+    width: 25%;
+    padding-bottom: 60rpx;
+    text-align: center;
+}
+
+.base.deleted .text {
+    color: #c2c2c2;
+    text-decoration: line-through;
+}
+
+.base.deleted .iconfont {
+    opacity: 0.6;
+}
+
+.font-icon-e023:after {
+    content: '\e023';
+}
+
+.font-icon-e024:after {
+    content: '\e024';
+}
+
+.font-icon-e027:after {
+    content: '\e027';
+}
+
+.font-icon-e028:after {
+    content: '\e028';
+}
+
+.font-icon-e029:after {
+    content: '\e029';
+}
+
+.font-icon-e02a:after {
+    content: '\e02a';
+}
+
+.font-icon-e02b:after {
+    content: '\e02b';
+}
+
+.font-icon-e02c:after {
+    content: '\e02c';
+}
+
+.font-icon-e02d:after {
+    content: '\e02d';
+}
+
+.font-icon-e02e:after {
+    content: '\e02e';
+}
+
+.font-icon-e02f:after {
+    content: '\e02f';
+}
+
+.font-icon-e030:after {
+    content: '\e030';
+}
+
+.font-icon-e031:after {
+    content: '\e031';
+}
+
+.font-icon-e032:after {
+    content: '\e032';
+}
+
+.font-icon-e033:after {
+    content: '\e033';
+}
+
+.font-icon-e034:after {
+    content: '\e034';
+}
+
+.font-icon-e035:after {
+    content: '\e035';
+}
+
+.font-icon-e036:after {
+    content: '\e036';
+}
+
+.font-icon-e037:after {
+    content: '\e037';
+}
+
+.font-icon-e038:after {
+    content: '\e038';
+}
+
+.font-icon-e039:after {
+    content: '\e039';
+}
+
+.font-icon-e03a:after {
+    content: '\e03a';
+}
+
+.font-icon-e03b:after {
+    content: '\e03b';
+}
+
+.font-icon-e03c:after {
+    content: '\e03c';
+}
+
+.font-icon-e03d:after {
+    content: '\e03d';
+}
+
+.font-icon-e03e:after {
+    content: '\e03e';
+}
+
+.font-icon-e03f:after {
+    content: '\e03f';
+}
+
+.font-icon-e040:after {
+    content: '\e040';
+}
+
+.font-icon-e041:after {
+    content: '\e041';
+}
+
+.font-icon-e042:after {
+    content: '\e042';
+}
+
+.font-icon-e043:after {
+    content: '\e043';
+}
+
+.font-icon-e044:after {
+    content: '\e044';
+}
+
+.font-icon-e045:after {
+    content: '\e045';
+}
+
+.font-icon-e046:after {
+    content: '\e046';
+}
+
+.font-icon-e047:after {
+    content: '\e047';
+}
+
+.font-icon-e048:after {
+    content: '\e048';
+}
+
+.font-icon-e049:after {
+    content: '\e049';
+}
+
+.font-icon-e04a:after {
+    content: '\e04a';
+}
+
+.font-icon-e04b:after {
+    content: '\e04b';
+}
+
+.font-icon-e04c:after {
+    content: '\e04c';
+}
+
+.font-icon-e04d:after {
+    content: '\e04d';
+}
+
+.font-icon-e04e:after {
+    content: '\e04e';
+}
+
+.font-icon-e04f:after {
+    content: '\e04f';
+}
+
+.font-icon-e050:after {
+    content: '\e050';
+}
+
+.font-icon-e051:after {
+    content: '\e051';
+}
+
+.font-icon-e052:after {
+    content: '\e052';
+}
+
+.font-icon-e053:after {
+    content: '\e053';
+}
+
+.font-icon-e054:after {
+    content: '\e054';
+}
+
+.font-icon-e055:after {
+    content: '\e055';
+}
+
+.font-icon-e056:after {
+    content: '\e056';
+}
+
+.font-icon-e057:after {
+    content: '\e057';
+}
+
+.font-icon-e058:after {
+    content: '\e058';
+}
+
+.font-icon-e059:after {
+    content: '\e059';
+}
+
+.font-icon-e05a:after {
+    content: '\e05a';
+}
+
+.font-icon-e05b:after {
+    content: '\e05b';
+}
+
+.font-icon-e05c:after {
+    content: '\e05c';
+}
+
+.font-icon-e05d:after {
+    content: '\e05d';
+}
+
+.font-icon-e05e:after {
+    content: '\e05e';
+}
+
+.font-icon-e05f:after {
+    content: '\e05f';
+}
+
+.font-icon-e060:after {
+    content: '\e060';
+}
+
+.font-icon-e061:after {
+    content: '\e061';
+}
+
+.font-icon-e062:after {
+    content: '\e062';
+}
+
+.font-icon-e063:after {
+    content: '\e063';
+}
+
+.font-icon-e064:after {
+    content: '\e064';
+}
+
+.font-icon-e065:after {
+    content: '\e065';
+}
+
+.font-icon-e066:after {
+    content: '\e066';
+}
+
+.font-icon-e067:after {
+    content: '\e067';
+}
+
+.font-icon-e068:after {
+    content: '\e068';
+}
+
+.font-icon-e069:after {
+    content: '\e069';
+}
+
+.font-icon-e06a:after {
+    content: '\e06a';
+}
+
+.font-icon-e06b:after {
+    content: '\e06b';
+}
+
+.font-icon-e06c:after {
+    content: '\e06c';
+}
+
+.font-icon-e06d:after {
+    content: '\e06d';
+}
+
+.font-icon-e06e:after {
+    content: '\e06e';
+}
+
+.font-icon-e06f:after {
+    content: '\e06f';
+}
+
+.font-icon-e070:after {
+    content: '\e070';
+}
+
+.font-icon-e071:after {
+    content: '\e071';
+}
+
+.font-icon-e0d2:after {
+    content: '\e0d2';
+}
+
+.font-icon-e0d8:after {
+    content: '\e0d8';
+}
+
+.font-icon-e0d9:after {
+    content: '\e0d9';
+}
+
+.font-icon-e0da:after {
+    content: '\e0da';
+}
+
+.font-icon-e0db:after {
+    content: '\e0db';
+}
+
+.font-icon-e0dc:after {
+    content: '\e0dc';
+}
+
+.font-icon-e0dd:after {
+    content: '\e0dd';
+}
+
+.font-icon-e0de:after {
+    content: '\e0de';
+}
+
+.font-icon-e0df:after {
+    content: '\e0df';
+}
+
+.font-icon-e0e0:after {
+    content: '\e0e0';
+}
+
+.font-icon-e066:after {
+    content: '\e066';
+}
+
+.font-icon-e11c:after {
+    content: '\e11c';
+}
+
+.font-icon-e11d:after {
+    content: '\e11d';
+}
+
+.font-icon-e11d:after {
+    content: '\e11d';
+}
+
+.font-icon-e11e:after {
+    content: '\e11e';
+}
+
+.font-icon-e11f:after {
+    content: '\e11f';
+}
+
+.font-icon-e120:after {
+    content: '\e120';
+}
+
+.font-icon-e121:after {
+    content: '\e121';
+}
+
+.font-icon-e122:after {
+    content: '\e122';
+}
+
+.font-icon-e123:after {
+    content: '\e123';
+}
+
+.font-icon-e124:after {
+    content: '\e124';
+}
+
+.font-icon-e125:after {
+    content: '\e125';
+}
+
+.font-icon-e126:after {
+    content: '\e126';
+}
+
+.font-icon-e127:after {
+    content: '\e127';
+}
+
+.font-icon-e128:after {
+    content: '\e128';
+}
+
+.font-icon-e129:after {
+    content: '\e129';
+}
+
+.font-icon-e12a:after {
+    content: '\e12a';
+}
+
+.font-icon-e12b:after {
+    content: '\e12b';
+}
+
+.font-icon-e12c:after {
+    content: '\e12c';
+}
+
+.font-icon-e12d:after {
+    content: '\e12d';
+}
+
+.font-icon-e12e:after {
+    content: '\e12e';
+}
+
+.font-icon-e12f:after {
+    content: '\e12f';
+}
+
+.font-icon-e130:after {
+    content: '\e130';
+}
+
+.font-icon-e131:after {
+    content: '\e131';
+}
+
+.font-icon-e132:after {
+    content: '\e132';
+}
+
+.font-icon-e133:after {
+    content: '\e133';
+}
+
+.font-icon-e134:after {
+    content: '\e134';
+}
+
+.font-icon-e135:after {
+    content: '\e135';
+}
+
+.font-icon-e136:after {
+    content: '\e136';
+}
+
+.font-icon-e137:after {
+    content: '\e137';
+}
+
+.font-icon-e138:after {
+    content: '\e138';
+}

@@ -1,0 +1,11 @@
+<view class="state-group align-center">
+    <icon size="80" type="warn"></icon>
+    <view class="title-box">支付失败</view>
+    <view class="text-desc">请重试或去[我的订单]进行支付</view>
+</view>
+<view class="btn-area">
+    <button bindtap="goPayClick" type="primary">重新支付</button>
+</view>
+<view class="btn-area">
+    <button bindtap="orderClick" plain="flase" type="primary">我的订单</button>
+</view>

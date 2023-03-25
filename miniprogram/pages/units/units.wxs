@@ -1,0 +1,27 @@
+var common = ({});
+common.arrIndexOf = (function(arr, value) {
+    return (arr.indexOf(value) != -1)
+});
+common.filterText = (function(gType) {
+    var text = '';
+    switch (gType) {
+        case 4:
+            text = 'sortText';
+            break;
+        case 2:
+            text = 'locationText';
+            break;
+        default:
+            text = 'moreSelectText';
+    };
+    return (text)
+});
+common.unitOptionsJoin = (function(list) {
+    return (list.map((function(v) {
+        return (v.text)
+    })).join(' · '))
+});
+common.toString = (function(v) {
+    return (v)
+});
+module.exports = common;

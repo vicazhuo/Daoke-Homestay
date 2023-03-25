@@ -1,0 +1,182 @@
+
+
+.order-locationinfo {
+    margin: 0rpx 20rpx;
+    background: #fff;
+    position: relative;
+    border-bottom-left-radius: 4rpx;
+    border-bottom-right-radius: 4rpx;
+    box-shadow: 0 1px 20rpx 0 rgba(0,0,0,0.04);
+}
+
+.order-locationinfo::after {
+    content: '';
+    position: absolute;
+    border: 10rpx solid #f7f9fb;
+    border-radius: 50%;
+    top: -5rpx;
+    left: -5rpx;
+}
+
+.order-locationinfo::before {
+    content: '';
+    position: absolute;
+    border: 10rpx solid #f7f9fb;
+    border-radius: 50%;
+    top: -5rpx;
+    right: -5rpx;
+}
+
+.hotel-name {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 190rpx;
+}
+
+.n-name {
+    font-size: 34rpx;
+    color: #333333;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 500;
+    text-overflow: ellipsis;
+}
+
+.n-font {
+    padding-left: 40rpx;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    flex: 1;
+}
+
+.arrow-right-i {
+    width: 35rpx;
+    height: 100%;
+    margin-right: 40rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-arrow-right {
+    width: 18rpx;
+    height: 18rpx;
+    border-top: 2rpx solid #cecece;
+    border-right: 2rpx solid #cecece;
+    transform: rotate(45deg);
+}
+
+.n-desc {
+    font-size: 24rpx;
+    margin-top: 10rpx;
+    color: #999999;
+}
+
+.o-detail-map {
+    display: flex;
+    justify-content: center;
+}
+
+.map-image {
+    width: 630rpx;
+    height: 210rpx;
+}
+
+.house-addr {
+    height: 138rpx;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.addr-font {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 40rpx;
+    height: 138rpx;
+    font-size: 28rpx;
+    color: #333333;
+}
+
+.addr-font-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.addr-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60rpx;
+    margin-right: 40rpx;
+}
+
+.addr-icon text {
+    font-size: 22rpx;
+    color: #FD8238;
+}
+
+.icon-go-to {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.icon-a-text {
+    padding-top: 5rpx;
+}
+
+.house-lanlord {
+    display: flex;
+    justify-content: center;
+}
+
+.h-l-content {
+    display: flex;
+    width: 630rpx;
+    height: 164rpx;
+}
+
+.h-l-content::before {
+    border-top: 1px solid #E9E9E9;
+}
+
+.l-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.l-tel-icon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60rpx;
+    z-index: 8;
+}
+
+.l-tel-icon text {
+    font-size: 22rpx;
+    color: #FD8238;
+}
+
+.l-name {
+    font-size: 28rpx;
+    color: #333333;
+}
+
+.l-type {
+    font-size: 24rpx;
+    margin-top: 11rpx;
+    color: #999999;
+}

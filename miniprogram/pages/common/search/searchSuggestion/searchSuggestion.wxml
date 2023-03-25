@@ -1,0 +1,24 @@
+<import src="./searchItem.wxml"></import>
+<view class="page-suggestion {{suggestionsGroup.length>0?'':'page-suggestion-no-data'}}">
+    <view class="page-suggestion-content br1_bottom" wx:if="{{suggestionsGroup.length>0}}">
+        <scroll-view height="100%" scrollY="true">
+            <view class="search-item" wx:for="{{suggestionsGroup}}" wx:key="{{item.destinationId}}">
+                <template is="search-item" data="{{item:item,keyword:keyword,isAliApp:isAliApp}}"></template>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="page-suggestion-content br1_bottom" wx:else>
+        <view class="search-no-result" wx:if="{{!isLoading}}">
+            <image class="search-no-result-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_keyword_noresult.png"></image>
+         {{searchBox.searchType==2?'当前城市未找到"'+keyword+'"':'没有找到相关结果，换个词试试吧'}}         
+      </view>
+    </view>
+    <view class="othen-city-list" wx:if="{{activeCityOutsideGroup.length}}">
+        <view class="othen-city-title">
+            “{{curDest.destName}}”城市以外的结果
+          </view>
+        <view class="search-item" wx:for="{{activeCityOutsideGroup}}" wx:key="{{index}}">
+            <template is="search-item" data="{{item:item,keyword:keyword,isAliApp:isAliApp}}"></template>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,18 @@
+<view class="order-chargeback">
+    <view class="chargeback-title">
+    房东申请扣除押金
+    <i>￥{{fineAmountText}}</i>
+    </view>
+    <view class="chargeback-reason" wx:if="{{depositRefundDes?depositRefundDes:''}}">
+        <view class="reason-field">{{depositRefundDes}}</view>
+    </view>
+    <view class="chargeback-btns">
+        <button bindtap="disagree" class="btn-lg btn">不同意</button>
+        <button bindtap="approve" class="btn-lg btn">同意</button>
+    </view>
+    <view class="chargeback-notice">{{depositRefundTip}}</view>
+    <view class="chargeback-footer">
+        <view class="footer-img-warp" style="background-image: url({{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-white-bg.png)"></view>
+        <view class="footer-cover-raduis"></view>
+    </view>
+</view>

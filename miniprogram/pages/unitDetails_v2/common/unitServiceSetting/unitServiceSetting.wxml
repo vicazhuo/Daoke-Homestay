@@ -1,0 +1,14 @@
+<view class="service-setting-wrapper">
+  <view class="base-setting" wx:for="{{unitFacilityGroups}}" wx:key="{{index}}">
+    <view class="base-set-title">{{item.groupName}}</view>
+    <view class="base-list" wx:if="{{item.unitFacilities&&item.unitFacilities.length}}">
+      <view class="base {{innerItem.isDeleted?'deleted':''}}" wx:for="{{item.unitFacilities}}" wx:for-index="innerIndex" wx:for-item="innerItem" wx:key="{{innerIndex}}">
+        <view class="icon">
+          <icon class="iconfont font-icon-{{innerItem.icon?innerItem.icon:'e023'}}"></icon>
+        </view>
+        <view class="text">{{innerItem.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<component-shipei wx:if="{{isNeedShiPei}}"></component-shipei>

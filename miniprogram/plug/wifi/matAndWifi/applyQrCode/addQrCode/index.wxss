@@ -1,0 +1,189 @@
+.add-qrcode-wrapper {
+}
+
+.haveApplyCount {
+    height: 46rpx;
+    text-align: center;
+    line-height: 46rpx;
+    font-size: 24rpx;
+    color: #FF9645;
+    background: #F7ECE4;
+    margin-bottom: 20rpx;
+}
+
+.formcss {
+    display: block;
+    padding: 0 0 0 40rpx;
+    background: #fff;
+}
+
+.store_list {
+    position: relative;
+    display: flex;
+    height: 96rpx;
+    font-size: 28rpx;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.02);
+    padding-right: 40rpx;
+}
+
+.store_list text {
+    flex: 0.3;
+    color: #999999;
+}
+
+.store_list input {
+    flex: 0.7;
+    color: #333;
+    text-align: right;
+}
+
+.house_size_list {
+    position: relative;
+    display: flex;
+    height: 96rpx;
+    font-size: 28rpx;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.02);
+    padding-right: 40rpx;
+}
+
+.house_size_list text {
+    flex: 0.4;
+    text-align: left;
+    color: #999999;
+}
+
+.house_size_list input {
+    flex: 0.6;
+    text-align: right;
+    color: #333;
+}
+
+.store_list icon,.house_size_list icon {
+    position: absolute;
+    width: 16rpx;
+    height: 18rpx;
+    right: 40rpx;
+    top: 36rpx;
+    border: 2rpx solid #ccc;
+    border-color: #ccc #ccc transparent transparent;
+    transform: rotate(45deg);
+}
+
+.wifi_name {
+    display: flex;
+    height: 96rpx;
+    font-size: 28rpx;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.02);
+    padding-right: 40rpx;
+}
+
+.wifi_name text {
+    flex: 0.3;
+    text-align: left;
+    color: #999999;
+}
+
+.wifi_name input {
+    flex: 0.7;
+    text-align: right;
+    color: #333;
+}
+
+.wifi_password {
+    display: flex;
+    height: 96rpx;
+    font-size: 28rpx;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.02);
+    padding-right: 40rpx;
+}
+
+.wifi_password text {
+    flex: 0.3;
+    text-align: left;
+    color: #999999;
+}
+
+.wifi_password input {
+    flex: 0.7;
+    text-align: right;
+    color: #333;
+}
+
+.wifi_note {
+    display: flex;
+    height: 96rpx;
+    font-size: 28rpx;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.02);
+    padding-right: 40rpx;
+}
+
+.wifi_note text {
+    flex: 0.2;
+    text-align: left;
+    color: #999999;
+}
+
+.wifi_note input {
+    flex: 0.8;
+    text-align: right;
+    color: #333;
+}
+
+.btn-submit {
+    margin-top: 60rpx;
+}
+
+.btn-submit .btn {
+    height: 96rpx;
+    line-height: 96rpx;
+    margin: 0 40rpx;
+    background: #dadada;
+    border-radius: 12rpx;
+    font-size: 32rpx;
+    color: #ffffff;
+    text-align: center;
+    border: none;
+}
+
+.btn-submit .active {
+    background: #ff9645;
+}
+
+.show-dropdown-list {
+    position: absolute;
+    left: 0;
+    top: 215rpx;
+    width: 100%;
+    z-index: 100;
+}
+
+.show-dropdown-list .list-alone {
+    width: 100%;
+    font-size: 14px;
+    color: #333333;
+    background: #fff8f3;
+}
+
+.show-dropdown-list .list-alone .text {
+    margin-left: 40rpx;
+    height: 96rpx;
+    line-height: 96rpx;
+    border-bottom: 1px solid rgba(0,0,0,0.02);
+}
+
+.sweet-tips {
+    text-align: left;
+    margin: 20rpx 47rpx 60rpx 40rpx;
+    font-size: 24rpx;
+    color: #999999;
+}

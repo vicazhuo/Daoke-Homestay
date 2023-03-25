@@ -1,0 +1,78 @@
+<template name="bindPhoneBox">
+  <view class="bingPhone">
+    <view class="title">
+      手机登录
+    </view>
+    <view class="tips">
+      如手机号未注册，验证后将自动注册
+    </view>
+    <view class="input-box">
+      <image class="phone" src="/common/images/icon/phone.png"></image>
+      <text class="text">手机号</text>
+      <input bindinput="changeInput" cursorSpacing="200" data-name="phone" maxlength="11" placeholder="请输入手机号" type="number"></input>
+    </view>
+    <view class="input-box">
+      <image class="identity" src="/common/images/icon/identity.png"></image>
+      <text class="text">验证码</text>
+      <input bindinput="changeInput" cursorSpacing="150" data-name="code" maxlength="8" placeholder="请输入短信验证码" type="number"></input>
+      <button bindtap="getCode" class="getCode" type="default">{{tpData.overTime&&tpData.overTime!='60'?tpData.overTime:'获取验证码'}}</button>
+    </view>
+    <view class="button-box">
+      <button bindtap="bindPhoneCancal" class="cancel" type="default">取 消</button>
+      <button bindtap="loginByMobile" class="login" type="warn">登 录</button>
+    </view>
+  </view>
+</template>
+<template name="notSubscribedLoginBox">
+  <view class="localsBindBox animation-scale-up">
+    <image class="logo-image" src="{{tpData.logoUrl}}"></image>
+    <view class="box-title border-bottom">
+      微信信息授权
+    </view>
+    <view class="box-content">
+      <text class="">{{tpData.appName}}申请获得以下权限</text>
+      <text class="tips">申请获取您的微信信息</text>
+    </view>
+    <view class="box-button">
+      <button bindgetuserinfo="notSubscribedGetUserInfo" openType="getUserInfo" type="warn">直接登录</button>
+    </view>
+  </view>
+</template>
+<template name="mobileLoginBox">
+  <view class="localsBindBox animation-scale-up">
+    <image class="logo-image" src="{{tpData.logoUrl}}"></image>
+    <view class="box-title border-bottom">
+      微信手机号授权
+    </view>
+    <view class="box-content">
+      <text class="">{{tpData.appName}}申请获得以下权限</text>
+      <text class="tips">申请获取您的微信绑定的手机号</text>
+    </view>
+    <block wx:if="{{tpData.canIUse}}">
+      <view class="box-button">
+        <button bindgetphonenumber="bindGetPhoneNumber" data-index="getPhoneNumber" openType="getPhoneNumber" type="warn">确认授权</button>
+      </view>
+      <view class="box-button">
+        <button bindtap="stopWxBind" class="cancel" type="default">换个帐号登录</button>
+      </view>
+    </block>
+    <view class="box-noButton" wx:else>请升级微信版本</view>
+  </view>
+</template>
+<template name="defaultLoginBox">
+  <view class="localsBindBox">
+    <image class="logo-image" src="{{tpData.logoUrl}}"></image>
+    <view class="box-title">
+      登录
+    </view>
+    <view class="box-content-mobile">
+      <text>{{tpData.mobile}}</text>
+    </view>
+    <view class="box-button">
+      <button bindgetuserinfo="bindGetUserInfo" openType="getUserInfo" type="warn">直接登录</button>
+    </view>
+    <view class="box-button">
+      <button catch:tap="changeAccountLogin" class="cancel">换个帐号登录</button>
+    </view>
+  </view>
+</template>

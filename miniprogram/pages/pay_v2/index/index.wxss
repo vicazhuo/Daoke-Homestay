@@ -1,0 +1,98 @@
+@import "/common/wxss/main.wxss";
+@import "/common/wxss/icon.wxss";
+
+.page-group {
+  margin-top: 20rpx;
+}
+
+.mbt {
+  padding-bottom: 130rpx;
+}
+
+.top-bOX {
+  margin: 0px;
+  padding: 20px;
+  min-height: 310rpx;
+  text-align: center;
+  background: #fff;
+}
+
+.top-bOX view {
+  margin-bottom: 30rpx;
+}
+
+.top-bOX .lastTime {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.top-bOX .timer {
+  font-weight: 600;
+  color: #e84358
+}
+
+.top-bOX .unitName {
+  font-size: 30rpx;
+  text-align: left;
+  height: 50rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top-bOX .date {
+  width: 55%;
+  margin: auto;
+  font-size: 28rpx;
+  line-height: 59rpx;
+  background: #e7e7e7;
+  border-radius: 10rpx;
+}
+
+.money-boox {
+  color: #333;
+}
+
+.descr-box {
+  display: flex;
+}
+
+.label-text {
+  margin-right: 0rpx;
+  color: #999;
+}
+
+.label-text2 {
+  margin-right: 0rpx;
+  color: #333;
+}
+
+.btn-group {
+  height: 120rpx;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.amount-box {
+  width: 234rpx;
+  padding: 20rpx 30rpx 0 30rpx;
+  line-height: 36rpx;
+  font-size: 24rpx;
+}
+
+.total-money {
+  line-height: 50rpx;
+  font-size: 48rpx;
+}
+
+.btn-lg {
+  line-height: 120rpx;
+  display: block;
+  width: 0;
+  flex: 1;
+  border-radius: 0;
+}

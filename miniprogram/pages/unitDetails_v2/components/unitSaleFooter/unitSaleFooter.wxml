@@ -1,0 +1,60 @@
+<view class="g-unit-sale-bar f-border-top-line-gray-deep {{isNeedShiPei?'is_need_shipei':''}}">
+  <form reportSubmit bindsubmit="formBtn" wx:if="{{isWxApp}}">
+    <button bindtap="openChat" class="icon-wrapper" formType="submit" hoverClass="none" wx:if="{{chatId>0}}">
+      <view class="icon border-right">
+        <image class="icon-chat" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-chat.png"></image>
+        <text class="desc">聊天</text>
+      </view>
+    </button>
+  </form>
+  <form reportSubmit bindsubmit="formBtn">
+    <button bindtap="callPhone" class="icon-wrapper" formType="submit" hoverClass="none">
+      <view class="icon">
+        <image class="icon-phone" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/phone.png"></image>
+        <text class="desc">电话</text>
+      </view>
+    </button>
+  </form>
+  <view class="g-product">
+    <form reportSubmit bindsubmit="formBtn">
+      <button bindgetphonenumber="getPhoneNumber" bindtap="getPhoneNumber" class="g-product-btn go-product-inner {{productsList[0].defaultProductStatus&&productsList[0].defaultProductStatus==1?'redbg':''}} {{productsList.length==0||productsList.length&&productsList[0].finalPrice<=0?'disabled':''}}"
+        data-index="{{0}}" formType="submit" hoverClass="none" openType="{{isAlreadyLogin?'':'getPhoneNumber'}}" wx:if="{{!getProductFail&&!footerLoading}}">
+        <view class="wrp1" wx:if="{{productsList.length}}">
+          <view class="wrp2" wx:if="{{productsList[0].finalPrice>0}}">
+            <view class="price-des">
+              <view class="price-origin-final">
+                <view class="final">
+                  <view>¥</view>
+                  <view class="final-text ml6 ">{{productsList[0].finalPrice}}</view>
+                </view>
+                <view class="origin ml10 " wx:if="{{productsList[0].finalPrice<productsList[0].productPrice}}">
+                  <view class="origin-text">¥ {{productsList[0].productPrice}}</view>
+                </view>
+              </view>
+              <view class="discount" wx:if="{{productsList[0].defaultProductTip}}">
+                {{productsList[0].defaultProductTip}}
+              </view>
+            </view>
+            <view class="action-order">
+              <view class="action">
+                <image class="quick" mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-shanding.png" wx:if="{{productsList[0].isExpressBooking}}"></image>
+                <view class="ml6">{{productsList[0].allowBooking?'立即预订':'修改日期'}}</view>
+              </view>
+              <view class="reason" wx:if="{{productsList[0].disallowBookingReason}}">
+                {{productsList[0].disallowBookingReason}}
+              </view>
+            </view>
+          </view>
+          <view class="no-price" wx:else>暂无价格...</view>
+        </view>
+        <view class="no-price" wx:else>暂无价格</view>
+      </button>
+      <view class="circular-list" wx:elif="{{footerLoading}}">
+        <view class="circular"></view>
+        <view class="circular"></view>
+        <view class="circular"></view>
+      </view>
+      <button bindtap="getProductAgain" class="fail" wx:else>价格获取失败 点击重试</button>
+    </form>
+  </view>
+</view>

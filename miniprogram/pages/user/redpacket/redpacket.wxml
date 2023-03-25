@@ -1,0 +1,132 @@
+<view class="wrap">
+    <image bindtap="goindex" class="backindex" src="/common/images/bar_index.png"></image>
+    <view class="navbar">
+        <view bindtap="navbarTap" class="item" data-idx="{{index}}" wx:for="{{navbar}}" wx:key="unique">
+            <view class="navitem {{currentTab==index?'active':''}}">{{item}}</view>
+        </view>
+    </view>
+    <view class="infogroup" hidden="{{currentTab!==0}}" id="one">
+        <block wx:if="{{unusedlist&&unusedlist.length>0}}">
+            <view class="mt" wx:for="{{unusedlist}}" wx:for-index="idx">
+                <view class="topinfo style01">
+                    <view class="lftinfo">
+                        <view class="moneycont">
+                            <span class="moneytype">{{item.currency}}</span>
+                            <span class="moneynum">{{item.amount}}</span>
+                        </view>
+                    </view>
+                    <view class="rgtinfo">
+                        <view class="cont">
+                            <view class="titcont">{{item.title}}</view>
+                            <view class="discount">{{item.content}}</view>
+                            <view class="date">有效期:{{item.validPeriod}}</view>
+                        </view>
+                    </view>
+                    <view class="icon-desc"></view>
+                    <view class="outing" wx:if="{{item.showExpire}}">{{expir}}</view>
+                </view>
+                <view bindtap="showAll" class="bottominfo" data-index="{{idx}}" wx:if="{{item.showLimitRules}}">
+                    <block wx:if="{{idx==curIndex}}">
+                        <span class="limit {{isShowAll?'':'oneline'}}">
+                            <span class="limitinfo" wx:for="{{item.limitRules}}" wx:for-item="i">{{i}}</span>
+                        </span>
+                        <span class="downarrow {{isShowAll?'uparrow':''}}" wx:if="{{isFold}}"></span>
+                    </block>
+                    <block wx:else>
+                        <span class="limit {{isShowAllStatic?'':'oneline'}}">
+                            <span class="limitinfo" wx:for="{{item.limitRules}}" wx:for-item="i">{{i}}</span>
+                        </span>
+                        <span class="downarrow {{isShowAllStatic?'uparrow':''}}" wx:if="{{isFold}}"></span>
+                    </block>
+                </view>
+            </view>
+        </block>
+        <view class="nothing" wx:elif="{{getlist01==1}}">
+            <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/noredbag.png"></image>
+            <view>暂无红包</view>
+        </view>
+    </view>
+    <view class="infogroup outdate" hidden="{{currentTab!==1}}" id="one">
+        <block wx:if="{{usedlist&&usedlist.length>0}}">
+            <view class="mt" wx:for="{{usedlist}}" wx:for-index="idx">
+                <view class="topinfo style03">
+                    <view class="lftinfo">
+                        <view class="moneycont">
+                            <span class="moneytype">¥</span>
+                            <span class="moneynum">{{item.amount}}</span>
+                        </view>
+                    </view>
+                    <view class="rgtinfo">
+                        <view class="cont">
+                            <view class="titcont">{{item.title}}</view>
+                            <view class="discount">{{item.content}}</view>
+                            <view class="date">有效期:{{item.validPeriod}}</view>
+                        </view>
+                    </view>
+                    <view class="icon-desc"></view>
+                    <view class="outing" wx:if="{{item.showExpire}}">{{expir}}</view>
+                </view>
+                <view bindtap="showAll" class="bottominfo" data-index="{{idx}}" wx:if="{{item.showLimitRules}}">
+                    <block wx:if="{{idx==curIndex}}">
+                        <span class="limit {{isShowAll?'':'oneline'}}">
+                            <span class="limitinfo" wx:for="{{item.limitRules}}" wx:for-item="i">{{i}}</span>
+                        </span>
+                        <span class="downarrow {{isShowAll?'uparrow':''}}" wx:if="{{isFold}}"></span>
+                    </block>
+                    <block wx:else>
+                        <span class="limit {{isShowAllStatic?'':'oneline'}}">
+                            <span class="limitinfo" wx:for="{{item.limitRules}}" wx:for-item="i">{{i}}</span>
+                        </span>
+                        <span class="downarrow {{isShowAllStatic?'uparrow':''}}" wx:if="{{isFold}}"></span>
+                    </block>
+                </view>
+            </view>
+        </block>
+        <view class="nothing" wx:elif="{{getlist02==1}}">
+            <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/noredbag.png"></image>
+            <view>暂无红包</view>
+        </view>
+    </view>
+    <view class="infogroup outdate" hidden="{{currentTab!==2}}" id="one">
+        <block wx:if="{{invalidlist&&invalidlist.length>0}}">
+            <view class="mt" wx:for="{{invalidlist}}" wx:for-index="idx">
+                <view class="topinfo style03">
+                    <view class="lftinfo">
+                        <view class="moneycont">
+                            <span class="moneytype">¥</span>
+                            <span class="moneynum">{{item.amount}}</span>
+                        </view>
+                    </view>
+                    <view class="rgtinfo">
+                        <view class="cont">
+                            <view class="titcont">{{item.title}}</view>
+                            <view class="discount">{{item.content}}</view>
+                            <view class="date">有效期:{{item.validPeriod}}</view>
+                        </view>
+                    </view>
+                    <view class="icon-desc"></view>
+                    <view class="outing" wx:if="{{item.showExpire}}">{{expir}}</view>
+                </view>
+                <view bindtap="showAll" class="bottominfo" data-index="{{idx}}" wx:if="{{item.showLimitRules}}">
+                    <block wx:if="{{idx==curIndex}}">
+                        <span class="limit {{isShowAll?'':'oneline'}}">
+                            <span class="limitinfo" wx:for="{{item.limitRules}}" wx:for-item="i">{{i}}</span>
+                        </span>
+                        <span class="downarrow {{isShowAll?'uparrow':''}}" wx:if="{{isFold}}"></span>
+                    </block>
+                    <block wx:else>
+                        <span class="limit {{isShowAllStatic?'':'oneline'}}">
+                            <span class="limitinfo" wx:for="{{item.limitRules}}" wx:for-item="i">{{i}}</span>
+                        </span>
+                        <span class="downarrow {{isShowAllStatic?'uparrow':''}}" wx:if="{{isFold}}"></span>
+                    </block>
+                </view>
+            </view>
+        </block>
+        <view class="nothing" wx:elif="{{getlist03==1}}">
+            <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/noredbag.png"></image>
+            <view>暂无红包</view>
+        </view>
+    </view>
+</view>
+<loading wx:if="{{loadingHidden}}">加载中...</loading>

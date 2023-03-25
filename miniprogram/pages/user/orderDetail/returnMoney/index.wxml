@@ -1,0 +1,9 @@
+<view class="content br1">
+    <view class="description-deposit-popup">
+        <view class="deposit-title-p">
+          返现
+          <text>￥{{orderNew.returnAmount}}</text>
+        </view>
+        <view class="deposit-content-p">{{orderNew.summary}}</view>
+    </view>
+</view>

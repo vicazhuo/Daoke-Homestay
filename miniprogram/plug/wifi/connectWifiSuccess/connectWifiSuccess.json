@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "途家－旅途中的家",
+    "usingComponents": {
+        "imageVerifyCode": "/components/imageVerifyCode/index",
+        "component-login": "../matAndWifi/login/index",
+        "component-redpacket": "../components/redpacket/redpacket"
+    }
+}

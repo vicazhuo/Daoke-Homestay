@@ -1,0 +1,20 @@
+<view class="help-list">
+    <view class="help-list-header">
+        <image class="list-header-left-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_help_list_title.png"></image>
+        <text class="list-header-text">已有<text class="list-header-num">{{helpNum}}人</text>助力</text>
+        <image class="list-header-right-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/promotion/redpacket/icon_help_list_title.png"></image>
+    </view>
+    <view class="help-list-contanier">
+        <view class="list-loading-text" wx:if="{{listLoading}}">加载中...</view>
+        <block wx:else>
+            <view class="help-list-item" wx:for="{{helpFriendList}}" wx:key="{{index}}">
+                <view class="list-item-left">
+                    <image class="list-item-userimg" src="{{item.weChatPicUrl?item.weChatPicUrl:avatarUrl}}"></image>
+                    <text class="list-item-name">{{item.nickName?item.nickName:'匿名'}}</text>
+                </view>
+                <text class="list-item-status">已助力</text>
+            </view>
+        </block>
+    </view>
+    <view bindtap="seeAllHelp" class="see-more-list-btn br1" wx:if="{{helpNum>showHelperNum+1&&!isAll}}">查看全部</view>
+</view>

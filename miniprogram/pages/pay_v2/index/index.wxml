@@ -1,0 +1,23 @@
+<block wx:if="{{!isLoading}}">
+  <view class="page-group top-bOX">
+    <view class="lastTime">支付剩余时间</view>
+    <view class="timer">{{leftTimeString}}</view>
+    <view class="unitName">{{unitName}}</view>
+    <view class="date">{{checkDate}}</view>
+  </view>
+  <!-- 选择支付方式 -->
+  <view class="page-group" wx:for="{{payType}}" wx:key="{{index}}">
+    <view class="cu-form-group">
+      <view class="title">{{item.label}}</view>
+      <checkbox class="round" checked></checkbox>
+    </view>
+  </view>
+  <view class="btn-group">
+    <button bindtap="submit" class="btn-lg" loading="{{paying}}" size="default" type="primary">
+      确认支付
+      <dfn class="paying">¥</dfn>{{needPayAmount}}
+    </button>
+  </view>
+</block>
+<loading wx:if="{{isLoading}}">加载中</loading>
+<include src="/components/toast/toast.wxml"></include>

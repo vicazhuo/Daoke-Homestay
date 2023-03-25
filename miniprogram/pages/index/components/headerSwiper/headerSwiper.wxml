@@ -1,0 +1,15 @@
+<view class="header-swiper-container">
+    <swiper autoplay circular bindchange="swiperChange" class="header-swiper" interval="4000">
+        <swiper-item class="header-swiper-item" wx:for="{{navigations}}" wx:key="{{index}}">
+            <view class="item-bg tj-img-background">
+                <view bindtap="headerBannerJump" class="item-image" data-title="头部广告_{{item.name}}" data-url="{{item.navigateUrl}}" mode="aspectFit" src="{{item.pictureUrl}}" style="background:url({{item.pictureUrl}}) top center no-repeat;background-size: 100% auto;"></view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="header-bottom-bar">
+        <view class="header-swiper-dots" wx:if="{{navigations.length>1}}">
+            <view class="swiper-dots-item {{current===index?'active':''}}" wx:for="{{navigations.length}}" wx:key="{{index}}"></view>
+        </view>
+    </view>
+    <view class="header-bottom-bg"></view>
+</view>

@@ -1,0 +1,64 @@
+<view>
+  <block>
+    <view class="interests-til">
+      <view class="message">
+        <view class="message-level">
+          <text>您目前的等级是</text>
+          <view class="nessage-progress">
+            <image mode="widthFix" src="https://oss.localhome.cn/new_icon/black.png"></image>
+            <text>{{levelTile}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="memberInte">
+        <text>会员权益</text>
+        <view class="levelList">
+          <view wx:for="{{levelList}}" wx:key="{{index}}" class="{{islevel == item.leval ?'levelDes active':'levelDes'}}">
+            <image mode="widthFix" src="{{item.images}}"></image>
+            <text>{{item.levelName}}</text>
+            <text>{{item.discount ==0 ? '-' :'订房'+item.discount+'折'}}</text>
+          </view>
+          <view class="levelLine"></view>
+          <view class="levelLineAvtive {{memberCode}}"></view>
+        </view>
+      </view>
+    </view>
+    <view class="interests-int">
+      <view class="rules">
+        <text>等级规则与权益</text>
+        <text class="textarea">{{levalInfo}}</text>
+      </view>
+      <view class="conditions">
+        <text>会员等级对照表</text>
+        <text class="up">用户等级达到对应的升级门槛，即立即升级。</text>
+        <view>
+          <view class="weui-cells">
+            <view class="weui-cell title">
+              <view class="weui-cell__hd">
+                <p>会员等级</p>
+              </view>
+              <view class="weui-cell__bd">
+                <p>等级条件</p>
+              </view>
+              <view class="weui-cell__ft">
+                <p>权益</p>
+              </view>
+            </view>
+            <view class="weui-cell" wx:for="{{levelList}}" wx:key="{{index}}">
+              <view class="weui-cell__hd">
+                <image alt="" class="cellimg" mode="widthFix" src="{{item.images}}"></image>
+                <p>{{item.name}}</p>
+              </view>
+              <view class="weui-cell__bd">
+                <p>{{item.levelSumer}}</p>
+              </view>
+              <view class="weui-cell__ft">
+                <p>{{'订房'+item.discount+'折'}}</p>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

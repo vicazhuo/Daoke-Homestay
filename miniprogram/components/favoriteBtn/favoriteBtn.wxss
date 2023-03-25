@@ -1,0 +1,61 @@
+.house-favorite {
+    position: absolute;
+    width: 60rpx;
+    height: 60rpx;
+    background: rgba(51,51,51,0.50);
+    border-radius: 50%;
+    display: inline-flex;
+    background-image: url(https://pic.tujia.com/upload/festatic/day_190221/201902212040203687.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: rgba(51,51,51,0.50);
+    background-size: 30rpx auto;
+    z-index: 201;
+    transform: translateZ(0);
+}
+
+.house-favorite.active {
+    background-color: #f66;
+    animation: scale 0.3s ease-out;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+
+    10% {
+        transform: scale(0.4);
+    }
+
+    20% {
+        transform: scale(0.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+
+    10% {
+        transform: scale(0.4);
+    }
+
+    20% {
+        transform: scale(0.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.favorite-star-icon {
+    width: 30rpx;
+    height: 25rpx;
+}

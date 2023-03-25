@@ -1,0 +1,5 @@
+<view class="favorite-tip-com" wx:if="{{isShow}}">添加到我的小程序，订民宿更便捷<view bindtap="closeTip" class="tip-del-btn-box">
+        <icon class="tip-del-btn" color="#fff" size="16" type="clear"></icon>
+    </view>
+    <view class="favorite-tip-arrow"></view>
+</view>

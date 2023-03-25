@@ -1,0 +1,29 @@
+<view class="wrap">
+    <image class="wrapbg" src="{{shareBgImageUrl}}"></image>
+    <form reportSubmit bindsubmit="formBtn">
+        <view class="popbg">
+            <image src="{{popImgUrl}}"></image>
+            <block wx:if="{{isSaveSuccess}}">
+                <view class="contents save"></view>
+                <view class="btns">
+                    <button bindtap="toBackH5" class="shareToFriendsCircle" formType="submit" type="primary">
+            确定
+          </button>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="contents">
+                    <view class="text01">{{popTitle}}</view>
+                    <view class="text02">{{popText}}</view>
+                </view>
+                <view class="btns">
+                    <button bindtap="toFriendShare" class="shareToFriendsCircle" formType="submit" type="primary">
+            保存图片分享
+          </button>
+                    <button class="shareToFriends" openType="share" type="primary">分享给好友</button>
+                </view>
+            </block>
+        </view>
+    </form>
+</view>
+<canvas canvasId="mycanvas2" height="1800" hidden="{{true}}" style="width: {{canvasWidth}}rpx; height: {{canvasHeight}}rpx;" width="1500"></canvas>

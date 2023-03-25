@@ -1,0 +1,30 @@
+/* pages/user/money/index.wxss */
+page{
+  background: #fff;
+}
+.corle{
+  color: #d64f5d;
+}
+.box{
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding: 30rpx;
+}
+.box-shadow{
+  width: 90%;
+  padding:25px 0px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #f8d1d5;
+}
+.title{
+  margin: 10px;
+  font-size: 38rpx;
+}
+.mt10{
+   margin: 10px;
+}
+.price{
+  font-size: 38rpx;
+}

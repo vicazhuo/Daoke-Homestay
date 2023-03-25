@@ -1,0 +1,129 @@
+page {
+    background: #fff;
+}
+
+.phone {
+    margin: 70rpx;
+    box-shadow: 0 2rpx 30rpx 0 rgba(0,0,0,0.10);
+    padding: 80rpx 100rpx;
+    width: 610rpx;
+    height: 473rpx;
+    box-sizing: border-box;
+}
+
+.phone .info {
+    width: 100%;
+    text-align: center;
+    font-size: 28rpx;
+    color: #333;
+    font-weight: 300;
+    margin-bottom: 54rpx;
+}
+
+.form {
+    border-bottom: 1rpx solid #e9e9e9;
+    display: flex;
+    padding-bottom: 33rpx;
+}
+
+.form-input {
+    text-align: center;
+    font-size: 48rpx;
+    height: 52rpx;
+    border: 0;
+    color: #333;
+    font-weight: 400;
+    box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 1;
+    letter-spacing: 0;
+}
+
+.form-reset {
+    display: none;
+}
+
+.form.has-reset .form-reset {
+    height: 48rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form .has-reset {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form-reset icon {
+    transform: translateY(2px);
+}
+
+.form .input-placeholder {
+    font-size: 48rpx;
+    color: #c1c1c1;
+}
+
+.btn-call {
+    margin: 60rpx auto 0;
+}
+
+.btn-call button {
+    font-size: 32rpx;
+    width: 410rpx;
+    line-height: 90rpx;
+    background: #d6525f;
+}
+
+.process {
+    height: 140rpx;
+    margin: 38rpx;
+}
+
+.process .title {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.process .process-item {
+    font-weight: 300;
+    display: flex;
+    margin: 39rpx auto;
+}
+
+.process .process-item .not-lastitem {
+    margin-right: 38rpx;
+}
+
+.process .process-item view {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.process .process-item i {
+    display: inline-block;
+    text-align: center;
+    width: 26rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    background: #d6525f;
+    border-radius: 50%;
+    font-size: 22rpx;
+    color: #fff;
+    margin-right: 9rpx;
+}
+
+.rule {
+    border-top: 1rpx dashed #e9e9e9;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    color: #666;
+    margin: 40rpx;
+    padding-top: 40rpx;
+}
+
+.rule .rule-item {
+    padding-right: 40rpx;
+    font-weight: 300;
+}

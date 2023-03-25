@@ -1,0 +1,11 @@
+<import src="../../template/template.wxml"></import>
+<common-page isIosCrossBtm crossBtnBtm="64" crossPagePaddingBtm="184" normalPagePaddingBtm="120">
+    <view class="red-packet-page travel-card-page">
+        <view class="red-picket-enabled-list">
+            <template is="travel-card" data="{{...item,index:index}}" wx:for="{{list}}" wx:key="{{index}}"></template>
+        </view>
+    </view>
+    <view class="people-list-btn-content" slot="bottom-button">
+        <button bindtap="submit" class="people-list-btn" hoverClass="btn-hover">确定</button>
+    </view>
+</common-page>

@@ -1,0 +1,115 @@
+<view class="main">
+    <view class="top">
+        <view class="tit">上传证件照片</view>
+        <view class="tit-con">应相关部门要求，办理入住前需要您实名信息登记。有家会依法严格保护您的信息安全，请放心上传</view>
+        <view class="sel-ul">
+            <view bindtap="selCard" class="sel-li" data-type="1">
+                <image src="../../../images/order/icon_checkin_sel.png" wx:if="{{type==1}}"></image>
+                <image src="../../../images/order/icon_checkin_unsel.png" wx:else></image>
+                <text>中华人民共和国居民身份证</text>
+            </view>
+            <view bindtap="selCard" class="sel-li" data-type="2">
+                <image src="../../../images/order/icon_checkin_sel.png" wx:if="{{type==2}}"></image>
+                <image src="../../../images/order/icon_checkin_unsel.png" wx:else></image>
+                <text>港澳居民来往内地通行证</text>
+            </view>
+            <view bindtap="selCard" class="sel-li" data-type="3">
+                <image src="../../../images/order/icon_checkin_sel.png" wx:if="{{type==3}}"></image>
+                <image src="../../../images/order/icon_checkin_unsel.png" wx:else></image>
+                <text>台湾居民来往大陆通行证</text>
+            </view>
+            <view bindtap="selCard" class="sel-li" data-type="4">
+                <image src="../../../images/order/icon_checkin_sel.png" wx:if="{{type==4}}"></image>
+                <image src="../../../images/order/icon_checkin_unsel.png" wx:else></image>
+                <text>护照</text>
+            </view>
+        </view>
+    </view>
+    <view class="unload-tit" wx:if="{{type!=0}}">上传证件照</view>
+    <block wx:if="{{type==1}}">
+        <view class="unload-con">
+			请上传入住人身份证正反面+人证合影照片。系统会自动在照片上<text>添加水印“仅用于有家民宿办理入住”</text>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="0" data-type="1">
+            <image src="{{imgArr[0]}}" wx:if="{{imgArr[0]}}"></image>
+            <image src="../../../images/checkin/type1-1.png" wx:else></image>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="1" data-type="1">
+            <image src="{{imgArr[1]}}" wx:if="{{imgArr[1]}}"></image>
+            <image src="../../../images/checkin/type1-2.png" wx:else></image>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="2" data-type="1">
+            <image src="{{imgArr[2]}}" wx:if="{{imgArr[2]}}"></image>
+            <image src="../../../images/checkin/type1-3.png" wx:else></image>
+        </view>
+        <view class="btm-con">上传后系统会自动为您下发智能门锁密码</view>
+    </block>
+    <block wx:if="{{type==2}}">
+        <view class="unload-con">
+			请上传通行证的正反面+人证合影照片。系统会自动在照片上<text>添加水印“仅用于有家民宿办理入住”</text>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="0" data-type="2">
+            <image src="{{imgArr[0]}}" wx:if="{{imgArr[0]}}"></image>
+            <image src="../../../images/checkin/type2-1.png" wx:else></image>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="1" data-type="2">
+            <image src="{{imgArr[1]}}" wx:if="{{imgArr[1]}}"></image>
+            <image src="../../../images/checkin/type2-2.png" wx:else></image>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="2" data-type="2">
+            <image src="{{imgArr[2]}}" wx:if="{{imgArr[2]}}"></image>
+            <image src="../../../images/checkin/type1-3.png" wx:else></image>
+        </view>
+        <view class="btm-con">上传后系统会自动为您下发智能门锁密码</view>
+    </block>
+    <block wx:if="{{type==3}}">
+        <view class="unload-con">
+			卡式通行证请上传正反面+人证合影。系统会自动在照片上<text>添加水印“仅用于有家民宿办理入住”</text>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="0" data-type="3">
+            <image src="{{imgArr[0]}}" wx:if="{{imgArr[0]}}"></image>
+            <image src="../../../images/checkin/type3-1.png" wx:else></image>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="1" data-type="3">
+            <image src="{{imgArr[1]}}" wx:if="{{imgArr[1]}}"></image>
+            <image src="../../../images/checkin/type3-2.png" wx:else></image>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="2" data-type="3">
+            <image src="{{imgArr[2]}}" wx:if="{{imgArr[2]}}"></image>
+            <image src="../../../images/checkin/type1-3.png" wx:else></image>
+        </view>
+        <view class="btm-con">上传后系统会自动为您下发智能门锁密码</view>
+    </block>
+    <block wx:if="{{type==4}}">
+        <view class="unload-con">
+			请上传护照信息页、有效签证页、最新出入境记录页、人证合影。系统会自动在照片上<text>添加水印“仅用于有家民宿办理入住”</text>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="0" data-type="4">
+            <image src="{{imgArr[0]}}" wx:if="{{imgArr[0]}}"></image>
+            <image src="../../../images/checkin/type4-1.png" wx:else></image>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="1" data-type="4">
+            <image src="{{imgArr[1]}}" wx:if="{{imgArr[1]}}"></image>
+            <image src="../../../images/checkin/type4-2.png" wx:else></image>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="2" data-type="4">
+            <image src="{{imgArr[2]}}" wx:if="{{imgArr[2]}}"></image>
+            <image src="../../../images/checkin/type4-3.png" wx:else></image>
+        </view>
+        <view bindtap="chooseImg" class="unload-image" data-num="3" data-type="4">
+            <image src="{{imgArr[3]}}" wx:if="{{imgArr[3]}}"></image>
+            <image src="../../../images/checkin/type1-3.png" wx:else></image>
+        </view>
+        <view class="btm-con">上传后系统会自动为您下发智能门锁密码</view>
+    </block>
+</view>
+<view bindtap="upload" class="btm">
+    <view class="{{isOk?'btn sel':'btn'}}">上传</view>
+</view>
+<view class="pop-bg" wx:if="{{guideProgressIsShow}}"></view>
+<view class="guide-download-progress" wx:if="{{guideProgressIsShow}}">
+    <view class="guide-download-progress-con">
+        <view>正在上传（{{imgIds.length+1}}/{{imgArr.length}}）大约{{imgSize}}kb</view>
+        <progress showInfo activeColor="#FAD330" percent="{{guideDownloadProgress}}"></progress>
+    </view>
+</view>

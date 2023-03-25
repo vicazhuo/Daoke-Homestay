@@ -1,0 +1,39 @@
+<view class="benefit-cpt">
+  <view class="benefit-cpt-tit">
+    <view class="benefit-cpt-tit-line"></view>
+    <view class="benefit-cpt-tit-circle"></view>
+    <view class="benefit-cpt-tit-text">{{info.levelName}}VIP尊享</view>
+    <view class="benefit-cpt-tit-text">权益</view>
+    <view class="benefit-cpt-tit-circle"></view>
+    <view class="benefit-cpt-tit-line"></view>
+  </view>
+  <view class="benefit-cpt-con" wx:if="{{info.level}}">
+    <view class="benefit-cpt-con-list">
+      <view class="benefit-cpt-con-list-item">
+        <image class="benefit-cpt-con-list-item-img" src="{{'http://minsu.image.zhiyinfo.com/member/vip/vip-card-'+info.level+'-icon-1.png'}}"></image>
+        <view class="benefit-cpt-con-list-item-t1">入住免押金</view>
+        <view class="benefit-cpt-con-list-item-t2">平均每单免500</view>
+      </view>
+      <view class="benefit-cpt-con-list-item">
+        <image class="benefit-cpt-con-list-item-img" src="{{'http://minsu.image.zhiyinfo.com/member/vip/vip-card-'+info.level+'-icon-2.png'}}"></image>
+        <view class="benefit-cpt-con-list-item-t1">退房返{{info.backRate}}%</view>
+        <view class="benefit-cpt-con-list-item-t2">预计每晚可获￥{{4*info.backRate}}</view>
+        <view class="benefit-cpt-con-list-item-t3">返现{{info.backRate}}%</view>
+      </view>
+      <view class="benefit-cpt-con-list-item">
+        <image class="benefit-cpt-con-list-item-img" src="{{'http://minsu.image.zhiyinfo.com/member/vip/vip-card-'+info.level+'-icon-3.png'}}"></image>
+        <view class="benefit-cpt-con-list-item-t1">生日惊喜</view>
+        <view class="benefit-cpt-con-list-item-t2">活动近期上线</view>
+      </view>
+    </view>
+    <view class="benefit-cpt-con-list" wx:if="{{info.isFreeFee}}">
+      <view class="benefit-cpt-con-list-item" wx:if="{{info.isFreeFee}}">
+        <image class="benefit-cpt-con-list-item-img" src="{{'http://minsu.image.zhiyinfo.com/member/vip/vip-card-'+info.level+'-icon-4.png'}}"></image>
+        <view class="benefit-cpt-con-list-item-t1">免费房入住资格</view>
+        <view class="benefit-cpt-con-list-item-t2">活动近期上线</view>
+      </view>
+      <view class="benefit-cpt-con-list-item"></view>
+      <view class="benefit-cpt-con-list-item"></view>
+    </view>
+  </view>
+</view>

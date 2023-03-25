@@ -1,0 +1,9 @@
+<view class="content br1">
+    <view class="description-deposit-popup">
+        <view class="deposit-title-p">
+      押金
+      <text>￥{{onlineDeposit}}</text>
+        </view>
+        <view class="deposit-content-p" wx:for="{{depositOnlineStr}}" wx:key="{{index}}">{{item}}</view>
+    </view>
+</view>

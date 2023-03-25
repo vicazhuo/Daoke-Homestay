@@ -1,0 +1,26 @@
+<view bindtap="footprintGoToDetail" class="footprint-house-item" data-inTns="{{houseInfo.inTns}}" data-unitid="{{houseInfo.unitId}}">
+    <view class="foorprint-house-img tj-img-background tj-img-size">
+        <view class="foorprint-house-img" style="background-image:url({{houseInfo.smallPictureUrl}});background-position:50% 50%;background-repeat:no-repeat;background-size:cover;"></view>
+    </view>
+    <view class="footprint-right-info">
+        <view class="ft-hotel-name-bar {{houseInfo.tags&&houseInfo.tags.length?'':'ft-no-tag-bar'}}">
+            <view class="ft-hotel-info-name {{isAliApp?'ali-info-name':''}}">
+                <image class="ft-icon-quick-buy ft-icon-quick-buy-title" src="https://pwastatic.tujia.com/static/wechat/landlord/icon_quick_buy.png" wx:if="{{houseInfo.expressBooking}}"></image>{{houseInfo.unitName}}</view>
+        </view>
+        <view class="ft-hotel-info-option">
+            <block wx:for="{{houseInfo.unitSummeries}}" wx:for-item="unitSummerie" wx:key="{{index}}">
+                <text style="font-weight:{{unitSummerie.bold?'bold':'normal'}}">{{unitSummerie.text}}</text>
+                <text class="hotel-option-dian" wx:if="{{index!=houseInfo.unitSummeries.length-1}}">·</text>
+            </block>
+        </view>
+        <view class="ft-promotion-tag-line">
+            <text class="ft-price-tag-item" style="background-color:{{item.background.color}};color:{{item.color}}" wx:for="{{houseInfo.priceTags}}" wx:key="{{index}}">{{item.text}}</text>
+        </view>
+        <view class="ft-hotel-price-line">
+            <text class="ft-hotel-info-price">{{houseInfo.finalPrice<0||!houseInfo.finalPrice?'暂无价格':'¥'+houseInfo.finalPrice}}</text>
+            <text class="ft-hotel-info-price-product" wx:if="{{houseInfo.finalPrice!==houseInfo.productPrice}}">¥{{houseInfo.productPrice}}</text>
+        </view>
+    </view>
+    <view class="ft-house-type-name" wx:if="{{houseInfo.qualityCertification}}">{{houseInfo.qualityCertification}}</view>
+    <tj-favorite-btn bindremoveFavorite="removeFavorite" styles="left:10rpx;top:10rpx" unitid="{{houseInfo.unitId}}"></tj-favorite-btn>
+</view>

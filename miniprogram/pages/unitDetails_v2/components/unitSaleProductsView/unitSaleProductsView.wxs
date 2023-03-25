@@ -1,0 +1,44 @@
+var getOrderBtnVal = (function(bookingTips) {
+    if (!bookingTips) return ("");;
+    if (bookingTips.length === 1) {
+        return (bookingTips[(0)])
+    } else {
+        return (bookingTips.join('\n'))
+    }
+});
+var styleFilter = (function(ele, flag) {
+    var fontSize = null;
+    var borderColor = null;
+    var bgGround = null;
+    if (ele === null) {
+        return
+    };
+    if (ele.background === null) {
+        bgGround = ""
+    } else if (ele.background.color === null && ele.background.image === null) {
+        bgGround = ""
+    } else if (ele.background.color !== null && ele.background.image === null) {
+        bgGround = ele.background.color
+    } else if (ele.background.color === null && ele.background.image !== null) {
+        bgGround = 'url(' + ele.background.image + ')'
+    } else {
+        bgGround = ele.background.color + ' url(' + ele.background.image + ')'
+    };
+    if (ele.border === null || ele.border.width === null || ele.border.color === null) {
+        fontSize = "12px";
+        borderColor = "none"
+    } else {
+        fontSize = '10px';
+        borderColor = ele.border.color
+    };
+    if (flag === 0) {
+        var style = 'color:' + ele.color + ';background:' + bgGround + ';font-size:' + fontSize + ';'
+    } else {
+        var style = 'border-color:' + borderColor
+    };
+    return (style)
+});
+module.exports = ({
+    getOrderBtnVal: getOrderBtnVal,
+    styleFilter: styleFilter,
+});

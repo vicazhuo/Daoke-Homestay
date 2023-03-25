@@ -1,0 +1,27 @@
+<view class="service-wrapper">
+    <view class="service-title-container">
+        <view class="service-title">服务设施</view>
+        <view class="service-title-desc" wx:if="{{houseSafeDescription}}">{{houseSafeDescription}}</view>
+    </view>
+    <view class="services-container">
+        <view class="service br1" wx:if="{{index<3}}" wx:for="{{unitFacilityGroups}}" wx:key="{{index}}">
+            <view class="service-title">
+                <view class="service-icon">
+                    <image mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/{{item.icon?item.icon:'base_icon'}}.png"></image>
+                </view>
+                <view class="service-name">{{item.groupName}}</view>
+            </view>
+            <view class="service-facility">
+                <view class="facility {{innerIndex<2?'mb10':''}}   {{innerItem.isDeleted?'disabled':''}}" wx:if="{{innerIndex<4}}" wx:for="{{item.unitFacilities||[]}}" wx:for-index="innerIndex" wx:for-item="innerItem" wx:key="{{innerIndex}}">
+                    <view class="facility-icon">
+                        <image mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/{{innerItem.isDeleted?'icon-v3-close.png':'icon-v3-right1.png'}}"></image>
+                    </view>
+                    <view class="facility-name">{{innerItem.name}}</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="gotoHouseDetailFaility" class="see-more-fac" wx:if="unitFacilityGroups.length>3">
+      查看更多
+    </view>
+    </view>
+</view>

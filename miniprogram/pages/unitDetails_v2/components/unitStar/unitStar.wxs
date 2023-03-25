@@ -1,0 +1,7 @@
+var getStarWidthPer = (function(overAll) {
+    starW = ((overAll - Math.floor(overAll) - 0.1) > 0.7 ? 0.7 : (overAll - Math.floor(overAll) - 0.1)) * 10 + Math.floor(overAll) * 13;
+    return (Math.round(starW / (5 * 13) * 100) + '%')
+});
+module.exports = ({
+    getStarWidthPer: getStarWidthPer,
+});

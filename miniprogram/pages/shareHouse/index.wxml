@@ -1,0 +1,22 @@
+<view class="units-list-container" wx:if="{{!isNoHouseList&&!isHouseLoadError}}">
+    <component-house-item date="{{date}}" houseInfo="{{item}}" wx:for="{{houseList}}" wx:key="{{index}}"></component-house-item>
+</view>
+<view class="houser-error-load" wx:if="{{isNoHouseList}}">
+  没找到推荐的房屋信息
+</view>
+<view class="houser-error-load" wx:if="{{isHouseLoadError}}">
+  房屋数据加载错误啦
+</view>
+<view class="link_btn">
+    <button bindtap="goAllHouseList" class="btn" data-type="1">查看其它房源</button>
+</view>
+<top-screen isPopupShow="{{isShowTopScreen}}">
+    <view class="i-description-popup">
+        <view class="top">
+            <view class="title">提示</view>
+            <view class="con">已超过推荐的入住时间，自己</view>
+            <view class="con">挑选喜欢的民宿吧！</view>
+        </view>
+        <view bindtap="goAllHouseList" class="btn_list" data-type="2">去挑选</view>
+    </view>
+</top-screen>

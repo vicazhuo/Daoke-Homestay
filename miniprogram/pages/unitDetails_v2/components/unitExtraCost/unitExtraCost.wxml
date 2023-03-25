@@ -1,0 +1,11 @@
+<view class="extracost-wrapper">
+    <view class="extracost-title">额外费用</view>
+    <view class="extracost-des">不包含在总房费里，由房东线下收取</view>
+    <view class="extracost-list">
+        <view class="extracost" wx:if="{{index<3}}" wx:for="{{checkinOtherInfo}}" wx:key="{{index}}">
+            <view class="extracost-left">{{item.title}}:</view>
+            <view class="extracost-right">{{item.introduction}}</view>
+        </view>
+    </view>
+    <view bindtap="seeUnitExtraCost" class="see-more" wx:if="checkinOtherInfo.length>2">查看更多</view>
+</view>

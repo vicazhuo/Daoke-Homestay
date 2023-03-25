@@ -1,0 +1,144 @@
+.house-detail {
+    margin-top: 20rpx;
+    padding: 0 40rpx 0rpx 40rpx;
+    background: #fff;
+}
+
+.house-detail.mb40 {
+    padding-bottom: 40rpx;
+}
+
+.house-detail .title-h1 {
+    margin-top: 18rpx;
+    padding: 40rpx 0 20rpx 0;
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.title-h2 {
+    display: block;
+    margin: 12rpx 0 22rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.house-detail__tip .tip-label {
+    display: inline-block;
+    padding: 2rpx 16rpx;
+    color: #FD8238;
+    font-size: 22rpx;
+    margin: 0 20rpx 20rpx 0;
+    border: 1px solid #FD8238;
+    background-color: #fff;
+    border-radius: 4rpx;
+}
+
+.house-detail__light .list-itme {
+    font-size: 28rpx;
+    line-height: 1.6;
+    color: #666;
+    position: relative;
+    display: block;
+    padding-left: 42rpx;
+}
+
+.house-detail__light .list-itme::before {
+    content: "";
+    font-size: 0;
+    left: 5px;
+    line-height: 0;
+    position: absolute;
+    top: 7px;
+    width: 0px;
+    height: 0px;
+    border-radius: 20px;
+    background: #ffb001;
+    border: 2px solid #ffb001;
+}
+
+.house-detail__description.pt40 {
+    padding-bottom: 40rpx;
+}
+
+.house-detail__description .house-description {
+    display: inline-block;
+    font-size: 28rpx;
+    line-height: 1.6;
+    color: #666;
+    word-break: break-all;
+}
+
+.house-detail__description .house-description text {
+    display: block;
+    width: 100%;
+    word-break: break-all;
+}
+
+.house-detail__description .description-twoline,.house-detail__description .description-fourline {
+    width: 100%;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    color: #666;
+    -webkit-line-clamp: 2;
+}
+
+.house-detail__description .description-fourline {
+    -webkit-line-clamp: 4;
+}
+
+.temp-more-btn {
+    line-height: 144rpx;
+    text-align: center;
+    color: #fd8238;
+}
+
+.temp-more-btn text {
+    display: inline-block;
+    position: relative;
+}
+
+.temp-more-btn text::after {
+    content: "";
+    display: block;
+    margin-left: 3px;
+    width: 16rpx;
+    height: 16rpx;
+    border: 2rpx solid #fd8238;
+    border-color: #fd8238 #fd8238 transparent transparent;
+    transform: rotate(135deg);
+    position: absolute;
+    top: 55rpx;
+    right: -40rpx;
+}
+
+.turnArrow text.downArrow::after {
+    transform: rotate(135deg);
+}
+
+.turnArrow text.upArrow::after {
+    top: 65rpx;
+    transform: rotate(-45deg);
+}
+
+@-webkit-keyframes turnArrow {
+    0% {
+        transform: rotate(135deg);
+    }
+
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes turnArrow {
+    0% {
+        transform: rotate(135deg);
+    }
+
+    100% {
+        transform: rotate(-45deg);
+    }
+}

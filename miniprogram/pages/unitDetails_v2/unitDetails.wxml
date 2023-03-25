@@ -1,0 +1,36 @@
+<import src="/components/unitHouseTag/houseTags/houseTagsV2.wxml"></import>
+<import src="/components/unitHouseTag/houseTagsDetail/houseTagsDetail.wxml"></import>
+<import src="components/unitStar/unitStar.wxml"></import>
+<import src="/components/backIndexBtn/index.wxml"></import>
+<common-page isError="{{isPageError}}">
+  <view>
+    <component-unitimgpreview class="img-preview" isVideoOrVR="{{isVideoOrVR}}" pictureList="{{unit.pictureList}}" unitVideoUrl="{{unit.unitVideoURL}}" unitVrUrl="{{unit.unitVRURL}}" unitid="{{unitId}}"></component-unitimgpreview>
+    <view class="bgwt">
+      <component-headerLabel houseTagsForUser="{{houseTagsForUser}}" unitName="{{unitName}}"></component-headerLabel>
+      <include src="./components/unitCalendar/topCalendar.wxml"></include>
+      <component-unithousetype baseBrief="{{baseBrief}}" promotionLinks="{{promotionList}}"></component-unithousetype>
+      <component-unitdiscount promotionLinks="{{promotionList}}" promotionLinksForUnit="{{promotionLinksForUnit}}"></component-unitdiscount>
+    </view>
+    <view class="lord-info">
+      <component-unitlandlordinfo businessTypeName="{{unit.businessTypeName}}" landlordInfo="{{unit.landlordInfo}}"></component-unitlandlordinfo>
+      <component-unitcomments businessType="{{unit.businessType}}" commentPreviewData="{{commentPreviewData}}" unitCommentSummary="{{unitCommentSummary}}" unitId="{{unit.unitId}}"></component-unitcomments>
+    </view>
+    <component-unithousedesc briefIntroduction="{{briefIntroduction}}" houseBrief="{{houseBrief}}" realPhoto="{{realPhoto}}" unitId="{{unitId}}" unitTrafficInfos="{{unitTrafficInfos}}"></component-unithousedesc>
+    <component-unitlocal address="{{unit.address}}" cityTerritoryType="{{cityTerritoryType}}" geoHandPosition="{{geoHandPosition}}" latitude="{{unit.latitude}}" longitude="{{unit.longitude}}" unitName="{{unit.unitName}}" unitId="{{unitId}}" wx:if="{{unit.latitude&&unit.longitude}}"></component-unitlocal>
+    <component-services houseSafeDescription="{{houseSafeDescription}}" unitFacilityGroups="{{unitFacilityGroups}}" unitId="{{unitId}}"></component-services>
+    <component-unitcalendar bind:changedate="changedDate" eWeekText="{{eWeekText}}" interval="{{interval}}" minRequireNights="{{unit.minRequireNights}}" optionsMonth="{{dateDescObj.monthDesc}}" sWeekText="{{sWeekText}}" selectBegin="{{selectBegin}}" selectEnd="{{selectEnd}}"
+      unitId="{{unitId}}"></component-unitcalendar>
+    <component-unitrule beginDate="{{_beginDate}}" cancelRules="{{cancelRules}}" cancelTexts="{{cancelTexts}}" endDate="{{_endDate}}" unitId="{{unitId}}"></component-unitrule>
+    <component-unitcheckintips checkInRules="{{checkInRules}}" wx:if="{{checkInRules}}"></component-unitcheckintips>
+    <component-unitextracost checkinOtherInfo="{{checkinOtherInfo}}" unitId="{{unitId}}" wx:if="{{checkinOtherInfo.length!=0}}"></component-unitextracost>
+    <component-unitsimilarhouse dateObj="{{dateObj}}" similarUnitsList="{{similarUnitsList}}" wx:if="{{similarUnitsList&&similarUnitsList.length>0}}"></component-unitsimilarhouse>
+    <component-footer isNeedShiPei="{{isNeedShiPei}}" unitId="{{unitId}}" unitNumber="{{unitNumber}}" brandInfo="{{brandInfo}}"></component-footer>
+    <component-salefooter bindcallPhone="callPhone" bindeditFooterLoading="editFooterLoading" bindgetProductAgain="getProductAgain" bindinitWxUserInfoCal="initWxUserInfoCal" bindnavBuyPage="navBuyPage" bindopenChat="openChat" chatId="{{chatId}}" dateDescObj="{{dateDescObj}}"
+      footerLoading="{{footerLoading}}" getProductFail="{{getProductFail}}" isLogin="{{isLogin}}" isNeedShiPei="{{isNeedShiPei}}" landlordId="{{landlordId}}" productsList="{{productsList}}"></component-salefooter>
+    <component-shipei wx:if="{{isNeedShiPei}}"></component-shipei>
+  </view>
+  <template is="back-index-btn" data="{{imgHost:PWA_STATIC_TUJIA_HOST,isNeedShiPei:isNeedShiPei}}" wx:if="{{isShare}}"></template>
+</common-page>
+<modal-popup modalShow="{{popupConfig.isShow}}" modalSrc="{{popupConfig.pictureUrl}}" modalUrl="{{popupConfig.navigateUrl}}"></modal-popup>
+<wxs module="unitCalendar" src="components/unitCalendar/unitCalendar.wxs" />
+<get-user-info-popup bindcloseEvent="getUserInfoPopupClose" isShow="{{isGetUserInfoPopup}}"></get-user-info-popup> 

@@ -1,0 +1,71 @@
+<import src="../unitStar_v3/unitStar.wxml"></import>
+<view class="guodu-image" wx:if="{{commentPreviewData.length>0}}"></view>
+<view class="comment-info" wx:if="{{commentPreviewData.length>0}}">
+    <navigator url="/pages/unitDetails_v2/common/unitComment/unitComment?unitId={{unitId}}&pictureCommentCount={{unitCommentSummary.pictureCommentCount}}&businessType={{businessType}}">
+        <view>
+            <view class="comment-outline" wx:if="{{unitCommentSummary.totalCount>0}}">
+                <view class="score-total">
+                    <view class="score">{{unitCommentSummary.overallDesc}}</view>
+                    <view class="star-group">
+                        <view class="star-total" wx:if="{{unitCommentSummary.scoreTitle}}">
+                            <view class="star-image">{{unitCommentSummary.scoreTitle}}</view>
+                        </view>
+                        <template is="unit-star" data="{{...unitCommentSummary,imgHost:PWA_STATIC_TUJIA_HOST}}" wx:if="{{unitCommentSummary}}"></template>
+                    </view>
+                </view>
+                <view class="comment-group">
+                    <view class="comment">
+                        {{unitCommentSummary.totalCount}}条
+                        <text class="comment-text">点评</text>
+                    </view>
+                    <view class="arrowleft"></view>
+                </view>
+            </view>
+            <view class="comment-list">
+                <view class="house-detail__comment-preview" wx:if="{{unitCommentSummary.totalCount>0}}">
+                    <view class="preview-content preview-detail">
+                        <navigator class="user-info">
+                            <view class="user-left">
+                                <view class="image-container">
+                                    <image src="{{commentPreviewData[0].customerAvatarUrl}}" wx:if="{{commentPreviewData[0].customerAvatarUrl}}"></image>
+                                    <image src="https://nmstatic.tujia.com/static/images/user_default.7587872.png" wx:else></image>
+                                </view>
+                                <view class="user-name-time">
+                                    <view class="user-name" wx:if="{{commentPreviewData[0].name}}">{{commentPreviewData[0].name}}</view>
+                                    <view class="user-time">
+                                        {{commentPreviewData[0].submitDate}}
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="comment-list-score">
+                                <view class="totalscore">
+                                    {{commentPreviewData[0].totalScoreDesc}}
+                                </view>
+                                <view class="total-star">
+                                    <template is="unit-star" data="{{...commentPreviewData[0],imgHost:PWA_STATIC_TUJIA_HOST}}"></template>
+                                </view>
+                            </view>
+                        </navigator>
+                        <view class="">
+                            <view class="detail-text">{{commentPreviewData[0].commentDetail}}</view>
+                            <view class="{{!commentPreviewData[0].pictureList||commentPreviewData[0].pictureList&&commentPreviewData[0].pictureList.length==0?'pb60':''}}"></view>
+                        </view>
+                        <view class="comments__pictures" wx:if="{{commentPreviewData[0].pictureList&&commentPreviewData[0].pictureList.length>0}}">
+                            <view class="thumbnails" wx:if="{{imgIndex<=3}}" wx:for="{{commentPreviewData[0].pictureList}}" wx:for-index="imgIndex" wx:for-item="imgItem" wx:key="{{imgIndex}}">
+                                <image data-comment-id="{{index}}  " data-index="{{imgIndex}}" src="{{imgItem.url}}"></image>
+                                <view class="more" wx:if="{{imgIndex==3}}">
+                                    <image mode="aspectFill" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-comentmore.png"></image>
+                                    <view class="len">
+                                        {{commentPreviewData[0].pictureList.length}}
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="h60" wx:if="{{commentPreviewData[0].pictureList&&commentPreviewData[0].pictureList.length!=0}}"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>
+<view class="comment-footer"></view>

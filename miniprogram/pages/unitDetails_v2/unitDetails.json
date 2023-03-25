@@ -1,0 +1,26 @@
+{
+    "navigationBarTitleText": "房屋详情",
+    "usingComponents": {
+        "component-unitdiscount": "components/unitDiscount/unitDiscount",
+        "component-unitimgpreview": "components/unitImgPreview/unitImgPreview",
+        "component-unithousetype": "components/unitHouseType/unitHouseType",
+        "component-unithouseinfo": "components/unitHouseInfo/unitHouseInfo",
+        "component-unitrule": "components/unitRule/unitRule",
+        "component-unitcheckintips": "components/unitCheckInTips/unitCheckInTips",
+        "component-unitcomments": "components/unitComments/unitComments",
+        "component-unitextracost": "components/unitExtraCost/unitExtraCost",
+        "component-unitcalendar": "components/unitCalendar/unitCalendar",
+        "component-unitlandlordinfo": "components/unitLandlordInfo/unitLandlordInfo",
+        "component-unitsimilarhouse": "components/unitSimilarHouse/unitSimilarHouse",
+        "component-unithousedesc": "components/unitDetailDes/unitDetailDes",
+        "component-services": "components/unitService/unitService",
+        "component-headerLabel": "components/unitHeadLabel/unitHeadLabel",
+        "component-unitlocal": "components/unitLocal/unitLocal",
+        "component-footer": "components/unitFooter/unitFooter",
+        "component-salefooter": "components/unitSaleFooter/unitSaleFooter",
+        "common-page": "/components/commonPage/commonPage",
+        "get-user-info-popup": "/components/getAuthPopup/popup",
+        "component-shipei": "components/unitShipeix/unitShipeix",
+        "modal-popup": "/components/advModal/modal"
+    }
+}

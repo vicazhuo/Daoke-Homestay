@@ -1,0 +1,18 @@
+<view bindtap="handleClickMask" class="i-as-mask i-class-mask {{visible?'i-as-mask-show':''}}"></view>
+<view class="i-class i-as {{visible?'i-as-show':''}}">
+    <view class="i-as-header i-class-header">
+        <slot name="header"></slot>
+    </view>
+    <view class="i-as-actions">
+        <view bindtap="handleClickItem" class="i-as-action-item" data-index="{{index}}" wx:for="{{actions}}" wx:key="{{ item.name }}">
+            <i-button long openType="{{item.openType}}" size="large" type="ghost">
+                <view class="i-as-btn-loading" wx:if="{{item.loading}}"></view>
+                <view class="i-as-btn-text" style="{{item.color?'color: '+item.color:''}}">{{item.name}}</view>
+            </i-button>
+        </view>
+    </view>
+    <view class="i-as-cancel" wx:if="{{showCancel}}">
+        <i-button bindclick="handleClickCancel" iClass="i-as-cancel-btn" long="true" size="large" type="ghost">{{cancelText}}</i-button>
+    </view>
+    <view class="tj-ios-cross-bar" wx:if="{{isIosCrossBar}}"></view>
+</view>

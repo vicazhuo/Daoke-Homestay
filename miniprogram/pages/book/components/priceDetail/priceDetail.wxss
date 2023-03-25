@@ -1,0 +1,114 @@
+.f-border-bottom-line-gray {
+    position: relative;
+    border: none;
+}
+
+.f-border-bottom-line-gray::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: left top;
+    border-radius: 0;
+    pointer-events: none;
+}
+
+.price-detail-title {
+    padding: 0 40rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 148rpx;
+}
+
+.price-detail-title .title {
+    font-weight: 500;
+    font-size: 38rpx;
+    color: #333333;
+}
+
+.price-detail-title .num {
+    font-weight: 500;
+    font-size: 38rpx;
+    color: #e64353;
+}
+
+.price-list-wrapper {
+    padding: 0 40rpx;
+}
+
+.price-list-alone {
+    font-size: 28rpx;
+    color: #666666;
+}
+
+.alone-title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 30rpx;
+    color: #666666;
+}
+
+.alone-sub-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 26rpx;
+    color: #666666;
+}
+
+.show-more {
+    font-size: 26rpx;
+    color: #e64353;
+}
+
+.zhezhao-footer image {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 230rpx;
+}
+
+.mb17 {
+    margin-bottom: 17rpx;
+}
+
+.mb10 {
+    margin-bottom: 10rpx;
+}
+
+.mt18 {
+    margin-top: 18rpx;
+}
+
+.mt44 {
+    margin-top: 44rpx;
+}
+
+.pt44 {
+    padding-top: 40rpx;
+}
+
+.insurance-wrapper {
+    padding: 50rpx 40rpx 0 40rpx;
+    box-sizing: border-box;
+}
+
+.insurance-title {
+    font-size: 28rpx;
+    color: #333333;
+    font-weight: 500;
+    margin-bottom: 30rpx;
+}
+
+.insurance-content {
+    font-size: 28rpx;
+    color: #666666;
+    text-align: justify;
+    line-height: 40rpx;
+}

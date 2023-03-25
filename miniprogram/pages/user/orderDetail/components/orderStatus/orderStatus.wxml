@@ -1,0 +1,23 @@
+<view class="order-status">
+    <view class="status-text" style="color: {{statusColor}}">{{statusText}}</view>
+    <view class="status-warn" wx:if="{{totalNeedPay>0}}">
+    待付金额
+    <i>￥{{totalNeedPay}}</i>
+    </view>
+    <view class="status-info">
+        <i wx:if="{{countdown>0}}">{{deadLineText}}</i>
+    {{summory}}
+  </view>
+    <view wx:if="{{(enumOrderOperationFlag&4096)===4096}}">
+        <button bindtap="depositCallback" class="button">
+        退款详情{{onlineDeposit>0&&!isExempteDeposit?'(含押金)':''}}
+    </button>
+    </view>
+    <view class="ask-entry">
+        <view bindtap="navTo" class="ask-item" data-url="{{item.navigateUrl}}" wx:for="{{help}}" wx:key="{{item.navigateUrl}}">
+      {{item.text}}
+    </view>
+    </view>
+</view>
+<view class="footer-shadow"></view>
+<view class="status-footer" style="background-image: url({{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-wave2.png)"></view>

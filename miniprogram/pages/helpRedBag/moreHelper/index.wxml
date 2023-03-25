@@ -1,0 +1,3 @@
+<view class="more-helper-page">
+    <helper-list isAll activityId="{{id}}"></helper-list>
+</view>

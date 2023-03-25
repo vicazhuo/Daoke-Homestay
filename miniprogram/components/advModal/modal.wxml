@@ -1,0 +1,6 @@
+<view class="mask-layer" wx:if="{{modalShow}}">
+    <view class="modal-box">
+        <image bindtap="closeModal" class="modal-close" src="{{HOST_STATIC+'icon_close.png'}}"></image>
+        <image bindtap="routeToWeb" class="modal-bg" mode="aspectFit" src="{{modalSrc}}"></image>
+    </view>
+</view>

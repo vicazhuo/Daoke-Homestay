@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "订单详情",
+    "usingComponents": {
+        "component-orderstatus": "components/orderStatus/orderStatus",
+        "component-chargeback": "components/chargeBack/chargeBack",
+        "component-checkinfo": "components/checkInfo/checkInfo",
+        "component-locationinfo": "components/locationInfo/locationInfo",
+        "component-activity": "components/activity/activity",
+        "component-popup": "components/popup/popup",
+        "top-screen": "../../../components/topScreen/index"
+    }
+}

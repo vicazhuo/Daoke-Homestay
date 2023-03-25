@@ -1,0 +1,53 @@
+<view bindtap="goToDetail" class="hotel-item" data-inTns="{{houseInfo.inTns}}" data-unitid="{{houseInfo.unitId}}">
+    <view class="hotel-img-box">
+        <swiper bindchange="swiperChange" class="house-pic-swiper">
+            <swiper-item wx:for="{{houseInfo.pictureList}}" wx:key="{{item}}">
+                <view class="tj-img-background">
+                    <image class="hotel-item-pic" lazyLoad="{{!isAliApp}}" mode="aspectFill" src="{{item}}"></image>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="landlord-hotel-img-container" wx:if="{{houseInfo.logoUrl}}">
+            <view class="landlord-hotel-img-box">
+                <image class="hotel-user-icon" src="{{houseInfo.logoUrl}}"></image>
+                <view class="is-rba-house" wx:if="{{houseInfo.rba}}">自营</view>
+            </view>
+            <view class="icon-hotel-super-box" wx:if="{{houseInfo.great}}">
+                <image class="icon-hotel-super" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/landlord/icon_super-comment.png"></image>
+            </view>
+        </view>
+        <view class="house-promotion {{houseInfo.qualityCertification?'':'house-promotion-one'}}" style="background:url({{houseInfo.promotionPicUrl}}) no-repeat;background-size:contain;" wx:if="{{houseInfo.promotionPicUrl}}"></view>
+        <view class="house-type-name" wx:if="{{houseInfo.qualityCertification}}">{{houseInfo.qualityCertification}}</view>
+        <image class="no-allow-icon" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_no_allow_booking.png" wx:if="{{!houseInfo.allowBooking}}"></image>
+    </view>
+    <view class="hotel-info-contaniner">
+        <view class="hotel-type-tag-bar" wx:if="{{houseInfo.tags&&houseInfo.tags.length}}">
+            <scroll-view scrollX class="hotel-type-tag-scroll">
+                <view class="tag-scroll-content">
+                    <view class="tag-scroll-item br1 {{isAliAndroid?'ali-tag-item':''}}" wx:for="{{houseInfo.tags}}" wx:key="{{index}}">
+               {{item}}
+            </view>
+                    <view class="tag-scroll-item-end"></view>
+                </view>
+            </scroll-view>
+            <view class="scroll-end-mask"></view>
+        </view>
+        <view class="hotel-name-bar {{houseInfo.tags&&houseInfo.tags.length?'':'no-tag-bar'}}">
+            <view class="hotel-info-name {{isAliApp?'ali-info-name':''}}">
+                <image class="icon-quick-buy icon-quick-buy-title" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/landlord/icon_quick_buy.png" wx:if="{{houseInfo.expressBooking}}"></image>{{houseInfo.unitName}}</view>
+        </view>
+        <view class="hotel-info-option">
+            <block wx:for="{{houseInfo.unitSummeries}}" wx:for-item="unitSummerie" wx:key="{{index}}">
+                <text style="font-weight:{{unitSummerie.bold?'bold':'normal'}}">{{unitSummerie.text}}</text>
+                <text class="hotel-option-dian" wx:if="{{index!=houseInfo.unitSummeries.length-1}}">·</text>
+            </block>
+        </view>
+        <view class="hotel-price-line">
+            <text class="hotel-info-price">{{houseInfo.finalPrice<0||!houseInfo.finalPrice?'暂无价格':'¥'+houseInfo.finalPrice}}</text>
+            <text class="hotel-info-price-product" wx:if="{{houseInfo.finalPrice!==houseInfo.productPrice}}">¥{{houseInfo.productPrice}}</text>
+            <text class="price-tag-item" style="background-color:{{item.background.color}};color:{{item.color}}" wx:for="{{houseInfo.priceTags}}" wx:key="{{index}}">{{item.text}}</text>
+        </view>
+    </view>
+    <tj-favorite-btn bindremoveFavorite="removeFavorite" isFavoritePage="{{isFavoritePage}}" styles="right:40rpx;top:40rpx" unitid="{{houseInfo.unitId}}"></tj-favorite-btn>
+    <view class="no-allow-mask" wx:if="{{!houseInfo.allowBooking}}"></view>
+</view>

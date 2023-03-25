@@ -1,0 +1,58 @@
+<view class="i-container">
+    <view class="img-content">
+        <image class="no-i-star" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/orderlist/icon-star.png"></image>
+        <view class="no-i-font">{{insuranceInfo.insuranceOrderStatus}}</view>
+    </view>
+    <view class="i-info">
+        <view class="i-item">
+            <view class="i-name">保险名称</view>
+            <view class="i-con">{{insuranceInfo.insuranceName}}</view>
+        </view>
+        <view class="i-item">
+            <view class="i-name">保单号</view>
+            <view class="i-con">{{insuranceInfo.insuranceOrderNumber}}</view>
+        </view>
+        <view class="i-item">
+            <view class="i-name">被保人</view>
+            <view class="i-con">{{insuranceInfo.policyHolderName}}</view>
+        </view>
+        <view class="i-item">
+            <view class="i-name">被保人身份证</view>
+            <view class="i-con">{{insuranceInfo.policyHolderIDCardNumber}}</view>
+        </view>
+        <view class="i-item">
+            <view class="i-name">保险公司</view>
+            <view class="i-con">{{insuranceInfo.insuranceCompany}}</view>
+        </view>
+        <view class="i-item">
+            <view class="i-name">投保金额</view>
+            <view class="i-con">￥{{insuranceInfo.insuranceMoney}}</view>
+        </view>
+        <view class="i-item">
+            <view class="i-name">投保有效期</view>
+            <view class="i-con">{{insuranceInfo.insuranceValidity}}</view>
+        </view>
+    </view>
+    <view class="i-line">
+        <view class="i-con-top br1_top"></view>
+    </view>
+    <view>
+        <view class="house-insurance">
+            <view class="h-i-left">
+                <view class="h-i-title">咨询、理赔</view>
+            </view>
+            <view class="h-i-right">
+                <text class="h-i-sec">{{insuranceInfo.insurancePhone}}</text>
+                <view class="h-i-content">
+                    <view class="icon-arrow-right"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="seeMoreDescription" class="about-i">关于保险</view>
+    <top-screen bindcloseEvent="seeMoreDescription" isPopupShow="{{isShowTopScreen}}">
+        <view class="i-description-popup">
+      {{insuranceInfo.detail}}
+    </view>
+    </top-screen>
+</view>

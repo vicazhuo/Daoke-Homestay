@@ -1,0 +1,75 @@
+<view class="main" wx:if="{{dataObj}}">
+    <block wx:for="{{dataObj.lockPwdList}}" wx:key="{{index}}">
+        <view class="tit" wx:if="{{item.lockType==2&&item.lockState==0||!item.hasLock}}">门锁密码获取失败</view>
+        <view class="tit" wx:else>恭喜您获取门锁密码</view>
+        <view class="con-warn" wx:if="{{item.lockType==2&&item.lockState==0}}">未到入住时间（{{item.startDate}}），暂无法获得密码。</view>
+        <view class="con" wx:if="{{dataObj.temp&&item.hasLock}}">当前为临时门锁密码，有效时长仅1小时，请您尽快补交押金！补交后密码有效期将延长至订单退房时间</view>
+        <view class="list" wx:if="{{item.createSuccess}}">
+            <view class="list-address">
+                <view class="list-address-tit list-address-tit-warn common-tit" wx:if="{{item.lockType==2&&item.lockState==0}}">{{item.address}}</view>
+                <view class="list-address-tit common-tit" wx:else>{{item.address}}</view>
+                <view class="list-address-con common-bold">{{item.rub}}</view>
+            </view>
+            <view class="list-pwd" wx:if="{{item.lockType==2&&item.lockState==0}}">
+                <view class="common-con">入住时间</view>
+                <view class="common-bold">{{item.startDate}} - {{item.endDate}}</view>
+            </view>
+            <view class="list-pwd" wx:else>
+                <view class="common-con">门锁密码</view>
+                <view class="common-bold_pwd list-pwd-num">
+                    <view wx:for="{{item.password}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{idx}}">{{itemName}}</view>
+                    <view>#</view>
+                </view>
+            </view>
+            <view class="list-time" wx:if="{{item.lockType==2&&item.lockState==0}}">
+                <view class="common-con common-con-row">门锁密码 <view class="common-con-statetip">待开启</view>
+                </view>
+                <view class="common-bold">* * * * * *</view>
+            </view>
+            <view class="list-time" wx:else>
+                <view class="common-con">密码生效时段</view>
+                <view class="common-bold todaytime-view" wx:if="{{item.lockType==0&&item.lockState==0}}">{{item.today}}  当天有效
+        <image bindtap="showPwdTip" class="tipimage" src="http://image01.iyoujia.com/m0/1907/P26cwMszP6eXFEJHYMhJThDwBA6rxb4a.png?x-oss-process=style/o7"></image>
+                </view>
+                <view class="common-bold" wx:else>{{item.startDate}} - {{item.endDate}}</view>
+            </view>
+        </view>
+        <view class="list" wx:if="{{!item.hasLock}}">
+            <view class="list-address list-address1">
+                <view class="list-address-tit list-address-tit-r common-tit">{{item.address}}</view>
+                <view class="list-address-con common-bold">{{item.rub}}</view>
+            </view>
+            <view class="list-info">该房屋未安装智能门锁，请联系管家获取钥匙</view>
+        </view>
+        <view class="list list-red" wx:if="{{item.hasLock&&!item.createSuccess}}">
+            <view class="list-address list-address1">
+                <view class="list-address-tit list-address-tit-r common-tit">{{item.address}}</view>
+                <view class="list-address-con common-bold">{{item.rub}}</view>
+            </view>
+            <view class="list-info">该房屋门锁密码获取失败，请联系管家</view>
+        </view>
+        <view class="list" wx:if="{{item.remark&&item.remark!=''&&item.remark!=null}}">
+            <view class="list-time">
+                <view class="common-con common-con-row">备注</view>
+                <view class="common-bold">{{item.remark}}</view>
+            </view>
+        </view>
+    </block>
+</view>
+<view class="btm-height-null"></view>
+<view class="btm">
+    <view class="contact-steward">
+        <view bindtap="callButler" class="contact-steward-inner">
+            <image src="../../../images/checkin/phone-icon.png"></image>
+            <view>联系管家：{{dataObj.offlineName}}</view>
+        </view>
+    </view>
+    <view bindtap="callServer" class="service">
+        <view>客服电话</view>
+        <text>400-606-6767</text>
+    </view>
+</view>
+<view bindtap="goDeposit" class="pay" wx:if="{{dataObj&&dataObj.payDepositBtn==1}}">
+    <view>补交押金</view>
+</view>
+<modalTip bindmodalBtnEvent="{{modalBtnEvent}}" modalSetting="{{modalSetting}}"></modalTip>

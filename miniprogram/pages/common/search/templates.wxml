@@ -1,0 +1,34 @@
+<template name="list-letter-bar">
+    <view class="list-letter">
+        <view bindtap="toTop" class="list-letter__item">#</view>
+        <view bindtap="clickLeters" class="list-letter__item" data-leters="{{index}}" wx:for="{{group}}" wx:key="{{index}}">{{index}}</view>
+    </view>
+</template>
+<template name="historyList">
+    <view hidden="{{!historyGroup.length}}">
+        <view class="recommend-tit">{{title}}<view bindtap="clearHistory" class="list__clear" data-historykey="{{name}}">清除</view>
+        </view>
+        <view class="scroll-history-inner">
+            <text bindtap="clickDest" class="recommend-name-col" data-item="{{item}}" data-key="{{key}}" data-title="{{title}}_{{item.name?item.name:item.destinationName}}}" wx:for="{{historyGroup}}" wx:key="{{index}}">{{item.name?item.name:item.destinationName}}</text>
+        </view>
+    </view>
+</template>
+<template name="cityList">
+    <block wx:if="{{hotGroup.length>0}}">
+        <view class="recommend-tit">热门城市</view>
+        <view class="list-columns hot-list br1_bottom">
+            <view bindtap="clickCity" class="hot__list__item" data-destId="{{item.cityId}}" data-destName="{{item.cityName}}" data-title="热门城市_{{item.cityName}}" wx:for="{{hotGroup}}" wx:key="{{index}}"> 
+                    {{item.cityName}}
+                  </view>
+        </view>
+    </block>
+    <block wx:for="{{group}}" wx:key="{{index}}">
+        <view class="letter-tit" id="{{id+index}}">{{index}}</view>
+        <view class="list-contaniner">
+            <template is="destItem" data="{{item:item}}"></template>
+        </view>
+    </block>
+</template>
+<template name="destItem">
+    <view bindtap="clickCity" class="list__item br1_bottom" data-destId="{{item.cityId}}" data-destName="{{item.cityName}}" data-title="列表城市_{{item.cityName}}" wx:for="{{item}}" wx:key="{{index}}">{{item.cityName}}</view>
+</template>

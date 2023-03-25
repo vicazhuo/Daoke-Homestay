@@ -1,0 +1,194 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": true,
+		"uglifyFileName": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.2",
+	"appid": "wx569825e306a7a842",
+	"projectname": "%E7%A8%BB%E5%AE%A2%E6%B0%91%E5%AE%BF-%E5%B9%B3%E5%8F%B0%E6%9D%BF",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 11,
+			"list": [
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/common/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "个人中心",
+					"pathName": "pages/user_v2/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "房东确认",
+					"pathName": "landlord/pages/order/confirm",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": "parentsId=22",
+					"scene": 1012
+				},
+				{
+					"id": -1,
+					"name": "pages/user/invoice/invoice",
+					"pathName": "pages/user/invoice/invoice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/book/book",
+					"pathName": "pages/book/book",
+					"query": "start=2019-10-09&end=2019-10-10&unitid=156&productid=156&activityInfo=undefined",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/units/units",
+					"pathName": "pages/units/units",
+					"query": "start=2019-10-09&end=2019-10-10&unitid=156&productid=156&activityInfo=undefined",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员中心",
+					"pathName": "pages/user_v2/member/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的钱包",
+					"pathName": "pages/user_v2/wallet/wallet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购买会员",
+					"pathName": "pages/user_v2/recharge/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购买会员/红纸",
+					"pathName": "pages/user_v2/recharge/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "订单详情v2",
+					"pathName": "pages/user/orderDetail/orderDetail",
+					"query": "orderId=809&orderNumber=OD1572951607&ordertype=true&index=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单支付",
+					"pathName": "pages/pay_v2/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "订单支付",
+					"pathName": "pages/pay_v2/index/index",
+					"query": "orderId=809",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/invoice/invoice-info",
+					"pathName": "pages/user/invoice/invoice-info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "Wifi首页",
+					"pathName": "plug/wifi/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 16,
+					"name": "plug/wifi/matAndWifi/applyMatterList/applyMatterList",
+					"pathName": "plug/wifi/matAndWifi/applyMatterList/applyMatterList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "plug/checkin/deposit/deposit",
+					"pathName": "plug/checkin/deposit/deposit",
+					"query": "orderId=809&orderNumber=OD1572951607&ordertype=true&index=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/landlord/index",
+					"pathName": "pages/landlord/index",
+					"query": "hotelId=59201",
+					"scene": null
+				}
+			]
+		}
+	}
+}

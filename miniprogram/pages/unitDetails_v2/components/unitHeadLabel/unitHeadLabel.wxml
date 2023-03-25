@@ -1,0 +1,18 @@
+<view class="label-container" wx:if="{{houseTagsForUser.length}}">
+    <view class="scroll-wrapper">
+        <view class="house-tags">
+            <view class="tag br1" wx:for="{{houseTagsForUser}}" wx:key="{{index}}">{{item}}</view>
+            <view class="w20"></view>
+        </view>
+    </view>
+    <view class="scroll-end-mask"></view>
+</view>
+<view class="summary-info">
+    <view class="summary-info__title">{{unitName}}</view>
+    <view class="line  br1"></view>
+    <view class="share">
+        <button class="share-btn" id="share" openType="share">
+            <image src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/tjunitdetail/icon-v3-share.png"></image>
+        </button>
+    </view>
+</view>

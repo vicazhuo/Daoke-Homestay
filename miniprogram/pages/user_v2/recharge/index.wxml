@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="tab">
+    <view bindtap="change1" class="{{isDirect?'':'tab-sel'}}">储值升级VIP</view>
+    <view bindtap="change2" class="{{isDirect?'tab-sel':''}}">直接购买VIP</view>
+  </view>
+  <view class="list" wx:if="{{!isDirect}}">
+    <view bindtap="selFun" class="{{selId==item.id?'item sel':'item un-sel'}}" data-id="{{item.id}}" data-m="{{item.payAmount}}" wx:for="{{storeList}}" wx:key="{{item.id}}">
+      <view class="item-money">
+        <text class="t1">{{item.payAmount}}</text>
+        <text class="t2">元</text>
+      </view>
+      <view class="item-bottom">
+        <view class="item-coupon" wx:if="{{item.giftType==2&&item.giftAmount}}">赠送余额￥{{item.giftAmount}}</view>
+         <view class="item-coupon" wx:if="{{item.giftType==3&&item.giftAmount}}">赠送积分￥{{item.giftScore}}</view>
+        <view class="item-grade" wx:if="{{item.giftType==1&&item.upLevel==1}}">直接升VIP{{item.levelTitle}}</view>
+        <view class="item-grade" wx:elif="{{item.giftType==1&&item.upLevel==2}}">直接升VIP{{item.levelTitle}}</view>
+        <view class="item-grade" wx:elif="{{item.giftType==1&&item.upLevel==3}}">直接升VIP{{item.levelTitle}}</view>
+        <view class="item-grade" wx:elif="{{item.giftType==1&&item.upLevel==4}}">直接升VIP{{item.levelTitle}}</view>
+      </view>
+    </view>
+    <view class="tit-con">储值金不支持提现、退款、转让</view>
+  </view>
+  <view class="direct" wx:else>
+    <block wx:if="{{directActivityObj}}">
+      <image src="{{wapUrl+'/images/vip/silver@2x.png'}}"></image>
+      <view>限时1折，欲购从速，5月31日恢复原价</view>
+    </block>
+    <block wx:if="{{saleVip}}">
+      <view class="swiper-item-com">
+        <image class="swiper-item-com-img" src="{{saleVip.imagesUrl}}" role="img">
+        </image>
+        <view class="swiper-item-com-view">
+          <view class="swiper-item-com-view-tit">{{saleVip.name}}会员
+           <image class="swiper-item-com-view-tit-img"src="http://minsu.image.zhiyinfo.com/member/vip/vip-icon.png"role="img"></image>
+          </view>
+          <view class="color-10 swiper-item-com-view-e">{{saleVip.enname}}</view>
+          <view class="price">{{saleVip.price}}<text class="txis">元</text></view>
+          <view class="color-10 swiper-item-com-view-t">{{saleVip.desc}}</view>
+        </view>
+      </view>
+      <view class="direct-v">{{saleVip.price}}元是购买VIP的费用，不计入储值余额</view>
+    </block>
+  </view>
+  <view class="btm" wx:if="{{userLevel>0&&selId==12}}">
+    <view class="v1">您已是VIP，无需购买</view>
+  </view>
+  <view bindtap="selWechatPayBtnFun" class="btm" wx:else>
+    <view wx:if="{{selId<20}}">支付￥{{selMoney}}</view>
+    <view wx:else>储值￥{{selMoney}}</view>
+  </view>
+</view>

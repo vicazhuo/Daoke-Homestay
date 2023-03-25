@@ -1,0 +1,66 @@
+<view class="page-top-border"></view>
+<view class="map-container">
+    <component-unitSearchHeader bindclearSearchEvent="clearSearchCondition" bindconditionsChange="headerCreateConditions" bindgoPageEvent="searchHeadGoPage" conditionsGroups="{{conditionsGroups}}" hotTags="{{hotTags}}" id="searchHeader" pageType="maps" params="{{optionsParams}}"></component-unitSearchHeader>
+    <map showLocation bindcallouttap="markerTap" bindregionchange="bindregionchange" bindtap="closeShowHouse" circles="{{circles}}" class="map" id="tjMap" latitude="{{myLocation.latitude}}" longitude="{{myLocation.longitude}}" markers="{{houseMarkerList}}" scale="{{mapScale}}">
+        <cover-view class="map-search-btn-box" wx:if="{{isSelectedDestination&&!isShowHouseScrollView&&isShowMarkerIcon}}">
+            <cover-image class="map-search-btn" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_search_btn.png"></cover-image>
+            <cover-view bindtap="setDestination" class="map-search-btn-text">搜索地标附近</cover-view>
+        </cover-view>
+        <cover-image class="center-marker-icon {{isMapTouch?'center-marker-icon-touch':''}}" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_map_market_own.png" wx:if="{{!isShowHouseScrollView&&isShowMarkerIcon}}"></cover-image>
+        <cover-view class="no-house-alert" wx:if="{{houseToastTexts.mainText}}">
+            <cover-view class="main-toast-text">{{houseToastTexts.mainText}}</cover-view>
+            <cover-view class="sub-toast-text" wx:if="{{houseToastTexts.subText}}">{{houseToastTexts.subText}}</cover-view>
+        </cover-view>
+        <cover-view class="phone-model-mask" wx:if="{{isPhoneModelMask}}"></cover-view>
+    </map>
+    <cover-image bindtap="myLocationTap" class="location-btn-box" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_location_btn.png" wx:if="{{selectCityInfo.value==myLocationInfo.destId&&isGeoAuth}}"></cover-image>
+    <cover-view-slider bindsliderChange="distanceSliderChange" defaultIndex="{{coverViewDistanceIndex}}" rangeList="{{distanceList}}" wx:if="{{distanceList.length&&!isShowHouseScrollView&&isDestination}}"></cover-view-slider>
+    <block wx:if="{{isShowHouseScrollView}}">
+        <cover-image class="scroll-view-bg" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_house_bg_write.png"></cover-image>
+        <cover-image class="scroll-view-shadow-bg" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_house_bg.png"></cover-image>
+        <cover-view class="scroll-view">
+            <cover-view bindtap="selectHouse" class="house-select-btn-box" data-type="-">
+                <cover-image class="house-select-btn  select-btn-left" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_map_arrow_right.png"></cover-image>
+            </cover-view>
+            <cover-view bindtap="goToDetail" class="house-item" data-inTns="{{houseList[nowShowHouseIndex].inTns}}" data-unitid="{{houseList[nowShowHouseIndex].unitId}}">
+                <cover-view class="house-item-content">
+                    <cover-view class="house-item-img-box">
+                        <cover-image class="house-item-left" mode="aspectFit" src="{{houseList[nowShowHouseIndex].smallPictureUrl}}"></cover-image>
+                        <cover-view class="house-lever-name-box" wx:if="{{houseList[nowShowHouseIndex].qualityCertification}}">
+                            <cover-image class="house-lever-name-shadow" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_lever_bg_shadow.png"></cover-image>
+                            <cover-view class="house-lever-name">
+                                <cover-view>{{houseList[nowShowHouseIndex].qualityCertification}}</cover-view>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                    <cover-view class="house-item-right">
+                        <cover-view class="house-item-name-box">
+                            <cover-image class="icon-quick-buy" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/landlord/icon_quick_buy.png" wx:if="{{houseList[nowShowHouseIndex].expressBooking}}"></cover-image>
+                            <cover-view class="house-item-name house-item-name-text">{{houseList[nowShowHouseIndex].unitName}}</cover-view>
+                        </cover-view>
+                        <cover-view class="house-item-tag house-item-name-text">
+                          {{common.unitOptionsJoin(houseList[nowShowHouseIndex].unitSummeries)}}
+                    </cover-view>
+                        <cover-view class="house-item-address house-item-name-text">
+                          {{houseList[nowShowHouseIndex].address}}
+                    </cover-view>
+                        <cover-view class="house-item-price">
+                      {{houseList[nowShowHouseIndex].finalPrice}}
+                      <cover-view class="good-price" wx:if="{{houseList[nowShowHouseIndex].productPrice}}">
+                                <cover-view style="">{{houseList[nowShowHouseIndex].productPrice}}　</cover-view>
+                                <cover-view class="price-del-border"></cover-view>
+                            </cover-view>
+                            <cover-view class="price-tag　{{houseList[nowShowHouseIndex].productPrice?'price-tag-product':''}}" wx:if="{{houseList[nowShowHouseIndex].priceTags&&houseList[nowShowHouseIndex].priceTags.length}}">
+                                <cover-view>{{houseList[nowShowHouseIndex].priceTags[0].text}}</cover-view>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view catchtap="selectHouse" class="house-select-btn-box" data-type="+">
+                <cover-image class="house-select-btn  select-btn-right" src="{{PWA_STATIC_TUJIA_HOST}}/static/wechat/units_search_page/icon_map_arrow_right.png"></cover-image>
+            </cover-view>
+        </cover-view>
+    </block>
+</view>
+<wxs module="common" src="../units.wxs" />

@@ -1,0 +1,96 @@
+<view class="main">
+  <view class="main-tit">认证失败</view>
+  <block wx:if="{{failNum==3}}">
+    <block wx:if="{{sex==1}}">
+      哎呀~您的人脸模型和吴彦祖有90%相似，系统无法准确识别身份，请您联系管家帮助您完成实名认证。
+    </block>
+    <block wx:else>
+      哎呀~您的人脸模型和迪丽热巴有90%相似，系统无法准确识别身份。您可以上传证件照片来完成实名认证，上传成功后可以直接获取开门密码。有家会依法严格保护您的数据安全。
+    </block>
+  </block>
+  <block wx:else>
+    <view class="main-con" wx:if="{{code=='-5005'||code=='-5007'||code=='-5008'||code=='-5010'||code=='-5013'}}">
+      <block wx:if="{{sex==1}}">
+        虽然你是我今天见过最靓的仔，但是你的声音还没有打动我哦~读数字一定要放慢语速，普通话发音清晰呀！
+      </block>
+      <block wx:else>
+        虽然你是我今天见过最靓的妞，但是你的声音还没有打动我哦~读数字一定要放慢语速，普通话发音清晰呀！
+      </block>
+    </view>
+    <view class="main-con" wx:if="{{code=='4009'||code=='4017'||code=='4018'||code=='66660005'}}">
+      <block wx:if="{{isCheckinAuth}}">
+        很抱歉，公安数据库中没有查询到您的人脸信息，无法进行人脸认证。您可以换同伴来试试，或用上传证件的方式来完成实名认证
+      </block>
+      <block wx:else>
+        很抱歉，公安数据库中没有查询到您的人脸信息，无法进行人脸认证。我们先为您提供门锁密码，请您先进屋，稍后再联系管家登记实名信息。
+      </block>
+    </view>
+    <view class="main-con" wx:if="{{code=='-4006'||code=='-4007'||code=='-4010'||code=='-4015'||code=='-5001'||code=='-5002'||code=='-5005'||code=='-5009'||code=='66660004'}}">
+      哎呀，不要害羞嘛，找一个光线充足的地方，人脸正对取景框，取下帽子眼镜，让我好好欣赏你的盛世美颜！
+    </view>
+    <view class="main-con" wx:if="{{code=='66660010'}}">
+      您输入的姓名和身份证号不匹配，修改正确后再试试吧
+    </view>
+    <view class="main-con" wx:if="{{code=='66660023'}}">
+      请务必确保是身份证持有人本人操作，照片模型什么的可骗不了我哦~
+    </view>
+  </block>
+  <block wx:if="{{failNum==1}}">
+    <block wx:if="{{code=='4009'||code=='4017'||code=='4018'||code=='66660005'}}">
+      <block wx:if="{{isCheckinAuth}}">
+        <view bindtap="goUploadCard" class="btn btn-bg">更换认证方式：上传证件</view>
+        <view bindtap="goPerson" class="btn">换同伴试试</view>
+      </block>
+      <view bindtap="goGetPwd" class="btn btn-bg" wx:else>查看门锁密码</view>
+    </block>
+    <view bindtap="goPerson" class="btn btn-bg" wx:elif="{{code=='66660010'}}">去修改</view>
+    <block wx:else>
+      <navigator appId="wx7ccfa42a2a641035" class="btn btn-bg" extraData="{{sendObj}}" hoverClass="none" openType="navigate" path="pages/pre" target="miniProgram" version="release">重试</navigator>
+      <view bindtap="goPerson" class="btn">换同伴试试</view>
+      <view bindtap="goUploadCard" class="btn-tip c-g">识别失败？上传证件照片来完成认证</view>
+    </block>
+  </block>
+  <block wx:elif="{{failNum==2}}">
+    <block wx:if="{{code=='4009'||code=='4017'||code=='4018'||code=='66660005'}}">
+      <block wx:if="{{isCheckinAuth}}">
+        <view bindtap="goUploadCard" class="btn btn-bg">更换认证方式：上传证件</view>
+        <view bindtap="goPerson" class="btn">换同伴试试</view>
+      </block>
+      <view bindtap="goGetPwd" class="btn btn-bg" wx:else>查看门锁密码</view>
+    </block>
+    <block wx:elif="{{code=='66660010'}}">
+      <view bindtap="goPerson" class="btn btn-bg" wx:if="{{isCheckinAuth}}">去修改</view>
+      <block wx:else>
+        <view class="main-other">我们先为您提供门锁密码，您可以开门入住，稍后再完成实名认证。</view>
+        <view bindtap="goGetPwd" class="btn btn-bg">查看门锁密码</view>
+      </block>
+    </block>
+    <block wx:else>
+      <block wx:if="{{isCheckinAuth}}">
+        <view bindtap="goUploadCard" class="btn btn-bg">更换认证方式：上传证件</view>
+        <view bindtap="goPerson" class="btn">换同伴试试</view>
+        <navigator appId="wx7ccfa42a2a641035" class="btn-tip" extraData="{{sendObj}}" hoverClass="none" openType="navigate" path="pages/pre" target="miniProgram" version="release">让我再试一次</navigator>
+      </block>
+      <block wx:else>
+        <view class="main-other">我们先为您提供门锁密码，您可以开门入住，稍后再完成实名认证,实名认证成功后即可免押金</view>
+        <view bindtap="goGetPwd" class="btn btn-bg">查看门锁密码</view>
+      </block>
+    </block>
+  </block>
+  <block wx:elif="{{failNum==3}}">
+    <view bindtap="goUploadCard" class="btn btn-bg">更换认证方式：上传证件</view>
+    <view bindtap="goPerson" class="btn-tip">我想换个人再试试人脸识别</view>
+  </block>
+</view>
+<view class="btm">
+  <view class="contact-steward">
+    <view bindtap="callButler" class="contact-steward-inner">
+      <image src="../../../images/checkin/phone-icon.png"></image>
+      <view>联系管家：{{butlerInfo.name}}</view>
+    </view>
+  </view>
+  <view bindtap="callServer" class="service">
+    <view>客服电话</view>
+    <text>400-606-6767</text>
+  </view>
+</view>

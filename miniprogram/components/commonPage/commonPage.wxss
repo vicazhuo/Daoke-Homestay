@@ -1,0 +1,40 @@
+.page-error-container {
+    background: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 142rpx;
+    box-sizing: border-box;
+}
+
+.error-img {
+    width: 640rpx;
+    height: 480rpx;
+}
+
+.to-tj-btn {
+    background: #FF9645;
+    box-shadow: 0 10rpx 20rpx 0 rgba(255,150,69,0.20);
+    border-radius: 80rpx;
+    height: 80rpx;
+    width: 346rpx;
+    display: flex;
+    color: #fff;
+    font-size: 32rpx;
+    justify-content: center;
+    align-items: center;
+}
+
+.common-btm {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.error-text {
+    font-size: 28rpx;
+    color: #666;
+    margin: 37rpx 0 73rpx;
+}

@@ -1,0 +1,19 @@
+page {
+    background-color: #fff;
+}
+
+.city-item {
+    height: 90rpx;
+    padding: 0 40rpx;
+    line-height: 90rpx;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.city-item.active {
+    color: #ff9645;
+}
+
+.city-item::before {
+    border-bottom: 1px solid #e9e9e9;
+}

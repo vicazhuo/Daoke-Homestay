@@ -1,0 +1,9 @@
+<view class="people-reception">
+  <view class="wrap-box {{isShow?'wrap-box-active':''}}" wx:if="{{isShow||isHide}}">
+    <view class="reception-tip rece-item" style="{{receptionTipStyles}}" wx:if="{{textLink.text}}">{{textLink.text}}</view>
+    <view class="tip-arrow" style="{{tipArrowStyle}}"></view>
+  </view>
+  <view class="people-reception-text">{{text}}
+    <text catchtap="_handleTap" class="rece-item reception-btn" id="receptionBtn">{{textLink.title}}</text>
+  </view>
+</view>

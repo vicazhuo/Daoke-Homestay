@@ -1,0 +1,10 @@
+<view bindtap="toggle" class="i-class i-switch {{parse.setSize(size)}} {{parse.setCurrent(value,disabled)}}">
+    <input class="i-switch-hide-input" name="name" type="text" value="{{value}}"></input>
+    <view class="i-switch-inner" wx:if="{{value===true}}">
+        <slot name="open"></slot>
+    </view>
+    <view class="i-switch-inner" wx:else>
+        <slot name="close"></slot>
+    </view>
+</view>
+<wxs module="parse" src="index.wxs" />

@@ -1,0 +1,7 @@
+<view bindtap="change" class="tj-radio-com {{styleType}}-radio-style ">
+    <view class="icon-span {{checked?'icon-span-select':''}} {{disabled?'tj-radio-disabled':''}}" style="{{checked?colorStyle:''}}">
+        <view class="spot-icon" style="{{checked?colorStyle:''}}" wx:if="{{styleType==='spot'}}"></view>
+    </view>
+    <text class="radio-label" wx:if="{{label}}">{{label}}</text>
+    <slot wx:else></slot>
+</view>

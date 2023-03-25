@@ -1,0 +1,264 @@
+page {
+  background: #f9f9f9;
+}
+
+.tit {
+  font-family: PingFangSC-Medium;
+  font-size: 50rpx;
+  color: #2a2a2a;
+  padding-left: 30rpx;
+  font-weight: bold;
+  background: #fff;
+  padding-top: 40rpx;
+}
+
+.tit-con {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #b4b9bf;
+  margin-top: 40rpx;
+}
+
+.list {
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list .item {
+  width: 336rpx;
+  height: 180rpx;
+  border-radius: 6rpx;
+  background: #ebebeb;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.list .un-sel::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: left top;
+  border-radius: 12rpx;
+}
+
+.list .sel {
+  background:  #fae8bd;
+}
+
+.list .item .item-money {
+  padding-top: 20rpx;
+  margin-left: 30rpx;
+  display: flex;
+  align-items: baseline;
+}
+
+.list .item .item-money .t1 {
+  font-family: PingFangSC-Medium;
+  font-size: 44rpx;
+  color: #2a2a2a;
+  font-weight: bold;
+}
+
+.list .item .item-money .t2 {
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #2a2a2a;
+  margin-left: 4rpx;
+  position: relative;
+  top: -2rpx;
+}
+
+.list .item .item-bottom {
+  position: absolute;
+  left: 30rpx;
+  bottom: 20rpx;
+}
+
+.list .item .item-coupon {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #2a2a2a;
+}
+
+.list .item .item-grade {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #2a2a2a;
+}
+
+.list .item .item-icon {
+  position: absolute;
+  right: -43rpx;
+  top: 24rpx;
+  background: linear-gradient(-135deg, #f86439 0%, #fca189 100%);
+  width: 150rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  transform: rotate(50deg);
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.btm {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 150rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.btm::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: #ebebeb;
+  transform: scaleY(0.5);
+}
+
+.btm view {
+  width: 690rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background: #e84358;
+  border-radius: 6rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 34rpx;
+  color: #fff;
+  font-weight: bold;
+  align-items: center;
+}
+
+.btm .v1 {
+  background: #ebebeb;
+  color: #b4b9bf;
+}
+
+.tab {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40rpx 100rpx 0;
+}
+
+.tab view {
+  font-family: PingFangSC-Medium;
+  font-size: 34rpx;
+  color: #5e646b;
+  font-weight: bold;
+  border-bottom: 4rpx solid transparent;
+}
+
+.tab .tab-sel {
+  color: #2a2a2a;
+  border-bottom: 4rpx solid #e84358;
+}
+
+.direct image {
+  width: 690rpx;
+  height: 356rpx;
+  display: block;
+  margin-top: 40rpx;
+}
+
+.direct view {
+  font-family: PingFangSC-Regular;
+  font-size: 35rpx;
+  color: #222020;
+  padding-left: 30rpx;
+}
+
+.direct .direct-v {
+  margin-top: 86rpx;
+  color: #b4b9bf;
+}
+
+.swiper-item-com {
+  position: relative;
+  height: 300rpx;
+}
+
+.swiper-item-com .swiper-item-com-view {
+  position: absolute;
+  top: 0rpx;
+  left: 10rpx;
+}
+
+.swiper-item-com .swiper-item-com-view .swiper-item-com-view-tit {
+  display: flex;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.swiper-item-com .swiper-item-com-view .swiper-item-com-view-tit .swiper-item-com-view-tit-v {
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #04082d;
+}
+
+.swiper-item-com .swiper-item-com-view-tit-img {
+  width: 45rpx;
+  height: 45rpx;
+  display: block;
+  margin-top: 0px;
+  margin-left: 12rpx;
+}
+
+.swiper-item-com .swiper-item-com-view .swiper-item-com-view-e {
+  opacity: 0.3;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #04082d;
+}
+
+.swiper-item-com .swiper-item-com-view .swiper-item-com-view-t {
+  font-family: PingFangSC-Regular;
+  font-size: 27rpx;
+  color: #04082d;
+  margin-top: 43rpx;
+}
+
+.swiper-item-com .price {
+  font-size: 60rpx;
+  margin-top: 44rpx;
+  color: #666;
+}
+.swiper-item-com .price .txis{
+  font-size: 30rpx;
+}
+
+.color-0 {
+  color: #2a2a2a !important;
+}
+
+.color-10 {
+  color: #04082d !important;
+}
+
+.color-20 {
+  color: #6a482e !important;
+}
+
+.color-30 {
+  color: #673033 !important;
+}
+
+.color-40 {
+  color: #ffebba !important;
+}
